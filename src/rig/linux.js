@@ -22,6 +22,8 @@ const i_rig_1 = require("../../interfaces/i_rig");
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
 const readdir = util.promisify(fs.readdir);
+const access = util.promisify(fs.access);
+const mkdir = util.promisify(fs.mkdir);
 const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
 const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
 const MINERS_PATH = __dirname + '/../../miners/';
@@ -114,12 +116,19 @@ class Linux extends i_rig_1.IRig {
         return __awaiter(this, void 0, void 0, function* () {
             yield writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
             if (config.fileType === 'binary') {
+                if (!(yield this.checkDir(CONFIG_COINS_PATH + name)))
+                    yield mkdir(CONFIG_COINS_PATH + name);
                 yield writeFile(MINERS_PATH + name, bin);
             }
             else if (config.fileType === 'tgz') {
                 yield this.untgzBuffer(bin);
             }
         });
+    }
+    checkDir(path) {
+        return access(path)
+            .then(() => true)
+            .catch(() => false);
     }
     untgzBuffer(bin) {
         return new Promise((resolve, reject) => {

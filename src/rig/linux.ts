@@ -17,6 +17,8 @@ import {IMinerConfig, IMinerList} from "../../interfaces/i_miner";
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
 const readdir = util.promisify(fs.readdir);
+const access = util.promisify(fs.access);
+const mkdir = util.promisify(fs.mkdir);
 
 const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
 const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
@@ -114,10 +116,17 @@ export class Linux extends IRig {
     public async updateMiner(name: string, config: IMinerConfig, bin: Buffer): Promise<void> {
         await writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
         if (config.fileType === 'binary') {
+            if (!await this.checkDir(CONFIG_COINS_PATH + name)) await mkdir(CONFIG_COINS_PATH + name);
             await writeFile(MINERS_PATH + name, bin);
         } else if (config.fileType === 'tgz') {
             await this.untgzBuffer(bin);
         }
+    }
+
+    protected checkDir(path: string): Promise<boolean> {
+        return access(path)
+            .then(() => true)
+            .catch(() => false);
     }
 
     protected untgzBuffer(bin: Buffer): Promise<void> {

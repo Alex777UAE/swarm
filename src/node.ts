@@ -128,6 +128,20 @@ export class Node {
 
         // setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
         await this.statisticLoop();
+        this.setSignalHandlers();
+    }
+
+    private async abortSignalHandler(): Promise<void> {
+        await this.miner.stop().catch(debug);
+        debug('Node stopped.');
+        process.exit(0);
+    }
+
+    private setSignalHandlers(): void {
+        process.on('SIGINT', this.abortSignalHandler.bind(this));
+        process.on('SIGBREAK', this.abortSignalHandler.bind(this)); // for windows, do we need it ??
+        process.on('SIGTERM', this.abortSignalHandler.bind(this));
+        process.on('SIGHUP', this.abortSignalHandler.bind(this));
     }
 
     private async statisticLoop(): Promise<void> {

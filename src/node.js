@@ -92,7 +92,21 @@ class Node {
             yield this.setCurrentCoin(coinName);
             // setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
             yield this.statisticLoop();
+            this.setSignalHandlers();
         });
+    }
+    abortSignalHandler() {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.miner.stop().catch(debug);
+            debug('Node stopped.');
+            process.exit(0);
+        });
+    }
+    setSignalHandlers() {
+        process.on('SIGINT', this.abortSignalHandler.bind(this));
+        process.on('SIGBREAK', this.abortSignalHandler.bind(this)); // for windows, do we need it ??
+        process.on('SIGTERM', this.abortSignalHandler.bind(this));
+        process.on('SIGHUP', this.abortSignalHandler.bind(this));
     }
     statisticLoop() {
         return __awaiter(this, void 0, void 0, function* () {

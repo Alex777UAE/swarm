@@ -16,7 +16,6 @@ const fs = require("fs");
 const util = require("util");
 const touch = require("touch");
 const child_process_1 = require("child_process");
-const constants_1 = require("constants");
 const i_gpu_1 = require("../../interfaces/i_gpu");
 const debug = require('debug')('miner:nvidia-gpu');
 const exec = util.promisify(child_process_1.execFile);
@@ -106,8 +105,8 @@ class NVidiaGPU extends i_gpu_1.IGPU {
                 watcher.on('error', reject);
             });
             debug(`restarting ligthdm`);
-            yield exec('/sbin/service lightdm restart', [], {
-                killSignal: constants_1.SIGKILL,
+            yield exec('/usr/sbin/service lightdm restart', [], {
+                killSignal: 'SIGKILL',
                 timeout: 90000
             });
             debug(`waiting lockfile to disappear`);

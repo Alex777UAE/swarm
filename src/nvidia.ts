@@ -5,7 +5,6 @@
 import 'source-map-support/register';
 import * as util from 'util';
 import {execFile} from 'child_process';
-import {SIGKILL} from "constants";
 
 const debug = require('debug')('miner:nvidia-smi');
 const exec = util.promisify(execFile);

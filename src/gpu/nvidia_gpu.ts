@@ -7,7 +7,6 @@ import * as fs from 'fs';
 import * as util from 'util';
 import * as touch from 'touch';
 import {execFile} from 'child_process';
-import {SIGKILL} from "constants";
 import {GPUModel, IGPUConfig, IGPUStats} from "../../interfaces/i_gpu";
 import {IGPU} from "../../interfaces/i_gpu";
 
@@ -105,8 +104,8 @@ export class NVidiaGPU extends IGPU {
             watcher.on('error', reject);
         });
         debug(`restarting ligthdm`);
-        await exec('/sbin/service lightdm restart', [], {
-            killSignal: SIGKILL,
+        await exec('/usr/sbin/service lightdm restart', [], {
+            killSignal: 'SIGKILL',
             timeout: 90000
         });
         debug(`waiting lockfile to disappear`);

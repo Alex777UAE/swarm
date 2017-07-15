@@ -20,6 +20,7 @@ const targz = require("tar.gz");
 const nvidia_1 = require("../nvidia");
 const nvidia_gpu_1 = require("../gpu/nvidia_gpu");
 const i_rig_1 = require("../../interfaces/i_rig");
+const stream_1 = require("stream");
 const debug = require('debug')('miner:linux');
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
@@ -145,7 +146,10 @@ class Linux extends i_rig_1.IRig {
     untgzBuffer(name, bin) {
         return new Promise((resolve, reject) => {
             debug(`buffer is ${Buffer.isBuffer(bin)}`);
-            const readStream = fs.createReadStream(bin);
+            // const readStream = fs.createReadStream(bin);
+            const readStream = new stream_1.Readable();
+            readStream._read = () => { };
+            readStream.push(bin);
             const writeStream = targz().createWriteStream(MINERS_PATH + name);
             debug(`untargziping to ${MINERS_PATH + name}`);
             readStream.pipe(writeStream);

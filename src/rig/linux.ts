@@ -14,6 +14,7 @@ import {IRig, OS} from "../../interfaces/i_rig";
 import {IGPU} from "../../interfaces/i_gpu";
 import {ICoinConfig, ICoinList} from "../../interfaces/i_coin";
 import {IMinerConfig, IMinerList} from "../../interfaces/i_miner";
+import {Readable} from "stream";
 
 const debug = require('debug')('miner:linux');
 
@@ -146,7 +147,10 @@ export class Linux extends IRig {
     protected untgzBuffer(name: string, bin: Buffer): Promise<void> {
         return new Promise((resolve, reject) => {
             debug(`buffer is ${Buffer.isBuffer(bin)}`);
-            const readStream = fs.createReadStream(bin);
+            // const readStream = fs.createReadStream(bin);
+            const readStream = new Readable();
+            readStream._read = () => {};
+            readStream.push(bin);
             const writeStream = targz().createWriteStream(MINERS_PATH + name);
             debug(`untargziping to ${MINERS_PATH + name}`);
             readStream.pipe(writeStream);

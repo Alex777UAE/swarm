@@ -99,14 +99,14 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
             this.miner.stdout.on('data', stdoutParser);
             this.miner.stderr.on('data', stderrParser);
             this.miner.on('close', this.handleExit.bind(this));
-            this.miner.on('error', StdOutMinerWrapper.errParser);
+            this.miner.on('error', StdOutMinerWrapper.errParser); // todo handle it properly
         });
     }
     toJson() {
         return JSON.stringify({ name: this.worker, type: this.type, hr: this.hashrate, hrs: this.hashrates });
     }
     static errParser(data) {
-        debug(data);
+        debug(data.toString());
     }
 }
 exports.StdOutMinerWrapper = StdOutMinerWrapper;

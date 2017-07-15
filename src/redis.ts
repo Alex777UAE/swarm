@@ -134,10 +134,10 @@ export class Redis extends IDBLayer {
     }
 
     public async updateStats(stringifiedJson: string): Promise<void> {
-        await this.redis.hset(REDIS_PREFIX + 'stats', this.options.myName, {
+        await this.redis.hset(REDIS_PREFIX + 'stats', this.options.myName, JSON.stringify({
             json: stringifiedJson,
             timestamp: Date.now()
-        });
+        }));
     }
 
     public async getStats(): Promise<DBStats> {

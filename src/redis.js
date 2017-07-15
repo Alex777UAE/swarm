@@ -138,10 +138,10 @@ class Redis extends i_db_layer_1.IDBLayer {
     }
     updateStats(stringifiedJson) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.redis.hset(REDIS_PREFIX + 'stats', this.options.myName, {
+            yield this.redis.hset(REDIS_PREFIX + 'stats', this.options.myName, JSON.stringify({
                 json: stringifiedJson,
                 timestamp: Date.now()
-            });
+            }));
         });
     }
     getStats() {

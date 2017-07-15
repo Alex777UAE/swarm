@@ -31,7 +31,6 @@ const chmod = util.promisify(fs.chmod);
 const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
 const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
 const MINERS_PATH = __dirname + '/../../miners/';
-const ROOT_PATH = __dirname + '/../../';
 const LIGHT_DM_CONFIG_PATH = '/etc/lightdm/lightdm.conf';
 class Linux extends i_rig_1.IRig {
     constructor(nvidiaSMIPath, nvidiaSettingsPath) {

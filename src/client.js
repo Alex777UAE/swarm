@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("source-map-support/register");
 const fs = require("fs");
 const os = require("os");
-const targz = require("tar.gz");
+const TarGz = require("tar.gz");
 const util = require("util");
 const Table = require("cli-table2");
 const redis_1 = require("./redis");
@@ -60,6 +60,7 @@ class Client {
     targzDirectory(name, path) {
         const newArchivePath = MINERS_DIR + name + '.tar.gz';
         return new Promise((resolve, reject) => {
+            const targz = new TarGz({}, { fromBase: true });
             const read = targz().createReadStream(path);
             const write = fs.createWriteStream(newArchivePath);
             read.pipe(write);

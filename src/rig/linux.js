@@ -29,6 +29,7 @@ const mkdir = util.promisify(fs.mkdir);
 const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
 const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
 const MINERS_PATH = __dirname + '/../../miners/';
+const ROOT_PATH = __dirname + '/../../';
 const LIGHT_DM_CONFIG_PATH = '/etc/lightdm/lightdm.conf';
 class Linux extends i_rig_1.IRig {
     constructor(nvidiaSMIPath, nvidiaSettingsPath) {
@@ -120,10 +121,10 @@ class Linux extends i_rig_1.IRig {
             if (config.fileType === 'binary') {
                 if (!(yield this.checkDir(MINERS_PATH + name)))
                     yield mkdir(MINERS_PATH + name);
-                yield writeFile(MINERS_PATH + name, bin);
+                yield writeFile(MINERS_PATH + name + config.executable, bin);
             }
             else if (config.fileType === 'tgz') {
-                yield this.untgzBuffer(bin);
+                yield this.untgzBuffer(name, bin);
             }
         });
     }
@@ -138,10 +139,10 @@ class Linux extends i_rig_1.IRig {
             return false;
         });
     }
-    untgzBuffer(bin) {
+    untgzBuffer(name, bin) {
         return new Promise((resolve, reject) => {
             const readStream = fs.createReadStream(bin);
-            const writeStream = targz().createWriteStream(MINERS_PATH);
+            const writeStream = targz().createWriteStream(MINERS_PATH + name);
             readStream.pipe(writeStream);
             writeStream.on('finish', resolve);
             writeStream.on('error', reject);

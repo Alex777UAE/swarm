@@ -3,7 +3,7 @@
 import 'source-map-support/register';
 import * as fs from "fs";
 import * as os from "os";
-import * as targz from 'tar.gz';
+import * as TarGz from 'tar.gz';
 import * as util from "util";
 import * as Table from 'cli-table2';
 import {Redis} from './redis';
@@ -60,6 +60,7 @@ export class Client {
     protected targzDirectory(name: string, path: string): Promise<string> {
         const newArchivePath = MINERS_DIR + name + '.tar.gz';
         return new Promise((resolve, reject) => {
+            const targz = new TarGz({}, {fromBase: true});
             const read = targz().createReadStream(path);
             const write = fs.createWriteStream(newArchivePath);
             read.pipe(write);

@@ -26,6 +26,7 @@ const mkdir = util.promisify(fs.mkdir);
 const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
 const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
 const MINERS_PATH = __dirname + '/../../miners/';
+const ROOT_PATH = __dirname + '/../../';
 const LIGHT_DM_CONFIG_PATH = '/etc/lightdm/lightdm.conf';
 
 export class Linux extends IRig {
@@ -121,9 +122,9 @@ export class Linux extends IRig {
         await writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
         if (config.fileType === 'binary') {
             if (!(await this.checkDir(MINERS_PATH + name))) await mkdir(MINERS_PATH + name);
-            await writeFile(MINERS_PATH + name, bin);
+            await writeFile(MINERS_PATH + name + config.executable, bin);
         } else if (config.fileType === 'tgz') {
-            await this.untgzBuffer(bin);
+            await this.untgzBuffer(name, bin);
         }
     }
 
@@ -139,10 +140,10 @@ export class Linux extends IRig {
             });
     }
 
-    protected untgzBuffer(bin: Buffer): Promise<void> {
+    protected untgzBuffer(name: string, bin: Buffer): Promise<void> {
         return new Promise((resolve, reject) => {
             const readStream = fs.createReadStream(bin);
-            const writeStream = targz().createWriteStream(MINERS_PATH);
+            const writeStream = targz().createWriteStream(MINERS_PATH + name);
             readStream.pipe(writeStream);
 
             writeStream.on('finish', resolve);

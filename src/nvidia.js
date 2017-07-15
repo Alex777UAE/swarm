@@ -42,7 +42,7 @@ class NVidia {
     }
     getIndexes() {
         return __awaiter(this, void 0, void 0, function* () {
-            const nvOpts = ['--query-gpu=count', '--format=csv,noheader,nounits'];
+            const nvOpts = ['--query-gpu=index', '--format=csv,noheader,nounits'];
             debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
             const { stdout } = yield exec(this.nvidiaSMIPath, nvOpts, {
                 killSignal: constants_1.SIGKILL,

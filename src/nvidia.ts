@@ -33,7 +33,7 @@ export class NVidia {
     }
 
     public async getIndexes(): Promise<number[]> {
-        const nvOpts = ['--query-gpu=count', '--format=csv,noheader,nounits'];
+        const nvOpts = ['--query-gpu=index', '--format=csv,noheader,nounits'];
         debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
         const { stdout } = await exec(this.nvidiaSMIPath, nvOpts, {
             killSignal: SIGKILL,

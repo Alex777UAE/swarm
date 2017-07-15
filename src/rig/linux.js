@@ -103,7 +103,7 @@ class Linux extends i_rig_1.IRig {
     static installLightDMConfig() {
         return __awaiter(this, void 0, void 0, function* () {
             let lightDMConfText = yield readFile(__dirname + '/../../templates/static/lightdm.conf', { encoding: 'utf8' });
-            lightDMConfText = lightDMConfText.replace('${dirname}', __dirname + '/../scripts');
+            lightDMConfText = lightDMConfText.replace('${dirname}', __dirname + '/../..');
             yield writeFile(LIGHT_DM_CONFIG_PATH, lightDMConfText);
         });
     }

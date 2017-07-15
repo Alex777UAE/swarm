@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const minimist = require('minimist');
+const Client = require('../src/client').Client;
+
+const argv = minimist(process.argv.slice(2));
+const client = new Client();
+
+if (!argv._[0] || !argv._[1]) {
+    console.error(`Please provide coin name and path to json config:\n\t./coin ftc ./configs/coins/ftc`);
+    process.exit(1);
+} else {
+    client.uploadCoin(argv._[0], argv._[1])
+        .then(() => {
+            console.log('Done');
+            process.exit(0);
+        })
+        .catch(err => console.error(err));
+}

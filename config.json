@@ -1,0 +1,10 @@
+{
+  "nvidia-smi": "/usr/bin/nvidia-smi",
+  "nvidia-settings": "/usr/bin/nvidia-smi",
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379
+  },
+  "defaultCoin": "zec",
+  "mode": "swarm"
+}

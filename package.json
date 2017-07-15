@@ -1,0 +1,32 @@
+{
+  "name": "miner",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "~1.17.1",
+    "cli-table2": "^0.2.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "ejs": "~2.5.6",
+    "ioredis": "^3.1.1",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "nicehash": "^1.0.2",
+    "node.bittrex.api": "^0.3.2",
+    "source-map-support": "^0.4.15",
+    "tar.gz": "^1.0.5",
+    "touch": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.8",
+    "@types/debug": "0.0.29",
+    "@types/ioredis": "0.0.23",
+    "@types/lodash": "^4.14.68",
+    "@types/minimist": "^1.2.0",
+    "@types/node": "^8.0.6"
+  }
+}

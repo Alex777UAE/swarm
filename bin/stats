@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+const minimist = require('minimist');
+const Client = require('../src/client').Client;
+
+const argv = minimist(process.argv.slice(2));
+const client = new Client();
+
+if (argv.h) {
+    console.log('./stats [-r nodeName|--full true|--full false]');
+    process.exit(0);
+}
+
+let promise;
+
+if (!argv.r) {
+    promise = client.showStats(argv.full);
+} else {
+    promise = client.removeDeadNode(argv.r);
+}
+
+promise
+    .then(() => process.exit(0))
+    .catch(err => console.error(err));

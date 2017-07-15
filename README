@@ -1,0 +1,53 @@
+1st version
+
+1. update configs from redis at each start
+    - coin_pool
+    - miner
+    - current bind
+2. switch configs
+3. remove dead node from stats
+
+-----------------------
+
+1. Publish JSON configs
+    a. miner config
+        name -> JSON
+        node index.js -pn name -pm configs/miners/name.json
+
+        {
+            apiType: 'ccminer' | 'EWBF' | 'Xgminer' | 'FireIce' | 'Claymore' | 'wrapper',
+            fileType: 'binary' | 'tgz'
+        }
+
+    b. coin/pool config
+        name -> JSON
+        node index.js -pn name -pc config/coin_pools/name.json
+
+2. Show online nodes
+    a. brief [hostname, coin, GPU#, hashrate, mining coin time, uptime]
+        node index.js -l
+
+    b. full [hostname, coin, mining coin time, uptime]
+        {GPU#, Name, Temperature, gpu_clocks, mem_clocks, wattage/limit, fan.speed, memory.used/total, hashrate}
+
+        node index.js -f
+
+3. Update own stats
+    done automaticaly
+
+4. Switch coins/miners on nodes
+    1. local
+        - manual
+        node index.js -sm miner_name -sc coin_pool_name
+
+        - auto (if not manualy set) by profit calculator
+
+    2. remote all
+        node index.js -r all -sm miner_name -sc coin_pool_name
+
+    3. remote by range [n-n|n,n|n-n,n,n-n,n]
+        node index.js -r a-b,c,d,f-h -sm miner_name -sc coin_pool_name
+
+    same for automatical: index.js -r all -u
+
+5. auto update

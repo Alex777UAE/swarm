@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+const minimist = require('minimist');
+const Client = require('../src/client').Client;
+
+const argv = minimist(process.argv.slice(2));
+const client = new Client();
+
+if (!argv._[0] || !argv._[0]) {
+    console.error('Please provide miner name, path to json config:');
+    console.error('\t./miner ccminer-8.09-klaust ./configs/miners/ccminer-8.09-klaust [directory|binary]');
+    process.exit(1);
+} else {
+    client.uploadMiner(...argv._)
+        .then(() => {
+            console.log('Done');
+            process.exit(0);
+        })
+        .catch(err => console.error(err));
+}

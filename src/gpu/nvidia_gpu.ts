@@ -40,13 +40,14 @@ export class NVidiaGPU extends IGPU {
 
     public async getStats(): Promise<IGPUStats> {
         const nvOpts = [
-            `-i ${this.id}`,
+            '-i',
+            this.id,
             '--query-gpu=utilization.gpu,utilization.memory,power.draw,temperature.gpu,fan.speed,' +
             'clocks.current.graphics,clocks.current.memory',
             '--format=csv,noheader,nounits'
         ];
         debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
-        const o = await exec(this.nvidiaSMIPath, nvOpts , {killSignal: SIGKILL, timeout: 90000});
+        const o = await exec(this.nvidiaSMIPath, nvOpts , {killSignal: 'SIGKILL', timeout: 90000});
         debug(`got output:\n${o.stdout}`);
         const stats = o.stdout.split(',').map(e => parseFloat(e));
         return {
@@ -62,7 +63,7 @@ export class NVidiaGPU extends IGPU {
 
     public async init(id: number): Promise<void> {
         this.cardId = id;
-        const nvOpts = [`-i ${id}`, '--query-gpu=name,uuid', '--format=csv,noheader,nounits'];
+        const nvOpts = ['-i', id, '--query-gpu=name,uuid', '--format=csv,noheader,nounits'];
         debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
         const o = await exec(this.nvidiaSMIPath, nvOpts , { killSignal: 'SIGKILL', timeout: 90000});
         debug(`got output:\n${o.stdout}`);

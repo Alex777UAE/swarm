@@ -49,7 +49,7 @@ class NVidia {
             });
             debug(`got output:\n${stdout}`);
             const lines = stdout.split('\n');
-            return lines.map(parseInt);
+            return lines.filter(el => el).map(el => parseInt(el));
         });
     }
 }

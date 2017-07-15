@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="nvidia indexes command fix">
+    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" />
@@ -9,6 +10,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nvidia.js" afterPath="$PROJECT_DIR$/src/nvidia.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nvidia.js.map" afterPath="$PROJECT_DIR$/src/nvidia.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nvidia.ts" afterPath="$PROJECT_DIR$/src/nvidia.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.ts" afterPath="$PROJECT_DIR$/src/rig/linux.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -68,7 +70,7 @@
       <file leaf-file-name="nvidia.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nvidia.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="417">
               <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding>
                 <element signature="e#41#78#0" expanded="true" />
@@ -77,15 +79,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nvidia_gpu.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nvidia_gpu.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gpu/nvidia_gpu.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="66" column="81" lean-forward="false" selection-start-line="66" selection-start-column="81" selection-end-line="66" selection-end-column="81" />
+            <state relative-caret-position="486">
+              <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
               <folding>
                 <element signature="e#41#78#0" expanded="true" />
                 <element signature="n#!!block;n#uuid#0;n#NVidiaGPU#0" expanded="false" />
-                <marker date="1500132182000" expanded="true" signature="2434:2462" ph="..." />
+                <marker date="1500134702000" expanded="true" signature="1884:1937" ph="..." />
+                <marker date="1500134702000" expanded="true" signature="2444:2472" ph="..." />
               </folding>
             </state>
           </provider>
@@ -97,6 +100,31 @@
             <state relative-caret-position="309">
               <caret line="1885" column="18" lean-forward="false" selection-start-line="1885" selection-start-column="8" selection-end-line="1885" selection-end-column="18" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linux.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="104" column="67" lean-forward="false" selection-start-line="104" selection-start-column="67" selection-end-line="104" selection-end-column="67" />
+              <folding>
+                <element signature="e#41#78#0" expanded="true" />
+                <element signature="n#!!block;n#constructor#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#hostname#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#cpu#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#uptime#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#ip#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#getGPUs#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#getLoad#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#toJson#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#updateCoin#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#loadMiners#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#loadCoins#0;n#Linux#0" expanded="false" />
+                <element signature="n#!!block;n#loadJSONFiles#0;n#Linux#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,15 +225,16 @@
         <option value="$PROJECT_DIR$/interfaces/i_rig.ts" />
         <option value="$PROJECT_DIR$/src/gpu/amd.ts" />
         <option value="$PROJECT_DIR$/src/node.ts" />
-        <option value="$PROJECT_DIR$/src/rig/linux.ts" />
         <option value="$PROJECT_DIR$/src/redis.ts" />
         <option value="$PROJECT_DIR$/src/wrappers/ccminer.ts" />
         <option value="$PROJECT_DIR$/src/wrappers/claymore.ts" />
         <option value="$PROJECT_DIR$/src/wrappers/ethminer.ts" />
         <option value="$PROJECT_DIR$/src/wrappers/ewbf.ts" />
         <option value="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts" />
-        <option value="$PROJECT_DIR$/src/nvidia.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
+        <option value="$PROJECT_DIR$/src/nvidia.ts" />
+        <option value="$PROJECT_DIR$/src/rig/linux.ts" />
       </list>
     </option>
   </component>
@@ -279,6 +308,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -317,10 +364,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="rig" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="linux.ts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -496,7 +539,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="58397000" />
+      <workItem from="1499812485546" duration="59375000" />
     </task>
     <task id="LOCAL-00001" summary="subscribe fix">
       <created>1500127082187</created>
@@ -526,11 +569,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500130661316</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="nvidia debug #1">
+      <created>1500132199205</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1500132199205</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84641000" />
+    <option name="totallyTimeSpent" value="85619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -594,7 +644,8 @@
     <MESSAGE value="subscribe fix" />
     <MESSAGE value="namespace fix" />
     <MESSAGE value="nvidia indexes command fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="nvidia indexes command fix" />
+    <MESSAGE value="nvidia debug #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="nvidia debug #1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -603,14 +654,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/gpu/nvidia_gpu.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="70" column="36" lean-forward="false" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/writer.ts" />
     <entry file="file://$PROJECT_DIR$/bin/miner" />
     <entry file="file://$PROJECT_DIR$/bin/miner-write" />
@@ -870,30 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!block;n#constructor#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#hostname#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#cpu#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#uptime#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#ip#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#getGPUs#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#getLoad#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#init#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#toJson#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#installLightDMConfig#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoin#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#loadMiners#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#loadCoins#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#loadJSONFiles#0;n#Linux#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/redis.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -980,9 +999,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gpu/nvidia_gpu.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+          <folding>
+            <element signature="e#41#78#0" expanded="true" />
+            <element signature="n#!!block;n#uuid#0;n#NVidiaGPU#0" expanded="false" />
+            <marker date="1500134702000" expanded="true" signature="1884:1937" ph="..." />
+            <marker date="1500134702000" expanded="true" signature="2444:2472" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/nvidia.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="417">
           <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
             <element signature="e#41#78#0" expanded="true" />
@@ -990,14 +1030,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gpu/nvidia_gpu.ts">
+    <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="66" column="81" lean-forward="false" selection-start-line="66" selection-start-column="81" selection-end-line="66" selection-end-column="81" />
+        <state relative-caret-position="486">
+          <caret line="104" column="67" lean-forward="false" selection-start-line="104" selection-start-column="67" selection-end-line="104" selection-end-column="67" />
           <folding>
             <element signature="e#41#78#0" expanded="true" />
-            <element signature="n#!!block;n#uuid#0;n#NVidiaGPU#0" expanded="false" />
-            <marker date="1500132182000" expanded="true" signature="2434:2462" ph="..." />
+            <element signature="n#!!block;n#constructor#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#hostname#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#cpu#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#uptime#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#ip#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#getGPUs#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#getLoad#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#toJson#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#updateCoin#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#loadMiners#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#loadCoins#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#loadJSONFiles#0;n#Linux#0" expanded="false" />
           </folding>
         </state>
       </provider>

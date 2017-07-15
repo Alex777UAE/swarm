@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js" afterPath="$PROJECT_DIR$/src/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js.map" afterPath="$PROJECT_DIR$/src/client.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.ts" afterPath="$PROJECT_DIR$/src/client.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js" afterPath="$PROJECT_DIR$/src/rig/linux.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js.map" afterPath="$PROJECT_DIR$/src/rig/linux.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.ts" afterPath="$PROJECT_DIR$/src/rig/linux.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="linux.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="linux.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="123" column="42" lean-forward="false" selection-start-line="123" selection-start-column="42" selection-end-line="123" selection-end-column="42" />
+            <state relative-caret-position="504">
+              <caret line="149" column="20" lean-forward="false" selection-start-line="149" selection-start-column="20" selection-end-line="149" selection-end-column="20" />
               <folding>
                 <element signature="e#41#78#0" expanded="true" />
                 <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
@@ -91,7 +91,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="client.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -205,8 +205,8 @@
         <option value="$PROJECT_DIR$/src/wrappers/ethminer.ts" />
         <option value="$PROJECT_DIR$/src/wrappers/ewbf.ts" />
         <option value="$PROJECT_DIR$/src/node.ts" />
-        <option value="$PROJECT_DIR$/src/rig/linux.ts" />
         <option value="$PROJECT_DIR$/src/client.ts" />
+        <option value="$PROJECT_DIR$/src/rig/linux.ts" />
       </list>
     </option>
   </component>
@@ -571,7 +571,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="67028000" />
+      <workItem from="1499812485546" duration="67240000" />
     </task>
     <task id="LOCAL-00001" summary="subscribe fix">
       <created>1500127082187</created>
@@ -776,11 +776,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500151634389</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="targz #1">
+      <created>1500152030297</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1500152030297</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93272000" />
+    <option name="totallyTimeSpent" value="93484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -858,7 +865,8 @@
     <MESSAGE value="check directory of miners #4" />
     <MESSAGE value="check directory of miners #5" />
     <MESSAGE value="check directory of miners #6" />
-    <option name="LAST_COMMIT_MESSAGE" value="check directory of miners #6" />
+    <MESSAGE value="targz #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="targz #1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1252,10 +1260,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="123" column="42" lean-forward="false" selection-start-line="123" selection-start-column="42" selection-end-line="123" selection-end-column="42" />
+        <state relative-caret-position="504">
+          <caret line="149" column="20" lean-forward="false" selection-start-line="149" selection-start-column="20" selection-end-line="149" selection-end-column="20" />
           <folding>
             <element signature="e#41#78#0" expanded="true" />
             <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
@@ -1267,14 +1283,6 @@
             <element signature="n#!!block;n#getLoad#0;n#Linux#0" expanded="false" />
             <element signature="n#!!block;n#toJson#0;n#Linux#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>

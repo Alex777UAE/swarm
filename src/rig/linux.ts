@@ -147,6 +147,7 @@ export class Linux extends IRig {
         return new Promise((resolve, reject) => {
             const readStream = fs.createReadStream(bin);
             const writeStream = targz().createWriteStream(MINERS_PATH + name);
+            debug(`untargziping to ${MINERS_PATH + name}`);
             readStream.pipe(writeStream);
 
             writeStream.on('finish', resolve);

@@ -209,7 +209,7 @@ export class Node {
     private async minerUpdate(name: string, config: IMinerConfig, binarry: Buffer) {
         this.miners[name] = config;
         await this.rig.updateMiner(name, config, binarry);
-        if (config.type === this.miner.type) {
+        if (this.miner && config.type === this.miner.type) {
             await this.setCurrentCoin(this.currentCoin);
         }
     }

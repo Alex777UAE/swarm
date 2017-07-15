@@ -174,7 +174,7 @@ class Node {
         return __awaiter(this, void 0, void 0, function* () {
             this.miners[name] = config;
             yield this.rig.updateMiner(name, config, binarry);
-            if (config.type === this.miner.type) {
+            if (this.miner && config.type === this.miner.type) {
                 yield this.setCurrentCoin(this.currentCoin);
             }
         });

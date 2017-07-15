@@ -130,11 +130,11 @@ export class Linux extends IRig {
     protected checkDir(path: string): Promise<boolean> {
         return access(path)
             .then(() => {
-                debug('dir exist');
+                debug(`dir ${path} exist`);
                 return true;
             })
             .catch(() => {
-                debug('dir does not exists');
+                debug(`dir ${path} does not exists`);
                 return false;
             });
     }

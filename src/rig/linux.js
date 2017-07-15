@@ -130,11 +130,11 @@ class Linux extends i_rig_1.IRig {
     checkDir(path) {
         return access(path)
             .then(() => {
-            debug('dir exist');
+            debug(`dir ${path} exist`);
             return true;
         })
             .catch(() => {
-            debug('dir does not exists');
+            debug(`dir ${path} does not exists`);
             return false;
         });
     }

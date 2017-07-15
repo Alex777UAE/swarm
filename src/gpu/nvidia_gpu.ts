@@ -62,7 +62,7 @@ export class NVidiaGPU extends IGPU {
 
     public async init(id: number): Promise<void> {
         this.cardId = id;
-        const nvOpts = [`-i ${id}`, '--query-gpu=name,uuid', '--format=csv,noheader,nounits'];
+        const nvOpts = [`-i ${id} --format=csv,noheader,nounits`];
         debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
         const o = await exec(this.nvidiaSMIPath, nvOpts , { killSignal: SIGKILL, timeout: 90000});
         debug(`got output:\n${o.stdout}`);

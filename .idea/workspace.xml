@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/miners/ccminer-klaust-8.09" afterPath="$PROJECT_DIR$/configs/miners/ccminer-klaust-8.09" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js.map" afterPath="$PROJECT_DIR$/src/rig/linux.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.ts" afterPath="$PROJECT_DIR$/src/rig/linux.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="linux.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="linux.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="124" column="42" lean-forward="false" selection-start-line="124" selection-start-column="42" selection-end-line="124" selection-end-column="42" />
+            <state relative-caret-position="320">
+              <caret line="142" column="14" lean-forward="false" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
               <folding>
                 <element signature="e#41#78#0" expanded="true" />
                 <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
@@ -34,6 +36,16 @@
                 <element signature="n#!!block;n#getLoad#0;n#Linux#0" expanded="false" />
                 <element signature="n#!!block;n#toJson#0;n#Linux#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ccminer-klaust-8.09" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/configs/miners/ccminer-klaust-8.09">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,7 +65,7 @@
       <file leaf-file-name="client.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-479">
+            <state relative-caret-position="-505">
               <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
               <folding />
             </state>
@@ -71,7 +83,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>refer</find>
       <find>refere</find>
       <find>U</find>
       <find>Units.</find>
@@ -101,6 +112,7 @@
       <find>E</find>
       <find>Error syn</find>
       <find>miner</find>
+      <find>exist</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -329,38 +341,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tar.gz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="miners" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -552,7 +532,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="65029000" />
+      <workItem from="1499812485546" duration="65233000" />
     </task>
     <task id="LOCAL-00001" summary="subscribe fix">
       <created>1500127082187</created>
@@ -715,11 +695,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500149318849</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="check directory of miners #5">
+      <created>1500149385327</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1500149385327</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91273000" />
+    <option name="totallyTimeSpent" value="91477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -795,7 +782,8 @@
     <MESSAGE value="lightdm restart fix #2&#10;check directory of miners #2" />
     <MESSAGE value="check directory of miners #3" />
     <MESSAGE value="check directory of miners #4" />
-    <option name="LAST_COMMIT_MESSAGE" value="check directory of miners #4" />
+    <MESSAGE value="check directory of miners #5" />
+    <option name="LAST_COMMIT_MESSAGE" value="check directory of miners #5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1161,22 +1149,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/miners/ccminer-klaust-8.09">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-479">
-          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/miner">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1197,8 +1169,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="124" column="42" lean-forward="false" selection-start-line="124" selection-start-column="42" selection-end-line="124" selection-end-column="42" />
+        <state relative-caret-position="320">
+          <caret line="142" column="14" lean-forward="false" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
           <folding>
             <element signature="e#41#78#0" expanded="true" />
             <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
@@ -1210,6 +1182,22 @@
             <element signature="n#!!block;n#getLoad#0;n#Linux#0" expanded="false" />
             <element signature="n#!!block;n#toJson#0;n#Linux#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-505">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/miners/ccminer-klaust-8.09">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

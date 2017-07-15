@@ -25,15 +25,15 @@ class Claymore extends StdOutMinerWrapper {
     // -epool $URL -ewal $USER.worker -eworker $USER.worker  -epsw $PASS -esm 2 -mode 1 -allpools 1 -allcoins
     public async start(coin: ICoinConfig): Promise<void> {
         await this.launchMinerBinary(coin, [
-            `-epool ${coin.poolURL}:${coin.port}`,
-            `-ewal ${coin.username}.${this.worker}`,
-            `-eworker ${coin.username}.${this.worker}`,
-            `-epsw ${coin.password}`,
-            '-esm 2',
-            '-mode 1',
-            '-colors 0',
-            '-allcoins 1',
-            '-allpools 1'
+            '-epool', `${coin.poolURL}:${coin.port}`,
+            '-ewal', `${coin.username}.${this.worker}`,
+            '-eworker', `${coin.username}.${this.worker}`,
+            '-epsw', coin.password,
+            '-esm', '2',
+            '-mode', '1',
+            '-colors', '0',
+            '-allcoins', '1',
+            '-allpools', '1'
         ], this.parseStdOut.bind(this))
     }
 

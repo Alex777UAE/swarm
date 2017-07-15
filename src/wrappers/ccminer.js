@@ -30,9 +30,9 @@ class CCMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
     start(coin) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.launchMinerBinary(coin, [
-                `-a ${coin.algorithm}`,
-                `-o stratum+${coin.ssl ? 'ssl' : 'tcp'}://${coin.poolURL}:${coin.port}`,
-                `-O ${coin.username}.${this.worker}:${coin.password}`,
+                '-a', coin.algorithm,
+                '-o', `stratum+${coin.ssl ? 'ssl' : 'tcp'}://${coin.poolURL}:${coin.port}`,
+                '-O', `${coin.username}.${this.worker}:${coin.password}`,
                 '--retries=1',
                 '--retry-pause=10',
                 '--timeout=60',

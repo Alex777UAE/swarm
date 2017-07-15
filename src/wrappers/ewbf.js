@@ -35,10 +35,10 @@ class EWBFMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
     start(coin) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.launchMinerBinary(coin, [
-                `--server ${coin.poolURL}`,
-                `--port ${coin.port}`,
-                `--user ${coin.username}.${this.worker}`,
-                `--pass ${coin.password}`,
+                '--server', coin.poolURL,
+                '--port', coin.port.toString(),
+                '--user', `${coin.username}.${this.worker}`,
+                '--pass', coin.password,
                 '--fee 0',
                 '--boff',
                 '--eexit 3'

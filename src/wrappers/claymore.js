@@ -29,15 +29,15 @@ class Claymore extends stdout_miner_wrapper_1.StdOutMinerWrapper {
     start(coin) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.launchMinerBinary(coin, [
-                `-epool ${coin.poolURL}:${coin.port}`,
-                `-ewal ${coin.username}.${this.worker}`,
-                `-eworker ${coin.username}.${this.worker}`,
-                `-epsw ${coin.password}`,
-                '-esm 2',
-                '-mode 1',
-                '-colors 0',
-                '-allcoins 1',
-                '-allpools 1'
+                '-epool', `${coin.poolURL}:${coin.port}`,
+                '-ewal', `${coin.username}.${this.worker}`,
+                '-eworker', `${coin.username}.${this.worker}`,
+                '-epsw', coin.password,
+                '-esm', '2',
+                '-mode', '1',
+                '-colors', '0',
+                '-allcoins', '1',
+                '-allpools', '1'
             ], this.parseStdOut.bind(this));
         });
     }

@@ -27,9 +27,9 @@ class CCMiner extends StdOutMinerWrapper {
     //noinspection JSUnusedGlobalSymbols
     public async start(coin: ICoinConfig): Promise<void> {
         await this.launchMinerBinary(coin, [
-            `-a ${coin.algorithm}`,
-            `-o stratum+${coin.ssl ? 'ssl' : 'tcp'}://${coin.poolURL}:${coin.port}`,
-            `-O ${coin.username}.${this.worker}:${coin.password}`,
+            '-a', coin.algorithm,
+            '-o', `stratum+${coin.ssl ? 'ssl' : 'tcp'}://${coin.poolURL}:${coin.port}`,
+            '-O', `${coin.username}.${this.worker}:${coin.password}`,
             '--retries=1',
             '--retry-pause=10',
             '--timeout=60',

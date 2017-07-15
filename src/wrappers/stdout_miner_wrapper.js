@@ -11,14 +11,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Created by alex on 13.07.17.
  */
+require("source-map-support/register");
 const childProcess = require("child_process");
 const Bluebird = require("bluebird");
 const timers_1 = require("timers");
+const i_miner_1 = require("../../interfaces/i_miner");
 const util = require('util');
 const VALIDATION_LOOP_INTERVAL = 5 * 60 * 1000; // once in a five minute
+const MINERS_DIRECTORY_BASE = __dirname + '/../../miners/';
 const debug = require('debug')('miner:StdOutMinerWrapper');
 const spawn = util.promisify(childProcess.spawn);
-class StdOutMinerWrapper extends Units.IMiner {
+class StdOutMinerWrapper extends i_miner_1.IMiner {
     constructor(executable) {
         super(executable);
         this.hr = 0;
@@ -78,13 +81,19 @@ class StdOutMinerWrapper extends Units.IMiner {
     }
     handleExit(code) {
         // todo notify switching algo module somehow?
+        debug(`exit code ${code}`);
         if (this.coin)
             this.start(this.coin)
                 .catch(debug);
     }
     exec(executable, args, stdoutParser, stderrParser) {
         return __awaiter(this, void 0, void 0, function* () {
-            this.miner = yield spawn(executable, args, { env: { GPU_MAX_ALLOC_PERCENT: 100, GPU_USE_SYNC_OBJECTS: 1 } });
+            this.miner = yield spawn(MINERS_DIRECTORY_BASE + executable, args, {
+                env: {
+                    GPU_MAX_ALLOC_PERCENT: 100,
+                    GPU_USE_SYNC_OBJECTS: 1
+                }
+            });
             this.miner.stdout.on('data', stdoutParser);
             this.miner.stderr.on('data', stderrParser);
             this.miner.on('close', this.handleExit.bind(this));

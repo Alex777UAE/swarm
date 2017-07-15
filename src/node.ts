@@ -1,14 +1,18 @@
 /**
  * Created by alex on 10.07.17.
  */
+import 'source-map-support/register';
 import * as fs from 'fs';
 import * as util from 'util';
 import {IDBLayer} from "../interfaces/i_db_layer";
 import {Redis} from "./redis";
 import {Linux} from "./rig/linux";
 import * as _ from 'lodash';
-import IGPUStats = Units.IGPUStats;
 import {setTimeout} from "timers";
+import {IRig} from "../interfaces/i_rig";
+import {IGPU, IGPUStats} from "../interfaces/i_gpu";
+import {IMiner, IMinerList, IMinerConfig} from "../interfaces/i_miner";
+import {ICoinConfig, ICoinList} from "../interfaces/i_coin";
 
 const debug = require('debug')('miner:node');
 const readFile = util.promisify(fs.readFile);
@@ -45,12 +49,12 @@ export interface IStats {
 
 export class Node {
     private db: IDBLayer;
-    private rig: Units.IRig;
-    private miner: Units.IMiner;
-    private GPUs: Units.IGPU[];
+    private rig: IRig;
+    private miner: IMiner;
+    private GPUs: IGPU[];
     private currentCoin: string;
-    private coins: Units.ICoinList = {};
-    private miners: Units.IMinerList = {};
+    private coins: ICoinList = {};
+    private miners: IMinerList = {};
 
     // stats
     private coinStartedAt: number; // timestamp
@@ -194,7 +198,7 @@ export class Node {
 
     }
 
-    private async coinUpdate(name: string, config: Units.ICoinConfig) {
+    private async coinUpdate(name: string, config: ICoinConfig) {
         this.coins[name] = config;
         await this.rig.updateCoin(name, config);
         if (this.currentCoin === name) {
@@ -202,7 +206,7 @@ export class Node {
         }
     }
 
-    private async minerUpdate(name: string, config: Units.IMinerConfig, binarry: Buffer) {
+    private async minerUpdate(name: string, config: IMinerConfig, binarry: Buffer) {
         this.miners[name] = config;
         await this.rig.updateMiner(name, config, binarry);
         if (config.type === this.miner.type) {

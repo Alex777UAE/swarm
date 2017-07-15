@@ -8,6 +8,7 @@ import * as util from "util";
 import * as Table from 'cli-table2';
 import {Redis} from './redis';
 import {IStats} from './node';
+import {IMinerConfig} from "../interfaces/i_miner";
 
 const readFile = util.promisify(fs.readFile);
 const stat = util.promisify(fs.stat);
@@ -37,7 +38,7 @@ export class Client {
     }
 
     public async uploadMiner(name: string, path: string, minerPath?: string): Promise<void> {
-        const minerConfig: Units.IMinerConfig = JSON.parse(await readFile(path));
+        const minerConfig: IMinerConfig = JSON.parse(await readFile(path));
 
         if (minerPath) {
             const fsStat: fs.Stats = await stat(minerPath);

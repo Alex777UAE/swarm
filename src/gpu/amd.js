@@ -1,7 +1,4 @@
 "use strict";
-/**
- * Created by alex on 11.07.17.
- */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -11,8 +8,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var IGPU = Units.IGPU;
-class AMD extends IGPU {
+const i_gpu_1 = require("../../interfaces/i_gpu");
+/**
+ * Created by alex on 11.07.17.
+ */
+class AMD extends i_gpu_1.IGPU {
     get id() {
         return this.cardId;
     }

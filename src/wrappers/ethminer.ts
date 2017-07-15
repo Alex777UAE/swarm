@@ -1,7 +1,10 @@
 /**
  * Created by alex on 13.07.17.
  */
+import 'source-map-support/register';
 import {StdOutMinerWrapper} from "./stdout_miner_wrapper";
+import {MinerType} from "../../interfaces/i_miner";
+import {ICoinConfig} from "../../interfaces/i_coin";
 const util = require('util');
 const debug = require('debug')('miner:ETHMiner');
 
@@ -13,11 +16,13 @@ class ETHMiner extends StdOutMinerWrapper {
         super(executable);
     }
 
-    public get type(): Units.MinerType {
+    //noinspection JSMethodCanBeStatic
+    public get type(): MinerType {
         return 'ethminer';
     }
 
-    public async start(coin: Units.ICoinConfig): Promise<void> {
+    //noinspection JSUnusedGlobalSymbols
+    public async start(coin: ICoinConfig): Promise<void> {
         await this.launchMinerBinary(coin, [
             `--server ${coin.poolURL}`,
             `--port ${coin.port}`,

@@ -1,1 +1,1 @@
-{"version":3,"file":"i_miner.js","sourceRoot":"","sources":["i_miner.ts"],"names":[],"mappings":"AAAA;;GAEG;AAEH,IAAU,KAAK,CA2Bd;AA3BD,WAAU,KAAK;IAaX,YAA6B,SAAQ,MAAA,KAAK;QACtC,YAAsB,UAAkB;YACpC,KAAK,EAAE,CAAC;YADU,eAAU,GAAV,UAAU,CAAQ;QAExC,CAAC;KAUJ;IAbqB,YAAM,SAa3B,CAAA;AACL,CAAC,EA3BS,KAAK,KAAL,KAAK,QA2Bd"}
+{"version":3,"file":"i_miner.js","sourceRoot":"","sources":["i_miner.ts"],"names":[],"mappings":";AAAA;;GAEG;;AAEH,qCAA+B;AAc/B,YAA6B,SAAQ,cAAK;IACtC,YAAsB,UAAkB;QACpC,KAAK,EAAE,CAAC;QADU,eAAU,GAAV,UAAU,CAAQ;IAExC,CAAC;CAiBJ;AApBD,wBAoBC"}

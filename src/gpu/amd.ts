@@ -1,10 +1,7 @@
+import {IGPU, IGPUConfig, GPUModel, IGPUStats} from "../../interfaces/i_gpu";
 /**
  * Created by alex on 11.07.17.
  */
-
-import IGPU = Units.IGPU;
-import GPUModel = Units.GPUModel;
-import IGPUConfig = Units.IGPUConfig;
 
 export class AMD extends IGPU {
     protected config: IGPUConfig;
@@ -24,7 +21,7 @@ export class AMD extends IGPU {
         return this.cardModel;
     }
 
-    public async getStats(): Promise<Units.IGPUStats> {
+    public async getStats(): Promise<IGPUStats> {
         return null;
     }
 

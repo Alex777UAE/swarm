@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require("source-map-support/register");
 const util = require("util");
 const child_process_1 = require("child_process");
 const constants_1 = require("constants");

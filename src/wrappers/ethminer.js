@@ -11,6 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Created by alex on 13.07.17.
  */
+require("source-map-support/register");
 const stdout_miner_wrapper_1 = require("./stdout_miner_wrapper");
 const util = require('util');
 const debug = require('debug')('miner:ETHMiner');
@@ -19,9 +20,11 @@ class ETHMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
     constructor(executable) {
         super(executable);
     }
+    //noinspection JSMethodCanBeStatic
     get type() {
         return 'ethminer';
     }
+    //noinspection JSUnusedGlobalSymbols
     start(coin) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.launchMinerBinary(coin, [

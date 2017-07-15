@@ -11,15 +11,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require("source-map-support/register");
 const fs = require("fs");
 const util = require("util");
 const touch = require("touch");
 const child_process_1 = require("child_process");
 const constants_1 = require("constants");
+const i_gpu_1 = require("../../interfaces/i_gpu");
 const debug = require('debug')('miner:nvidia-gpu');
 const exec = util.promisify(child_process_1.execFile);
 const writeFile = util.promisify(fs.writeFile);
-class NVidiaGPU extends Units.IGPU {
+class NVidiaGPU extends i_gpu_1.IGPU {
     constructor(nvidiaSMIPath, nvidiaSettingsPath) {
         super();
         this.nvidiaSMIPath = nvidiaSMIPath;

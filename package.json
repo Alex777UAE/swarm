@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/node.js"
   },
   "dependencies": {
     "bluebird": "^3.5.0",

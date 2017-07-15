@@ -4,12 +4,13 @@ const minimist = require('minimist');
 const Client = require('../src/client').Client;
 
 const argv = minimist(process.argv.slice(2));
-const client = new Client();
 
 if (argv.h) {
     console.log('./stats [-r nodeName|--full true|--full false]');
     process.exit(0);
 }
+
+const client = new Client();
 
 let promise;
 

@@ -2,22 +2,25 @@
  * Created by alex on 11.07.17.
  */
 
+import 'source-map-support/register';
 import * as fs from 'fs';
 import * as util from 'util';
 import * as touch from 'touch';
 import {execFile} from 'child_process';
 import {SIGKILL} from "constants";
+import {GPUModel, IGPUConfig, IGPUStats} from "../../interfaces/i_gpu";
+import {IGPU} from "../../interfaces/i_gpu";
 
 const debug = require('debug')('miner:nvidia-gpu');
 
 const exec = util.promisify(execFile);
 const writeFile = util.promisify(fs.writeFile);
 
-export class NVidiaGPU extends Units.IGPU {
-    protected config: Units.IGPUConfig;
+export class NVidiaGPU extends IGPU {
+    protected config: IGPUConfig;
     protected cardId: number;
     protected cardUUID: string;
-    protected cardModel: Units.GPUModel;
+    protected cardModel: GPUModel;
 
     constructor(private nvidiaSMIPath: string, private nvidiaSettingsPath: string) {
         super();
@@ -31,11 +34,11 @@ export class NVidiaGPU extends Units.IGPU {
         return this.cardUUID;
     }
 
-    get model(): Units.GPUModel {
+    get model(): GPUModel {
         return this.cardModel;
     }
 
-    public async getStats(): Promise<Units.IGPUStats> {
+    public async getStats(): Promise<IGPUStats> {
         const nvOpts = [
             `-i ${this.id}`,
             '--query-gpu=utilization.gpu,utilization.memory,power.draw,temperature.gpu,fan.speed,' +
@@ -68,7 +71,7 @@ export class NVidiaGPU extends Units.IGPU {
         this.cardModel = name.replace('GeForce', '').replace(/\s+/g, '');
     }
 
-    public async setup(config: Units.IGPUConfig): Promise<void> {
+    public async setup(config: IGPUConfig): Promise<void> {
         const lockFile = `/tmp/oc_${this.id}`;
         const scriptPath = __dirname + '/../../scripts/overclock.sh';
         this.config = config;

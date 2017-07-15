@@ -2,17 +2,19 @@
  * Created by alex on 12.07.17.
  */
 
+import {ICoinConfig, ICoinList} from "./i_coin";
+import {IMinerConfig, IMinerList} from "./i_miner";
 export type DBStats = {[name: string]: {timestamp: number, json: string}};
 
 export abstract class IDBLayer {
-    public abstract async getAllCoins(): Promise<Units.ICoinList>;
-    public abstract async getAllMiners(): Promise<Units.IMinerList>;
+    public abstract async getAllCoins(): Promise<ICoinList>;
+    public abstract async getAllMiners(): Promise<IMinerList>;
     public abstract async getMinerBinnary(sha256sum: string): Promise<Buffer>;
     public abstract async getCurrentCoin(): Promise<string>;
 
     public abstract async setCurrentCoin(name: string, nodes?: string[]): Promise<void>;
-    public abstract async updateCoin(name: string, config: Units.ICoinConfig): Promise<void>;
-    public abstract async updateMiner(name: string, config: Units.IMinerConfig, binaryPath?: string): Promise<void>;
+    public abstract async updateCoin(name: string, config: ICoinConfig): Promise<void>;
+    public abstract async updateMiner(name: string, config: IMinerConfig, binaryPath?: string): Promise<void>;
 
     public abstract async updateStats(stringifiedJson: string): Promise<void>;
     public abstract async getStats(): Promise<DBStats>;

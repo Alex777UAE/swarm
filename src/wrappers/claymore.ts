@@ -1,7 +1,10 @@
 /**
  * Created by alex on 13.07.17.
  */
+import 'source-map-support/register';
 import {StdOutMinerWrapper} from "./stdout_miner_wrapper";
+import {MinerType} from "../../interfaces/i_miner";
+import {ICoinConfig} from "../../interfaces/i_coin";
 const util = require('util');
 const debug = require('debug')('miner:Claymore');
 
@@ -14,12 +17,13 @@ class Claymore extends StdOutMinerWrapper {
         super(executable);
     }
 
-    public get type(): Units.MinerType {
+    //noinspection JSMethodCanBeStatic
+    public get type(): MinerType {
         return 'claymore';
     }
 
     // -epool $URL -ewal $USER.worker -eworker $USER.worker  -epsw $PASS -esm 2 -mode 1 -allpools 1 -allcoins
-    public async start(coin: Units.ICoinConfig): Promise<void> {
+    public async start(coin: ICoinConfig): Promise<void> {
         await this.launchMinerBinary(coin, [
             `-epool ${coin.poolURL}:${coin.port}`,
             `-ewal ${coin.username}.${this.worker}`,

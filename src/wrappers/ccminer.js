@@ -1,4 +1,7 @@
 "use strict";
+/**
+ * Created by alex on 13.07.17.
+ */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -8,9 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * Created by alex on 13.07.17.
- */
+require("source-map-support/register");
 const stdout_miner_wrapper_1 = require("./stdout_miner_wrapper");
 const util = require('util');
 const debug = require('debug')('miner:CCMiner');
@@ -21,9 +22,11 @@ class CCMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
     constructor(executable) {
         super(executable);
     }
+    //noinspection JSMethodCanBeStatic
     get type() {
         return 'ccminer';
     }
+    //noinspection JSUnusedGlobalSymbols
     start(coin) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.launchMinerBinary(coin, [

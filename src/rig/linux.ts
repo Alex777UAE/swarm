@@ -2,12 +2,17 @@
  * Created by alex on 11.07.17.
  */
 
+import 'source-map-support/register';
 import * as os from 'os';
 import * as fs from 'fs';
 import * as util from 'util';
 import * as targz from 'tar.gz';
 import {NVidia} from "../nvidia";
 import {NVidiaGPU} from "../gpu/nvidia_gpu";
+import {IRig, OS} from "../../interfaces/i_rig";
+import {IGPU} from "../../interfaces/i_gpu";
+import {ICoinConfig, ICoinList} from "../../interfaces/i_coin";
+import {IMinerConfig, IMinerList} from "../../interfaces/i_miner";
 
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
@@ -18,8 +23,8 @@ const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
 const MINERS_PATH = __dirname + '/../../miners/';
 const LIGHT_DM_CONFIG_PATH = '/etc/lightdm/lightdm.conf';
 
-export class Linux extends Units.IRig {
-    protected gpus: Units.IGPU[] = [];
+export class Linux extends IRig {
+    protected gpus: IGPU[] = [];
     protected nv: NVidia;
 
     constructor(private nvidiaSMIPath: string, private nvidiaSettingsPath: string) {
@@ -27,7 +32,7 @@ export class Linux extends Units.IRig {
         this.nv = new NVidia(nvidiaSMIPath);
     }
 
-    public get os(): Units.OS {
+    public get os(): OS {
         return 'linux';
     }
 
@@ -56,7 +61,7 @@ export class Linux extends Units.IRig {
         throw new Error('No IP configured?');
     }
 
-    public async getGPUs(): Promise<Units.IGPU[]> {
+    public async getGPUs(): Promise<IGPU[]> {
         return this.gpus;
     }
 
@@ -102,11 +107,11 @@ export class Linux extends Units.IRig {
         await writeFile(LIGHT_DM_CONFIG_PATH, lightDMConfText);
     }
 
-    public async updateCoin(name: string, config: Units.ICoinConfig): Promise<void> {
+    public async updateCoin(name: string, config: ICoinConfig): Promise<void> {
         await writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
     }
 
-    public async updateMiner(name: string, config: Units.IMinerConfig, bin: Buffer): Promise<void> {
+    public async updateMiner(name: string, config: IMinerConfig, bin: Buffer): Promise<void> {
         await writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
         if (config.fileType === 'binary') {
             await writeFile(MINERS_PATH + name, bin);
@@ -127,11 +132,11 @@ export class Linux extends Units.IRig {
         }) as Promise<any>;
     }
 
-    public async loadMiners(): Promise<Units.IMinerList> {
+    public async loadMiners(): Promise<IMinerList> {
         return await Linux.loadJSONFiles(CONFIG_MINERS_PATH);
     }
 
-    public async loadCoins(): Promise<Units.ICoinList> {
+    public async loadCoins(): Promise<ICoinList> {
         return await Linux.loadJSONFiles(CONFIG_COINS_PATH);
     }
 

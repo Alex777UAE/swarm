@@ -2,11 +2,14 @@
  * Created by alex on 12.07.17.
  */
 
+import 'source-map-support/register';
 import * as fs from 'fs';
 import * as util from 'util';
 import * as crypto from 'crypto';
 import * as IORedis from 'ioredis';
 import {DBStats, IDBLayer} from "../interfaces/i_db_layer";
+import {IMinerConfig, IMinerList} from "../interfaces/i_miner";
+import {ICoinConfig, ICoinList} from "../interfaces/i_coin";
 
 const debug = require('debug')('miner:redis');
 const readFile = util.promisify(fs.readFile);
@@ -17,8 +20,8 @@ interface RedisOptions {
     host: string;
     port: number;
     myName: string;
-    onCoinUpdate?: (coinName: string, config: Units.ICoinConfig) => void,
-    onMinerUpdate?: (minerName: string, config: Units.IMinerConfig, binary: Buffer) => void,
+    onCoinUpdate?: (coinName: string, config: ICoinConfig) => void,
+    onMinerUpdate?: (minerName: string, config: IMinerConfig, binary: Buffer) => void,
     onCurrentCoinUpdate?: (coinName: string) => void,
 }
 
@@ -47,7 +50,7 @@ export class Redis extends IDBLayer {
                         const fn = this.options.onMinerUpdate;
                         debug(`Miner ${name} update:\n${config}`);
                         if (typeof fn === 'function') {
-                            this.redis.getBuffer((config as Units.IMinerConfig).sha256sum, (err, buff) => {
+                            this.redis.getBuffer((config as IMinerConfig).sha256sum, (err, buff) => {
                                 if (err) return debug(`Error: ${err}`);
                                 fn(name, config, buff);
                             });
@@ -70,18 +73,18 @@ export class Redis extends IDBLayer {
         }
     }
 
-    public async getAllCoins(): Promise<Units.ICoinList> {
+    public async getAllCoins(): Promise<ICoinList> {
         const rawData = await this.redis.hgetall(REDIS_PREFIX + 'coins');
-        const coinList: Units.ICoinList = {};
+        const coinList: ICoinList = {};
         Object.keys(rawData).forEach(coin => {
                coinList[coin] = JSON.parse(rawData[coin]);
         });
         return coinList;
     }
 
-    public async getAllMiners(): Promise<Units.IMinerList> {
+    public async getAllMiners(): Promise<IMinerList> {
         const rawData = await this.redis.hgetall(REDIS_PREFIX + 'miners');
-        const minerList: Units.IMinerList = {};
+        const minerList: IMinerList = {};
         Object.keys(rawData).forEach(miner => {
             minerList[miner] = JSON.parse(rawData[miner]);
         });
@@ -97,13 +100,13 @@ export class Redis extends IDBLayer {
         return coinData[this.options.myName] ? coinData[this.options.myName] : coinData['default'];
     }
 
-    public async updateCoin(name: string, config: Units.ICoinConfig): Promise<void> {
+    public async updateCoin(name: string, config: ICoinConfig): Promise<void> {
         await this.redis.hset(REDIS_PREFIX + 'coins', name, JSON.stringify(config));
         await this.redis.publish('coins', JSON.stringify({name, config}));
     }
 
-    public async updateMiner(name: string, config: Units.IMinerConfig, binaryPath?: string): Promise<void> {
-        const current: Units.IMinerConfig = JSON.parse(await this.redis.hget(REDIS_PREFIX + 'miners', name));
+    public async updateMiner(name: string, config: IMinerConfig, binaryPath?: string): Promise<void> {
+        const current: IMinerConfig = JSON.parse(await this.redis.hget(REDIS_PREFIX + 'miners', name));
         if (!current && !binaryPath) throw new Error(`Can't go for a new miner without it's binary`);
 
         const binary = await readFile(binaryPath);

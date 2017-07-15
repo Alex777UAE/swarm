@@ -2,6 +2,7 @@
  * Created by alex on 11.07.17.
  */
 
+import 'source-map-support/register';
 import * as util from 'util';
 import {execFile} from 'child_process';
 import {SIGKILL} from "constants";

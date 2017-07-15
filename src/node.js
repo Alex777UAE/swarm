@@ -11,6 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Created by alex on 10.07.17.
  */
+require("source-map-support/register");
 const fs = require("fs");
 const util = require("util");
 const redis_1 = require("./redis");

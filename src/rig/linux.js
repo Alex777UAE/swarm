@@ -11,12 +11,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require("source-map-support/register");
 const os = require("os");
 const fs = require("fs");
 const util = require("util");
 const targz = require("tar.gz");
 const nvidia_1 = require("../nvidia");
 const nvidia_gpu_1 = require("../gpu/nvidia_gpu");
+const i_rig_1 = require("../../interfaces/i_rig");
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
 const readdir = util.promisify(fs.readdir);
@@ -24,7 +26,7 @@ const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
 const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
 const MINERS_PATH = __dirname + '/../../miners/';
 const LIGHT_DM_CONFIG_PATH = '/etc/lightdm/lightdm.conf';
-class Linux extends Units.IRig {
+class Linux extends i_rig_1.IRig {
     constructor(nvidiaSMIPath, nvidiaSettingsPath) {
         super();
         this.nvidiaSMIPath = nvidiaSMIPath;

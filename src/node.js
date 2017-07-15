@@ -116,7 +116,7 @@ class Node {
                 stats.gpuDetails.push(yield gpu.getStats());
                 stats.gpuNames.push(gpu.model);
             }
-            this.db.updateStats(JSON.stringify(stats)).catch(debug);
+            yield this.db.updateStats(JSON.stringify(stats)).catch(debug);
             this.timer = timers_1.setTimeout(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
         });
     }

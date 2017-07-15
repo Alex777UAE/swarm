@@ -153,7 +153,7 @@ export class Node {
             stats.gpuNames.push(gpu.model);
         }
 
-        this.db.updateStats(JSON.stringify(stats)).catch(debug);
+        await this.db.updateStats(JSON.stringify(stats)).catch(debug);
 
         this.timer = setTimeout(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
     }

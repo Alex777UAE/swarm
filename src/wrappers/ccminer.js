@@ -60,6 +60,8 @@ class CCMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
      * @param data
      */
     parseStdOut(data) {
+        console.log(typeof data);
+        console.log(data);
         const lines = data.split('\n');
         lines.forEach(line => {
             debug(line);

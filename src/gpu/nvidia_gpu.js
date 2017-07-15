@@ -105,7 +105,7 @@ class NVidiaGPU extends i_gpu_1.IGPU {
                 watcher.on('error', reject);
             });
             debug(`restarting ligthdm`);
-            yield exec('/usr/sbin/service lightdm restart', [], {
+            yield exec('/usr/sbin/service', ['lightdm', 'restart'], {
                 killSignal: 'SIGKILL',
                 timeout: 90000
             });

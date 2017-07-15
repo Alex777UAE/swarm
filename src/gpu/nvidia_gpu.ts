@@ -104,7 +104,7 @@ export class NVidiaGPU extends IGPU {
             watcher.on('error', reject);
         });
         debug(`restarting ligthdm`);
-        await exec('/usr/sbin/service lightdm restart', [], {
+        await exec('/usr/sbin/service', ['lightdm', 'restart'], {
             killSignal: 'SIGKILL',
             timeout: 90000
         });

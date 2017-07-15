@@ -56,8 +56,8 @@ class CCMiner extends StdOutMinerWrapper {
      Jul 14 01:54:41 K310 ccminer[17832]: [S/A/T]: 0/50/50, diff: 0.165, 40.37MH/s (yes!)
      * @param data
      */
-    protected parseStdOut(data: string | Buffer): void {
-        const lines = data.toString().split('\n');
+    protected parseStdOut(data: string): void {
+        const lines = data.split('\n');
         lines.forEach(line => {
             debug(line);
             const acceptedMatchV1 = REGEXP_ACCEPTED_HASHRATE_V1.exec(line);

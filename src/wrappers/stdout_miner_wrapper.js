@@ -91,8 +91,8 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
     exec(args, stdoutParser, stderrParser) {
         return __awaiter(this, void 0, void 0, function* () {
             this.miner = childProcess.spawn(MINERS_DIRECTORY_BASE + this.name + path.sep + this.executable, args);
-            this.miner.stdout.on('data', stdoutParser);
-            this.miner.stderr.on('data', stderrParser);
+            this.miner.stdout.on('data', data => { data = data.toString(); stdoutParser(data); });
+            this.miner.stderr.on('data', data => { data = data.toString(); stderrParser(data); });
             this.miner.on('close', this.handleExit.bind(this));
             this.miner.on('error', StdOutMinerWrapper.errParser); // todo handle it properly
         });

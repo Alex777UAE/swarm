@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.ts" afterPath="$PROJECT_DIR$/src/client.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js.map" afterPath="$PROJECT_DIR$/src/client.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ccminer.js" afterPath="$PROJECT_DIR$/src/wrappers/ccminer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ccminer.js.map" afterPath="$PROJECT_DIR$/src/wrappers/ccminer.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ccminer.ts" afterPath="$PROJECT_DIR$/src/wrappers/ccminer.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.js" afterPath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.js.map" afterPath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts" afterPath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,17 +45,17 @@
         <entry file="file://$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="309">
-              <caret line="104" column="108" lean-forward="false" selection-start-line="104" selection-start-column="108" selection-end-line="104" selection-end-column="108" />
+              <caret line="106" column="91" lean-forward="false" selection-start-line="106" selection-start-column="91" selection-end-line="106" selection-end-column="91" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ccminer.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ccminer.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/wrappers/ccminer.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="58" column="47" lean-forward="false" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
+              <caret line="58" column="38" lean-forward="false" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -85,7 +91,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="client.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
@@ -198,9 +204,7 @@
         <option value="$PROJECT_DIR$/src/wrappers/ethminer.ts" />
         <option value="$PROJECT_DIR$/src/wrappers/ewbf.ts" />
         <option value="$PROJECT_DIR$/src/rig/linux.ts" />
-        <option value="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts" />
         <option value="$PROJECT_DIR$/bin/node" />
-        <option value="$PROJECT_DIR$/src/wrappers/ccminer.ts" />
         <option value="$PROJECT_DIR$/configs/coins/sib" />
         <option value="$PROJECT_DIR$/configs/coins/zec" />
         <option value="$PROJECT_DIR$/config.json" />
@@ -208,6 +212,8 @@
         <option value="$PROJECT_DIR$/bin/stats" />
         <option value="$PROJECT_DIR$/src/node.ts" />
         <option value="$PROJECT_DIR$/src/client.ts" />
+        <option value="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts" />
+        <option value="$PROJECT_DIR$/src/wrappers/ccminer.ts" />
       </list>
     </option>
   </component>
@@ -543,14 +549,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="74253000" />
-    </task>
-    <task id="LOCAL-00004" summary="nvidia indexes command fix">
-      <created>1500130661316</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1500130661316</updated>
+      <workItem from="1499812485546" duration="74439000" />
     </task>
     <task id="LOCAL-00005" summary="nvidia debug #1">
       <created>1500132199205</created>
@@ -888,11 +887,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500161581529</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="stats">
+      <created>1500161838243</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1500161838244</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100497000" />
+    <option name="totallyTimeSpent" value="100683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1308,22 +1314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="104" column="108" lean-forward="false" selection-start-line="104" selection-start-column="108" selection-end-line="104" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wrappers/ccminer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="58" column="47" lean-forward="false" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/configs/coins/sib">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1408,6 +1398,22 @@
           <folding>
             <element signature="e#21#58#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="106" column="91" lean-forward="false" selection-start-line="106" selection-start-column="91" selection-end-line="106" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wrappers/ccminer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="58" column="38" lean-forward="false" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

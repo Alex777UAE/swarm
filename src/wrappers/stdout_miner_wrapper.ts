@@ -103,8 +103,8 @@ export abstract class StdOutMinerWrapper extends IMiner {
 
     protected async exec(args: string[], stdoutParser: parserFn, stderrParser: parserFn) {
         this.miner = childProcess.spawn(MINERS_DIRECTORY_BASE + this.name + path.sep + this.executable, args);
-        this.miner.stdout.on('data', stdoutParser);
-        this.miner.stderr.on('data', stderrParser);
+        this.miner.stdout.on('data', data => { data = data.toString(); stdoutParser(data); });
+        this.miner.stderr.on('data', data => { data = data.toString(); stderrParser(data); });
         this.miner.on('close', this.handleExit.bind(this));
         this.miner.on('error', StdOutMinerWrapper.errParser) // todo handle it properly
     }

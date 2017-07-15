@@ -25,8 +25,7 @@ class Client {
         this.redis = new redis_1.Redis({
             host: config.redis.host,
             port: config.redis.port,
-            myName: os.hostname(),
-            onCurrentCoinUpdate: this.setCurrentCoin.bind(this)
+            myName: os.hostname()
         });
     }
     uploadCoin(name, path) {

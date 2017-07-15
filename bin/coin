@@ -15,5 +15,8 @@ if (!argv._[0] || !argv._[1]) {
             console.log('Done');
             process.exit(0);
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+            console.error(err);
+            process.exit(1);
+        });
 }

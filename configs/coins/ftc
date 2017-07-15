@@ -1,0 +1,19 @@
+{
+  "algorithm": "neoscrypt",
+  "poolURL": "hub.miningpoolhub.com",
+  "port": 20510,
+  "username": "host",
+  "password": "x",
+  "ssl": false,
+  "gpuConfigs": {
+    "GTX1070": {
+      "fanSpeedTarget": 80,
+      "memClockOffset": 1100,
+      "gpuClockOffset": 115,
+      "powerLimit": 197,
+      "miners": {
+        "neoscrypt": "ccminer-klaust-8.09"
+      }
+    }
+  }
+}

@@ -24,42 +24,46 @@ class Redis extends i_db_layer_1.IDBLayer {
         super();
         this.options = options;
         this.redis = new IORedis(this.options.port, this.options.host);
-        this.redis.subscribe('coins', 'miners', 'switch');
-        this.redis.on('message', (ch, msg) => {
-            try {
-                if (ch === 'coins') {
-                    const fn = this.options.onCoinUpdate;
-                    const { name, config } = JSON.parse(msg);
-                    debug(`Coin ${name} update:\n${config}`);
-                    if (typeof fn === 'function')
-                        fn(name, config);
-                }
-                if (ch === 'miners') {
-                    const { name, config } = JSON.parse(msg);
-                    const fn = this.options.onMinerUpdate;
-                    debug(`Miner ${name} update:\n${config}`);
-                    if (typeof fn === 'function') {
-                        this.redis.getBuffer(config.sha256sum, (err, buff) => {
-                            if (err)
-                                return debug(`Error: ${err}`);
-                            fn(name, config, buff);
-                        });
+        if (this.options.onCoinUpdate || this.options.onMinerUpdate || this.options.onCurrentCoinUpdate) {
+            this.redisSubscriber = new IORedis(this.options.port, this.options.host);
+            debug('subscribing');
+            this.redisSubscriber.subscribe('coins', 'miners', 'switch');
+            this.redisSubscriber.on('message', (ch, msg) => {
+                try {
+                    if (ch === 'coins') {
+                        const fn = this.options.onCoinUpdate;
+                        const { name, config } = JSON.parse(msg);
+                        debug(`Coin ${name} update:\n${config}`);
+                        if (typeof fn === 'function')
+                            fn(name, config);
+                    }
+                    if (ch === 'miners') {
+                        const { name, config } = JSON.parse(msg);
+                        const fn = this.options.onMinerUpdate;
+                        debug(`Miner ${name} update:\n${config}`);
+                        if (typeof fn === 'function') {
+                            this.redis.getBuffer(config.sha256sum, (err, buff) => {
+                                if (err)
+                                    return debug(`Error: ${err}`);
+                                fn(name, config, buff);
+                            });
+                        }
+                    }
+                    if (ch === 'switch') {
+                        const { hostname, coinName } = JSON.parse(msg);
+                        const fn = this.options.onCurrentCoinUpdate;
+                        debug(`Current coin switched to ${coinName} for: ${hostname}`);
+                        if (hostname === this.options.myName || hostname === 'all' && typeof fn === 'function') {
+                            debug(`Switching current coin to ${coinName}`);
+                            fn(coinName);
+                        }
                     }
                 }
-                if (ch === 'switch') {
-                    const { hostname, coinName } = JSON.parse(msg);
-                    const fn = this.options.onCurrentCoinUpdate;
-                    debug(`Current coin switched to ${coinName} for: ${hostname}`);
-                    if (hostname === this.options.myName || hostname === 'all' && typeof fn === 'function') {
-                        debug(`Switching current coin to ${coinName}`);
-                        fn(coinName);
-                    }
+                catch (err) {
+                    debug(err);
                 }
-            }
-            catch (err) {
-                debug(err);
-            }
-        });
+            });
+        }
     }
     getAllCoins() {
         return __awaiter(this, void 0, void 0, function* () {

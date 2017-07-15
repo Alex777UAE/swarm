@@ -11,10 +11,10 @@ namespace Units {
     export interface ICoinConfig {
         algorithm: Algorithm;
         poolURL: string;
-        port: string;
+        port: number;
         username: string;
         password: string;
         ssl: boolean;
-        gpuConfigs: {[typeOrUUID: string]: IGPUConfig};
+        gpuConfigs: {[modelOrUUID: string]: IGPUConfig};
     }
 }

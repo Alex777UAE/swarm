@@ -14,7 +14,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("source-map-support/register");
 const util = require("util");
 const child_process_1 = require("child_process");
-const constants_1 = require("constants");
 const debug = require('debug')('miner:nvidia-smi');
 const exec = util.promisify(child_process_1.execFile);
 class NVidia {
@@ -28,7 +27,7 @@ class NVidia {
             try {
                 debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
                 const { stdout } = yield exec(this.nvidiaSMIPath, nvOpts, {
-                    killSignal: constants_1.SIGKILL,
+                    killSignal: 'SIGKILL',
                     timeout: 60000
                 });
                 debug(`got output:\n${stdout}`);
@@ -45,7 +44,7 @@ class NVidia {
             const nvOpts = ['--query-gpu=index', '--format=csv,noheader,nounits'];
             debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
             const { stdout } = yield exec(this.nvidiaSMIPath, nvOpts, {
-                killSignal: constants_1.SIGKILL,
+                killSignal: 'SIGKILL',
                 timeout: 60000
             });
             debug(`got output:\n${stdout}`);

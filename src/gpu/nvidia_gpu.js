@@ -62,9 +62,9 @@ class NVidiaGPU extends i_gpu_1.IGPU {
     init(id) {
         return __awaiter(this, void 0, void 0, function* () {
             this.cardId = id;
-            const nvOpts = [`-i ${id} --format=csv,noheader,nounits`];
+            const nvOpts = [`-i ${id}`, '--query-gpu=name,uuid', '--format=csv,noheader,nounits'];
             debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
-            const o = yield exec(this.nvidiaSMIPath, nvOpts, { killSignal: constants_1.SIGKILL, timeout: 90000 });
+            const o = yield exec(this.nvidiaSMIPath, nvOpts, { killSignal: 'SIGKILL', timeout: 90000 });
             debug(`got output:\n${o.stdout}`);
             let [name, uuid] = o.stdout.split(',');
             this.cardUUID = uuid.trim();

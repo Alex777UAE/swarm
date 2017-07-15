@@ -21,7 +21,7 @@ export class NVidia {
         try {
             debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
             const { stdout } = await exec(this.nvidiaSMIPath, nvOpts , {
-                killSignal: SIGKILL,
+                killSignal: 'SIGKILL',
                 timeout: 60000
             });
             debug(`got output:\n${stdout}`);
@@ -36,7 +36,7 @@ export class NVidia {
         const nvOpts = ['--query-gpu=index', '--format=csv,noheader,nounits'];
         debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
         const { stdout } = await exec(this.nvidiaSMIPath, nvOpts, {
-            killSignal: SIGKILL,
+            killSignal: 'SIGKILL',
             timeout: 60000
         });
         debug(`got output:\n${stdout}`);

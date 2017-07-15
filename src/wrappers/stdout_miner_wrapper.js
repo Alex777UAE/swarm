@@ -98,8 +98,9 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
                 }
             });
             this.miner.stdout.on('data', stdoutParser);
-            this.miner.stderr.on('error', stderrParser);
+            this.miner.stderr.on('data', stderrParser);
             this.miner.on('close', this.handleExit.bind(this));
+            this.miner.on('error', StdOutMinerWrapper.errParser);
         });
     }
     toJson() {

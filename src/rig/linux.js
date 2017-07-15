@@ -114,12 +114,12 @@ class Linux extends i_rig_1.IRig {
     }
     updateCoin(name, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
+            yield writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config, null, 2));
         });
     }
     updateMiner(name, config, bin) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
+            yield writeFile(CONFIG_MINERS_PATH + name, JSON.stringify(config, null, 2));
             if (config.fileType === 'binary') {
                 if (!(yield this.checkDir(MINERS_PATH + name)))
                     yield mkdir(MINERS_PATH + name);

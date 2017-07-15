@@ -117,11 +117,11 @@ export class Linux extends IRig {
     }
 
     public async updateCoin(name: string, config: ICoinConfig): Promise<void> {
-        await writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
+        await writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config, null, 2));
     }
 
     public async updateMiner(name: string, config: IMinerConfig, bin: Buffer): Promise<void> {
-        await writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
+        await writeFile(CONFIG_MINERS_PATH + name, JSON.stringify(config, null, 2));
         if (config.fileType === 'binary') {
             if (!(await this.checkDir(MINERS_PATH + name))) await mkdir(MINERS_PATH + name);
             await writeFile(MINERS_PATH  + name + path.sep + config.executable, bin);

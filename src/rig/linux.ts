@@ -6,6 +6,7 @@ import 'source-map-support/register';
 import * as os from 'os';
 import * as fs from 'fs';
 import * as util from 'util';
+import * as path from 'path';
 import * as targz from 'tar.gz';
 import {NVidia} from "../nvidia";
 import {NVidiaGPU} from "../gpu/nvidia_gpu";
@@ -106,7 +107,7 @@ export class Linux extends IRig {
     protected static async installLightDMConfig(): Promise<void> {
         let lightDMConfText: string = await readFile(__dirname + '/../../templates/static/lightdm.conf', {encoding: 'utf8'});
 
-        lightDMConfText = lightDMConfText.replace('${dirname}', __dirname + '/../..');
+        lightDMConfText = lightDMConfText.replace(/\${dirname}/ig, path.resolve(__dirname + '/../..'));
         await writeFile(LIGHT_DM_CONFIG_PATH, lightDMConfText);
     }
 

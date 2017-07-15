@@ -74,7 +74,8 @@ class NVidiaGPU extends i_gpu_1.IGPU {
     setup(config) {
         return __awaiter(this, void 0, void 0, function* () {
             const lockFile = `/tmp/oc_${this.id}`;
-            const scriptPath = __dirname + '/../../scripts/overclock.sh';
+            const overclockScriptPath = __dirname + '/../../scripts/overclock.sh';
+            const cleanScriptPath = __dirname + '/../../scripts/clean.sh';
             this.config = config;
             let overClockScript = '#!/bin/bash';
             overClockScript += `
@@ -88,10 +89,12 @@ class NVidiaGPU extends i_gpu_1.IGPU {
             ${this.nvidiaSettingsPath} -a [gpu:${this.id}]/GPUMemoryTransferRateOffset[3]=${config.memClockOffset}
             
             /usr/sbin/service lightdm stop
-            rm -f ${lockFile}
         `;
-            debug(`writing script text to a file: ${scriptPath}:\n${overClockScript}`);
-            yield writeFile(scriptPath, overClockScript);
+            const cleanScript = `#!/bin/bash\nrm -f ${lockFile}`;
+            debug(`writing script text to a file: ${overclockScriptPath}:\n${overClockScript}`);
+            yield writeFile(overclockScriptPath, overClockScript);
+            debug(`writing script text to a file: ${cleanScriptPath}:\n${cleanScript}`);
+            yield writeFile(cleanScriptPath, cleanScript);
             debug(`locking with ${lockFile}`);
             yield touch(lockFile);
             const locked = new Promise((resolve, reject) => {

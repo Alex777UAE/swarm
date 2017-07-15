@@ -15,6 +15,7 @@ require("source-map-support/register");
 const os = require("os");
 const fs = require("fs");
 const util = require("util");
+const path = require("path");
 const targz = require("tar.gz");
 const nvidia_1 = require("../nvidia");
 const nvidia_gpu_1 = require("../gpu/nvidia_gpu");
@@ -103,7 +104,7 @@ class Linux extends i_rig_1.IRig {
     static installLightDMConfig() {
         return __awaiter(this, void 0, void 0, function* () {
             let lightDMConfText = yield readFile(__dirname + '/../../templates/static/lightdm.conf', { encoding: 'utf8' });
-            lightDMConfText = lightDMConfText.replace('${dirname}', __dirname + '/../..');
+            lightDMConfText = lightDMConfText.replace(/\${dirname}/ig, path.resolve(__dirname + '/../..'));
             yield writeFile(LIGHT_DM_CONFIG_PATH, lightDMConfText);
         });
     }

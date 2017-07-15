@@ -16,7 +16,6 @@ const VALIDATION_LOOP_INTERVAL = 5 * 60 * 1000; // once in a five minute
 const MINERS_DIRECTORY_BASE = __dirname + '/../../miners/';
 
 const debug = require('debug')('miner:StdOutMinerWrapper');
-const spawn = util.promisify(childProcess.spawn);
 
 export type parserFn = (data: string) => void;
 
@@ -103,7 +102,7 @@ export abstract class StdOutMinerWrapper extends IMiner {
     }
 
     protected async exec(args: string[], stdoutParser: parserFn, stderrParser: parserFn) {
-        this.miner = await spawn(MINERS_DIRECTORY_BASE + this.name + path.sep + this.executable, args,  {
+        this.miner = childProcess.spawn(MINERS_DIRECTORY_BASE + this.name + path.sep + this.executable, args,  {
             env: {
                 GPU_MAX_ALLOC_PERCENT: 100,
                 GPU_USE_SYNC_OBJECTS: 1

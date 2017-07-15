@@ -58,7 +58,7 @@ class EWBFMiner extends StdOutMinerWrapper {
             debug(line);
             const totalMatch = REGEXP_TOTAL_HASHRATE.exec(line);
             if (totalMatch) {
-                const summaryHashrate = totalMatch[4];
+                const summaryHashrate = totalMatch[1];
                 this.setTotalHashrate(parseInt(summaryHashrate));
             } else {
                 const shares = REGEXP_ACCEPTED_SHARES.exec(line);

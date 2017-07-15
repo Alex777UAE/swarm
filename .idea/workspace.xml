@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
+    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="stats">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ewbf.js" afterPath="$PROJECT_DIR$/src/wrappers/ewbf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ewbf.js.map" afterPath="$PROJECT_DIR$/src/wrappers/ewbf.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ewbf.ts" afterPath="$PROJECT_DIR$/src/wrappers/ewbf.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -50,8 +49,8 @@
       <file leaf-file-name="ewbf.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/wrappers/ewbf.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+            <state relative-caret-position="164">
+              <caret line="60" column="52" lean-forward="false" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
               </folding>
@@ -547,14 +546,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="74605000" />
-    </task>
-    <task id="LOCAL-00006" summary="nvidia bugfix and lightdm.conf path fix">
-      <created>1500134924804</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1500134924804</updated>
+      <workItem from="1499812485546" duration="74794000" />
     </task>
     <task id="LOCAL-00007" summary="nvidia bugfix and lightdm.conf path fix">
       <created>1500134984616</created>
@@ -892,11 +884,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500162051448</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="stats">
+      <created>1500162303818</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1500162303818</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100849000" />
+    <option name="totallyTimeSpent" value="101038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1407,8 +1406,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wrappers/ewbf.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+        <state relative-caret-position="164">
+          <caret line="60" column="52" lean-forward="false" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
           <folding>
             <element signature="e#40#77#0" expanded="true" />
           </folding>

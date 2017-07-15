@@ -15,6 +15,8 @@ const os = require("os");
 const TarGz = require("tar.gz");
 const util = require("util");
 const Table = require("cli-table2");
+const colors = require("colors");
+const moment = require("moment");
 const redis_1 = require("./redis");
 const readFile = util.promisify(fs.readFile);
 const stat = util.promisify(fs.stat);
@@ -61,7 +63,7 @@ class Client {
         const newArchivePath = MINERS_DIR + name + '.tar.gz';
         return new Promise((resolve, reject) => {
             const targz = new TarGz({}, { fromBase: true });
-            const read = targz.createReadStream(path);
+            const read = targz().createReadStream(path);
             const write = fs.createWriteStream(newArchivePath);
             read.pipe(write);
             read.on('error', reject);
@@ -74,14 +76,16 @@ class Client {
             yield this.redis.setCurrentCoin(name, nodes);
         });
     }
-    showStats(short = true) {
+    showStats(full = true) {
         return __awaiter(this, void 0, void 0, function* () {
             const rawStats = yield this.redis.getStats();
             let stats = {};
             Object.keys(rawStats).forEach(name => {
                 stats[name] = { timestamp: rawStats[name].timestamp, info: JSON.parse(rawStats[name].json) };
+                stats[name].info.coinTime = moment.duration(stats[name].info.coinTime).humanize();
+                stats[name].info.uptime = moment.duration(stats[name].info.uptime * 1000).humanize();
             });
-            short ? this.briefTable(stats) : this.fullTable(stats);
+            !full ? this.briefTable(stats) : this.fullTable(stats);
         });
     }
     briefTable(stats) {
@@ -94,9 +98,22 @@ class Client {
             const d = Math.round((Date.now() - stats[name].timestamp) / 1000);
             table.push([name, info.ip, info.coin, info.cpu, info.gpuN, info.hashrate, info.coinTime, info.uptime, d]);
         });
+        console.log(table.toString());
     }
     fullTable(stats) {
-        const table = new Table({ style: { head: [], border: [] } });
+        const table = new Table({
+            head: [
+                { colSpan: 2, content: 'Hostname' },
+                'IP',
+                'Coin',
+                'CPU',
+                'GPU Total',
+                'Hashrate',
+                'Mining time',
+                'Uptime',
+                'Freshness sec.'
+            ],
+        });
         Object.keys(stats).forEach(name => {
             const info = stats[name].info;
             const d = Math.round((Date.now() - stats[name].timestamp) / 1000);
@@ -111,6 +128,18 @@ class Client {
                 info.uptime,
                 d
             ]);
+            table.push([
+                'GPU#',
+                'Model',
+                'Temperature',
+                'GPU Load %',
+                'Mem IO Load %',
+                'GPU Clocks',
+                'Mem Clocks',
+                'Fan speed',
+                'Wh',
+                'Hashrate'
+            ].map(head => colors.blue(head)));
             info.gpuDetails.forEach((gpu, id) => {
                 table.push([
                     id,
@@ -126,6 +155,7 @@ class Client {
                 ]);
             });
         });
+        console.log(table.toString());
     }
     removeDeadNode(name) {
         return __awaiter(this, void 0, void 0, function* () {

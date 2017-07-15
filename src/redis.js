@@ -150,6 +150,7 @@ class Redis extends i_db_layer_1.IDBLayer {
             const dbStats = {};
             Object.keys(rawData).forEach(name => {
                 dbStats[name] = JSON.parse(rawData[name]);
+                // dbStats[name].json = JSON.parse(dbStats[name].json);
             });
             return dbStats;
         });

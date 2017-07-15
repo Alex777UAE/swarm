@@ -15,7 +15,7 @@ const client = new Client();
 let promise;
 
 if (!argv.r) {
-    promise = client.showStats(argv.full);
+    promise = client.showStats(argv.full ? JSON.parse(argv.full) : false);
 } else {
     promise = client.removeDeadNode(argv.r);
 }

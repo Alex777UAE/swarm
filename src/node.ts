@@ -37,14 +37,14 @@ export interface IStats {
     cpuLoad: number;
     memLoad: number;
     coin: string;
-    coinTime: number;
+    coinTime: number | string;
     gpuN: number;
     gpuNames: string[];
     gpuHashrates: number[];
     gpuDetails: IGPUStats[];
     hashrate: number;
     acceptPercent: number;
-    uptime: number;
+    uptime: number | string;
 }
 
 export class Node {

@@ -6,6 +6,8 @@ import * as os from "os";
 import * as TarGz from 'tar.gz';
 import * as util from "util";
 import * as Table from 'cli-table2';
+import * as colors from 'colors';
+import * as moment from 'moment';
 import {Redis} from './redis';
 import {IStats} from './node';
 import {IMinerConfig} from "../interfaces/i_miner";
@@ -61,7 +63,7 @@ export class Client {
         const newArchivePath = MINERS_DIR + name + '.tar.gz';
         return new Promise((resolve, reject) => {
             const targz = new TarGz({}, {fromBase: true});
-            const read = targz.createReadStream(path);
+            const read = targz().createReadStream(path);
             const write = fs.createWriteStream(newArchivePath);
             read.pipe(write);
             read.on('error', reject);
@@ -74,15 +76,16 @@ export class Client {
         await this.redis.setCurrentCoin(name, nodes);
     }
 
-    public async showStats(short: boolean = true): Promise<void> {
+    public async showStats(full: boolean = true): Promise<void> {
         const rawStats = await this.redis.getStats();
         let stats: Stats = {};
 
         Object.keys(rawStats).forEach(name => {
             stats[name] = {timestamp: rawStats[name].timestamp, info: JSON.parse(rawStats[name].json)};
+            stats[name].info.coinTime = moment.duration(stats[name].info.coinTime).humanize();
+            stats[name].info.uptime = moment.duration((stats[name].info.uptime as number) * 1000).humanize()
         });
-
-        short ? this.briefTable(stats) : this.fullTable(stats);
+        !full ? this.briefTable(stats) : this.fullTable(stats);
     }
 
     protected briefTable(stats: Stats): void {
@@ -95,10 +98,24 @@ export class Client {
             const d = Math.round((Date.now() - stats[name].timestamp) / 1000);
             table.push([name, info.ip, info.coin, info.cpu, info.gpuN, info.hashrate, info.coinTime, info.uptime, d]);
         });
+        console.log(table.toString());
     }
 
     protected fullTable(stats: Stats): void {
-        const table = new Table({style: {head: [], border: []}});
+        const table = new Table({
+            head: [
+                {colSpan: 2, content: 'Hostname'},
+                'IP',
+                'Coin',
+                'CPU',
+                'GPU Total',
+                'Hashrate',
+                'Mining time',
+                'Uptime',
+                'Freshness sec.'
+            ],
+            // border: []
+        });
 
         Object.keys(stats).forEach(name => {
             const info = stats[name].info;
@@ -114,6 +131,18 @@ export class Client {
                 info.uptime,
                 d
             ]);
+            table.push([
+                'GPU#',
+                'Model',
+                'Temperature',
+                'GPU Load %',
+                'Mem IO Load %',
+                'GPU Clocks',
+                'Mem Clocks',
+                'Fan speed',
+                'Wh',
+                'Hashrate'
+            ].map(head => colors.blue(head)));
             info.gpuDetails.forEach((gpu, id) => {
                 table.push([
                     id,
@@ -129,6 +158,7 @@ export class Client {
                 ]);
             });
         });
+        console.log(table.toString());
     }
 
     public async removeDeadNode(name: string): Promise<void> {

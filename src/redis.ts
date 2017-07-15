@@ -143,11 +143,10 @@ export class Redis extends IDBLayer {
     public async getStats(): Promise<DBStats> {
         const rawData = await this.redis.hgetall(REDIS_PREFIX + 'stats');
         const dbStats: DBStats = {};
-
         Object.keys(rawData).forEach(name => {
             dbStats[name] = JSON.parse(rawData[name]);
+            // dbStats[name].json = JSON.parse(dbStats[name].json);
         });
-
         return dbStats;
     }
 

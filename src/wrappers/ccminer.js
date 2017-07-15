@@ -37,7 +37,7 @@ class CCMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
                 '--retry-pause=10',
                 '--timeout=60',
                 '--no-color'
-            ], this.parseStdOut.bind(this));
+            ], this.parseStdOut.bind(this), this.parseStdOut.bind(this));
         });
     }
     /**

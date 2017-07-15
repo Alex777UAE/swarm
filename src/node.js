@@ -196,8 +196,10 @@ class Node {
                 return;
             }
             if (this.miner) {
+                debug(`stopping current miner wrapper ${this.miner.type}`);
                 yield this.miner.stop();
             }
+            debug(`setting gpu config for ${name}`);
             if (!(yield this.setGPUConfig(name))) {
                 if (!this.currentCoin)
                     throw new Error(`no default coin is set to failover`);
@@ -207,8 +209,11 @@ class Node {
             this.currentCoin = name;
             this.miner = miner;
             this.miner.setWorker(this.rig.hostname);
+            debug(`Current coin is ${name} and miner type is ${miner.type} with worker name ${this.rig.hostname}`);
+            debug(`Starting miner up`);
             yield this.miner.start(this.coins[name]);
             this.coinStartedAt = Date.now();
+            debug(`Miner started at ${this.coinStartedAt}`);
         });
     }
     setGPUConfig(coinName) {

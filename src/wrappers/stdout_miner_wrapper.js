@@ -45,7 +45,9 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
     launchMinerBinary(coin, args, stoutParser, stdErrParser) {
         return __awaiter(this, void 0, void 0, function* () {
             this.coin = coin;
+            debug(`executing ${this.executable} with ${args.join(' ')}`);
             yield this.exec(args, stoutParser, stdErrParser ? stdErrParser : StdOutMinerWrapper.errParser);
+            debug(`starting validation loop`);
             this.validityLoop();
         });
     }

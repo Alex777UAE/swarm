@@ -216,7 +216,7 @@ export class Node {
 
     private async setCurrentCoin(name: string) {
         const gpus = this.GPUs;
-        let miner;
+        let miner: IMiner;
         let minerName;
         try {
             minerName = this.coins[name].gpuConfigs[gpus[0].model].miners[this.coins[name].algorithm];
@@ -230,9 +230,11 @@ export class Node {
         }
 
         if (this.miner) {
+            debug(`stopping current miner wrapper ${this.miner.type}`);
             await this.miner.stop();
         }
 
+        debug(`setting gpu config for ${name}`);
         if (!await this.setGPUConfig(name)) {
             if (!this.currentCoin) throw new Error(`no default coin is set to failover`);
             await this.miner.start(this.coins[this.currentCoin]);
@@ -242,8 +244,11 @@ export class Node {
         this.currentCoin = name;
         this.miner = miner;
         this.miner.setWorker(this.rig.hostname);
+        debug(`Current coin is ${name} and miner type is ${miner.type} with worker name ${this.rig.hostname}`);
+        debug(`Starting miner up`);
         await this.miner.start(this.coins[name]);
         this.coinStartedAt = Date.now();
+        debug(`Miner started at ${this.coinStartedAt}`);
     }
 
     private async setGPUConfig(coinName: string): Promise<boolean> {

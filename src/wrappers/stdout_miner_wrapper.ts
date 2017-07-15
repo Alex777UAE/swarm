@@ -56,7 +56,9 @@ export abstract class StdOutMinerWrapper extends IMiner {
                                    stoutParser: parserFn,
                                    stdErrParser?: parserFn): Promise<void> {
         this.coin = coin;
+        debug(`executing ${this.executable} with ${args.join(' ')}`);
         await this.exec(args, stoutParser, stdErrParser ? stdErrParser : StdOutMinerWrapper.errParser);
+        debug(`starting validation loop`);
         this.validityLoop();
     }
 

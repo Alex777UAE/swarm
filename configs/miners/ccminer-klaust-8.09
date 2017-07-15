@@ -1,6 +1,6 @@
 {
-  "fileType": "tgz",
+  "fileType": "",
   "sha256sum": "",
   "type": "ccminer",
-  "executable": "ccminer"
+  "executable": "ccminer-klaust-8.09/ccminer"
 }

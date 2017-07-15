@@ -145,7 +145,7 @@ export class Linux extends IRig {
 
     protected untgzBuffer(name: string, bin: Buffer): Promise<void> {
         return new Promise((resolve, reject) => {
-            debug(`bufer is ${typeof bin}`);
+            debug(`buffer is ${Buffer.isBuffer(bin)}`);
             const readStream = fs.createReadStream(bin);
             const writeStream = targz().createWriteStream(MINERS_PATH + name);
             debug(`untargziping to ${MINERS_PATH + name}`);

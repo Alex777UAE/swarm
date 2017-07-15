@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js" afterPath="$PROJECT_DIR$/src/rig/linux.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js.map" afterPath="$PROJECT_DIR$/src/rig/linux.js.map" />
@@ -21,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="linux.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="linux.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="147" column="44" lean-forward="false" selection-start-line="147" selection-start-column="44" selection-end-line="147" selection-end-column="44" />
+            <state relative-caret-position="405">
+              <caret line="147" column="50" lean-forward="false" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
               <folding>
                 <element signature="e#41#78#0" expanded="true" />
                 <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
@@ -101,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="redis.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="redis.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/redis.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="367">
@@ -540,7 +539,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="67504000" />
+      <workItem from="1499812485546" duration="67637000" />
     </task>
     <task id="LOCAL-00001" summary="subscribe fix">
       <created>1500127082187</created>
@@ -759,11 +758,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500152389781</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="targz #2">
+      <created>1500152718479</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1500152718479</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93748000" />
+    <option name="totallyTimeSpent" value="93881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1200,24 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="147" column="44" lean-forward="false" selection-start-line="147" selection-start-column="44" selection-end-line="147" selection-end-column="44" />
-          <folding>
-            <element signature="e#41#78#0" expanded="true" />
-            <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#hostname#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#cpu#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#uptime#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#ip#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#getGPUs#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#getLoad#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#toJson#0;n#Linux#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/interfaces/i_db_layer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1259,6 +1247,24 @@
           <folding>
             <element signature="e#41#78#0" expanded="true" />
             <element signature="e#1174#3042#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="147" column="50" lean-forward="false" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
+          <folding>
+            <element signature="e#41#78#0" expanded="true" />
+            <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#hostname#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#cpu#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#uptime#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#ip#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#getGPUs#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#getLoad#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#toJson#0;n#Linux#0" expanded="false" />
           </folding>
         </state>
       </provider>

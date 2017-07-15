@@ -5,7 +5,10 @@ const Node = require('../src/node').Node;
 const node = new Node();
 
 node.main()
-    .then(() => process.exit(0))
+    .then(() => {
+        console.log('Miner launched succefully');
+        // process.exit(0);
+    })
     .catch(err => {
         console.error(err);
         process.exit(1);

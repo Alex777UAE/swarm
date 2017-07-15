@@ -55,6 +55,7 @@ export class Node {
     private currentCoin: string;
     private coins: ICoinList = {};
     private miners: IMinerList = {};
+    private timer: NodeJS.Timer;
 
     // stats
     private coinStartedAt: number; // timestamp
@@ -125,8 +126,8 @@ export class Node {
 
         await this.setCurrentCoin(coinName);
 
-        setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
-        // await this.statisticLoop();
+        // setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
+        await this.statisticLoop();
     }
 
     private async statisticLoop(): Promise<void> {
@@ -165,7 +166,8 @@ export class Node {
 
         this.statsLocked = false;
 
-        // this.timer = setTimeout(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
+        this.timer = setTimeout(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
+        this.timer.ref();
     }
 
     private async syncCoins(): Promise<void> {

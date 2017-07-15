@@ -17,6 +17,7 @@ const util = require("util");
 const redis_1 = require("./redis");
 const linux_1 = require("./rig/linux");
 const _ = require("lodash");
+const timers_1 = require("timers");
 const debug = require('debug')('miner:node');
 const readFile = util.promisify(fs.readFile);
 const STATISTIC_LOOP_INTERVAL_MS = 60 * 1000; // once a minute
@@ -89,8 +90,8 @@ class Node {
                 yield this.syncMiners();
             }
             yield this.setCurrentCoin(coinName);
-            setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
-            // await this.statisticLoop();
+            // setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
+            yield this.statisticLoop();
         });
     }
     statisticLoop() {
@@ -127,7 +128,8 @@ class Node {
                 debug(err);
             }
             this.statsLocked = false;
-            // this.timer = setTimeout(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
+            this.timer = timers_1.setTimeout(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
+            this.timer.ref();
         });
     }
     syncCoins() {

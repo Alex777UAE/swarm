@@ -118,8 +118,8 @@ class Linux extends i_rig_1.IRig {
         return __awaiter(this, void 0, void 0, function* () {
             yield writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
             if (config.fileType === 'binary') {
-                if (!(yield this.checkDir(CONFIG_COINS_PATH + name)))
-                    yield mkdir(CONFIG_COINS_PATH + name);
+                if (!(yield this.checkDir(MINERS_PATH + name)))
+                    yield mkdir(MINERS_PATH + name);
                 yield writeFile(MINERS_PATH + name, bin);
             }
             else if (config.fileType === 'tgz') {

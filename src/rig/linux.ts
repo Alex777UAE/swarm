@@ -120,7 +120,7 @@ export class Linux extends IRig {
     public async updateMiner(name: string, config: IMinerConfig, bin: Buffer): Promise<void> {
         await writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
         if (config.fileType === 'binary') {
-            if (!(await this.checkDir(CONFIG_COINS_PATH + name))) await mkdir(CONFIG_COINS_PATH + name);
+            if (!(await this.checkDir(MINERS_PATH + name))) await mkdir(MINERS_PATH + name);
             await writeFile(MINERS_PATH + name, bin);
         } else if (config.fileType === 'tgz') {
             await this.untgzBuffer(bin);

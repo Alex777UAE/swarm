@@ -1,6 +1,6 @@
 {
   "nvidia-smi": "/usr/bin/nvidia-smi",
-  "nvidia-settings": "/usr/bin/nvidia-smi",
+  "nvidia-settings": "/usr/bin/nvidia-settings",
   "redis": {
     "host": "127.0.0.1",
     "port": 6379

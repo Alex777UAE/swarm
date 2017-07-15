@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="miner path fix">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nvidia.js.map" afterPath="$PROJECT_DIR$/src/nvidia.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nvidia.ts" afterPath="$PROJECT_DIR$/src/nvidia.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.json" afterPath="$PROJECT_DIR$/config.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,12 +40,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nvidia_gpu.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nvidia_gpu.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gpu/nvidia_gpu.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            <state relative-caret-position="144">
+              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
               <folding>
+                <element signature="e#41#78#0" expanded="true" />
                 <element signature="n#!!block;n#uuid#0;n#NVidiaGPU#0" expanded="false" />
                 <marker date="1500137383000" expanded="true" signature="1849:1902" ph="..." />
                 <marker date="1500137383000" expanded="true" signature="2409:2437" ph="..." />
@@ -61,11 +58,10 @@
       <file leaf-file-name="linux.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="119" column="22" lean-forward="true" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
+            <state relative-caret-position="174">
+              <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
               <folding>
                 <element signature="e#41#78#0" expanded="true" />
-                <element signature="n#!!block;n#constructor#0;n#Linux#0" expanded="false" />
                 <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
                 <element signature="n#!!block;n#hostname#0;n#Linux#0" expanded="false" />
                 <element signature="n#!!block;n#cpu#0;n#Linux#0" expanded="false" />
@@ -98,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
-              <caret line="222" column="53" lean-forward="false" selection-start-line="222" selection-start-column="53" selection-end-line="222" selection-end-column="53" />
+              <caret line="105" column="23" lean-forward="false" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
                 <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
@@ -109,6 +105,16 @@
                 <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -190,7 +196,6 @@
         <option value="$PROJECT_DIR$/src/node/rig_manager.ts" />
         <option value="$PROJECT_DIR$/src/wrappers/Claymore.ts" />
         <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/configs/coins/ftc" />
         <option value="$PROJECT_DIR$/configs/miners/ccminer-klaust-8.09" />
         <option value="$PROJECT_DIR$/bin/miner" />
@@ -220,6 +225,7 @@
         <option value="$PROJECT_DIR$/src/rig/linux.ts" />
         <option value="$PROJECT_DIR$/src/nvidia.ts" />
         <option value="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
+        <option value="$PROJECT_DIR$/config.json" />
       </list>
     </option>
   </component>
@@ -574,7 +580,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="61282000" />
+      <workItem from="1499812485546" duration="61400000" />
     </task>
     <task id="LOCAL-00001" summary="subscribe fix">
       <created>1500127082187</created>
@@ -660,11 +666,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500137233337</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="miner path fix">
+      <created>1500137391102</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1500137391102</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87526000" />
+    <option name="totallyTimeSpent" value="87644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -802,14 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1065,23 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/node.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="222" column="53" lean-forward="false" selection-start-line="222" selection-start-column="53" selection-end-line="222" selection-end-column="53" />
-          <folding>
-            <element signature="e#40#77#0" expanded="true" />
-            <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
-            <element signature="e#5250#5547#0" expanded="false" />
-            <element signature="e#5382#5533#0" expanded="false" />
-            <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/static/lightdm.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1090,13 +1078,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
+    <entry file="file://$PROJECT_DIR$/src/nvidia.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="119" column="22" lean-forward="true" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
+        <state relative-caret-position="90">
+          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="37" />
           <folding>
             <element signature="e#41#78#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#Linux#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gpu/nvidia_gpu.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="e#41#78#0" expanded="true" />
+            <element signature="n#!!block;n#uuid#0;n#NVidiaGPU#0" expanded="false" />
+            <marker date="1500137383000" expanded="true" signature="1849:1902" ph="..." />
+            <marker date="1500137383000" expanded="true" signature="2409:2437" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding>
+            <element signature="e#41#78#0" expanded="true" />
             <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
             <element signature="n#!!block;n#hostname#0;n#Linux#0" expanded="false" />
             <element signature="n#!!block;n#cpu#0;n#Linux#0" expanded="false" />
@@ -1114,25 +1124,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nvidia.ts">
+    <entry file="file://$PROJECT_DIR$/src/node.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="37" />
+        <state relative-caret-position="234">
+          <caret line="105" column="23" lean-forward="false" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
           <folding>
-            <element signature="e#41#78#0" expanded="true" />
+            <element signature="e#40#77#0" expanded="true" />
+            <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
+            <element signature="e#5250#5547#0" expanded="false" />
+            <element signature="e#5382#5533#0" expanded="false" />
+            <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gpu/nvidia_gpu.ts">
+    <entry file="file://$PROJECT_DIR$/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!block;n#uuid#0;n#NVidiaGPU#0" expanded="false" />
-            <marker date="1500137383000" expanded="true" signature="1849:1902" ph="..." />
-            <marker date="1500137383000" expanded="true" signature="2409:2437" ph="..." />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>

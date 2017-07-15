@@ -105,7 +105,8 @@ class Linux extends i_rig_1.IRig {
     }
     static installLightDMConfig() {
         return __awaiter(this, void 0, void 0, function* () {
-            let lightDMConfText = yield readFile(__dirname + '/../../templates/static/lightdm.conf', { encoding: 'utf8' });
+            const lightDMConfig = __dirname + '/../../templates/static/lightdm.conf';
+            let lightDMConfText = yield readFile(lightDMConfig, { encoding: 'utf8' });
             lightDMConfText = lightDMConfText.replace(/\${dirname}/ig, path.resolve(__dirname + '/../..'));
             yield writeFile(LIGHT_DM_CONFIG_PATH, lightDMConfText);
         });
@@ -121,7 +122,7 @@ class Linux extends i_rig_1.IRig {
             if (config.fileType === 'binary') {
                 if (!(yield this.checkDir(MINERS_PATH + name)))
                     yield mkdir(MINERS_PATH + name);
-                yield writeFile(MINERS_PATH + name + config.executable, bin);
+                yield writeFile(MINERS_PATH + name + path.sep + config.executable, bin);
             }
             else if (config.fileType === 'tgz') {
                 yield this.untgzBuffer(name, bin);

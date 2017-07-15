@@ -108,7 +108,8 @@ export class Linux extends IRig {
     }
 
     protected static async installLightDMConfig(): Promise<void> {
-        let lightDMConfText: string = await readFile(__dirname + '/../../templates/static/lightdm.conf', {encoding: 'utf8'});
+        const lightDMConfig = __dirname + '/../../templates/static/lightdm.conf';
+        let lightDMConfText: string = await readFile(lightDMConfig, {encoding: 'utf8'});
 
         lightDMConfText = lightDMConfText.replace(/\${dirname}/ig, path.resolve(__dirname + '/../..'));
         await writeFile(LIGHT_DM_CONFIG_PATH, lightDMConfText);
@@ -122,7 +123,7 @@ export class Linux extends IRig {
         await writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config));
         if (config.fileType === 'binary') {
             if (!(await this.checkDir(MINERS_PATH + name))) await mkdir(MINERS_PATH + name);
-            await writeFile(MINERS_PATH  + name + config.executable, bin);
+            await writeFile(MINERS_PATH  + name + path.sep + config.executable, bin);
         } else if (config.fileType === 'tgz') {
             await this.untgzBuffer(name, bin);
         }

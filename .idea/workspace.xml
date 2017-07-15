@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js" afterPath="$PROJECT_DIR$/src/node.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js.map" afterPath="$PROJECT_DIR$/src/node.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.ts" afterPath="$PROJECT_DIR$/src/node.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js" afterPath="$PROJECT_DIR$/src/rig/linux.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js.map" afterPath="$PROJECT_DIR$/src/rig/linux.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.ts" afterPath="$PROJECT_DIR$/src/rig/linux.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="linux.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="linux.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-179">
-              <caret line="77" column="30" lean-forward="false" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="30" />
+            <state relative-caret-position="543">
+              <caret line="111" column="66" lean-forward="false" selection-start-line="111" selection-start-column="66" selection-end-line="111" selection-end-column="66" />
               <folding>
                 <element signature="e#41#78#0" expanded="true" />
                 <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
@@ -39,10 +39,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="node.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
+            <state relative-caret-position="288">
               <caret line="211" column="23" lean-forward="true" selection-start-line="211" selection-start-column="23" selection-end-line="211" selection-end-column="23" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
@@ -184,8 +184,8 @@
         <option value="$PROJECT_DIR$/miners/README.md" />
         <option value="$PROJECT_DIR$/src/client.ts" />
         <option value="$PROJECT_DIR$/configs/miners/ccminer-klaust-8.09" />
-        <option value="$PROJECT_DIR$/src/rig/linux.ts" />
         <option value="$PROJECT_DIR$/src/node.ts" />
+        <option value="$PROJECT_DIR$/src/rig/linux.ts" />
       </list>
     </option>
   </component>
@@ -550,7 +550,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="65373000" />
+      <workItem from="1499812485546" duration="65544000" />
     </task>
     <task id="LOCAL-00001" summary="subscribe fix">
       <created>1500127082187</created>
@@ -727,11 +727,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500149643061</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="check directory of miners #6">
+      <created>1500149784639</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1500149784640</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91617000" />
+    <option name="totallyTimeSpent" value="91788000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -808,7 +815,8 @@
     <MESSAGE value="check directory of miners #3" />
     <MESSAGE value="check directory of miners #4" />
     <MESSAGE value="check directory of miners #5" />
-    <option name="LAST_COMMIT_MESSAGE" value="check directory of miners #5" />
+    <MESSAGE value="check directory of miners #6" />
+    <option name="LAST_COMMIT_MESSAGE" value="check directory of miners #6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1192,26 +1200,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-179">
-          <caret line="77" column="30" lean-forward="false" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="30" />
-          <folding>
-            <element signature="e#41#78#0" expanded="true" />
-            <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#hostname#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#cpu#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#uptime#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#ip#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#getGPUs#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#toJson#0;n#Linux#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/node.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
+        <state relative-caret-position="288">
           <caret line="211" column="23" lean-forward="true" selection-start-line="211" selection-start-column="23" selection-end-line="211" selection-end-column="23" />
           <folding>
             <element signature="e#40#77#0" expanded="true" />
@@ -1222,6 +1213,23 @@
             <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="111" column="66" lean-forward="false" selection-start-line="111" selection-start-column="66" selection-end-line="111" selection-end-column="66" />
+          <folding>
+            <element signature="e#41#78#0" expanded="true" />
+            <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#hostname#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#cpu#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#uptime#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#ip#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#getGPUs#0;n#Linux#0" expanded="false" />
+            <element signature="n#!!block;n#toJson#0;n#Linux#0" expanded="false" />
           </folding>
         </state>
       </provider>

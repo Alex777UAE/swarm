@@ -21,6 +21,7 @@ const REGEXP_ACCEPTED_SHARES = /GPU(\d+)\s+Accepted\s+share\s+.*\[A:(\d+),\s+R:(
 class EWBFMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
     constructor(name, executable) {
         super(name, executable);
+        this.accPcntArray = {};
     }
     //noinspection JSMethodCanBeStatic
     get type() {

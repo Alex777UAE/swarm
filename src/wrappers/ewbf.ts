@@ -14,7 +14,7 @@ const REGEXP_ACCEPTED_SHARES = /GPU(\d+)\s+Accepted\s+share\s+.*\[A:(\d+),\s+R:(
 
 export default //noinspection JSUnusedGlobalSymbols
 class EWBFMiner extends StdOutMinerWrapper {
-    protected accPcntArray: {[gpuId: number]: number};
+    protected accPcntArray: {[gpuId: number]: number} = {};
 
     constructor(name: string, executable: string) {
         super(name, executable);

@@ -277,6 +277,6 @@ export class Node {
     }
 
     private static async readConfig(): Promise<Config> {
-        return JSON.parse(await readFile(__dirname + '/../config.json'));
+        return JSON.parse(await readFile(__dirname + '/../config.json', {encoding: 'utf8'}));
     }
 }

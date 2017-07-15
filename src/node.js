@@ -240,7 +240,7 @@ class Node {
     }
     static readConfig() {
         return __awaiter(this, void 0, void 0, function* () {
-            return JSON.parse(yield readFile(__dirname + '/../config.json'));
+            return JSON.parse(yield readFile(__dirname + '/../config.json', { encoding: 'utf8' }));
         });
     }
 }

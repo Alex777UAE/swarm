@@ -102,7 +102,7 @@ export class Linux extends IRig {
     }
 
     protected static async installLightDMConfig(): Promise<void> {
-        const lightDMConfText = await readFile(__dirname + '/../../templates/static/lightdm.conf');
+        const lightDMConfText: string = await readFile(__dirname + '/../../templates/static/lightdm.conf', {encoding: 'utf8'});
         lightDMConfText.replace('${dirname}', __dirname + '/../scripts');
         await writeFile(LIGHT_DM_CONFIG_PATH, lightDMConfText);
     }
@@ -146,7 +146,7 @@ export class Linux extends IRig {
 
         for (let i = 0; i < files.length; i++) {
             const name = files[i];
-            list[name] = JSON.parse(await readFile(dir + name));
+            list[name] = JSON.parse(await readFile(dir + name,{encoding: 'utf8'}));
         }
 
         return list;

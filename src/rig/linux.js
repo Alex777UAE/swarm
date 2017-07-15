@@ -100,7 +100,7 @@ class Linux extends i_rig_1.IRig {
     }
     static installLightDMConfig() {
         return __awaiter(this, void 0, void 0, function* () {
-            const lightDMConfText = yield readFile(__dirname + '/../../templates/static/lightdm.conf');
+            const lightDMConfText = yield readFile(__dirname + '/../../templates/static/lightdm.conf', { encoding: 'utf8' });
             lightDMConfText.replace('${dirname}', __dirname + '/../scripts');
             yield writeFile(LIGHT_DM_CONFIG_PATH, lightDMConfText);
         });
@@ -147,7 +147,7 @@ class Linux extends i_rig_1.IRig {
             const files = yield readdir(dir);
             for (let i = 0; i < files.length; i++) {
                 const name = files[i];
-                list[name] = JSON.parse(yield readFile(dir + name));
+                list[name] = JSON.parse(yield readFile(dir + name, { encoding: 'utf8' }));
             }
             return list;
         });

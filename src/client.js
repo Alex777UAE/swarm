@@ -30,13 +30,13 @@ class Client {
     }
     uploadCoin(name, path) {
         return __awaiter(this, void 0, void 0, function* () {
-            const coinConfig = JSON.parse(yield readFile(path));
+            const coinConfig = JSON.parse(yield readFile(path, { encoding: 'utf8' }));
             yield this.redis.updateCoin(name, coinConfig);
         });
     }
     uploadMiner(name, path, minerPath) {
         return __awaiter(this, void 0, void 0, function* () {
-            const minerConfig = JSON.parse(yield readFile(path));
+            const minerConfig = JSON.parse(yield readFile(path, { encoding: 'utf8' }));
             if (minerPath) {
                 const fsStat = yield stat(minerPath);
                 if (fsStat.isDirectory()) {

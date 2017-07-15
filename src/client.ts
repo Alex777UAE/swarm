@@ -32,13 +32,13 @@ export class Client {
     }
 
     public async uploadCoin(name: string, path: string): Promise<void> {
-        const coinConfig = JSON.parse(await readFile(path));
+        const coinConfig = JSON.parse(await readFile(path, {encoding: 'utf8'}));
         await this.redis.updateCoin(name, coinConfig);
 
     }
 
     public async uploadMiner(name: string, path: string, minerPath?: string): Promise<void> {
-        const minerConfig: IMinerConfig = JSON.parse(await readFile(path));
+        const minerConfig: IMinerConfig = JSON.parse(await readFile(path, {encoding: 'utf8'}));
 
         if (minerPath) {
             const fsStat: fs.Stats = await stat(minerPath);

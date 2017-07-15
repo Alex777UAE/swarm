@@ -58,8 +58,8 @@ class CCMiner extends StdOutMinerWrapper {
      */
     protected parseStdOut(data: string): void {
         console.log(typeof data);
-        console.log(data);
-        const lines = data.split('\n');
+        console.log(data.toString());
+        const lines = data.toString().split('\n');
         lines.forEach(line => {
             debug(line);
             const acceptedMatchV1 = REGEXP_ACCEPTED_HASHRATE_V1.exec(line);

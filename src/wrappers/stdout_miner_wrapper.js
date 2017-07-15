@@ -16,14 +16,15 @@ const childProcess = require("child_process");
 const Bluebird = require("bluebird");
 const timers_1 = require("timers");
 const i_miner_1 = require("../../interfaces/i_miner");
+const path = require("path");
 const util = require('util');
 const VALIDATION_LOOP_INTERVAL = 5 * 60 * 1000; // once in a five minute
 const MINERS_DIRECTORY_BASE = __dirname + '/../../miners/';
 const debug = require('debug')('miner:StdOutMinerWrapper');
 const spawn = util.promisify(childProcess.spawn);
 class StdOutMinerWrapper extends i_miner_1.IMiner {
-    constructor(executable) {
-        super(executable);
+    constructor(name, executable) {
+        super(name, executable);
         this.hr = 0;
         this.hrs = {};
         this.hrsTimestamp = {};
@@ -44,7 +45,7 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
     launchMinerBinary(coin, args, stoutParser, stdErrParser) {
         return __awaiter(this, void 0, void 0, function* () {
             this.coin = coin;
-            yield this.exec(this.executable, args, stoutParser, stdErrParser ? stdErrParser : StdOutMinerWrapper.errParser);
+            yield this.exec(args, stoutParser, stdErrParser ? stdErrParser : StdOutMinerWrapper.errParser);
             this.validityLoop();
         });
     }
@@ -86,9 +87,9 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
             this.start(this.coin)
                 .catch(debug);
     }
-    exec(executable, args, stdoutParser, stderrParser) {
+    exec(args, stdoutParser, stderrParser) {
         return __awaiter(this, void 0, void 0, function* () {
-            this.miner = yield spawn(MINERS_DIRECTORY_BASE + executable, args, {
+            this.miner = yield spawn(MINERS_DIRECTORY_BASE + this.name + path.sep + this.executable, args, {
                 env: {
                     GPU_MAX_ALLOC_PERCENT: 100,
                     GPU_USE_SYNC_OBJECTS: 1

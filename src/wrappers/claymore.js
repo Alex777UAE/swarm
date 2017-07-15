@@ -18,8 +18,8 @@ const debug = require('debug')('miner:Claymore');
 const REGEXP_TOTAL_ACCEPTED = /Total\s+Speed:\s+(.*?)\s+.*?:\s+(\d+).*?Rejected:\s+(\d+)/gi;
 const REGEXP_PER_GPU_HASHRATE = /GPU(\d+)\s+(.*)\s+(((kh)|(th)|(gh)|(mh))\/s)/gi;
 class Claymore extends stdout_miner_wrapper_1.StdOutMinerWrapper {
-    constructor(executable) {
-        super(executable);
+    constructor(name, executable) {
+        super(name, executable);
     }
     //noinspection JSMethodCanBeStatic
     get type() {

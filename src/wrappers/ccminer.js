@@ -19,8 +19,8 @@ const REGEXP_GPU_HASHRATE = /GPU\s*#(\d+):.*,\s*(\d+(\.\d+)?)\s*(((kh)|(th)|(gh)
 const REGEXP_ACCEPTED_HASHRATE_V1 = /accepted:\s+(\d+)\/(\d+)\s+\((.*?)\),\s+(.*?)\s+(((kh)|(th)|(gh)|(mh))\/s)/gi;
 const REGEXP_ACCEPTED_HASHRATE_V2 = /\[S\/A\/T]:\s+(\d+)\/(\d+)\/(\d+),.*,\s+(.*)(((kh)|(th)|(gh)|(mh))\/s)/gi;
 class CCMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
-    constructor(executable) {
-        super(executable);
+    constructor(name, executable) {
+        super(name, executable);
     }
     //noinspection JSMethodCanBeStatic
     get type() {

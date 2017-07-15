@@ -16,8 +16,8 @@ export default //noinspection JSUnusedGlobalSymbols
 class EWBFMiner extends StdOutMinerWrapper {
     protected accPcntArray: {[gpuId: number]: number};
 
-    constructor(executable: string) {
-        super(executable);
+    constructor(name: string, executable: string) {
+        super(name, executable);
     }
 
     //noinspection JSMethodCanBeStatic

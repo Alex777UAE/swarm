@@ -17,7 +17,7 @@ export interface IMinerConfig {
 }
 
 export abstract class IMiner extends IUnit {
-    constructor(protected executable: string) {
+    constructor(protected name: string, protected executable: string) {
         super();
     }
 

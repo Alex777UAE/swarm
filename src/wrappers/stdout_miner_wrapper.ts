@@ -9,6 +9,7 @@ import {SIGTERM} from "constants";
 import {setTimeout} from "timers";
 import {ICoinConfig} from "../../interfaces/i_coin";
 import {IMiner} from "../../interfaces/i_miner";
+import * as path from "path";
 const util = require('util');
 
 const VALIDATION_LOOP_INTERVAL = 5 * 60 * 1000; // once in a five minute
@@ -30,8 +31,8 @@ export abstract class StdOutMinerWrapper extends IMiner {
     protected worker: string;
     protected timer: NodeJS.Timer;
 
-    constructor(executable: string) {
-        super(executable);
+    constructor(name: string, executable: string) {
+        super(name, executable);
     }
 
     public get hashrate(): number {
@@ -55,7 +56,7 @@ export abstract class StdOutMinerWrapper extends IMiner {
                                    stoutParser: parserFn,
                                    stdErrParser?: parserFn): Promise<void> {
         this.coin = coin;
-        await this.exec(this.executable, args, stoutParser, stdErrParser ? stdErrParser : StdOutMinerWrapper.errParser);
+        await this.exec(args, stoutParser, stdErrParser ? stdErrParser : StdOutMinerWrapper.errParser);
         this.validityLoop();
     }
 
@@ -99,8 +100,8 @@ export abstract class StdOutMinerWrapper extends IMiner {
             .catch(debug);
     }
 
-    protected async exec(executable: string, args: string[], stdoutParser: parserFn, stderrParser: parserFn) {
-        this.miner = await spawn(MINERS_DIRECTORY_BASE + executable, args,  {
+    protected async exec(args: string[], stdoutParser: parserFn, stderrParser: parserFn) {
+        this.miner = await spawn(MINERS_DIRECTORY_BASE + this.name + path.sep + this.executable, args,  {
             env: {
                 GPU_MAX_ALLOC_PERCENT: 100,
                 GPU_USE_SYNC_OBJECTS: 1

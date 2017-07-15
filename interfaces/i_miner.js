@@ -5,8 +5,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const i_unit_1 = require("./i_unit");
 class IMiner extends i_unit_1.IUnit {
-    constructor(executable) {
+    constructor(name, executable) {
         super();
+        this.name = name;
         this.executable = executable;
     }
 }

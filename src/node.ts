@@ -223,7 +223,7 @@ export class Node {
             const minerPath = __dirname + '/wrappers/' + this.miners[minerName].type;
             debug(`loading miner: ${this.miners[minerName].type} from ${minerPath}`);
             const Miner = require(minerPath).default;
-            miner = new Miner(this.miners[minerName].executable);
+            miner = new Miner(minerName, this.miners[minerName].executable);
         } catch (err) {
             debug(`can't continue setting current coins: ${err}`);
             return;

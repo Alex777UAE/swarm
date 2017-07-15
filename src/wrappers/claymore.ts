@@ -13,8 +13,8 @@ const REGEXP_PER_GPU_HASHRATE = /GPU(\d+)\s+(.*)\s+(((kh)|(th)|(gh)|(mh))\/s)/gi
 
 export default //noinspection JSUnusedGlobalSymbols
 class Claymore extends StdOutMinerWrapper {
-    constructor(executable: string) {
-        super(executable);
+    constructor(name: string, executable: string) {
+        super(name, executable);
     }
 
     //noinspection JSMethodCanBeStatic

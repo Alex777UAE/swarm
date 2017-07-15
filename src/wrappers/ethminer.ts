@@ -12,8 +12,8 @@ const REG_EXP = /Mining\s+on\s+Powhash.*?:\s+(\d+\.?\d*)(((kh)|(th)|(gh)|(mh))\/
 
 export default //noinspection JSUnusedGlobalSymbols
 class ETHMiner extends StdOutMinerWrapper {
-    constructor(executable: string) {
-        super(executable);
+    constructor(name: string, executable: string) {
+        super(name, executable);
     }
 
     //noinspection JSMethodCanBeStatic

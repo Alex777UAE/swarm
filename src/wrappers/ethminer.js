@@ -17,8 +17,8 @@ const util = require('util');
 const debug = require('debug')('miner:ETHMiner');
 const REG_EXP = /Mining\s+on\s+Powhash.*?:\s+(\d+\.?\d*)(((kh)|(th)|(gh)|(mh))\/s)\s+\[A(\d+).*R(\d+).*F(\d+)]/gi;
 class ETHMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
-    constructor(executable) {
-        super(executable);
+    constructor(name, executable) {
+        super(name, executable);
     }
     //noinspection JSMethodCanBeStatic
     get type() {

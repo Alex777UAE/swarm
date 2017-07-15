@@ -22,6 +22,7 @@ const readFile = util.promisify(fs.readFile);
 const readdir = util.promisify(fs.readdir);
 const access = util.promisify(fs.access);
 const mkdir = util.promisify(fs.mkdir);
+const chmod = util.promisify(fs.chmod);
 
 const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
 const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
@@ -124,6 +125,7 @@ export class Linux extends IRig {
         if (config.fileType === 'binary') {
             if (!(await this.checkDir(MINERS_PATH + name))) await mkdir(MINERS_PATH + name);
             await writeFile(MINERS_PATH  + name + path.sep + config.executable, bin);
+            await chmod(MINERS_PATH  + name + path.sep + config.executable, 755);
         } else if (config.fileType === 'tgz') {
             await this.untgzBuffer(name, bin);
         }

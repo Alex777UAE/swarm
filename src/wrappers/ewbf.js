@@ -19,8 +19,8 @@ const REGEXP_GPU_HASHRATE = /(GPU(\d+):\s+(\d+)\s+sol\/s)/gi;
 const REGEXP_TOTAL_HASHRATE = /Total\s+speed:\s+(\d+)\s+sol\/s/gi;
 const REGEXP_ACCEPTED_SHARES = /GPU(\d+)\s+Accepted\s+share\s+.*\[A:(\d+),\s+R:(\d+)]/gi;
 class EWBFMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
-    constructor(executable) {
-        super(executable);
+    constructor(name, executable) {
+        super(name, executable);
     }
     //noinspection JSMethodCanBeStatic
     get type() {

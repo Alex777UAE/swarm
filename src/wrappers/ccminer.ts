@@ -15,8 +15,8 @@ const REGEXP_ACCEPTED_HASHRATE_V2 = /\[S\/A\/T]:\s+(\d+)\/(\d+)\/(\d+),.*,\s+(.*
 
 export default //noinspection JSUnusedGlobalSymbols
 class CCMiner extends StdOutMinerWrapper {
-    constructor(executable: string) {
-        super(executable);
+    constructor(name: string, executable: string) {
+        super(name, executable);
     }
 
     //noinspection JSMethodCanBeStatic

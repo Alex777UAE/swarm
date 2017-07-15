@@ -220,8 +220,8 @@ export class Node {
         let minerName;
         try {
             minerName = this.coins[name].gpuConfigs[gpus[0].model].miners[this.coins[name].algorithm];
-            const minerPath = __dirname + '/' + this.miners[minerName].type;
-            debug(`loading miner: ${minerName} from ${minerPath}`);
+            const minerPath = __dirname + '/wrappers/' + this.miners[minerName].type;
+            debug(`loading miner: ${this.miners[minerName].type} from ${minerPath}`);
             const Miner = require(minerPath).default;
             miner = new Miner(this.miners[minerName].executable);
         } catch (err) {

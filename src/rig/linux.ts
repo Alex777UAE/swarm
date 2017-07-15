@@ -57,7 +57,7 @@ export class Linux extends IRig {
 
     public get ip(): string {
         const ifaces = os.networkInterfaces();
-        const ifaceNames = Object.keys(ifaces).filter(key => key[1] !== 'l' || key[2] !== 'o');
+        const ifaceNames = Object.keys(ifaces).filter(key => key[0] !== 'l' || key[1] !== 'o');
         for (let i = 0; i < ifaceNames.length; i++) {
             const ifaceName = ifaceNames[i];
             for (let j = 0; j < ifaces[ifaceName].length; j++) {

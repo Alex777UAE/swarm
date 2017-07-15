@@ -102,12 +102,12 @@ export abstract class StdOutMinerWrapper extends IMiner {
     }
 
     protected async exec(args: string[], stdoutParser: parserFn, stderrParser: parserFn) {
-        this.miner = childProcess.spawn(MINERS_DIRECTORY_BASE + this.name + path.sep + this.executable, args,  {
+        this.miner = childProcess.spawn(MINERS_DIRECTORY_BASE + this.name + path.sep + this.executable, args/*,  {
             env: {
                 GPU_MAX_ALLOC_PERCENT: 100,
                 GPU_USE_SYNC_OBJECTS: 1
             }
-        });
+        }*/);
         this.miner.stdout.on('data', stdoutParser);
         this.miner.stderr.on('data', stderrParser);
         this.miner.on('close', this.handleExit.bind(this));

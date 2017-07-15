@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nvidia.js" afterPath="$PROJECT_DIR$/src/nvidia.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nvidia.js.map" afterPath="$PROJECT_DIR$/src/nvidia.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nvidia.ts" afterPath="$PROJECT_DIR$/src/nvidia.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.ts" afterPath="$PROJECT_DIR$/src/rig/linux.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js" afterPath="$PROJECT_DIR$/src/rig/linux.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js.map" afterPath="$PROJECT_DIR$/src/rig/linux.js.map" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -539,7 +533,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="59375000" />
+      <workItem from="1499812485546" duration="59437000" />
     </task>
     <task id="LOCAL-00001" summary="subscribe fix">
       <created>1500127082187</created>
@@ -576,11 +570,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500132199205</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="nvidia bugfix and lightdm.conf path fix">
+      <created>1500134924804</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1500134924804</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85619000" />
+    <option name="totallyTimeSpent" value="85681000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -645,7 +646,8 @@
     <MESSAGE value="namespace fix" />
     <MESSAGE value="nvidia indexes command fix" />
     <MESSAGE value="nvidia debug #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="nvidia debug #1" />
+    <MESSAGE value="nvidia bugfix and lightdm.conf path fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="nvidia bugfix and lightdm.conf path fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

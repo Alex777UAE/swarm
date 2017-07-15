@@ -142,7 +142,7 @@ export class Client {
                 'Fan speed',
                 'Wh',
                 'Hashrate'
-            ].map(head => colors.blue(head)));
+            ].map(head => colors.green(head)));
             info.gpuDetails.forEach((gpu, id) => {
                 table.push([
                     id,

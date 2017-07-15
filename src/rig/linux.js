@@ -20,6 +20,7 @@ const targz = require("tar.gz");
 const nvidia_1 = require("../nvidia");
 const nvidia_gpu_1 = require("../gpu/nvidia_gpu");
 const i_rig_1 = require("../../interfaces/i_rig");
+const debug = require('debug')('miner:linux');
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
 const readdir = util.promisify(fs.readdir);
@@ -128,8 +129,14 @@ class Linux extends i_rig_1.IRig {
     }
     checkDir(path) {
         return access(path)
-            .then(() => true)
-            .catch(() => false);
+            .then(() => {
+            debug('dir exist');
+            return true;
+        })
+            .catch(() => {
+            debug('dir does not exists');
+            return false;
+        });
     }
     untgzBuffer(bin) {
         return new Promise((resolve, reject) => {

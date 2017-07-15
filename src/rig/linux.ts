@@ -15,6 +15,8 @@ import {IGPU} from "../../interfaces/i_gpu";
 import {ICoinConfig, ICoinList} from "../../interfaces/i_coin";
 import {IMinerConfig, IMinerList} from "../../interfaces/i_miner";
 
+const debug = require('debug')('miner:linux');
+
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
 const readdir = util.promisify(fs.readdir);
@@ -127,8 +129,14 @@ export class Linux extends IRig {
 
     protected checkDir(path: string): Promise<boolean> {
         return access(path)
-            .then(() => true)
-            .catch(() => false);
+            .then(() => {
+                debug('dir exist');
+                return true;
+            })
+            .catch(() => {
+                debug('dir does not exists');
+                return false;
+            });
     }
 
     protected untgzBuffer(bin: Buffer): Promise<void> {

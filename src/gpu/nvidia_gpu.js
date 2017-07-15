@@ -20,6 +20,7 @@ const i_gpu_1 = require("../../interfaces/i_gpu");
 const debug = require('debug')('miner:nvidia-gpu');
 const exec = util.promisify(child_process_1.execFile);
 const writeFile = util.promisify(fs.writeFile);
+const chmod = util.promisify(fs.chmod);
 class NVidiaGPU extends i_gpu_1.IGPU {
     constructor(nvidiaSMIPath, nvidiaSettingsPath) {
         super();
@@ -93,8 +94,10 @@ class NVidiaGPU extends i_gpu_1.IGPU {
             const cleanScript = `#!/bin/bash\nrm -f ${lockFile}`;
             debug(`writing script text to a file: ${overclockScriptPath}:\n${overClockScript}`);
             yield writeFile(overclockScriptPath, overClockScript);
+            yield chmod(overclockScriptPath, 755);
             debug(`writing script text to a file: ${cleanScriptPath}:\n${cleanScript}`);
             yield writeFile(cleanScriptPath, cleanScript);
+            yield chmod(cleanScriptPath, 755);
             debug(`locking with ${lockFile}`);
             yield touch(lockFile);
             const locked = new Promise((resolve, reject) => {

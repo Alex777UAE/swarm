@@ -110,7 +110,7 @@ export abstract class StdOutMinerWrapper extends IMiner {
             }
         });
         this.miner.stdout.on('data', stdoutParser);
-        this.miner.stderr.on('data', stderrParser);
+        this.miner.stderr.on('error', stderrParser);
         this.miner.on('close', this.handleExit.bind(this))
     }
 

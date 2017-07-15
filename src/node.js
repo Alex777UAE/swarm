@@ -17,7 +17,6 @@ const util = require("util");
 const redis_1 = require("./redis");
 const linux_1 = require("./rig/linux");
 const _ = require("lodash");
-const timers_1 = require("timers");
 const debug = require('debug')('miner:node');
 const readFile = util.promisify(fs.readFile);
 const STATISTIC_LOOP_INTERVAL_MS = 60 * 1000; // once a minute
@@ -25,6 +24,7 @@ class Node {
     constructor() {
         this.coins = {};
         this.miners = {};
+        this.statsLocked = false;
     }
     /*
         1. init rig manager
@@ -89,35 +89,45 @@ class Node {
                 yield this.syncMiners();
             }
             yield this.setCurrentCoin(coinName);
-            yield this.statisticLoop();
+            setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
+            // await this.statisticLoop();
         });
     }
     statisticLoop() {
         return __awaiter(this, void 0, void 0, function* () {
-            const { cpu, mem } = yield this.rig.getLoad();
-            const stats = {
-                ip: this.rig.ip,
-                os: this.rig.os,
-                cpu: this.rig.cpu,
-                cpuLoad: cpu,
-                memLoad: mem,
-                coin: this.currentCoin,
-                coinTime: Date.now() - this.coinStartedAt,
-                gpuN: this.GPUs.length,
-                uptime: this.rig.uptime,
-                hashrate: this.miner.hashrate,
-                gpuHashrates: this.miner.hashrates,
-                gpuDetails: [],
-                gpuNames: [],
-                acceptPercent: this.miner.acceptedPercent
-            };
-            for (let i = 0; i < this.GPUs.length; i++) {
-                const gpu = this.GPUs[i];
-                stats.gpuDetails.push(yield gpu.getStats());
-                stats.gpuNames.push(gpu.model);
+            if (this.statsLocked)
+                return;
+            this.statsLocked = true;
+            try {
+                const { cpu, mem } = yield this.rig.getLoad();
+                const stats = {
+                    ip: this.rig.ip,
+                    os: this.rig.os,
+                    cpu: this.rig.cpu,
+                    cpuLoad: cpu,
+                    memLoad: mem,
+                    coin: this.currentCoin,
+                    coinTime: Date.now() - this.coinStartedAt,
+                    gpuN: this.GPUs.length,
+                    uptime: this.rig.uptime,
+                    hashrate: this.miner.hashrate,
+                    gpuHashrates: this.miner.hashrates,
+                    gpuDetails: [],
+                    gpuNames: [],
+                    acceptPercent: this.miner.acceptedPercent
+                };
+                for (let i = 0; i < this.GPUs.length; i++) {
+                    const gpu = this.GPUs[i];
+                    stats.gpuDetails.push(yield gpu.getStats());
+                    stats.gpuNames.push(gpu.model);
+                }
+                yield this.db.updateStats(JSON.stringify(stats));
             }
-            yield this.db.updateStats(JSON.stringify(stats)).catch(debug);
-            this.timer = timers_1.setTimeout(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
+            catch (err) {
+                debug(err);
+            }
+            this.statsLocked = false;
+            // this.timer = setTimeout(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
         });
     }
     syncCoins() {

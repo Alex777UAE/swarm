@@ -58,7 +58,7 @@ export class Node {
 
     // stats
     private coinStartedAt: number; // timestamp
-    private timer: NodeJS.Timer;
+    private statsLocked: boolean = false;
 
     /*
         1. init rig manager
@@ -125,37 +125,47 @@ export class Node {
 
         await this.setCurrentCoin(coinName);
 
-        await this.statisticLoop();
+        setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
+        // await this.statisticLoop();
     }
 
     private async statisticLoop(): Promise<void> {
-        const {cpu, mem} = await this.rig.getLoad();
-        const stats: IStats = {
-            ip: this.rig.ip,
-            os: this.rig.os,
-            cpu: this.rig.cpu,
-            cpuLoad: cpu,
-            memLoad: mem,
-            coin: this.currentCoin,
-            coinTime: Date.now() - this.coinStartedAt,
-            gpuN: this.GPUs.length,
-            uptime: this.rig.uptime,
-            hashrate: this.miner.hashrate,
-            gpuHashrates: this.miner.hashrates,
-            gpuDetails: [],
-            gpuNames: [],
-            acceptPercent: this.miner.acceptedPercent
-        };
+        if (this.statsLocked) return;
+        this.statsLocked = true;
 
-        for (let i = 0; i < this.GPUs.length; i++) {
-            const gpu = this.GPUs[i];
-            stats.gpuDetails.push(await gpu.getStats());
-            stats.gpuNames.push(gpu.model);
+        try {
+            const {cpu, mem} = await this.rig.getLoad();
+            const stats: IStats = {
+                ip: this.rig.ip,
+                os: this.rig.os,
+                cpu: this.rig.cpu,
+                cpuLoad: cpu,
+                memLoad: mem,
+                coin: this.currentCoin,
+                coinTime: Date.now() - this.coinStartedAt,
+                gpuN: this.GPUs.length,
+                uptime: this.rig.uptime,
+                hashrate: this.miner.hashrate,
+                gpuHashrates: this.miner.hashrates,
+                gpuDetails: [],
+                gpuNames: [],
+                acceptPercent: this.miner.acceptedPercent
+            };
+
+            for (let i = 0; i < this.GPUs.length; i++) {
+                const gpu = this.GPUs[i];
+                stats.gpuDetails.push(await gpu.getStats());
+                stats.gpuNames.push(gpu.model);
+            }
+
+            await this.db.updateStats(JSON.stringify(stats));
+        } catch (err) {
+            debug(err);
         }
 
-        await this.db.updateStats(JSON.stringify(stats)).catch(debug);
+        this.statsLocked = false;
 
-        this.timer = setTimeout(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
+        // this.timer = setTimeout(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
     }
 
     private async syncCoins(): Promise<void> {

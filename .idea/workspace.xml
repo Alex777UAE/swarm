@@ -6,9 +6,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js" afterPath="$PROJECT_DIR$/src/node.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js.map" afterPath="$PROJECT_DIR$/src/node.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.ts" afterPath="$PROJECT_DIR$/src/node.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.js" afterPath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.js.map" afterPath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts" afterPath="$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,13 +42,13 @@
       <file leaf-file-name="node.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="157" column="78" lean-forward="false" selection-start-line="157" selection-start-column="78" selection-end-line="157" selection-end-column="78" />
+            <state relative-caret-position="610">
+              <caret line="164" column="8" lean-forward="false" selection-start-line="164" selection-start-column="8" selection-end-line="164" selection-end-column="8" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
                 <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
-                <element signature="e#5256#5553#0" expanded="false" />
-                <element signature="e#5388#5539#0" expanded="false" />
+                <element signature="e#5617#5914#0" expanded="false" />
+                <element signature="e#5749#5900#0" expanded="false" />
                 <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
               </folding>
@@ -526,7 +523,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="70960000" />
+      <workItem from="1499812485546" duration="71180000" />
     </task>
     <task id="LOCAL-00001" summary="subscribe fix">
       <created>1500127082187</created>
@@ -829,11 +826,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500157274462</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="wrappers fix &amp; debug &amp; stats">
+      <created>1500157735340</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1500157735340</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97204000" />
+    <option name="totallyTimeSpent" value="97424000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -917,7 +921,8 @@
     <MESSAGE value="targz #4" />
     <MESSAGE value="wrappers update" />
     <MESSAGE value="wrappers fix &amp; debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrappers fix &amp; debug" />
+    <MESSAGE value="wrappers fix &amp; debug &amp; stats" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrappers fix &amp; debug &amp; stats" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1314,13 +1319,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/node.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="157" column="78" lean-forward="false" selection-start-line="157" selection-start-column="78" selection-end-line="157" selection-end-column="78" />
+        <state relative-caret-position="610">
+          <caret line="164" column="8" lean-forward="false" selection-start-line="164" selection-start-column="8" selection-end-line="164" selection-end-column="8" />
           <folding>
             <element signature="e#40#77#0" expanded="true" />
             <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
-            <element signature="e#5256#5553#0" expanded="false" />
-            <element signature="e#5388#5539#0" expanded="false" />
+            <element signature="e#5617#5914#0" expanded="false" />
+            <element signature="e#5749#5900#0" expanded="false" />
             <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
           </folding>

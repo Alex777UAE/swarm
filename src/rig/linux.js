@@ -156,6 +156,7 @@ class Linux extends i_rig_1.IRig {
             writeStream.on('finish', resolve);
             writeStream.on('error', reject);
             readStream.on('error', reject);
+            setImmediate(() => { readStream.push(null); });
         });
     }
     loadMiners() {

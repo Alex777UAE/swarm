@@ -158,6 +158,7 @@ export class Linux extends IRig {
             writeStream.on('finish', resolve);
             writeStream.on('error', reject);
             readStream.on('error', reject);
+            setImmediate(() => {readStream.push(null)});
         }) as Promise<any>;
     }
 

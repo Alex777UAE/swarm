@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/configs/coins/sib" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ccminer.js" afterPath="$PROJECT_DIR$/src/wrappers/ccminer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ccminer.js.map" afterPath="$PROJECT_DIR$/src/wrappers/ccminer.js.map" />
@@ -86,11 +87,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ccminer.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ccminer.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/wrappers/ccminer.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="60" column="35" lean-forward="false" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+            <state relative-caret-position="125">
+              <caret line="58" column="47" lean-forward="false" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sib" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/configs/coins/sib">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -215,6 +226,7 @@
         <option value="$PROJECT_DIR$/src/node.ts" />
         <option value="$PROJECT_DIR$/bin/node" />
         <option value="$PROJECT_DIR$/src/wrappers/ccminer.ts" />
+        <option value="$PROJECT_DIR$/configs/coins/sib" />
       </list>
     </option>
   </component>
@@ -250,7 +262,9 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -401,6 +415,10 @@
               <option name="myItemId" value="configs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -432,6 +450,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/configs/coins" />
       <recent name="$PROJECT_DIR$/bin" />
       <recent name="$PROJECT_DIR$/src/wrappers" />
     </key>
@@ -543,7 +562,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="71738000" />
+      <workItem from="1499812485546" duration="72123000" />
     </task>
     <task id="LOCAL-00001" summary="subscribe fix">
       <created>1500127082187</created>
@@ -881,11 +900,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500158811082</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="ccminer">
+      <created>1500158879258</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1500158879258</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97982000" />
+    <option name="totallyTimeSpent" value="98367000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -970,7 +996,8 @@
     <MESSAGE value="wrappers update" />
     <MESSAGE value="wrappers fix &amp; debug" />
     <MESSAGE value="wrappers fix &amp; debug &amp; stats" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrappers fix &amp; debug &amp; stats" />
+    <MESSAGE value="ccminer" />
+    <option name="LAST_COMMIT_MESSAGE" value="ccminer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -979,7 +1006,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/bin/app-write.ts" />
     <entry file="file://$PROJECT_DIR$/src/bin/app.ts" />
     <entry file="file://$PROJECT_DIR$/node_modules/@types/commander/index.d.ts" />
     <entry file="file://$PROJECT_DIR$/test/writer-spec.ts" />
@@ -1374,8 +1400,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wrappers/ccminer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="60" column="35" lean-forward="false" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+        <state relative-caret-position="125">
+          <caret line="58" column="47" lean-forward="false" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/coins/sib">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding />
         </state>
       </provider>

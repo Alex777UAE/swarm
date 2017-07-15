@@ -1,0 +1,19 @@
+{
+  "algorithm": "sib",
+  "poolURL": "sib.suprnova.cc",
+  "port": 3458,
+  "username": "host777",
+  "password": "x",
+  "ssl": false,
+  "gpuConfigs": {
+    "GTX1070": {
+      "fanSpeedTarget": 80,
+      "memClockOffset": 1100,
+      "gpuClockOffset": 115,
+      "powerLimit": 197,
+      "miners": {
+        "sib": "ccminer-alexis-1.0"
+      }
+    }
+  }
+}

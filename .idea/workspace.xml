@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="commands support #1">
+    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/remote" afterPath="$PROJECT_DIR$/bin/remote" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js" afterPath="$PROJECT_DIR$/src/redis.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js.map" afterPath="$PROJECT_DIR$/src/redis.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.ts" afterPath="$PROJECT_DIR$/src/redis.ts" />
@@ -48,8 +47,8 @@
       <file leaf-file-name="redis.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/redis.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="76" column="83" lean-forward="false" selection-start-line="76" selection-start-column="83" selection-end-line="76" selection-end-column="83" />
+            <state relative-caret-position="492">
+              <caret line="178" column="91" lean-forward="false" selection-start-line="178" selection-start-column="91" selection-end-line="178" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -469,14 +468,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="92366000" />
-    </task>
-    <task id="LOCAL-00021" summary="lightdm restart fix #2&#10;check directory of miners #2">
-      <created>1500147291439</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1500147291439</updated>
+      <workItem from="1499812485546" duration="92550000" />
     </task>
     <task id="LOCAL-00022" summary="check directory of miners #3">
       <created>1500149143997</created>
@@ -814,11 +806,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500224311682</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="commands support #2">
+      <created>1500225178056</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1500225178056</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118610000" />
+    <option name="totallyTimeSpent" value="118794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -879,7 +878,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="check directory of miners #3" />
     <MESSAGE value="check directory of miners #4" />
     <MESSAGE value="check directory of miners #5" />
     <MESSAGE value="check directory of miners #6" />
@@ -904,7 +902,8 @@
     <MESSAGE value="stats for single hostname" />
     <MESSAGE value="commands support" />
     <MESSAGE value="commands support #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="commands support #1" />
+    <MESSAGE value="commands support #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="commands support #2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1385,8 +1384,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/redis.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="76" column="83" lean-forward="false" selection-start-line="76" selection-start-column="83" selection-end-line="76" selection-end-column="83" />
+        <state relative-caret-position="492">
+          <caret line="178" column="91" lean-forward="false" selection-start-line="178" selection-start-column="91" selection-end-line="178" selection-end-column="91" />
           <folding />
         </state>
       </provider>

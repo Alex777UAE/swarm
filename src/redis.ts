@@ -42,7 +42,7 @@ export class Redis extends IDBLayer {
             this.redisSubscriber.subscribe('coins', 'miners', 'switch');
             if (this.options.onCommand) this.redisSubscriber.psubscribe('command.*');
             this.redisSubscriber.on('message', (ch, msg) => {
-                console.log('------------------->')
+                console.log('------------------->', ch, msg);
                 try {
                     if (ch === 'coins') {
                         const fn = this.options.onCoinUpdate;
@@ -175,12 +175,18 @@ export class Redis extends IDBLayer {
             await this.redis.publish(`command.${command}`, JSON.stringify({params, hostname}));
             debug(`Command ${command} with params ${params} sent`);
         } else {
-            this.redis.on('ready', () => {
-                this.redis.publish(`command.${command}`, JSON.stringify({params, hostname}), (err) => {
-                    if (err) throw new Error(err);
-                    debug(`Command ${command} with params ${params} sent`);
+            return new Promise((resolve, reject) => {
+                this.redis.on('ready', () => {
+                    const msg = JSON.stringify({params, hostname});
+                    this.redis.publish(`command.${command}`, msg, (err) => {
+                        if (err) throw reject(err);
+                        debug(`Command ${command} with params ${msg} sent`);
+                        resolve();
+                    });
                 });
-            })
+                this.redis.on('error', reject);
+            }) as Promise<any>;
+
         }
 
     }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
+    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="commands support #3">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/remote" afterPath="$PROJECT_DIR$/bin/remote" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js" afterPath="$PROJECT_DIR$/src/redis.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js.map" afterPath="$PROJECT_DIR$/src/redis.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.ts" afterPath="$PROJECT_DIR$/src/redis.ts" />
@@ -47,18 +48,8 @@
       <file leaf-file-name="redis.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/redis.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="178" column="91" lean-forward="false" selection-start-line="178" selection-start-column="91" selection-end-line="178" selection-end-column="91" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="remote" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/remote">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="299">
+              <caret line="44" column="59" lean-forward="false" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -75,7 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>update</find>
       <find>upda</find>
       <find>E</find>
       <find>miner</find>
@@ -105,6 +95,7 @@
       <find>can't continue setting current coins</find>
       <find>utilization.gpu</find>
       <find>exec</find>
+      <find>publish</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -468,14 +459,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="92550000" />
-    </task>
-    <task id="LOCAL-00022" summary="check directory of miners #3">
-      <created>1500149143997</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1500149143997</updated>
+      <workItem from="1499812485546" duration="92854000" />
     </task>
     <task id="LOCAL-00023" summary="check directory of miners #4">
       <created>1500149318849</created>
@@ -813,11 +797,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500225178056</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="commands support #3">
+      <created>1500225363989</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1500225363989</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118794000" />
+    <option name="totallyTimeSpent" value="119098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -878,7 +869,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="check directory of miners #4" />
     <MESSAGE value="check directory of miners #5" />
     <MESSAGE value="check directory of miners #6" />
     <MESSAGE value="targz #1" />
@@ -903,7 +893,8 @@
     <MESSAGE value="commands support" />
     <MESSAGE value="commands support #1" />
     <MESSAGE value="commands support #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="commands support #2" />
+    <MESSAGE value="commands support #3" />
+    <option name="LAST_COMMIT_MESSAGE" value="commands support #3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1019,14 +1010,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1271">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es6.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="965" column="4" lean-forward="false" selection-start-line="965" selection-start-column="4" selection-end-line="965" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1252,14 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/ioredis/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="278" column="8" lean-forward="false" selection-start-line="278" selection-start-column="8" selection-end-line="278" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1503">
@@ -1362,14 +1337,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/remote">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -1382,10 +1349,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es6.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="985" column="10" lean-forward="false" selection-start-line="985" selection-start-column="10" selection-end-line="985" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/ioredis/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="302" column="8" lean-forward="false" selection-start-line="302" selection-start-column="8" selection-end-line="302" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/remote">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/redis.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="178" column="91" lean-forward="false" selection-start-line="178" selection-start-column="91" selection-end-line="178" selection-end-column="91" />
+        <state relative-caret-position="299">
+          <caret line="44" column="59" lean-forward="false" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
           <folding />
         </state>
       </provider>

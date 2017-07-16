@@ -14,7 +14,6 @@ if (argv.h || !argv._[0]) {
 
 const Client = require('../src/client').Client;
 const client = new Client();
-console.log(argv._[0], `"${argv.p || ''}"`, argv._[1])
 client.command(argv._[0], argv.p || '', argv._[1])
     .then(() => process.exit(0))
     .catch(err => {

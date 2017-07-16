@@ -29,19 +29,20 @@ interface RedisOptions {
 export class Redis extends IDBLayer {
     protected redis: IORedis.Redis;
     protected redisSubscriber: IORedis.Redis;
-    protected subsriberReady: boolean = false;
+    protected ready: boolean = false;
 
     constructor(private options: RedisOptions) {
         super();
         this.redis = new IORedis(this.options.port, this.options.host);
+        this.redis.on('connect', () => this.ready = true);
         if (this.options.onCoinUpdate || this.options.onMinerUpdate || this.options.onCurrentCoinUpdate ||
             this.options.onCommand) {
             this.redisSubscriber = new IORedis(this.options.port, this.options.host);
-            this.redisSubscriber.on('connect', () => this.subsriberReady = true);
             debug('subscribing');
             this.redisSubscriber.subscribe('coins', 'miners', 'switch');
             if (this.options.onCommand) this.redisSubscriber.psubscribe('command.*', (ch, msg) => {
                 const {hostname, params} = JSON.parse(msg);
+                debug(`command received: ${ch} -p ${params} ${hostname}`);
                 if (!hostname || hostname === this.options.myName) {
                     this.options.onCommand(ch, params);
                 }
@@ -168,12 +169,14 @@ export class Redis extends IDBLayer {
     }
 
     public async command(command: string, params: string = '', hostname: string = ''): Promise<void> {
-        if (this.subsriberReady) {
-            await this.redisSubscriber.publish(`command.${command}`, {params, hostname});
+        if (this.ready) {
+            await this.redis.publish(`command.${command}`, {params, hostname});
+            debug(`Command ${command} with params ${params} sent`);
         } else {
-            this.redisSubscriber.on('ready', () => {
-                this.redisSubscriber.publish(`command.${command}`, {params, hostname}, (err) => {
+            this.redis.on('ready', () => {
+                this.redis.publish(`command.${command}`, {params, hostname}, (err) => {
                     if (err) throw new Error(err);
+                    debug(`Command ${command} with params ${params} sent`);
                 });
             })
         }

@@ -29,7 +29,8 @@ class EWBFMiner extends StdOutMinerWrapper {
 
     public get acceptedPercent(): number {
         const gpuIdArray = Object.keys(this.accPcntArray);
-        const avPercent = gpuIdArray.reduce((total, gpuId) => total + this.accPcntArray[gpuId], 0) / (gpuIdArray.length || 1);
+        const avPercent = gpuIdArray
+                .reduce((total, gpuId) => total + this.accPcntArray[gpuId], 0) / (gpuIdArray.length || 1);
         return parseFloat(avPercent.toFixed(2));
     }
 
@@ -40,9 +41,9 @@ class EWBFMiner extends StdOutMinerWrapper {
             '--port', coin.port.toString(),
             '--user', `${coin.username}.${this.worker}`,
             '--pass', coin.password,
-            '--fee 0',
+            '--fee', '0',
             '--boff',
-            '--eexit 3'
+            '--eexit', '3'
         ], this.parseStdOut.bind(this))
     }
 
@@ -52,6 +53,7 @@ class EWBFMiner extends StdOutMinerWrapper {
      EWBF miner GPU0: 497 Sol/s GPU1: 485 Sol/s GPU2: 486 Sol/s
      EWBF miner Total speed: 1468 Sol/s
      EWBF miner INFO 23:36:01: GPU1 Accepted share 45ms [A:92, R:0]
+     miner:EWBFMiner ERROR: Looks like GPU1 are stopped. Restart attempt. +0ms
      */
 
     protected parseStdOut(data: string): void {

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_gpu.ts" afterPath="$PROJECT_DIR$/interfaces/i_gpu.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ewbf.js" afterPath="$PROJECT_DIR$/src/wrappers/ewbf.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ewbf.js.map" afterPath="$PROJECT_DIR$/src/wrappers/ewbf.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ewbf.ts" afterPath="$PROJECT_DIR$/src/wrappers/ewbf.ts" />
@@ -44,11 +45,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="i_coin.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interfaces/i_coin.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="zec" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/coins/zec">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="405">
+              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="i_gpu.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interfaces/i_gpu.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -87,8 +108,8 @@
       <file leaf-file-name="ewbf.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/wrappers/ewbf.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="31" column="125" lean-forward="false" selection-start-line="31" selection-start-column="125" selection-end-line="31" selection-end-column="125" />
+            <state relative-caret-position="248">
+              <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
               </folding>
@@ -171,7 +192,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" />
         <option value="$PROJECT_DIR$/interfaces/i_unit.ts" />
-        <option value="$PROJECT_DIR$/interfaces/i_gpu.ts" />
         <option value="$PROJECT_DIR$/interfaces/i_coin.ts" />
         <option value="$PROJECT_DIR$/src/gpu/amd.ts" />
         <option value="$PROJECT_DIR$/templates/static/lightdm.conf" />
@@ -205,6 +225,7 @@
         <option value="$PROJECT_DIR$/src/redis.ts" />
         <option value="$PROJECT_DIR$/configs/coins/zec" />
         <option value="$PROJECT_DIR$/bin/coin" />
+        <option value="$PROJECT_DIR$/interfaces/i_gpu.ts" />
         <option value="$PROJECT_DIR$/src/wrappers/ewbf.ts" />
       </list>
     </option>
@@ -364,6 +385,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="miners" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -542,14 +577,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="93962000" />
-    </task>
-    <task id="LOCAL-00027" summary="check directory of miners #6">
-      <created>1500150071179</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1500150071179</updated>
+      <workItem from="1499812485546" duration="94696000" />
     </task>
     <task id="LOCAL-00028" summary="check directory of miners #6">
       <created>1500150694759</created>
@@ -887,11 +915,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500226957564</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="commands support #5&#10;restart experiment for ewbf #2">
+      <created>1500227101908</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1500227101909</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120206000" />
+    <option name="totallyTimeSpent" value="120940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -952,7 +987,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="targz #2" />
     <MESSAGE value="targz #3" />
     <MESSAGE value="targz #4" />
     <MESSAGE value="wrappers update" />
@@ -977,7 +1011,8 @@
     <MESSAGE value="commands support #4" />
     <MESSAGE value="commands support #5" />
     <MESSAGE value="commands support #5&#10;restart experiment for ewbf" />
-    <option name="LAST_COMMIT_MESSAGE" value="commands support #5&#10;restart experiment for ewbf" />
+    <MESSAGE value="commands support #5&#10;restart experiment for ewbf #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="commands support #5&#10;restart experiment for ewbf #2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1220,22 +1255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interfaces/i_gpu.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="65" lean-forward="false" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/interfaces/i_coin.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1370,22 +1389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TODO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="56" column="16" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1395,14 +1398,6 @@
             <element signature="n#!!block;n#fullTable#0;n#Client#0" expanded="false" />
             <element signature="n#!!block;n#removeDeadNode#0;n#Client#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/coins/zec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1454,10 +1449,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="56" column="16" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interfaces/i_coin.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/coins/zec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interfaces/i_gpu.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/wrappers/ewbf.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="31" column="125" lean-forward="false" selection-start-line="31" selection-start-column="125" selection-end-line="31" selection-end-column="125" />
+        <state relative-caret-position="248">
+          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
           <folding>
             <element signature="e#40#77#0" expanded="true" />
           </folding>

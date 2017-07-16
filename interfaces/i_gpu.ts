@@ -17,7 +17,7 @@ export interface IGPUConfig {
     memClockOffset: number;
     gpuClockOffset: number;
     powerLimit: number;
-    miners: { [algorithm: string]: string }; // Algorithm: IMinerConfig name (key in redis/db)
+    miner: string; // miner name (key from miner:miners
 }
 
 export interface IGPUStats {

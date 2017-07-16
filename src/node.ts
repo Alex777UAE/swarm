@@ -22,8 +22,9 @@ const readFile = util.promisify(fs.readFile);
 const unlink = util.promisify(fs.unlink);
 
 const STATISTIC_LOOP_INTERVAL_MS = 60 * 1000; // once a minute
+export const SWITCH_FILE = 'switchCoin';
 
-interface Config {
+export interface IAppConfig {
     "nvidia-smi": string;
     "nvidia-settings": string;
     "redis": {
@@ -50,8 +51,6 @@ export interface IStats {
     acceptPercent: number;
     uptime: number | string;
 }
-
-export const SWITCH_FILE = 'switchCoin';
 
 export class Node {
     private db: IDBLayer;
@@ -341,7 +340,7 @@ export class Node {
         return true;
     }
 
-    private static async readConfig(): Promise<Config> {
+    private static async readConfig(): Promise<IAppConfig> {
         return JSON.parse(await readFile(__dirname + '/../config.json', {encoding: 'utf8'}));
     }
 }

@@ -18,12 +18,16 @@ const colors = require("colors");
 const moment = require("moment");
 const util = require("util");
 const redis_1 = require("./redis");
+const node_1 = require("./node");
+const path = require("path");
 const readFile = util.promisify(fs.readFile);
+const writeFile = util.promisify(fs.writeFile);
 const stat = util.promisify(fs.stat);
 const MINERS_DIR = __dirname + '/../miners/';
 class Client {
     constructor() {
         const config = JSON.parse(fs.readFileSync(__dirname + '/../config.json', { encoding: 'utf8' }));
+        this.config = config;
         this.redis = new redis_1.Redis({
             host: config.redis.host,
             port: config.redis.port,
@@ -73,7 +77,10 @@ class Client {
     }
     setCurrentCoin(name, nodes) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.redis.setCurrentCoin(name, nodes);
+            if (this.config.mode === 'swarm')
+                yield this.redis.setCurrentCoin(name, nodes);
+            else
+                yield writeFile(os.tmpdir() + path.sep + node_1.SWITCH_FILE, name, 'utf8');
         });
     }
     showStats(full = true) {

@@ -9,10 +9,12 @@ import * as colors from 'colors';
 import * as moment from 'moment';
 import * as util from 'util';
 import {Redis} from './redis';
-import {IStats} from './node';
+import {IStats, IAppConfig, SWITCH_FILE} from './node';
 import {IMinerConfig} from "../interfaces/i_miner";
+import * as path from "path";
 
 const readFile = util.promisify(fs.readFile);
+const writeFile = util.promisify(fs.writeFile);
 const stat = util.promisify(fs.stat);
 
 const MINERS_DIR = __dirname + '/../miners/';
@@ -23,9 +25,11 @@ interface Stats {
 
 export class Client {
     protected redis: Redis;
+    protected config: IAppConfig;
 
     constructor() {
         const config = JSON.parse(fs.readFileSync(__dirname + '/../config.json', {encoding: 'utf8'}));
+        this.config = config;
         this.redis = new Redis({
             host: config.redis.host,
             port: config.redis.port,
@@ -73,7 +77,10 @@ export class Client {
     }
 
     public async setCurrentCoin(name: string, nodes?: string[]): Promise<void> {
-        await this.redis.setCurrentCoin(name, nodes);
+        if (this.config.mode === 'swarm')
+            await this.redis.setCurrentCoin(name, nodes);
+        else
+            await writeFile(os.tmpdir() + path.sep + SWITCH_FILE, name, 'utf8');
     }
 
     public async showStats(full: boolean = true): Promise<void> {

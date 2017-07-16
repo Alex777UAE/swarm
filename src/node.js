@@ -13,14 +13,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 require("source-map-support/register");
 const fs = require("fs");
-const util = require("util");
+const os = require("os");
+const _ = require("lodash");
+const touch = require("touch");
+const Bluebird = require("bluebird");
 const redis_1 = require("./redis");
 const linux_1 = require("./rig/linux");
-const _ = require("lodash");
 const timers_1 = require("timers");
+const path = require("path");
 const debug = require('debug')('miner:node');
-const readFile = util.promisify(fs.readFile);
+const readFile = Bluebird.promisify(fs.readFile);
+const unlink = Bluebird.promisify(fs.unlink);
 const STATISTIC_LOOP_INTERVAL_MS = 60 * 1000; // once a minute
+exports.SWITCH_FILE = 'switchCoin';
 class Node {
     constructor() {
         this.coins = {};
@@ -89,14 +94,39 @@ class Node {
                 yield this.syncCoins();
                 yield this.syncMiners();
             }
+            else {
+                yield touch(os.tmpdir() + path.sep + exports.SWITCH_FILE);
+                this.watchSwitchFile();
+            }
             yield this.setCurrentCoin(coinName);
             // setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
             yield this.statisticLoop();
             this.setSignalHandlers();
         });
     }
+    watchSwitchFile() {
+        const fileName = os.tmpdir() + path.sep + exports.SWITCH_FILE;
+        this.switchFileWatcher = fs.watch(fileName, 'utf8', (event) => {
+            if (event === 'change') {
+                fs.readFile(fileName, 'utf8', (err, data) => {
+                    if (err) {
+                        debug(`Error reading switch file ${err}`);
+                        return;
+                    }
+                    const coin = data.split('\n')[0].trim();
+                    this.setCurrentCoin(coin)
+                        .catch(debug);
+                });
+            }
+        });
+    }
     abortSignalHandler() {
         return __awaiter(this, void 0, void 0, function* () {
+            if (this.switchFileWatcher) {
+                this.switchFileWatcher.close();
+                yield unlink(os.tmpdir() + path.sep + exports.SWITCH_FILE);
+                debug('Switch file watch stopped');
+            }
             yield this.miner.stop().catch(debug);
             debug('Node stopped.');
             process.exit(0);

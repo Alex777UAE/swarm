@@ -5,9 +5,9 @@
 import 'source-map-support/register';
 import * as os from 'os';
 import * as fs from 'fs';
-import * as util from 'util';
 import * as path from 'path';
 import * as targz from 'tar.gz';
+import * as Bluebird from 'bluebird';
 import {NVidia} from "../nvidia";
 import {NVidiaGPU} from "../gpu/nvidia_gpu";
 import {IRig, OS} from "../../interfaces/i_rig";
@@ -18,12 +18,12 @@ import {Readable} from "stream";
 
 const debug = require('debug')('miner:linux');
 
-const writeFile = util.promisify(fs.writeFile);
-const readFile = util.promisify(fs.readFile);
-const readdir = util.promisify(fs.readdir);
-const access = util.promisify(fs.access);
-const mkdir = util.promisify(fs.mkdir);
-const chmod = util.promisify(fs.chmod);
+const writeFile: any = Bluebird.promisify(fs.writeFile);
+const readFile: any = Bluebird.promisify(fs.readFile);
+const readdir: any = Bluebird.promisify(fs.readdir);
+const access: any = Bluebird.promisify(fs.access);
+const mkdir: any = Bluebird.promisify(fs.mkdir);
+const chmod: any = Bluebird.promisify(fs.chmod);
 
 const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
 const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';

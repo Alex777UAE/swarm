@@ -4,16 +4,16 @@ import 'source-map-support/register';
 import * as fs from "fs";
 import * as os from "os";
 import * as TarGz from 'tar.gz';
-import * as util from "util";
 import * as Table from 'cli-table2';
 import * as colors from 'colors';
 import * as moment from 'moment';
+import * as Bluebird from 'bluebird';
 import {Redis} from './redis';
 import {IStats} from './node';
 import {IMinerConfig} from "../interfaces/i_miner";
 
-const readFile = util.promisify(fs.readFile);
-const stat = util.promisify(fs.stat);
+const readFile: any = Bluebird.promisify(fs.readFile);
+const stat: any = Bluebird.promisify(fs.stat);
 
 const MINERS_DIR = __dirname + '/../miners/';
 
@@ -160,11 +160,11 @@ export class Client {
                 'Temp',
                 'GPU Load %',
                 'Mem IO Load %',
+                'Hashrate',
                 'GPU Clocks',
                 'Mem Clocks',
                 'Fan speed',
-                'Wh',
-                'Hashrate'
+                'Wh'
             ].map(head => colors.green(head)));
             info.gpuDetails.forEach((gpu, id) => {
                 table.push([
@@ -173,11 +173,11 @@ export class Client {
                     gpu.temperature,
                     gpu.gpuLoad,
                     gpu.memLoad,
+                    info.gpuHashrates[id],
                     gpu.gpuClock,
                     gpu.memClock,
                     gpu.fanSpeed,
-                    gpu.powerDraw,
-                    info.gpuHashrates[id]
+                    gpu.powerDraw
                 ]);
             });
         });

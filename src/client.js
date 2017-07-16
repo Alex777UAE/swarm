@@ -13,13 +13,13 @@ require("source-map-support/register");
 const fs = require("fs");
 const os = require("os");
 const TarGz = require("tar.gz");
-const util = require("util");
 const Table = require("cli-table2");
 const colors = require("colors");
 const moment = require("moment");
+const Bluebird = require("bluebird");
 const redis_1 = require("./redis");
-const readFile = util.promisify(fs.readFile);
-const stat = util.promisify(fs.stat);
+const readFile = Bluebird.promisify(fs.readFile);
+const stat = Bluebird.promisify(fs.stat);
 const MINERS_DIR = __dirname + '/../miners/';
 class Client {
     constructor() {
@@ -159,11 +159,11 @@ class Client {
                 'Temp',
                 'GPU Load %',
                 'Mem IO Load %',
+                'Hashrate',
                 'GPU Clocks',
                 'Mem Clocks',
                 'Fan speed',
-                'Wh',
-                'Hashrate'
+                'Wh'
             ].map(head => colors.green(head)));
             info.gpuDetails.forEach((gpu, id) => {
                 table.push([
@@ -172,11 +172,11 @@ class Client {
                     gpu.temperature,
                     gpu.gpuLoad,
                     gpu.memLoad,
+                    info.gpuHashrates[id],
                     gpu.gpuClock,
                     gpu.memClock,
                     gpu.fanSpeed,
-                    gpu.powerDraw,
-                    info.gpuHashrates[id]
+                    gpu.powerDraw
                 ]);
             });
         });

@@ -3,19 +3,23 @@
  */
 import 'source-map-support/register';
 import * as fs from 'fs';
-import * as util from 'util';
+import * as os from 'os';
+import * as _ from 'lodash';
+import * as touch from 'touch';
+import * as Bluebird from 'bluebird';
 import {IDBLayer} from "../interfaces/i_db_layer";
 import {Redis} from "./redis";
 import {Linux} from "./rig/linux";
-import * as _ from 'lodash';
 import {setTimeout} from "timers";
 import {IRig} from "../interfaces/i_rig";
 import {IGPU, IGPUStats} from "../interfaces/i_gpu";
 import {IMiner, IMinerList, IMinerConfig} from "../interfaces/i_miner";
 import {ICoinConfig, ICoinList} from "../interfaces/i_coin";
+import * as path from "path";
 
 const debug = require('debug')('miner:node');
-const readFile = util.promisify(fs.readFile);
+const readFile: any = Bluebird.promisify(fs.readFile);
+const unlink: any = Bluebird.promisify(fs.unlink);
 
 const STATISTIC_LOOP_INTERVAL_MS = 60 * 1000; // once a minute
 
@@ -47,6 +51,8 @@ export interface IStats {
     uptime: number | string;
 }
 
+export const SWITCH_FILE = 'switchCoin';
+
 export class Node {
     private db: IDBLayer;
     private rig: IRig;
@@ -56,6 +62,7 @@ export class Node {
     private coins: ICoinList = {};
     private miners: IMinerList = {};
     private timer: NodeJS.Timer;
+    private switchFileWatcher: fs.FSWatcher;
 
     // stats
     private coinStartedAt: number; // timestamp
@@ -122,6 +129,9 @@ export class Node {
             coinName = await this.db.getCurrentCoin();
             await this.syncCoins();
             await this.syncMiners();
+        } else {
+            await touch(os.tmpdir() + path.sep + SWITCH_FILE);
+            this.watchSwitchFile();
         }
 
         await this.setCurrentCoin(coinName);
@@ -131,7 +141,29 @@ export class Node {
         this.setSignalHandlers();
     }
 
+    private watchSwitchFile(): void {
+        const fileName = os.tmpdir() + path.sep + SWITCH_FILE;
+        this.switchFileWatcher = fs.watch(fileName, 'utf8', (event) => {
+            if (event === 'change') {
+                fs.readFile(fileName, 'utf8', (err, data: string) => {
+                   if (err) {
+                       debug(`Error reading switch file ${err}`);
+                       return;
+                   }
+                   const coin: string = data.split('\n')[0].trim();
+                   this.setCurrentCoin(coin)
+                       .catch(debug);
+                });
+            }
+        });
+    }
+
     private async abortSignalHandler(): Promise<void> {
+        if (this.switchFileWatcher) {
+            this.switchFileWatcher.close();
+            await unlink(os.tmpdir() + path.sep + SWITCH_FILE);
+            debug('Switch file watch stopped');
+        }
         await this.miner.stop().catch(debug);
         debug('Node stopped.');
         process.exit(0);

@@ -7,12 +7,13 @@ import * as fs from 'fs';
 import * as util from 'util';
 import * as crypto from 'crypto';
 import * as IORedis from 'ioredis';
+import * as Bluebird from 'bluebird';
 import {DBStats, IDBLayer} from "../interfaces/i_db_layer";
 import {IMinerConfig, IMinerList} from "../interfaces/i_miner";
 import {ICoinConfig, ICoinList} from "../interfaces/i_coin";
 
 const debug = require('debug')('miner:redis');
-const readFile = util.promisify(fs.readFile);
+const readFile: any = Bluebird.promisify(fs.readFile);
 
 const REDIS_PREFIX = 'miner:';
 

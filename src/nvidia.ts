@@ -3,11 +3,11 @@
  */
 
 import 'source-map-support/register';
-import * as util from 'util';
+import * as Bluebird from 'bluebird';
 import {execFile} from 'child_process';
 
 const debug = require('debug')('miner:nvidia-smi');
-const exec = util.promisify(execFile);
+const exec: any = Bluebird.promisify(execFile);
 
 
 export class NVidia {

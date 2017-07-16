@@ -83,11 +83,12 @@ export class Client {
             await writeFile(os.tmpdir() + path.sep + SWITCH_FILE, name, 'utf8');
     }
 
-    public async showStats(full: boolean = true): Promise<void> {
+    public async showStats(full: boolean = true, hostname?: string): Promise<void> {
         const rawStats = await this.redis.getStats();
         let stats: Stats = {};
 
         Object.keys(rawStats).forEach(name => {
+            if (hostname && hostname !== name) return;
             stats[name] = {timestamp: rawStats[name].timestamp, info: JSON.parse(rawStats[name].json)};
             stats[name].info.coinTime = moment.duration(stats[name].info.coinTime).humanize();
             stats[name].info.uptime = moment.duration((stats[name].info.uptime as number) * 1000).humanize()

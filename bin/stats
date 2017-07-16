@@ -4,7 +4,8 @@ const minimist = require('minimist');
 const argv = minimist(process.argv.slice(2));
 
 if (argv.h) {
-    console.log('./stats [-r nodeName|--full true|--full false]');
+    console.log('./stats [-r|--full true|--full false] [HOSTNAME]');
+    console.log('\t-r remove hostname from stats');
     process.exit(0);
 }
 
@@ -13,7 +14,7 @@ const client = new Client();
 let promise;
 
 if (!argv.r) {
-    promise = client.showStats(argv.full ? JSON.parse(argv.full) : false);
+    promise = client.showStats(argv.full ? JSON.parse(argv.full) : false, argv._[0]);
 } else {
     promise = client.removeDeadNode(argv.r);
 }

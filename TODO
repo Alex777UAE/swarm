@@ -1,8 +1,6 @@
 
-- standalone mode
 - simplify coin->miner config
 
-- stats for exceptionaly for NODE_NAME
 - list available coins
 - delete coin
 - list miners

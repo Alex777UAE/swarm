@@ -83,11 +83,13 @@ class Client {
                 yield writeFile(os.tmpdir() + path.sep + node_1.SWITCH_FILE, name, 'utf8');
         });
     }
-    showStats(full = true) {
+    showStats(full = true, hostname) {
         return __awaiter(this, void 0, void 0, function* () {
             const rawStats = yield this.redis.getStats();
             let stats = {};
             Object.keys(rawStats).forEach(name => {
+                if (hostname && hostname !== name)
+                    return;
                 stats[name] = { timestamp: rawStats[name].timestamp, info: JSON.parse(rawStats[name].json) };
                 stats[name].info.coinTime = moment.duration(stats[name].info.coinTime).humanize();
                 stats[name].info.uptime = moment.duration(stats[name].info.uptime * 1000).humanize();

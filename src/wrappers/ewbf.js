@@ -74,7 +74,7 @@ class EWBFMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
                 else {
                     const error = ERROR_PATTERN.exec(line);
                     if (error) {
-                        const coin = this.coin;
+                        const coin = Object.assign({}, this.coin);
                         this.stop()
                             .then(() => this.start(coin))
                             .catch(debug);

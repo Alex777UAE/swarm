@@ -14,6 +14,15 @@
       "miners": {
         "equihash": "ewbf-0.3.4b"
       }
+    },
+    "GPU-5d49e948-770c-4228-bb89-027ca3c521ab": {
+      "fanSpeedTarget": 80,
+      "memClockOffset": 1000,
+      "gpuClockOffset": 100,
+      "powerLimit": 195,
+      "miners": {
+        "equihash": "ewbf-0.3.4b"
+      }
     }
   }
 }

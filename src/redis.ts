@@ -23,19 +23,29 @@ interface RedisOptions {
     onCoinUpdate?: (coinName: string, config: ICoinConfig) => void,
     onMinerUpdate?: (minerName: string, config: IMinerConfig, binary: Buffer) => void,
     onCurrentCoinUpdate?: (coinName: string) => void,
+    onCommand?: (command: string, options?: string) => void;
 }
 
 export class Redis extends IDBLayer {
     protected redis: IORedis.Redis;
     protected redisSubscriber: IORedis.Redis;
+    protected subsriberReady: boolean = false;
 
     constructor(private options: RedisOptions) {
         super();
         this.redis = new IORedis(this.options.port, this.options.host);
-        if (this.options.onCoinUpdate || this.options.onMinerUpdate || this.options.onCurrentCoinUpdate) {
+        if (this.options.onCoinUpdate || this.options.onMinerUpdate || this.options.onCurrentCoinUpdate ||
+            this.options.onCommand) {
             this.redisSubscriber = new IORedis(this.options.port, this.options.host);
+            this.redisSubscriber.on('connect', () => this.subsriberReady = true);
             debug('subscribing');
             this.redisSubscriber.subscribe('coins', 'miners', 'switch');
+            if (this.options.onCommand) this.redisSubscriber.psubscribe('command.*', (ch, msg) => {
+                const {hostname, params} = JSON.parse(msg);
+                if (!hostname || hostname === this.options.myName) {
+                    this.options.onCommand(ch, params);
+                }
+            });
             this.redisSubscriber.on('message', (ch, msg) => {
                 try {
                     if (ch === 'coins') {
@@ -154,5 +164,19 @@ export class Redis extends IDBLayer {
 
     public async removeDeadNode(name: string): Promise<void> {
         await this.redis.hdel(REDIS_PREFIX + 'stats', name);
+        if (name !== 'default') await this.redis.hdel(REDIS_PREFIX + 'currentCoin', name);
+    }
+
+    public async command(command: string, params: string = '', hostname: string = ''): Promise<void> {
+        if (this.subsriberReady) {
+            await this.redisSubscriber.publish(`command.${command}`, {params, hostname});
+        } else {
+            this.redisSubscriber.on('ready', () => {
+                this.redisSubscriber.publish(`command.${command}`, {params, hostname}, (err) => {
+                    if (err) throw new Error(err);
+                });
+            })
+        }
+
     }
 }

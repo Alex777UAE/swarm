@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+const minimist = require('minimist');
+const argv = minimist(process.argv.slice(2));
+
+if (argv.h || !argv._[0]) {
+    console.log('\nremote <command> [-p params] [HOSTNAME]');
+    console.log('\texecute command on all nodes or only on HOSTNAME\n');
+    console.log('Supported commands:\t');
+    console.log('\trestart - restarts current miner proccess');
+    console.log('\treboot - reboot rig');
+    process.exit(0);
+}
+
+const Client = require('../src/client').Client;
+const client = new Client();
+console.log(argv._[0], `"${argv.p || ''}"`, argv._[1])
+client.command(argv._[0], argv.p || '', argv._[1])
+    .then(() => process.exit(0))
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });

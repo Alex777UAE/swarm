@@ -24,11 +24,21 @@ class Redis extends i_db_layer_1.IDBLayer {
     constructor(options) {
         super();
         this.options = options;
+        this.subsriberReady = false;
         this.redis = new IORedis(this.options.port, this.options.host);
-        if (this.options.onCoinUpdate || this.options.onMinerUpdate || this.options.onCurrentCoinUpdate) {
+        if (this.options.onCoinUpdate || this.options.onMinerUpdate || this.options.onCurrentCoinUpdate ||
+            this.options.onCommand) {
             this.redisSubscriber = new IORedis(this.options.port, this.options.host);
+            this.redisSubscriber.on('connect', () => this.subsriberReady = true);
             debug('subscribing');
             this.redisSubscriber.subscribe('coins', 'miners', 'switch');
+            if (this.options.onCommand)
+                this.redisSubscriber.psubscribe('command.*', (ch, msg) => {
+                    const { hostname, params } = JSON.parse(msg);
+                    if (!hostname || hostname === this.options.myName) {
+                        this.options.onCommand(ch, params);
+                    }
+                });
             this.redisSubscriber.on('message', (ch, msg) => {
                 try {
                     if (ch === 'coins') {
@@ -159,6 +169,23 @@ class Redis extends i_db_layer_1.IDBLayer {
     removeDeadNode(name) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.redis.hdel(REDIS_PREFIX + 'stats', name);
+            if (name !== 'default')
+                yield this.redis.hdel(REDIS_PREFIX + 'currentCoin', name);
+        });
+    }
+    command(command, params = '', hostname = '') {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (this.subsriberReady) {
+                yield this.redisSubscriber.publish(`command.${command}`, { params, hostname });
+            }
+            else {
+                this.redisSubscriber.on('ready', () => {
+                    this.redisSubscriber.publish(`command.${command}`, { params, hostname }, (err) => {
+                        if (err)
+                            throw new Error(err);
+                    });
+                });
+            }
         });
     }
 }

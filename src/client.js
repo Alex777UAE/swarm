@@ -31,7 +31,8 @@ class Client {
         this.redis = new redis_1.Redis({
             host: config.redis.host,
             port: config.redis.port,
-            myName: os.hostname()
+            myName: os.hostname(),
+            onCommand: () => { } // to allow subscriber mode
         });
     }
     uploadCoin(name, path) {
@@ -95,6 +96,7 @@ class Client {
                 stats[name].info.uptime = moment.duration(stats[name].info.uptime * 1000).humanize();
             });
             !full ? this.briefTable(stats) : this.fullTable(stats);
+            console.log(`Total GPUs: ${Object.keys(rawStats).reduce((total, n) => total + stats[n].info.gpuN, 0)}`);
         });
     }
     briefTable(stats) {
@@ -194,6 +196,11 @@ class Client {
     removeDeadNode(name) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.redis.removeDeadNode(name);
+        });
+    }
+    command(name, params = '', hostname = '') {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.redis.command(name, params, hostname);
         });
     }
 }

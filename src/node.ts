@@ -124,7 +124,8 @@ export class Node {
                 myName: this.rig.hostname,
                 onMinerUpdate: this.minerUpdate.bind(this),
                 onCoinUpdate: this.coinUpdate.bind(this),
-                onCurrentCoinUpdate: this.setCurrentCoin.bind(this)
+                onCurrentCoinUpdate: this.setCurrentCoin.bind(this),
+                onCommand: this.command.bind(this)
             });
             coinName = await this.db.getCurrentCoin();
             await this.syncCoins();
@@ -139,6 +140,16 @@ export class Node {
         // setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
         if (swarm) await this.statisticLoop();
         this.setSignalHandlers();
+    }
+
+    private async command(command: string, params: string): Promise<void> {
+        if (command === 'command.reboot') {
+            await this.abortSignalHandler();
+            await this.rig.reboot();
+        } else if (command === 'command.restart') {
+            await this.miner.stop();
+            await this.miner.start(this.coins[this.currentCoin]);
+        }
     }
 
     private watchSwitchFile(): void {

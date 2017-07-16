@@ -47,7 +47,12 @@ export class NVidiaGPU extends IGPU {
             '--format=csv,noheader,nounits'
         ];
         debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
-        const o = await exec(this.nvidiaSMIPath, nvOpts , {killSignal: 'SIGKILL', timeout: 90000});
+
+        const o = await exec(this.nvidiaSMIPath, nvOpts, {killSignal: 'SIGKILL', timeout: 90000})
+            .catch((err, stdout, stderr) => {
+                debug(`Got error:\n${stderr}\n${stdout}`);
+                throw new Error(stderr);
+            });
         debug(`got output:\n${o.stdout}`);
         const stats = o.stdout.split(',').map(e => parseFloat(e));
         return {
@@ -65,7 +70,7 @@ export class NVidiaGPU extends IGPU {
         this.cardId = id;
         const nvOpts = ['-i', id, '--query-gpu=name,uuid', '--format=csv,noheader,nounits'];
         debug(`executing: ${this.nvidiaSMIPath} ${nvOpts.join(' ')}`);
-        const o = await exec(this.nvidiaSMIPath, nvOpts , { killSignal: 'SIGKILL', timeout: 90000});
+        const o = await exec(this.nvidiaSMIPath, nvOpts, {killSignal: 'SIGKILL', timeout: 90000});
         debug(`got output:\n${o.stdout}`);
         let [name, uuid] = o.stdout.split(',');
         this.cardUUID = uuid.trim();

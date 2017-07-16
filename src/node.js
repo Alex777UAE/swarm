@@ -89,7 +89,8 @@ class Node {
                     myName: this.rig.hostname,
                     onMinerUpdate: this.minerUpdate.bind(this),
                     onCoinUpdate: this.coinUpdate.bind(this),
-                    onCurrentCoinUpdate: this.setCurrentCoin.bind(this)
+                    onCurrentCoinUpdate: this.setCurrentCoin.bind(this),
+                    onCommand: this.command.bind(this)
                 });
                 coinName = yield this.db.getCurrentCoin();
                 yield this.syncCoins();
@@ -104,6 +105,18 @@ class Node {
             if (swarm)
                 yield this.statisticLoop();
             this.setSignalHandlers();
+        });
+    }
+    command(command, params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (command === 'command.reboot') {
+                yield this.abortSignalHandler();
+                yield this.rig.reboot();
+            }
+            else if (command === 'command.restart') {
+                yield this.miner.stop();
+                yield this.miner.start(this.coins[this.currentCoin]);
+            }
         });
     }
     watchSwitchFile() {

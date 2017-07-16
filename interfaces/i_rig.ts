@@ -19,6 +19,8 @@ export abstract class IRig extends IUnit {
 
     public abstract get ip(): string;
 
+    public abstract async reboot(): Promise<void>;
+
     public abstract async getGPUs(): Promise<IGPU[]>;
 
     public abstract async getLoad(): Promise<{ cpu: number; mem: number }>;

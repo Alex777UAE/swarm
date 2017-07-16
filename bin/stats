@@ -4,7 +4,7 @@ const minimist = require('minimist');
 const argv = minimist(process.argv.slice(2));
 
 if (argv.h) {
-    console.log('./stats [-r|--full true|--full false] [HOSTNAME]');
+    console.log('\nstats [-r|--full true|--full false] [HOSTNAME]');
     console.log('\t-r remove hostname from stats');
     process.exit(0);
 }

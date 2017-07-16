@@ -21,6 +21,7 @@ const nvidia_1 = require("../nvidia");
 const nvidia_gpu_1 = require("../gpu/nvidia_gpu");
 const i_rig_1 = require("../../interfaces/i_rig");
 const stream_1 = require("stream");
+const child_process_1 = require("child_process");
 const debug = require('debug')('miner:linux');
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
@@ -28,6 +29,7 @@ const readdir = util.promisify(fs.readdir);
 const access = util.promisify(fs.access);
 const mkdir = util.promisify(fs.mkdir);
 const chmod = util.promisify(fs.chmod);
+const exec = util.promisify(child_process_1.execFile);
 const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
 const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
 const MINERS_PATH = __dirname + '/../../miners/';
@@ -64,6 +66,11 @@ class Linux extends i_rig_1.IRig {
             }
         }
         throw new Error('No IP configured?');
+    }
+    reboot() {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield exec('/sbin/reboot');
+        });
     }
     getGPUs() {
         return __awaiter(this, void 0, void 0, function* () {

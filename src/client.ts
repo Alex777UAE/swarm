@@ -33,7 +33,8 @@ export class Client {
         this.redis = new Redis({
             host: config.redis.host,
             port: config.redis.port,
-            myName: os.hostname()
+            myName: os.hostname(),
+            onCommand: () => {} // to allow subscriber mode
         });
     }
 
@@ -94,6 +95,7 @@ export class Client {
             stats[name].info.uptime = moment.duration((stats[name].info.uptime as number) * 1000).humanize()
         });
         !full ? this.briefTable(stats) : this.fullTable(stats);
+        console.log(`Total GPUs: ${Object.keys(rawStats).reduce((total, n) => total + stats[n].info.gpuN, 0)}`);
     }
 
     protected briefTable(stats: Stats): void {
@@ -194,6 +196,10 @@ export class Client {
 
     public async removeDeadNode(name: string): Promise<void> {
         await this.redis.removeDeadNode(name);
+    }
+
+    public async command(name, params: string = '', hostname: string = ''): Promise<void> {
+        await this.redis.command(name, params, hostname);
     }
 }
 

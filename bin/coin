@@ -6,7 +6,7 @@ const Client = require('../src/client').Client;
 const argv = minimist(process.argv.slice(2));
 
 if (!argv._[0] || !argv._[1]) {
-    console.error(`Please provide coin name and path to json config:\n\t./coin ftc ./configs/coins/ftc`);
+    console.error(`\nPlease provide coin name and path to json config:\n\tcoin ftc ./configs/coins/ftc`);
     process.exit(1);
 } else {
     const client = new Client();

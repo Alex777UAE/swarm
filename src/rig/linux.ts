@@ -15,6 +15,7 @@ import {IGPU} from "../../interfaces/i_gpu";
 import {ICoinConfig, ICoinList} from "../../interfaces/i_coin";
 import {IMinerConfig, IMinerList} from "../../interfaces/i_miner";
 import {Readable} from "stream";
+import {execFile} from "child_process";
 
 const debug = require('debug')('miner:linux');
 
@@ -24,6 +25,7 @@ const readdir = util.promisify(fs.readdir);
 const access = util.promisify(fs.access);
 const mkdir = util.promisify(fs.mkdir);
 const chmod = util.promisify(fs.chmod);
+const exec = util.promisify(execFile);
 
 const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
 const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
@@ -66,6 +68,10 @@ export class Linux extends IRig {
             }
         }
         throw new Error('No IP configured?');
+    }
+
+    public async reboot(): Promise<void> {
+        await exec('/sbin/reboot');
     }
 
     public async getGPUs(): Promise<IGPU[]> {

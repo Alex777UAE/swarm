@@ -19,4 +19,5 @@ export abstract class IDBLayer {
     public abstract async updateStats(stringifiedJson: string): Promise<void>;
     public abstract async getStats(): Promise<DBStats>;
     public abstract async removeDeadNode(name: string): Promise<void>;
+    public abstract async command(name: string, params?: string): Promise<void>;
 }

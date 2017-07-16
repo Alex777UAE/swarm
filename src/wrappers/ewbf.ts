@@ -29,7 +29,7 @@ class EWBFMiner extends StdOutMinerWrapper {
 
     public get acceptedPercent(): number {
         const gpuIdArray = Object.keys(this.accPcntArray);
-        const avPercent = gpuIdArray.reduce((total, gpuId) => total + this.accPcntArray[gpuId], 0) / gpuIdArray.length || 1;
+        const avPercent = gpuIdArray.reduce((total, gpuId) => total + this.accPcntArray[gpuId], 0) / (gpuIdArray.length || 1);
         return parseFloat(avPercent.toFixed(2));
     }
 

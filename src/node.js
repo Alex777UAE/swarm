@@ -116,8 +116,8 @@ class Node {
                         return;
                     }
                     const coin = data.split('\n')[0].trim();
-                    this.setCurrentCoin(coin)
-                        .catch(debug);
+                    if (coin && coin !== this.currentCoin)
+                        this.setCurrentCoin(coin).catch(debug);
                 });
             }
         });

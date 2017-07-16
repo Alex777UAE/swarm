@@ -21,3 +21,6 @@
     2. setup all provided miners
     3. install "/usr/bin/screen -dmS swarm bash -c 'DEBUG=* /usr/local/swarm/bin/node'" into rc.local if not done yet
     4. add to PATH system env.var /usr/local/swarm/bin/
+
+-  may be autorestart possible ?
+    miner:EWBFMiner ERROR: Looks like GPU1 are stopped. Restart attempt. +0ms

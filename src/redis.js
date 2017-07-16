@@ -31,11 +31,19 @@ class Redis extends i_db_layer_1.IDBLayer {
             this.options.onCommand) {
             this.redisSubscriber = new IORedis(this.options.port, this.options.host);
             debug('subscribing');
-            this.redisSubscriber.subscribe('coins', 'miners', 'switch');
-            if (this.options.onCommand)
+            if (this.options.onCommand) {
                 this.redisSubscriber.psubscribe('command.*');
+                this.redisSubscriber.on('pmessage', (pattern, ch, msg) => {
+                    if (ch.indexOf('command') === 0) {
+                        const { hostname, params } = JSON.parse(msg);
+                        const fn = this.options.onCommand;
+                        if (!hostname || hostname === this.options.myName && fn)
+                            fn(ch, params);
+                    }
+                });
+            }
+            this.redisSubscriber.subscribe('coins', 'miners', 'switch');
             this.redisSubscriber.on('message', (ch, msg) => {
-                console.log('------------------->', ch, msg);
                 try {
                     if (ch === 'coins') {
                         const fn = this.options.onCoinUpdate;
@@ -62,13 +70,6 @@ class Redis extends i_db_layer_1.IDBLayer {
                             debug(`Switching current coin to ${coinName}`);
                             fn(coinName);
                         }
-                    }
-                    console.log(ch);
-                    if (ch.indexOf('command') === 0) {
-                        const { hostname, params } = JSON.parse(msg);
-                        const fn = this.options.onCommand;
-                        if (!hostname || hostname === this.options.myName && fn)
-                            fn(ch, params);
                     }
                 }
                 catch (err) {

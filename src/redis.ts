@@ -39,10 +39,19 @@ export class Redis extends IDBLayer {
             this.options.onCommand) {
             this.redisSubscriber = new IORedis(this.options.port, this.options.host);
             debug('subscribing');
+            if (this.options.onCommand) {
+                this.redisSubscriber.psubscribe('command.*');
+                this.redisSubscriber.on('pmessage', (pattern ,ch, msg) => {
+                    if (ch.indexOf('command') === 0) {
+                        const {hostname, params} = JSON.parse(msg);
+                        const fn = this.options.onCommand;
+                        if (!hostname || hostname === this.options.myName && fn) fn(ch, params);
+                    }
+                });
+            }
             this.redisSubscriber.subscribe('coins', 'miners', 'switch');
-            if (this.options.onCommand) this.redisSubscriber.psubscribe('command.*');
             this.redisSubscriber.on('message', (ch, msg) => {
-                console.log('------------------->', ch, msg);
+
                 try {
                     if (ch === 'coins') {
                         const fn = this.options.onCoinUpdate;
@@ -72,12 +81,6 @@ export class Redis extends IDBLayer {
                         }
                     }
 
-                    console.log(ch);
-                    if (ch.indexOf('command') === 0) {
-                        const {hostname, params} = JSON.parse(msg);
-                        const fn = this.options.onCommand;
-                        if (!hostname || hostname === this.options.myName && fn) fn(ch, params);
-                    }
                 } catch (err) {
                     debug(err);
                 }

@@ -11,6 +11,8 @@ const debug = require('debug')('miner:EWBFMiner');
 const REGEXP_GPU_HASHRATE = /(GPU(\d+):\s+(\d+)\s+sol\/s)/gi;
 const REGEXP_TOTAL_HASHRATE = /Total\s+speed:\s+(\d+)\s+sol\/s/gi;
 const REGEXP_ACCEPTED_SHARES = /GPU(\d+)\s+Accepted\s+share\s+.*\[A:(\d+),\s+R:(\d+)]/gi;
+const ERROR_PATTERN = /Looks\s+like\s+GPU(.*?)\s+are stopped.\s+Restart\s+/gi;
+
 
 export default //noinspection JSUnusedGlobalSymbols
 class EWBFMiner extends StdOutMinerWrapper {
@@ -68,11 +70,19 @@ class EWBFMiner extends StdOutMinerWrapper {
                     const rejectedShares = parseInt(shares[3]);
                     this.accPcntArray[gpuId] = 100 * acceptedShares / (acceptedShares + rejectedShares);
                 } else {
-                    let gpuMatch;
-                    while (gpuMatch = REGEXP_GPU_HASHRATE.exec(line)) {
-                        const id = parseInt(gpuMatch[2]);
-                        const hashrate = parseInt(gpuMatch[3]);
-                        this.setGPUHashrate(id, hashrate);
+                    const error = ERROR_PATTERN.exec(line);
+                    if (error) {
+                        const coin = this.coin;
+                        this.stop()
+                            .then(() => this.start(coin))
+                            .catch(debug);
+                    } else {
+                        let gpuMatch;
+                        while (gpuMatch = REGEXP_GPU_HASHRATE.exec(line)) {
+                            const id = parseInt(gpuMatch[2]);
+                            const hashrate = parseInt(gpuMatch[3]);
+                            this.setGPUHashrate(id, hashrate);
+                        }
                     }
                 }
             }

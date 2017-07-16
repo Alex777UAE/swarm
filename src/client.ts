@@ -63,7 +63,7 @@ export class Client {
         const newArchivePath = MINERS_DIR + name + '.tar.gz';
         return new Promise((resolve, reject) => {
             const targz = new TarGz({}, {fromBase: true});
-            const read = targz().createReadStream(path);
+            const read = targz.createReadStream(path);
             const write = fs.createWriteStream(newArchivePath);
             read.pipe(write);
             read.on('error', reject);
@@ -90,13 +90,34 @@ export class Client {
 
     protected briefTable(stats: Stats): void {
         const table = new Table({
-            head: ['Hostname', 'IP', 'Coin', 'CPU', 'GPU#', 'Hashrate', 'Mining time', 'Uptime', 'Freshness sec.']
-            // , colWidths: [100, 200]
+            head: [
+                'Hostname',
+                'IP',
+                'Coin',
+                'CPU',
+                'GPU#',
+                'Hashrate',
+                'Accept %',
+                'Mining time',
+                'Uptime',
+                'Freshness sec.'
+            ],
+            colWidths: [21, 17, 6, 32, 15]
         });
         Object.keys(stats).forEach(name => {
             const info = stats[name].info;
             const d = Math.round((Date.now() - stats[name].timestamp) / 1000);
-            table.push([name, info.ip, info.coin, info.cpu, info.gpuN, info.hashrate, info.coinTime, info.uptime, d]);
+            table.push([
+                name,
+                info.ip,
+                info.coin,
+                info.cpu,
+                info.gpuN,
+                info.hashrate,
+                info.acceptPercent,
+                info.coinTime,
+                info.uptime,
+                d]);
         });
         console.log(table.toString());
     }
@@ -104,37 +125,39 @@ export class Client {
     protected fullTable(stats: Stats): void {
         const table = new Table({
             head: [
-                {colSpan: 2, content: 'Hostname'},
+                'Hostname',
                 'IP',
                 'Coin',
                 'CPU',
                 'GPU Total',
                 'Hashrate',
+                'Accept %',
                 'Mining time',
                 'Uptime',
                 'Freshness sec.'
             ],
-            // border: []
+            colWidths: [21, 17, 6, 32, 15]
         });
 
         Object.keys(stats).forEach(name => {
             const info = stats[name].info;
             const d = Math.round((Date.now() - stats[name].timestamp) / 1000);
             table.push([
-                {colSpan: 2, content: name},
+                name,
                 info.ip,
                 info.coin,
                 info.cpu,
                 info.gpuN,
                 info.hashrate,
+                info.acceptPercent,
                 info.coinTime,
                 info.uptime,
                 d
-            ]);
+            ].map(rig => colors.bold(rig.toString())));
             table.push([
                 'GPU#',
                 'Model',
-                'Temperature',
+                'Temp',
                 'GPU Load %',
                 'Mem IO Load %',
                 'GPU Clocks',

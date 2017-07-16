@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 
 const minimist = require('minimist');
-const Client = require('../src/client').Client;
 
 const argv = minimist(process.argv.slice(2));
 
 if (!argv._[0]) {
-    console.error('Please provide coin name:\n\t./switch zec');
+    console.error('Please provide coin name:\n\t./switch zec [NODE_NAME1 NODE_NAME_2 ...]');
+    console.error('- if no NODE names provided - switch all');
+    console.error('- to reset NODE(s) to default currency do ./switch default NODE_NAME1 [NODE_NAME2 ...]');
     process.exit(1);
 } else {
+    const Client = require('../src/client').Client;
     const client = new Client();
     const params = argv._.slice(1);
     client.setCurrentCoin(argv._[0], params)

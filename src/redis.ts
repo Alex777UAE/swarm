@@ -50,10 +50,9 @@ export class Redis extends IDBLayer {
                         const fn = this.options.onMinerUpdate;
                         debug(`Miner ${name} update:\n${config}`);
                         if (typeof fn === 'function') {
-                            this.redis.getBuffer((config as IMinerConfig).sha256sum, (err, buff) => {
-                                if (err) return debug(`Error: ${err}`);
-                                fn(name, config, buff);
-                            });
+                            this.getMinerBinnary((config as IMinerConfig).sha256sum)
+                                .then(buff => fn(name, config, buff))
+                                .catch(err => debug(`Error: ${err}`));
                         }
                     }
 
@@ -120,7 +119,10 @@ export class Redis extends IDBLayer {
     }
 
     public async setCurrentCoin(name: string, nodes?: string[]): Promise<void> {
-        if (name === 'default' && (!nodes || nodes.length === 0)) throw new Error(`can't reset without nodes argument`);
+        if (name === 'default' && (!nodes || nodes.length === 0)) throw new Error(`Can't reset without nodes argument`);
+        const availableCoins = await this.getAllCoins();
+        if (Object.keys(availableCoins).indexOf(name) === -1) throw new Error(`No coin ${name} available in swarm`);
+
         if (!nodes || nodes.length === 0) {
             await this.redis.hset(REDIS_PREFIX + 'currentCoin', 'default', name);
             await this.redis.publish('switch', JSON.stringify({hostname: 'all', coinName: name}));

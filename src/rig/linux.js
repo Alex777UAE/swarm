@@ -47,7 +47,7 @@ class Linux extends i_rig_1.IRig {
         return os.hostname();
     }
     get cpu() {
-        return os.cpus()[0].model;
+        return os.cpus()[0].model.replace(/\s{2,}/gi, ' ');
     }
     get uptime() {
         return os.uptime();
@@ -144,7 +144,8 @@ class Linux extends i_rig_1.IRig {
     }
     untgzBuffer(name, bin) {
         return new Promise((resolve, reject) => {
-            debug(`buffer is ${Buffer.isBuffer(bin)}`);
+            debug(`Is buffer: ${Buffer.isBuffer(bin)}`);
+            debug(`Buffer length is: ${bin.length}`);
             // const readStream = fs.createReadStream(bin);
             const readStream = new stream_1.Readable();
             readStream._read = () => { };

@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 const minimist = require('minimist');
-const Client = require('../src/client').Client;
-
 const argv = minimist(process.argv.slice(2));
 
 if (!argv._[0] || !argv._[0]) {
@@ -10,6 +8,7 @@ if (!argv._[0] || !argv._[0]) {
     console.error('\t./miner ccminer-klaust-8.09 ./configs/miners/ccminer-klaust-8.09 [directory|binary]');
     process.exit(1);
 } else {
+    const Client = require('../src/client').Client;
     const client = new Client();
     client.uploadMiner(...argv._)
         .then(() => {

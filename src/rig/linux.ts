@@ -48,7 +48,7 @@ export class Linux extends IRig {
     }
 
     public get cpu(): string {
-        return os.cpus()[0].model;
+        return os.cpus()[0].model.replace(/\s{2,}/gi, ' ');
     }
 
     public get uptime(): number {
@@ -145,7 +145,8 @@ export class Linux extends IRig {
 
     protected untgzBuffer(name: string, bin: Buffer): Promise<void> {
         return new Promise((resolve, reject) => {
-            debug(`buffer is ${Buffer.isBuffer(bin)}`);
+            debug(`Is buffer: ${Buffer.isBuffer(bin)}`);
+            debug(`Buffer length is: ${bin.length}`);
             // const readStream = fs.createReadStream(bin);
             const readStream = new Readable();
             readStream._read = () => {};

@@ -124,7 +124,8 @@ class Node {
         return __awaiter(this, void 0, void 0, function* () {
             if (this.switchFileWatcher) {
                 this.switchFileWatcher.close();
-                yield unlink(os.tmpdir() + path.sep + exports.SWITCH_FILE);
+                yield unlink(os.tmpdir() + path.sep + exports.SWITCH_FILE)
+                    .catch(debug);
                 debug('Switch file watch stopped');
             }
             yield this.miner.stop().catch(debug);

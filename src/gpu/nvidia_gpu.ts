@@ -12,9 +12,9 @@ import {IGPU} from "../../interfaces/i_gpu";
 
 const debug = require('debug')('miner:nvidia-gpu');
 
-const exec: any = util.promisify(execFile);
-const writeFile: any = util.promisify(fs.writeFile);
-const chmod: any = util.promisify(fs.chmod);
+const exec = util.promisify(execFile);
+const writeFile = util.promisify(fs.writeFile);
+const chmod = util.promisify(fs.chmod);
 
 export class NVidiaGPU extends IGPU {
     protected config: IGPUConfig;

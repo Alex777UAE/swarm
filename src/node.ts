@@ -18,8 +18,8 @@ import {ICoinConfig, ICoinList} from "../interfaces/i_coin";
 import * as path from "path";
 
 const debug = require('debug')('miner:node');
-const readFile: any = util.promisify(fs.readFile);
-const unlink: any = util.promisify(fs.unlink);
+const readFile = util.promisify(fs.readFile);
+const unlink = util.promisify(fs.unlink);
 
 const STATISTIC_LOOP_INTERVAL_MS = 60 * 1000; // once a minute
 
@@ -161,7 +161,8 @@ export class Node {
     private async abortSignalHandler(): Promise<void> {
         if (this.switchFileWatcher) {
             this.switchFileWatcher.close();
-            await unlink(os.tmpdir() + path.sep + SWITCH_FILE);
+            await unlink(os.tmpdir() + path.sep + SWITCH_FILE)
+                .catch(debug);
             debug('Switch file watch stopped');
         }
         await this.miner.stop().catch(debug);

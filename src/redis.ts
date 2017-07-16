@@ -12,7 +12,7 @@ import {IMinerConfig, IMinerList} from "../interfaces/i_miner";
 import {ICoinConfig, ICoinList} from "../interfaces/i_coin";
 
 const debug = require('debug')('miner:redis');
-const readFile: any = util.promisify(fs.readFile);
+const readFile = util.promisify(fs.readFile);
 
 const REDIS_PREFIX = 'miner:';
 

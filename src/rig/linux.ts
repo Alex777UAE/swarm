@@ -18,12 +18,12 @@ import {Readable} from "stream";
 
 const debug = require('debug')('miner:linux');
 
-const writeFile: any = util.promisify(fs.writeFile);
-const readFile: any = util.promisify(fs.readFile);
-const readdir: any = util.promisify(fs.readdir);
-const access: any = util.promisify(fs.access);
-const mkdir: any = util.promisify(fs.mkdir);
-const chmod: any = util.promisify(fs.chmod);
+const writeFile = util.promisify(fs.writeFile);
+const readFile = util.promisify(fs.readFile);
+const readdir = util.promisify(fs.readdir);
+const access = util.promisify(fs.access);
+const mkdir = util.promisify(fs.mkdir);
+const chmod = util.promisify(fs.chmod);
 
 const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
 const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';

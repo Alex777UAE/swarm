@@ -7,7 +7,7 @@ import * as util from 'util';
 import {execFile} from 'child_process';
 
 const debug = require('debug')('miner:nvidia-smi');
-const exec: any = util.promisify(execFile);
+const exec = util.promisify(execFile);
 
 
 export class NVidia {

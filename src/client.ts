@@ -12,8 +12,8 @@ import {Redis} from './redis';
 import {IStats} from './node';
 import {IMinerConfig} from "../interfaces/i_miner";
 
-const readFile: any = util.promisify(fs.readFile);
-const stat: any = util.promisify(fs.stat);
+const readFile = util.promisify(fs.readFile);
+const stat = util.promisify(fs.stat);
 
 const MINERS_DIR = __dirname + '/../miners/';
 

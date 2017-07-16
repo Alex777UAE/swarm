@@ -143,6 +143,7 @@ export class Node {
     }
 
     private async command(command: string, params: string): Promise<void> {
+        debug(`received command ${command} with params ${params}`);
         if (command === 'command.reboot') {
             await this.abortSignalHandler();
             await this.rig.reboot();

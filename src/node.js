@@ -109,6 +109,7 @@ class Node {
     }
     command(command, params) {
         return __awaiter(this, void 0, void 0, function* () {
+            debug(`received command ${command} with params ${params}`);
             if (command === 'command.reboot') {
                 yield this.abortSignalHandler();
                 yield this.rig.reboot();

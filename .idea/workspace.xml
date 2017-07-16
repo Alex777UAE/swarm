@@ -1,33 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="commands support">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/remote" />
+    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO" afterPath="$PROJECT_DIR$/TODO" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/coin" afterPath="$PROJECT_DIR$/bin/coin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/miner" afterPath="$PROJECT_DIR$/bin/miner" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/stats" afterPath="$PROJECT_DIR$/bin/stats" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/switch" afterPath="$PROJECT_DIR$/bin/switch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_db_layer.js.map" afterPath="$PROJECT_DIR$/interfaces/i_db_layer.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_db_layer.ts" afterPath="$PROJECT_DIR$/interfaces/i_db_layer.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_rig.js.map" afterPath="$PROJECT_DIR$/interfaces/i_rig.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_rig.ts" afterPath="$PROJECT_DIR$/interfaces/i_rig.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js" afterPath="$PROJECT_DIR$/src/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js.map" afterPath="$PROJECT_DIR$/src/client.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.ts" afterPath="$PROJECT_DIR$/src/client.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js" afterPath="$PROJECT_DIR$/src/node.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js.map" afterPath="$PROJECT_DIR$/src/node.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.ts" afterPath="$PROJECT_DIR$/src/node.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js" afterPath="$PROJECT_DIR$/src/redis.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js.map" afterPath="$PROJECT_DIR$/src/redis.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.ts" afterPath="$PROJECT_DIR$/src/redis.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js" afterPath="$PROJECT_DIR$/src/rig/linux.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js.map" afterPath="$PROJECT_DIR$/src/rig/linux.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.ts" afterPath="$PROJECT_DIR$/src/rig/linux.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -72,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="client.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="41" column="68" lean-forward="false" selection-start-line="41" selection-start-column="68" selection-end-line="41" selection-end-column="68" />
+            <state relative-caret-position="378">
+              <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
               <folding>
                 <element signature="e#21#58#0" expanded="true" />
                 <element signature="n#!!block;n#briefTable#0;n#Client#0" expanded="false" />
@@ -99,33 +77,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="node.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="148" column="40" lean-forward="false" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="40" />
+            <state relative-caret-position="223">
+              <caret line="145" column="67" lean-forward="false" selection-start-line="145" selection-start-column="67" selection-end-line="145" selection-end-column="67" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
                 <element signature="e#1851#3220#0" expanded="false" />
                 <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
-                <element signature="e#6636#7211#0" expanded="false" />
-                <element signature="e#7269#7435#0" expanded="false" />
-                <element signature="e#7521#7556#0" expanded="false" />
-                <element signature="e#8078#8229#0" expanded="false" />
-                <element signature="e#8266#8441#0" expanded="false" />
+                <element signature="e#6704#7279#0" expanded="false" />
+                <element signature="e#7337#7503#0" expanded="false" />
+                <element signature="e#7589#7624#0" expanded="false" />
+                <element signature="e#8146#8297#0" expanded="false" />
+                <element signature="e#8334#8509#0" expanded="false" />
                 <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
-                <element signature="e#8509#9099#0" expanded="false" />
-                <element signature="e#8683#9089#0" expanded="false" />
-                <element signature="e#8820#9075#0" expanded="false" />
-                <element signature="e#9112#9290#0" expanded="false" />
+                <element signature="e#8577#9167#0" expanded="false" />
+                <element signature="e#8751#9157#0" expanded="false" />
+                <element signature="e#8888#9143#0" expanded="false" />
+                <element signature="e#9180#9358#0" expanded="false" />
                 <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
-                <element signature="e#9488#9544#0" expanded="false" />
+                <element signature="e#9556#9612#0" expanded="false" />
                 <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-                <element signature="e#9789#9857#0" expanded="false" />
+                <element signature="e#9857#9925#0" expanded="false" />
                 <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
-                <element signature="e#11527#12450#0" expanded="false" />
-                <element signature="e#11748#12402#0" expanded="false" />
-                <element signature="e#12021#12357#0" expanded="false" />
+                <element signature="e#11595#12518#0" expanded="false" />
+                <element signature="e#11816#12470#0" expanded="false" />
+                <element signature="e#12089#12425#0" expanded="false" />
                 <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
               </folding>
             </state>
@@ -153,7 +131,7 @@
       <file leaf-file-name="redis.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/redis.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
+            <state relative-caret-position="492">
               <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
               <folding />
             </state>
@@ -261,7 +239,6 @@
         <option value="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
         <option value="$PROJECT_DIR$/interfaces/i_rig.ts" />
         <option value="$PROJECT_DIR$/src/rig/linux.ts" />
-        <option value="$PROJECT_DIR$/src/node.ts" />
         <option value="$PROJECT_DIR$/bin/coin" />
         <option value="$PROJECT_DIR$/bin/miner" />
         <option value="$PROJECT_DIR$/bin/stats" />
@@ -270,6 +247,7 @@
         <option value="$PROJECT_DIR$/bin/remote" />
         <option value="$PROJECT_DIR$/src/redis.ts" />
         <option value="$PROJECT_DIR$/src/client.ts" />
+        <option value="$PROJECT_DIR$/src/node.ts" />
       </list>
     </option>
   </component>
@@ -620,14 +598,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="90578000" />
-    </task>
-    <task id="LOCAL-00018" summary="lightdm restart fix #2&#10;check directory of miners #1">
-      <created>1500147091658</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1500147091658</updated>
+      <workItem from="1499812485546" duration="90970000" />
     </task>
     <task id="LOCAL-00019" summary="lightdm restart fix #2&#10;check directory of miners #2">
       <created>1500147159878</created>
@@ -965,11 +936,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500216918707</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="commands support">
+      <created>1500220892134</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1500220892134</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116822000" />
+    <option name="totallyTimeSpent" value="117214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1030,7 +1008,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="lightdm restart fix #2&#10;check directory of miners #1" />
     <MESSAGE value="lightdm restart fix #2&#10;check directory of miners #2" />
     <MESSAGE value="check directory of miners #3" />
     <MESSAGE value="check directory of miners #4" />
@@ -1055,7 +1032,8 @@
     <MESSAGE value="standalone mode, coin switch" />
     <MESSAGE value="standalone mode, coin switch fix #1" />
     <MESSAGE value="stats for single hostname" />
-    <option name="LAST_COMMIT_MESSAGE" value="stats for single hostname" />
+    <MESSAGE value="commands support" />
+    <option name="LAST_COMMIT_MESSAGE" value="commands support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1390,37 +1368,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/node.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="148" column="40" lean-forward="false" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="40" />
-          <folding>
-            <element signature="e#40#77#0" expanded="true" />
-            <element signature="e#1851#3220#0" expanded="false" />
-            <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
-            <element signature="e#6636#7211#0" expanded="false" />
-            <element signature="e#7269#7435#0" expanded="false" />
-            <element signature="e#7521#7556#0" expanded="false" />
-            <element signature="e#8078#8229#0" expanded="false" />
-            <element signature="e#8266#8441#0" expanded="false" />
-            <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
-            <element signature="e#8509#9099#0" expanded="false" />
-            <element signature="e#8683#9089#0" expanded="false" />
-            <element signature="e#8820#9075#0" expanded="false" />
-            <element signature="e#9112#9290#0" expanded="false" />
-            <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
-            <element signature="e#9488#9544#0" expanded="false" />
-            <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-            <element signature="e#9789#9857#0" expanded="false" />
-            <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
-            <element signature="e#11527#12450#0" expanded="false" />
-            <element signature="e#11748#12402#0" expanded="false" />
-            <element signature="e#12021#12357#0" expanded="false" />
-            <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/coin">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1">
@@ -1485,9 +1432,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+          <folding>
+            <element signature="e#21#58#0" expanded="true" />
+            <element signature="n#!!block;n#briefTable#0;n#Client#0" expanded="false" />
+            <element signature="n#!!block;n#fullTable#0;n#Client#0" expanded="false" />
+            <element signature="n#!!block;n#removeDeadNode#0;n#Client#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/redis.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
+        <state relative-caret-position="492">
           <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
           <folding />
         </state>
@@ -1509,15 +1469,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client.ts">
+    <entry file="file://$PROJECT_DIR$/src/node.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="41" column="68" lean-forward="false" selection-start-line="41" selection-start-column="68" selection-end-line="41" selection-end-column="68" />
+        <state relative-caret-position="223">
+          <caret line="145" column="67" lean-forward="false" selection-start-line="145" selection-start-column="67" selection-end-line="145" selection-end-column="67" />
           <folding>
-            <element signature="e#21#58#0" expanded="true" />
-            <element signature="n#!!block;n#briefTable#0;n#Client#0" expanded="false" />
-            <element signature="n#!!block;n#fullTable#0;n#Client#0" expanded="false" />
-            <element signature="n#!!block;n#removeDeadNode#0;n#Client#0" expanded="false" />
+            <element signature="e#40#77#0" expanded="true" />
+            <element signature="e#1851#3220#0" expanded="false" />
+            <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
+            <element signature="e#6704#7279#0" expanded="false" />
+            <element signature="e#7337#7503#0" expanded="false" />
+            <element signature="e#7589#7624#0" expanded="false" />
+            <element signature="e#8146#8297#0" expanded="false" />
+            <element signature="e#8334#8509#0" expanded="false" />
+            <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
+            <element signature="e#8577#9167#0" expanded="false" />
+            <element signature="e#8751#9157#0" expanded="false" />
+            <element signature="e#8888#9143#0" expanded="false" />
+            <element signature="e#9180#9358#0" expanded="false" />
+            <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
+            <element signature="e#9556#9612#0" expanded="false" />
+            <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
+            <element signature="e#9857#9925#0" expanded="false" />
+            <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
+            <element signature="e#11595#12518#0" expanded="false" />
+            <element signature="e#11816#12470#0" expanded="false" />
+            <element signature="e#12089#12425#0" expanded="false" />
+            <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
           </folding>
         </state>
       </provider>

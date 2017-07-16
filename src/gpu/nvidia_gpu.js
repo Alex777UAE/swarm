@@ -14,13 +14,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("source-map-support/register");
 const fs = require("fs");
 const touch = require("touch");
-const Bluebird = require("bluebird");
+const util = require("util");
 const child_process_1 = require("child_process");
 const i_gpu_1 = require("../../interfaces/i_gpu");
 const debug = require('debug')('miner:nvidia-gpu');
-const exec = Bluebird.promisify(child_process_1.execFile);
-const writeFile = Bluebird.promisify(fs.writeFile);
-const chmod = Bluebird.promisify(fs.chmod);
+const exec = util.promisify(child_process_1.execFile);
+const writeFile = util.promisify(fs.writeFile);
+const chmod = util.promisify(fs.chmod);
 class NVidiaGPU extends i_gpu_1.IGPU {
     constructor(nvidiaSMIPath, nvidiaSettingsPath) {
         super();

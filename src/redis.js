@@ -13,12 +13,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 require("source-map-support/register");
 const fs = require("fs");
+const util = require("util");
 const crypto = require("crypto");
 const IORedis = require("ioredis");
-const Bluebird = require("bluebird");
 const i_db_layer_1 = require("../interfaces/i_db_layer");
 const debug = require('debug')('miner:redis');
-const readFile = Bluebird.promisify(fs.readFile);
+const readFile = util.promisify(fs.readFile);
 const REDIS_PREFIX = 'miner:';
 class Redis extends i_db_layer_1.IDBLayer {
     constructor(options) {

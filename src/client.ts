@@ -7,13 +7,13 @@ import * as TarGz from 'tar.gz';
 import * as Table from 'cli-table2';
 import * as colors from 'colors';
 import * as moment from 'moment';
-import * as Bluebird from 'bluebird';
+import * as util from 'util';
 import {Redis} from './redis';
 import {IStats} from './node';
 import {IMinerConfig} from "../interfaces/i_miner";
 
-const readFile: any = Bluebird.promisify(fs.readFile);
-const stat: any = Bluebird.promisify(fs.stat);
+const readFile: any = util.promisify(fs.readFile);
+const stat: any = util.promisify(fs.stat);
 
 const MINERS_DIR = __dirname + '/../miners/';
 

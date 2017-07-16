@@ -1,5 +1,7 @@
 
 - standalone mode
+- simplify coin->miner config
+
 - list available coins
 - delete coin
 - list miners

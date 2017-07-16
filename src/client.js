@@ -16,10 +16,10 @@ const TarGz = require("tar.gz");
 const Table = require("cli-table2");
 const colors = require("colors");
 const moment = require("moment");
-const Bluebird = require("bluebird");
+const util = require("util");
 const redis_1 = require("./redis");
-const readFile = Bluebird.promisify(fs.readFile);
-const stat = Bluebird.promisify(fs.stat);
+const readFile = util.promisify(fs.readFile);
+const stat = util.promisify(fs.stat);
 const MINERS_DIR = __dirname + '/../miners/';
 class Client {
     constructor() {

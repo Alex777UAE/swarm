@@ -5,16 +5,16 @@
 import 'source-map-support/register';
 import * as fs from 'fs';
 import * as touch from 'touch';
-import * as Bluebird from 'bluebird';
+import * as util from 'util';
 import {execFile} from 'child_process';
 import {GPUModel, IGPUConfig, IGPUStats} from "../../interfaces/i_gpu";
 import {IGPU} from "../../interfaces/i_gpu";
 
 const debug = require('debug')('miner:nvidia-gpu');
 
-const exec: any = Bluebird.promisify(execFile);
-const writeFile: any = Bluebird.promisify(fs.writeFile);
-const chmod: any = Bluebird.promisify(fs.chmod);
+const exec: any = util.promisify(execFile);
+const writeFile: any = util.promisify(fs.writeFile);
+const chmod: any = util.promisify(fs.chmod);
 
 export class NVidiaGPU extends IGPU {
     protected config: IGPUConfig;

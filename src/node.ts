@@ -5,8 +5,8 @@ import 'source-map-support/register';
 import * as fs from 'fs';
 import * as os from 'os';
 import * as _ from 'lodash';
+import * as util from 'util';
 import * as touch from 'touch';
-import * as Bluebird from 'bluebird';
 import {IDBLayer} from "../interfaces/i_db_layer";
 import {Redis} from "./redis";
 import {Linux} from "./rig/linux";
@@ -18,8 +18,8 @@ import {ICoinConfig, ICoinList} from "../interfaces/i_coin";
 import * as path from "path";
 
 const debug = require('debug')('miner:node');
-const readFile: any = Bluebird.promisify(fs.readFile);
-const unlink: any = Bluebird.promisify(fs.unlink);
+const readFile: any = util.promisify(fs.readFile);
+const unlink: any = util.promisify(fs.unlink);
 
 const STATISTIC_LOOP_INTERVAL_MS = 60 * 1000; // once a minute
 

@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 const minimist = require('minimist');
-const Client = require('../src/client').Client;
-
 const argv = minimist(process.argv.slice(2));
 
 if (argv.h) {
@@ -10,8 +8,8 @@ if (argv.h) {
     process.exit(0);
 }
 
+const Client = require('../src/client').Client;
 const client = new Client();
-
 let promise;
 
 if (!argv.r) {

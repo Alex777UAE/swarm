@@ -15,15 +15,15 @@ require("source-map-support/register");
 const fs = require("fs");
 const os = require("os");
 const _ = require("lodash");
+const util = require("util");
 const touch = require("touch");
-const Bluebird = require("bluebird");
 const redis_1 = require("./redis");
 const linux_1 = require("./rig/linux");
 const timers_1 = require("timers");
 const path = require("path");
 const debug = require('debug')('miner:node');
-const readFile = Bluebird.promisify(fs.readFile);
-const unlink = Bluebird.promisify(fs.unlink);
+const readFile = util.promisify(fs.readFile);
+const unlink = util.promisify(fs.unlink);
 const STATISTIC_LOOP_INTERVAL_MS = 60 * 1000; // once a minute
 exports.SWITCH_FILE = 'switchCoin';
 class Node {

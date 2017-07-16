@@ -12,10 +12,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 require("source-map-support/register");
-const Bluebird = require("bluebird");
+const util = require("util");
 const child_process_1 = require("child_process");
 const debug = require('debug')('miner:nvidia-smi');
-const exec = Bluebird.promisify(child_process_1.execFile);
+const exec = util.promisify(child_process_1.execFile);
 class NVidia {
     constructor(nvidiaSMIPath) {
         this.nvidiaSMIPath = nvidiaSMIPath;

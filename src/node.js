@@ -74,6 +74,7 @@ class Node {
     main() {
         return __awaiter(this, void 0, void 0, function* () {
             const appConf = yield Node.readConfig();
+            const swarm = appConf.mode === 'swarm';
             let coinName = appConf.defaultCoin;
             // todo multi-OS, multi-GPU support
             this.rig = new linux_1.Linux(appConf['nvidia-smi'], appConf['nvidia-settings']);
@@ -81,7 +82,7 @@ class Node {
             this.GPUs = yield this.rig.getGPUs();
             this.coins = yield this.rig.loadCoins();
             this.miners = yield this.rig.loadMiners();
-            if (appConf.mode === 'swarm') {
+            if (swarm) {
                 this.db = new redis_1.Redis({
                     host: appConf.redis.host,
                     port: appConf.redis.port,
@@ -100,7 +101,8 @@ class Node {
             }
             yield this.setCurrentCoin(coinName);
             // setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
-            yield this.statisticLoop();
+            if (swarm)
+                yield this.statisticLoop();
             this.setSignalHandlers();
         });
     }

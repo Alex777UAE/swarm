@@ -3,19 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js.map" afterPath="$PROJECT_DIR$/src/client.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.ts" afterPath="$PROJECT_DIR$/src/client.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO" afterPath="$PROJECT_DIR$/TODO" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js" afterPath="$PROJECT_DIR$/src/node.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js.map" afterPath="$PROJECT_DIR$/src/node.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.ts" afterPath="$PROJECT_DIR$/src/node.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nvidia.js.map" afterPath="$PROJECT_DIR$/src/nvidia.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/nvidia.ts" afterPath="$PROJECT_DIR$/src/nvidia.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js.map" afterPath="$PROJECT_DIR$/src/redis.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.ts" afterPath="$PROJECT_DIR$/src/redis.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js.map" afterPath="$PROJECT_DIR$/src/rig/linux.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.ts" afterPath="$PROJECT_DIR$/src/rig/linux.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,8 +24,8 @@
       <file leaf-file-name="TODO" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TODO">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state relative-caret-position="60">
+              <caret line="4" column="29" lean-forward="false" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -65,36 +56,34 @@
       <file leaf-file-name="node.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="164" column="28" lean-forward="false" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="28" />
+            <state relative-caret-position="555">
+              <caret line="140" column="17" lean-forward="false" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
                 <element signature="e#1841#3210#0" expanded="false" />
-                <element signature="e#3720#4048#0" expanded="false" />
+                <element signature="e#3749#4077#0" expanded="false" />
                 <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
-                <element signature="n#!!block;n#statisticLoop#0;n#Node#0" expanded="false" />
-                <element signature="e#6029#6994#0" expanded="false" />
-                <element signature="e#6122#6697#0" expanded="false" />
-                <element signature="e#6755#6921#0" expanded="false" />
-                <element signature="e#7007#7042#0" expanded="false" />
+                <element signature="e#6162#6737#0" expanded="false" />
+                <element signature="e#6795#6961#0" expanded="false" />
+                <element signature="e#7047#7082#0" expanded="false" />
                 <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
-                <element signature="e#7263#7739#0" expanded="false" />
-                <element signature="e#7432#7729#0" expanded="false" />
-                <element signature="e#7564#7715#0" expanded="false" />
-                <element signature="e#7752#7927#0" expanded="false" />
+                <element signature="e#7303#7779#0" expanded="false" />
+                <element signature="e#7472#7769#0" expanded="false" />
+                <element signature="e#7604#7755#0" expanded="false" />
+                <element signature="e#7792#7967#0" expanded="false" />
                 <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
-                <element signature="e#7995#8585#0" expanded="false" />
-                <element signature="e#8169#8575#0" expanded="false" />
-                <element signature="e#8306#8561#0" expanded="false" />
-                <element signature="e#8598#8776#0" expanded="false" />
+                <element signature="e#8035#8625#0" expanded="false" />
+                <element signature="e#8209#8615#0" expanded="false" />
+                <element signature="e#8346#8601#0" expanded="false" />
+                <element signature="e#8638#8816#0" expanded="false" />
                 <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
-                <element signature="e#8974#9030#0" expanded="false" />
+                <element signature="e#9014#9070#0" expanded="false" />
                 <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-                <element signature="e#9275#9343#0" expanded="false" />
+                <element signature="e#9315#9383#0" expanded="false" />
                 <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
-                <element signature="e#11013#11936#0" expanded="false" />
-                <element signature="e#11234#11888#0" expanded="false" />
-                <element signature="e#11507#11843#0" expanded="false" />
+                <element signature="e#11053#11976#0" expanded="false" />
+                <element signature="e#11274#11928#0" expanded="false" />
+                <element signature="e#11547#11883#0" expanded="false" />
                 <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
               </folding>
             </state>
@@ -194,12 +183,12 @@
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/src/wrappers/ewbf.ts" />
         <option value="$PROJECT_DIR$/bin/stats" />
-        <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/src/rig/linux.ts" />
         <option value="$PROJECT_DIR$/src/client.ts" />
         <option value="$PROJECT_DIR$/src/nvidia.ts" />
         <option value="$PROJECT_DIR$/src/redis.ts" />
         <option value="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
+        <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/src/node.ts" />
       </list>
     </option>
@@ -551,14 +540,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="85664000" />
-    </task>
-    <task id="LOCAL-00013" summary="miner path fix">
-      <created>1500137391102</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1500137391102</updated>
+      <workItem from="1499812485546" duration="85909000" />
     </task>
     <task id="LOCAL-00014" summary="miner path fix">
       <created>1500137505909</created>
@@ -896,11 +878,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500215106166</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="node 8 -&gt; 6 backward compatibility, reverted #1">
+      <created>1500215262917</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1500215262917</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111908000" />
+    <option name="totallyTimeSpent" value="112153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -911,7 +900,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -961,7 +950,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updateMiner fix" />
     <MESSAGE value="miner path fix" />
     <MESSAGE value="lightdm restart fix" />
     <MESSAGE value="lightdm restart fix #1" />
@@ -986,7 +974,8 @@
     <MESSAGE value="node 8 -&gt; 6 backward compatibility &#10;standalone mode tets" />
     <MESSAGE value="node 8 -&gt; 6 backward compatibility &#10;standalone mode tets&#10;&#10;ewbf default acceptedPercent fix" />
     <MESSAGE value="node 8 -&gt; 6 backward compatibility, reverted&#10;standalone mode tets&#10;&#10;ewbf default acceptedPercent fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="node 8 -&gt; 6 backward compatibility, reverted&#10;standalone mode tets&#10;&#10;ewbf default acceptedPercent fix" />
+    <MESSAGE value="node 8 -&gt; 6 backward compatibility, reverted #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="node 8 -&gt; 6 backward compatibility, reverted #1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1361,14 +1350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TODO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nvidia.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -1423,38 +1404,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="29" lean-forward="false" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/node.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="164" column="28" lean-forward="false" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="28" />
+        <state relative-caret-position="555">
+          <caret line="140" column="17" lean-forward="false" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
           <folding>
             <element signature="e#40#77#0" expanded="true" />
             <element signature="e#1841#3210#0" expanded="false" />
-            <element signature="e#3720#4048#0" expanded="false" />
+            <element signature="e#3749#4077#0" expanded="false" />
             <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#statisticLoop#0;n#Node#0" expanded="false" />
-            <element signature="e#6029#6994#0" expanded="false" />
-            <element signature="e#6122#6697#0" expanded="false" />
-            <element signature="e#6755#6921#0" expanded="false" />
-            <element signature="e#7007#7042#0" expanded="false" />
+            <element signature="e#6162#6737#0" expanded="false" />
+            <element signature="e#6795#6961#0" expanded="false" />
+            <element signature="e#7047#7082#0" expanded="false" />
             <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
-            <element signature="e#7263#7739#0" expanded="false" />
-            <element signature="e#7432#7729#0" expanded="false" />
-            <element signature="e#7564#7715#0" expanded="false" />
-            <element signature="e#7752#7927#0" expanded="false" />
+            <element signature="e#7303#7779#0" expanded="false" />
+            <element signature="e#7472#7769#0" expanded="false" />
+            <element signature="e#7604#7755#0" expanded="false" />
+            <element signature="e#7792#7967#0" expanded="false" />
             <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
-            <element signature="e#7995#8585#0" expanded="false" />
-            <element signature="e#8169#8575#0" expanded="false" />
-            <element signature="e#8306#8561#0" expanded="false" />
-            <element signature="e#8598#8776#0" expanded="false" />
+            <element signature="e#8035#8625#0" expanded="false" />
+            <element signature="e#8209#8615#0" expanded="false" />
+            <element signature="e#8346#8601#0" expanded="false" />
+            <element signature="e#8638#8816#0" expanded="false" />
             <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
-            <element signature="e#8974#9030#0" expanded="false" />
+            <element signature="e#9014#9070#0" expanded="false" />
             <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-            <element signature="e#9275#9343#0" expanded="false" />
+            <element signature="e#9315#9383#0" expanded="false" />
             <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
-            <element signature="e#11013#11936#0" expanded="false" />
-            <element signature="e#11234#11888#0" expanded="false" />
-            <element signature="e#11507#11843#0" expanded="false" />
+            <element signature="e#11053#11976#0" expanded="false" />
+            <element signature="e#11274#11928#0" expanded="false" />
+            <element signature="e#11547#11883#0" expanded="false" />
             <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
           </folding>
         </state>

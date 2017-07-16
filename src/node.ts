@@ -109,6 +109,7 @@ export class Node {
      */
     public async main(): Promise<void> {
         const appConf = await Node.readConfig();
+        const swarm = appConf.mode === 'swarm';
         let coinName = appConf.defaultCoin;
         // todo multi-OS, multi-GPU support
         this.rig = new Linux(appConf['nvidia-smi'], appConf['nvidia-settings']);
@@ -117,7 +118,7 @@ export class Node {
         this.coins = await this.rig.loadCoins();
         this.miners = await this.rig.loadMiners();
 
-        if (appConf.mode === 'swarm') {
+        if (swarm) {
             this.db = new Redis({
                 host: appConf.redis.host,
                 port: appConf.redis.port,
@@ -137,7 +138,7 @@ export class Node {
         await this.setCurrentCoin(coinName);
 
         // setInterval(this.statisticLoop.bind(this), STATISTIC_LOOP_INTERVAL_MS);
-        await this.statisticLoop();
+        if (swarm) await this.statisticLoop();
         this.setSignalHandlers();
     }
 

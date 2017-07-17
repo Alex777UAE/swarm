@@ -11,6 +11,8 @@ const debug = require('debug')('miner:ETHMiner');
 
 const REG_EXP = /Mining\s+on\s+Powhash.*?:\s+(\d+\.?\d*)(((kh)|(th)|(gh)|(mh))\/s)\s+\[A(\d+).*R(\d+).*F(\d+)]/gi;
 
+const hrsDumb = new Array(16).fill(-1);
+
 export default //noinspection JSUnusedGlobalSymbols
 class ETHMiner extends StdOutMinerWrapper {
     constructor(name: string, executable: string) {
@@ -20,6 +22,10 @@ class ETHMiner extends StdOutMinerWrapper {
     //noinspection JSMethodCanBeStatic
     public get type(): MinerType {
         return 'ethminer';
+    }
+
+    public get hashrates(): number[] {
+        return hrsDumb;
     }
 
     //noinspection JSUnusedGlobalSymbols

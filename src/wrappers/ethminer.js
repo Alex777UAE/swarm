@@ -17,6 +17,7 @@ const stdout_miner_wrapper_1 = require("./stdout_miner_wrapper");
 const util = require('util');
 const debug = require('debug')('miner:ETHMiner');
 const REG_EXP = /Mining\s+on\s+Powhash.*?:\s+(\d+\.?\d*)(((kh)|(th)|(gh)|(mh))\/s)\s+\[A(\d+).*R(\d+).*F(\d+)]/gi;
+const hrsDumb = new Array(16).fill(-1);
 class ETHMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
     constructor(name, executable) {
         super(name, executable);
@@ -24,6 +25,9 @@ class ETHMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
     //noinspection JSMethodCanBeStatic
     get type() {
         return 'ethminer';
+    }
+    get hashrates() {
+        return hrsDumb;
     }
     //noinspection JSUnusedGlobalSymbols
     start(coin) {

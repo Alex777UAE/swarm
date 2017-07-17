@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab" afterPath="$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/gpus/gtx1070" afterPath="$PROJECT_DIR$/data/gpus/gtx1070" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js.map" afterPath="$PROJECT_DIR$/src/redis.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.ts" afterPath="$PROJECT_DIR$/src/redis.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ethminer.js" afterPath="$PROJECT_DIR$/src/wrappers/ethminer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ethminer.js.map" afterPath="$PROJECT_DIR$/src/wrappers/ethminer.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ethminer.ts" afterPath="$PROJECT_DIR$/src/wrappers/ethminer.ts" />
@@ -115,12 +111,34 @@
       <file leaf-file-name="ethminer.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/wrappers/ethminer.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="32" column="67" lean-forward="false" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
+            <state relative-caret-position="388">
+              <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#40#77#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ewbf.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/wrappers/ewbf.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-723">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stdout_miner_wrapper.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,30 +169,6 @@
             <state relative-caret-position="255">
               <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ccminer.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/wrappers/ccminer.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="11" column="91" lean-forward="false" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nvidia.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/nvidia.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-179">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -599,14 +593,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="126917000" />
-    </task>
-    <task id="LOCAL-00049" summary="ccminer">
-      <created>1500158879258</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1500158879258</updated>
+      <workItem from="1499812485546" duration="127359000" />
     </task>
     <task id="LOCAL-00050" summary="ccminer">
       <created>1500159426524</created>
@@ -944,11 +931,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500333176051</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="ver 0.0.4&#10;&#10;fix for coin current coin update skip if it's already the same&#10;ethminer params fix&#10;ethminer colors fix #2">
+      <created>1500333860804</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1500333860804</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153161000" />
+    <option name="totallyTimeSpent" value="153603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1009,7 +1003,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="node 8 -&gt; 6 backward compatibility, reverted #1" />
     <MESSAGE value="standalone mode fix" />
     <MESSAGE value="standalone mode, coin switch" />
     <MESSAGE value="standalone mode, coin switch fix #1" />
@@ -1034,7 +1027,8 @@
     <MESSAGE value="ver 0.0.4&#10;&#10;sp-mod + groestl mem clock template" />
     <MESSAGE value="ver 0.0.4&#10;&#10;fix for coin current coin update skip if it's already the same&#10;ethminer params fix" />
     <MESSAGE value="ver 0.0.4&#10;&#10;fix for coin current coin update skip if it's already the same&#10;ethminer params fix&#10;ethminer colors fix #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.4&#10;&#10;fix for coin current coin update skip if it's already the same&#10;ethminer params fix&#10;ethminer colors fix #1" />
+    <MESSAGE value="ver 0.0.4&#10;&#10;fix for coin current coin update skip if it's already the same&#10;ethminer params fix&#10;ethminer colors fix #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.4&#10;&#10;fix for coin current coin update skip if it's already the same&#10;ethminer params fix&#10;ethminer colors fix #2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1043,14 +1037,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/coins/dgb-groestl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/coins/dgb-skein">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1406,17 +1392,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#40#77#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/colors/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1512,10 +1487,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/wrappers/ewbf.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-723">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wrappers/stdout_miner_wrapper.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/wrappers/ethminer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="32" column="67" lean-forward="false" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
+        <state relative-caret-position="388">
+          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#40#77#0" expanded="true" />

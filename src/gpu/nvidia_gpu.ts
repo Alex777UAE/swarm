@@ -98,10 +98,10 @@ export class NVidiaGPU extends IGPU {
         const cleanScript = `#!/bin/bash\nrm -f ${lockFile}`;
         debug(`writing script text to a file: ${overclockScriptPath}:\n${overClockScript}`);
         await writeFile(overclockScriptPath, overClockScript);
-        await chmod(overclockScriptPath, 755);
+        await chmod(overclockScriptPath, 0o755);
         debug(`writing script text to a file: ${cleanScriptPath}:\n${cleanScript}`);
         await writeFile(cleanScriptPath, cleanScript);
-        await chmod(cleanScriptPath, 755);
+        await chmod(cleanScriptPath, 0o755);
         debug(`locking with ${lockFile}`);
         await touch(lockFile);
         const locked = new Promise((resolve, reject) => {

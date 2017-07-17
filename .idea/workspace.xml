@@ -4,6 +4,10 @@
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/setup" afterPath="$PROJECT_DIR$/bin/setup" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.ts" afterPath="$PROJECT_DIR$/src/rig/linux.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,8 +38,8 @@
       <file leaf-file-name="setup" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/setup">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="67" column="40" lean-forward="false" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
+            <state relative-caret-position="529">
+              <caret line="71" column="3" lean-forward="true" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -146,8 +150,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>: any =</find>
-      <find>: any = ut</find>
       <find>: any = uti</find>
       <find>: any = util</find>
       <find>this.coins[name]</find>
@@ -176,6 +178,8 @@
       <find>path</find>
       <find>path.b</find>
       <find>path.</find>
+      <find>ch</find>
+      <find>chmod</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -554,14 +558,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="118638000" />
-    </task>
-    <task id="LOCAL-00032" summary="targz #2">
-      <created>1500152718479</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1500152718479</updated>
+      <workItem from="1499812485546" duration="118791000" />
     </task>
     <task id="LOCAL-00033" summary="targz #2">
       <created>1500152895200</created>
@@ -899,11 +896,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500302622376</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="ver 0.0.2 &#10;&#10;#3">
+      <created>1500302920351</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1500302920352</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144882000" />
+    <option name="totallyTimeSpent" value="145035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -964,7 +968,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wrappers fix &amp; debug &amp; stats" />
     <MESSAGE value="ccminer" />
     <MESSAGE value="stats" />
     <MESSAGE value="stats &amp; signal handlers" />
@@ -989,7 +992,8 @@
     <MESSAGE value="ver 0.0.2" />
     <MESSAGE value="ver 0.0.2 &#10;&#10;#1" />
     <MESSAGE value="ver 0.0.2 &#10;&#10;#2" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.2 &#10;&#10;#2" />
+    <MESSAGE value="ver 0.0.2 &#10;&#10;#3" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.2 &#10;&#10;#3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1010,15 +1014,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="156" column="30" lean-forward="false" selection-start-line="156" selection-start-column="30" selection-end-line="156" selection-end-column="30" />
-          <folding>
-            <element signature="e#41#78#0" expanded="true" />
-            <element signature="n#!!block;n#os#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#hostname#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#uptime#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#getGPUs#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#getLoad#0;n#Linux#0" expanded="false" />
-            <element signature="n#!!block;n#toJson#0;n#Linux#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1291,9 +1287,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
           <caret line="107" column="23" lean-forward="false" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
-          <folding>
-            <element signature="e#41#78#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1488,8 +1482,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/setup">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="67" column="40" lean-forward="false" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
+        <state relative-caret-position="529">
+          <caret line="71" column="3" lean-forward="true" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="3" />
           <folding />
         </state>
       </provider>

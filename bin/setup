@@ -65,7 +65,7 @@ sed -i '/Driver/a Option "Interactive" "False"' /etc/X11/xorg.conf
 
 exit 0`;
         yield writeFile('/etc/rc.local', lines, 'utf8');
-        yield chmod('/etc/rc.local', 755)
+        yield chmod('/etc/rc.local', 0o755)
     } else {
         console.log('Yes, do nothing');
     }

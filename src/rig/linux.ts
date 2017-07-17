@@ -132,7 +132,7 @@ export class Linux extends IRig {
         if (config.fileType === 'binary') {
             if (!(await this.checkDir(MINERS_PATH + name))) await mkdir(MINERS_PATH + name);
             await writeFile(MINERS_PATH + name + path.sep + config.executable, bin);
-            await chmod(MINERS_PATH + name + path.sep + config.executable, 755);
+            await chmod(MINERS_PATH + name + path.sep + config.executable, 0o755);
         } else if (config.fileType === 'tgz') {
             await this.untgzBuffer(name, bin);
         }

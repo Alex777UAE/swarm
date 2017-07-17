@@ -98,10 +98,10 @@ class NVidiaGPU extends i_gpu_1.IGPU {
             const cleanScript = `#!/bin/bash\nrm -f ${lockFile}`;
             debug(`writing script text to a file: ${overclockScriptPath}:\n${overClockScript}`);
             yield writeFile(overclockScriptPath, overClockScript);
-            yield chmod(overclockScriptPath, 755);
+            yield chmod(overclockScriptPath, 0o755);
             debug(`writing script text to a file: ${cleanScriptPath}:\n${cleanScript}`);
             yield writeFile(cleanScriptPath, cleanScript);
-            yield chmod(cleanScriptPath, 755);
+            yield chmod(cleanScriptPath, 0o755);
             debug(`locking with ${lockFile}`);
             yield touch(lockFile);
             const locked = new Promise((resolve, reject) => {

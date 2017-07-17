@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO" afterPath="$PROJECT_DIR$/TODO" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/setup" afterPath="$PROJECT_DIR$/bin/setup" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,8 +25,8 @@
       <file leaf-file-name="TODO" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TODO">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="22" selection-end-column="19" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -34,18 +35,8 @@
       <file leaf-file-name="setup" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/setup">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="2846" column="20" lean-forward="false" selection-start-line="2846" selection-start-column="20" selection-end-line="2846" selection-end-column="20" />
+            <state relative-caret-position="233">
+              <caret line="47" column="41" lean-forward="false" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -87,7 +78,7 @@
       <file leaf-file-name="node.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-273">
+            <state relative-caret-position="652">
               <caret line="320" column="30" lean-forward="false" selection-start-line="320" selection-start-column="30" selection-end-line="320" selection-end-column="30" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
@@ -120,16 +111,6 @@
                 <element signature="e#10256#10324#0" expanded="false" />
                 <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -245,7 +226,6 @@
         <option value="$PROJECT_DIR$/data/coins/xmr" />
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/scripts/clean.sh" />
-        <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/bin/rig-remote" />
         <option value="$PROJECT_DIR$/bin/set-coin" />
         <option value="$PROJECT_DIR$/bin/set-gpu" />
@@ -254,6 +234,7 @@
         <option value="$PROJECT_DIR$/bin/coin-set" />
         <option value="$PROJECT_DIR$/bin/gpu-set" />
         <option value="$PROJECT_DIR$/bin/setup.js" />
+        <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/bin/setup" />
       </list>
     </option>
@@ -574,14 +555,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="117946000" />
-    </task>
-    <task id="LOCAL-00030" summary="targz #1">
-      <created>1500152030297</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1500152030297</updated>
+      <workItem from="1499812485546" duration="118454000" />
     </task>
     <task id="LOCAL-00031" summary="targz #2">
       <created>1500152389781</created>
@@ -919,11 +893,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500299871637</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="ver 0.0.2 &#10;&#10;#1">
+      <created>1500301610779</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1500301610780</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144190000" />
+    <option name="totallyTimeSpent" value="144698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -984,7 +965,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wrappers update" />
     <MESSAGE value="wrappers fix &amp; debug" />
     <MESSAGE value="wrappers fix &amp; debug &amp; stats" />
     <MESSAGE value="ccminer" />
@@ -1009,7 +989,8 @@
     <MESSAGE value="commands support #5&#10;restart experiment for ewbf #2" />
     <MESSAGE value="commands support #5&#10;restart experiment for ewbf #3" />
     <MESSAGE value="ver 0.0.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.2" />
+    <MESSAGE value="ver 0.0.2 &#10;&#10;#1" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.2 &#10;&#10;#1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1291,44 +1272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/node.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-273">
-          <caret line="320" column="30" lean-forward="false" selection-start-line="320" selection-start-column="30" selection-end-line="320" selection-end-column="30" />
-          <folding>
-            <element signature="e#40#77#0" expanded="true" />
-            <element signature="e#1930#3299#0" expanded="false" />
-            <element signature="n#!!block;n#command#0;n#Node#0" expanded="false" />
-            <element signature="e#4994#5087#0" expanded="false" />
-            <element signature="e#5128#5242#0" expanded="false" />
-            <element signature="n#!!block;n#watchSwitchFile#0;n#Node#0" expanded="false" />
-            <element signature="e#5422#5913#0" expanded="false" />
-            <element signature="e#5460#5903#0" expanded="false" />
-            <element signature="e#5531#5887#0" expanded="false" />
-            <element signature="e#5561#5680#0" expanded="false" />
-            <element signature="n#!!block;n#abortSignalHandler#0;n#Node#0" expanded="false" />
-            <element signature="e#6015#6212#0" expanded="false" />
-            <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#statisticLoop#0;n#Node#0" expanded="false" />
-            <element signature="e#6805#7770#0" expanded="false" />
-            <element signature="e#6898#7473#0" expanded="false" />
-            <element signature="e#7531#7697#0" expanded="false" />
-            <element signature="e#7783#7818#0" expanded="false" />
-            <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
-            <element signature="e#8039#8515#0" expanded="false" />
-            <element signature="e#8208#8505#0" expanded="false" />
-            <element signature="e#8340#8491#0" expanded="false" />
-            <element signature="e#8528#8703#0" expanded="false" />
-            <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
-            <element signature="e#8945#9351#0" expanded="false" />
-            <element signature="e#9082#9337#0" expanded="false" />
-            <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-            <element signature="e#10256#10324#0" expanded="false" />
-            <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/overclock.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1341,14 +1284,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1490,6 +1425,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/node.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="320" column="30" lean-forward="false" selection-start-line="320" selection-start-column="30" selection-end-line="320" selection-end-column="30" />
+          <folding>
+            <element signature="e#40#77#0" expanded="true" />
+            <element signature="e#1930#3299#0" expanded="false" />
+            <element signature="n#!!block;n#command#0;n#Node#0" expanded="false" />
+            <element signature="e#4994#5087#0" expanded="false" />
+            <element signature="e#5128#5242#0" expanded="false" />
+            <element signature="n#!!block;n#watchSwitchFile#0;n#Node#0" expanded="false" />
+            <element signature="e#5422#5913#0" expanded="false" />
+            <element signature="e#5460#5903#0" expanded="false" />
+            <element signature="e#5531#5887#0" expanded="false" />
+            <element signature="e#5561#5680#0" expanded="false" />
+            <element signature="n#!!block;n#abortSignalHandler#0;n#Node#0" expanded="false" />
+            <element signature="e#6015#6212#0" expanded="false" />
+            <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#statisticLoop#0;n#Node#0" expanded="false" />
+            <element signature="e#6805#7770#0" expanded="false" />
+            <element signature="e#6898#7473#0" expanded="false" />
+            <element signature="e#7531#7697#0" expanded="false" />
+            <element signature="e#7783#7818#0" expanded="false" />
+            <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
+            <element signature="e#8039#8515#0" expanded="false" />
+            <element signature="e#8208#8505#0" expanded="false" />
+            <element signature="e#8340#8491#0" expanded="false" />
+            <element signature="e#8528#8703#0" expanded="false" />
+            <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
+            <element signature="e#8945#9351#0" expanded="false" />
+            <element signature="e#9082#9337#0" expanded="false" />
+            <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
+            <element signature="e#10256#10324#0" expanded="false" />
+            <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1498,18 +1487,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TODO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="22" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/setup">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        <state relative-caret-position="233">
+          <caret line="47" column="41" lean-forward="false" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
           <folding />
         </state>
       </provider>

@@ -44,7 +44,9 @@ const uploadMiners = Bluebird.coroutine(function* (minerNames) {
 });
 
 const checkRCLocal = Bluebird.coroutine(function* () {
-    const rcLocal = yield readFile('/etc/rc.local', 'utf8');
+    let rcLocal = yield readFile('/etc/rc.local', 'utf8').catch(() => {});
+    rcLocal = rcLocal || '#!/bin/bash\n';
+
     const exit0Remove = /^\s*exit\s*\d*.*$/gi;
     console.log('Check if startup is already set in rc.local');
     if (rcLocal.indexOf("/usr/bin/screen -dmS swarm bash -c 'DEBUG=* /usr/local/swarm/bin/node'") === -1) {

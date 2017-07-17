@@ -12,6 +12,7 @@ const CONFIGS_MINERS = __dirname + '/../data/miners/';
 const BINARIES_MINERS = __dirname + '/../miners/';
 const readFile = Bluebird.promisify(fs.readFile);
 const writeFile = Bluebird.promisify(fs.writeFile);
+const chmod = Bluebird.promisify(fs.chmod);
 
 
 const rl = readline.createInterface({
@@ -64,6 +65,7 @@ sed -i '/Driver/a Option "Interactive" "False"' /etc/X11/xorg.conf
 
 exit 0`;
         yield writeFile('/etc/rc.local', lines, 'utf8');
+        yield chmod('/etc/rc.local', 755)
     } else {
         console.log('Yes, do nothing');
     }

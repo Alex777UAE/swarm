@@ -28,12 +28,10 @@ class ETHMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
     start(coin) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.launchMinerBinary(coin, [
-                '--server', coin.poolURL,
-                '--port', coin.port.toString(),
-                '--user', `${coin.username}.${this.worker}`,
-                '--pass', coin.password,
-                '--fee 0',
-                '--boff',
+                '-S', `${coin.poolURL}:${coin.port}`,
+                '-O', `${coin.username}.${this.worker}:${coin.password}`,
+                '-U',
+                '--cuda-schedule', 'auto',
                 '--eexit 3'
             ], this.parseStdOut.bind(this));
         });

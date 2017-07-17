@@ -262,6 +262,8 @@ class Node {
     }
     setCurrentCoin(name) {
         return __awaiter(this, void 0, void 0, function* () {
+            if (name === this.currentCoin)
+                return;
             const gpus = this.GPUs;
             const model = gpus[0].model;
             const algorithm = this.coins[name].algorithm;

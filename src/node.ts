@@ -294,6 +294,7 @@ export class Node {
     }
 
     private async setCurrentCoin(name: string) {
+        if (name === this.currentCoin) return;
         const gpus = this.GPUs;
         const model = gpus[0].model;
         const algorithm = this.coins[name].algorithm;

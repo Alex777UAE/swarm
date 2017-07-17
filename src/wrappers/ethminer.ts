@@ -24,12 +24,10 @@ class ETHMiner extends StdOutMinerWrapper {
     //noinspection JSUnusedGlobalSymbols
     public async start(coin: ICoinConfig): Promise<void> {
         await this.launchMinerBinary(coin, [
-            '--server', coin.poolURL,
-            '--port', coin.port.toString(),
-            '--user', `${coin.username}.${this.worker}`,
-            '--pass', coin.password,
-            '--fee 0',
-            '--boff',
+            '-S', `${coin.poolURL}:${coin.port}`,
+            '-O', `${coin.username}.${this.worker}:${coin.password}`,
+            '-U',
+            '--cuda-schedule', 'auto',
             '--eexit 3'
         ], this.parseStdOut.bind(this))
     }

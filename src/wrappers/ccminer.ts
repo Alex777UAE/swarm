@@ -9,7 +9,7 @@ import {ICoinConfig} from "../../interfaces/i_coin";
 const util = require('util');
 const debug = require('debug')('miner:CCMiner');
 
-const REGEXP_GPU_HASHRATE = /GPU\s*#(\d+):.*,\s*(\d+(\.\d+)?)\s*(((kh)|(th)|(gh)|(mh))\/s)/gi;
+const REGEXP_GPU_HASHRATE = /GPU\s*#(\d+):.*,\s*(\d+(\.\d+)?)\s*(((kh)|(th)|(gh)|(mh))\/s)*/gi;
 const REGEXP_ACCEPTED_HASHRATE_V1 = /accepted:\s+(\d+)\/(\d+)\s+\((.*?)\),\s+(.*?)\s+(((kh)|(th)|(gh)|(mh))\/s)/gi;
 const REGEXP_ACCEPTED_HASHRATE_V2 = /\[S\/A\/T]:\s+(\d+)\/(\d+)\/(\d+),.*,\s+(.*)(((kh)|(th)|(gh)|(mh))\/s)/gi;
 

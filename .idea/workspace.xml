@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="ver 0.0.3">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/miners/ethminer-0.11.0.dev0" afterPath="$PROJECT_DIR$/data/miners/ethminer-0.12.0.dev0" />
+    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gpu-set" afterPath="$PROJECT_DIR$/bin/gpu-set" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/miner-upload" afterPath="$PROJECT_DIR$/bin/miner-upload" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ccminer.js" afterPath="$PROJECT_DIR$/src/wrappers/ccminer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ccminer.js.map" afterPath="$PROJECT_DIR$/src/wrappers/ccminer.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ccminer.ts" afterPath="$PROJECT_DIR$/src/wrappers/ccminer.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TODO" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TODO" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TODO">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -108,18 +108,18 @@
       <file leaf-file-name="gtx1070" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/gpus/gtx1070">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="15" lean-forward="true" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+            <state relative-caret-position="1275">
+              <caret line="85" column="10" lean-forward="false" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ccminer.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ccminer.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/wrappers/ccminer.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+            <state relative-caret-position="-538">
+              <caret line="11" column="91" lean-forward="false" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -149,7 +149,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>: any = uti</find>
       <find>: any = util</find>
       <find>this.coins[name]</find>
       <find>can't continue setting current coins</find>
@@ -179,6 +178,7 @@
       <find>path.</find>
       <find>ch</find>
       <find>chmod</find>
+      <find>nana</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,7 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bin/miner" />
         <option value="$PROJECT_DIR$/bin/stats" />
         <option value="$PROJECT_DIR$/interfaces/i_rig.ts" />
         <option value="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
@@ -238,6 +237,7 @@
         <option value="$PROJECT_DIR$/bin/setup" />
         <option value="$PROJECT_DIR$/bin/gpu-set" />
         <option value="$PROJECT_DIR$/bin/miner-upload" />
+        <option value="$PROJECT_DIR$/src/wrappers/ccminer.ts" />
       </list>
     </option>
   </component>
@@ -313,71 +313,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wrappers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gpu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interfaces" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,39 +331,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="miners" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gpus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
+              <option name="myItemId" value="coins" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -575,14 +479,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="124033000" />
-    </task>
-    <task id="LOCAL-00042" summary="wrappers fix &amp; debug">
-      <created>1500156959954</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1500156959954</updated>
+      <workItem from="1499812485546" duration="124411000" />
     </task>
     <task id="LOCAL-00043" summary="wrappers fix &amp; debug">
       <created>1500157274461</created>
@@ -920,11 +817,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500330198317</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="ver 0.0.3">
+      <created>1500330450802</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1500330450802</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150277000" />
+    <option name="totallyTimeSpent" value="150655000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1267,59 +1171,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="2846" column="20" lean-forward="false" selection-start-line="2846" selection-start-column="20" selection-end-line="2846" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="86" column="50" lean-forward="false" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
-          <folding>
-            <element signature="e#975#1155#0" expanded="false" />
-            <element signature="n#!!block;n#uploadCoin#0;n#Client#0" expanded="false" />
-            <element signature="n#!!block;n#targzDirectory#0;n#Client#0" expanded="false" />
-            <element signature="e#2683#3042#0" expanded="false" />
-            <element signature="n#!!block;n#showStats#0;n#Client#0" expanded="false" />
-            <element signature="e#3622#3996#0" expanded="false" />
-            <element signature="n#!!block;n#briefTable#0;n#Client#0" expanded="false" />
-            <element signature="e#4259#4615#0" expanded="false" />
-            <element signature="e#4279#4561#0" expanded="false" />
-            <element signature="e#4661#5144#0" expanded="false" />
-            <element signature="e#4808#5132#0" expanded="false" />
-            <element signature="n#!!block;n#fullTable#0;n#Client#0" expanded="false" />
-            <element signature="e#5271#5632#0" expanded="false" />
-            <element signature="e#5291#5578#0" expanded="false" />
-            <element signature="e#5679#7010#0" expanded="false" />
-            <element signature="e#5826#6150#0" expanded="false" />
-            <element signature="e#6216#6505#0" expanded="false" />
-            <element signature="e#6589#6998#0" expanded="false" />
-            <element signature="e#6618#6982#0" expanded="false" />
-            <element signature="n#!!block;n#removeDeadNode#0;n#Client#0" expanded="false" />
-            <element signature="n#!!block;n#command#0;n#Client#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wrappers/ccminer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1401,14 +1257,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/gpus/gtx1070">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="15" lean-forward="true" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1478,6 +1326,62 @@
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="86" column="50" lean-forward="false" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
+          <folding>
+            <element signature="e#975#1155#0" expanded="false" />
+            <element signature="n#!!block;n#uploadCoin#0;n#Client#0" expanded="false" />
+            <element signature="n#!!block;n#targzDirectory#0;n#Client#0" expanded="false" />
+            <element signature="e#2683#3042#0" expanded="false" />
+            <element signature="n#!!block;n#showStats#0;n#Client#0" expanded="false" />
+            <element signature="e#3622#3996#0" expanded="false" />
+            <element signature="n#!!block;n#briefTable#0;n#Client#0" expanded="false" />
+            <element signature="e#4259#4615#0" expanded="false" />
+            <element signature="e#4279#4561#0" expanded="false" />
+            <element signature="e#4661#5144#0" expanded="false" />
+            <element signature="e#4808#5132#0" expanded="false" />
+            <element signature="n#!!block;n#fullTable#0;n#Client#0" expanded="false" />
+            <element signature="e#5271#5632#0" expanded="false" />
+            <element signature="e#5291#5578#0" expanded="false" />
+            <element signature="e#5679#7010#0" expanded="false" />
+            <element signature="e#5826#6150#0" expanded="false" />
+            <element signature="e#6216#6505#0" expanded="false" />
+            <element signature="e#6589#6998#0" expanded="false" />
+            <element signature="e#6618#6982#0" expanded="false" />
+            <element signature="n#!!block;n#removeDeadNode#0;n#Client#0" expanded="false" />
+            <element signature="n#!!block;n#command#0;n#Client#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/gpus/gtx1070">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" column="10" lean-forward="false" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wrappers/ccminer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-538">
+          <caret line="11" column="91" lean-forward="false" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

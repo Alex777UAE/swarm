@@ -103,6 +103,9 @@ rl.question('Are you sure? Press Control-C to cancel.', () => {
         })
         .then(checkRCLocal)
         .then(writeEnv)
+        .then(() => {
+            return client.setCurrentCoin()
+        })
         .then(() => 'Setup finished succefully!')
         .catch(err => {
             console.error(err);

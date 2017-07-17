@@ -84,6 +84,8 @@ class Client {
     }
     setCurrentCoin(name, nodes) {
         return __awaiter(this, void 0, void 0, function* () {
+            if (!name)
+                name = this.config.defaultCoin;
             if (this.config.mode === 'swarm')
                 yield this.redis.setCurrentCoin(name, nodes);
             else

@@ -83,7 +83,8 @@ export class Client {
         }) as Promise<string>;
     }
 
-    public async setCurrentCoin(name: string, nodes?: string[]): Promise<void> {
+    public async setCurrentCoin(name?: string, nodes?: string[]): Promise<void> {
+        if (!name) name = this.config.defaultCoin;
         if (this.config.mode === 'swarm')
             await this.redis.setCurrentCoin(name, nodes);
         else

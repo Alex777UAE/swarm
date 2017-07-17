@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="ver 0.0.2 &#10;&#10;#4">
+    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/setup" afterPath="$PROJECT_DIR$/bin/setup" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js" afterPath="$PROJECT_DIR$/src/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js.map" afterPath="$PROJECT_DIR$/src/client.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.ts" afterPath="$PROJECT_DIR$/src/client.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,17 +31,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup" pinned="false" current-in-tab="false">
+      <file leaf-file-name="setup" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/setup">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="106" column="41" lean-forward="false" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="41" />
+            <state relative-caret-position="360">
+              <caret line="64" column="70" lean-forward="false" selection-start-line="64" selection-start-column="70" selection-end-line="64" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="client.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
@@ -235,8 +232,8 @@
         <option value="$PROJECT_DIR$/bin/gpu-set" />
         <option value="$PROJECT_DIR$/bin/setup.js" />
         <option value="$PROJECT_DIR$/TODO" />
-        <option value="$PROJECT_DIR$/bin/setup" />
         <option value="$PROJECT_DIR$/src/client.ts" />
+        <option value="$PROJECT_DIR$/bin/setup" />
       </list>
     </option>
   </component>
@@ -556,14 +553,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="119086000" />
-    </task>
-    <task id="LOCAL-00035" summary="targz #4">
-      <created>1500153314408</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1500153314408</updated>
+      <workItem from="1499812485546" duration="119506000" />
     </task>
     <task id="LOCAL-00036" summary="targz #4">
       <created>1500153355491</created>
@@ -901,11 +891,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500303166876</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="ver 0.0.2 &#10;&#10;#5">
+      <created>1500303791858</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1500303791858</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145330000" />
+    <option name="totallyTimeSpent" value="145750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -966,7 +963,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="stats" />
     <MESSAGE value="stats &amp; signal handlers" />
     <MESSAGE value="stats and minerUpdate fix" />
     <MESSAGE value="node 8 -&gt; 6 backward compatibility &#10;standalone mode tets" />
@@ -991,7 +987,8 @@
     <MESSAGE value="ver 0.0.2 &#10;&#10;#2" />
     <MESSAGE value="ver 0.0.2 &#10;&#10;#3" />
     <MESSAGE value="ver 0.0.2 &#10;&#10;#4" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.2 &#10;&#10;#4" />
+    <MESSAGE value="ver 0.0.2 &#10;&#10;#5" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.2 &#10;&#10;#5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1447,14 +1444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/setup">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="106" column="41" lean-forward="false" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -1482,6 +1471,14 @@
             <element signature="n#!!block;n#removeDeadNode#0;n#Client#0" expanded="false" />
             <element signature="n#!!block;n#command#0;n#Client#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/setup">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="64" column="70" lean-forward="false" selection-start-line="64" selection-start-column="70" selection-end-line="64" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>

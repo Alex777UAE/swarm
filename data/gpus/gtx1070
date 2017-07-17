@@ -93,7 +93,7 @@
   "ethash": {
     "fanSpeedTarget": 75,
     "memClockOffset": 1100,
-    "gpuClockOffset": -400,
+    "gpuClockOffset": -200,
     "powerLimit": 140,
     "miner": "ethminer-0.12.0.dev0"
   }

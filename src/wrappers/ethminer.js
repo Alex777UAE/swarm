@@ -34,7 +34,7 @@ class ETHMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
                 '-U',
                 '--farm-recheck', '2000',
                 '--cuda-schedule', 'auto'
-            ], this.parseStdOut.bind(this));
+            ], this.parseStdOut.bind(this), this.parseStdOut.bind(this));
         });
     }
     /**

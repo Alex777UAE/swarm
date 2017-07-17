@@ -53,7 +53,6 @@ export class Redis extends IDBLayer {
             }
             this.redisSubscriber.subscribe('coins', 'miners', 'switch');
             this.redisSubscriber.on('message', (ch, msg) => {
-
                 try {
                     if (ch === 'coins') {
                         const fn = this.options.onCoinUpdate;

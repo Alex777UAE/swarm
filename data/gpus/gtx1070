@@ -11,49 +11,49 @@
     "memClockOffset": 1100,
     "gpuClockOffset": 115,
     "powerLimit": 197,
-    "miner": "ccminer-klaust-8.09"
+    "miner": "ccminer-sp-1.5.81"
   },
   "groestl": {
     "fanSpeedTarget": 80,
     "memClockOffset": 1100,
     "gpuClockOffset": 115,
     "powerLimit": 197,
-    "miner": "ccminer-klaust-8.09"
+    "miner": "ccminer-sp-1.5.81"
   },
   "myr-gr": {
     "fanSpeedTarget": 80,
     "memClockOffset": 1100,
     "gpuClockOffset": 115,
     "powerLimit": 197,
-    "miner": "ccminer-klaust-8.09"
+    "miner": "ccminer-sp-nicehash-1.5.80-git"
   },
   "dmd-gr": {
     "fanSpeedTarget": 80,
     "memClockOffset": 1100,
     "gpuClockOffset": 115,
     "powerLimit": 197,
-    "miner": "ccminer-klaust-8.09"
+    "miner": "ccminer-sp-1.5.81"
   },
   "sia": {
     "fanSpeedTarget": 80,
     "memClockOffset": 1100,
     "gpuClockOffset": 115,
     "powerLimit": 197,
-    "miner": "ccminer-klaust-8.09"
+    "miner": "ccminer-alexis-1.0"
   },
   "sib": {
     "fanSpeedTarget": 80,
     "memClockOffset": 1100,
     "gpuClockOffset": 115,
     "powerLimit": 197,
-    "miner": "ccminer-klaust-8.09"
+    "miner": "ccminer-alexis-1.0"
   },
   "lyra2v2": {
     "fanSpeedTarget": 80,
     "memClockOffset": 1100,
     "gpuClockOffset": 115,
     "powerLimit": 197,
-    "miner": "ccminer-nanashi-1.8-r2"
+    "miner": "ccminer-alexis-1.0"
   },
   "decred": {
     "fanSpeedTarget": 80,
@@ -76,13 +76,6 @@
     "powerLimit": 197,
     "miner": "ccminer-alexis-1.0"
   },
-  "x11gost": {
-    "fanSpeedTarget": 80,
-    "memClockOffset": 1100,
-    "gpuClockOffset": 115,
-    "powerLimit": 197,
-    "miner": "ccminer-alexis-1.0"
-  },
   "lyra2z": {
     "fanSpeedTarget": 80,
     "memClockOffset": 1100,
@@ -95,13 +88,13 @@
     "memClockOffset": 1100,
     "gpuClockOffset": 115,
     "powerLimit": 197,
-    "miner": "ccminer-tpruvot-2.0"
+    "miner": "ccminer-cryptonight-2.03"
   },
   "ethash": {
     "fanSpeedTarget": 75,
     "memClockOffset": 1100,
     "gpuClockOffset": -400,
     "powerLimit": 140,
-    "miner": "ethminer-0.11.0.dev0"
+    "miner": "ethminer-0.12.0.dev0"
   }
 }

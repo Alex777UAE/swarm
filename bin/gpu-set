@@ -5,7 +5,7 @@ const minimist = require('minimist');
 const argv = minimist(process.argv.slice(2));
 
 if (!argv._[0] || !argv._[1]) {
-    console.error(`\nPlease provide gpu model or uuid and path to json config:\n\tgpu-set gtx1070 ./config/gpus/gtx1070`);
+    console.error(`\nPlease provide gpu model or uuid and path to json config:\n\tgpu-set gtx1070 ./data/gpus/gtx1070`);
     process.exit(1);
 } else {
     const Client = require('../src/client').Client;

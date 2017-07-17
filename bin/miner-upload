@@ -5,7 +5,7 @@ const argv = minimist(process.argv.slice(2));
 
 if (!argv._[0] || !argv._[0]) {
     console.error('\nPlease provide miner name, path to json config:');
-    console.error('\tminer-upload ccminer-klaust-8.09 ./configs/miners/ccminer-klaust-8.09 [directory|binary]');
+    console.error('\tminer-upload ccminer-klaust-8.09 ./data/miners/ccminer-klaust-8.09 [directory|binary]');
     process.exit(1);
 } else {
     const Client = require('../src/client').Client;

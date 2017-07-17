@@ -97,7 +97,7 @@ console.log('Now I will (re)initialize all coins, gpu and miners configs. Previo
 rl.question('Are you sure? Press Control-C to cancel.', () => {
     rl.close();
 
-    checkRCLocal
+    checkRCLocal()
         .then(writeEnv)
         .then(() => {
             if (!argv.r) return;

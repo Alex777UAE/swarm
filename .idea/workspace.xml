@@ -2,71 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/setup" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/bcn" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/dgb-groestl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/dgb-skein" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/etc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/eth" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/exp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/grs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/hush" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/kmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/lbc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/mona" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/music" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/myr-groestl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/myr-skein" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/sc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/ubq" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/vtc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/xmr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/xzc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/coins/zen" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/gpus/gtx1070" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/miners/ccminer-klaust-8.09" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/miners/ccminer-nanashi-1.8-r2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/miners/ccminer-tpruvot-2.0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/clean.sh" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bin/coin" afterPath="$PROJECT_DIR$/bin/coin-set" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bin/miner" afterPath="$PROJECT_DIR$/bin/miner-upload" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bin/remote" afterPath="$PROJECT_DIR$/bin/rig-remote" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bin/switch" afterPath="$PROJECT_DIR$/bin/switch-coin" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/configs/coins/ftc" afterPath="$PROJECT_DIR$/data/coins/ftc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/configs/coins/sib" afterPath="$PROJECT_DIR$/data/coins/sib" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/configs/coins/zec" afterPath="$PROJECT_DIR$/data/coins/zec" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/configs/miners/ccminer-klaust-8.09" afterPath="$PROJECT_DIR$/data/miners/ccminer-alexis-1.0" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/configs/miners/claymore-dual-9.7" afterPath="$PROJECT_DIR$/data/miners/claymore-dual-9.7" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/configs/miners/ethminer-0.11.0.dev0" afterPath="$PROJECT_DIR$/data/miners/ethminer-0.11.0.dev0" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/configs/miners/ewbf-0.3.4b" afterPath="$PROJECT_DIR$/data/miners/ewbf-0.3.4b" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO" afterPath="$PROJECT_DIR$/TODO" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/stats" afterPath="$PROJECT_DIR$/bin/stats" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.json" afterPath="$PROJECT_DIR$/config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_coin.ts" afterPath="$PROJECT_DIR$/interfaces/i_coin.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_db_layer.js.map" afterPath="$PROJECT_DIR$/interfaces/i_db_layer.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_db_layer.ts" afterPath="$PROJECT_DIR$/interfaces/i_db_layer.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_gpu.js.map" afterPath="$PROJECT_DIR$/interfaces/i_gpu.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_gpu.ts" afterPath="$PROJECT_DIR$/interfaces/i_gpu.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_rig.js.map" afterPath="$PROJECT_DIR$/interfaces/i_rig.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_rig.ts" afterPath="$PROJECT_DIR$/interfaces/i_rig.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js" afterPath="$PROJECT_DIR$/src/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js.map" afterPath="$PROJECT_DIR$/src/client.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.ts" afterPath="$PROJECT_DIR$/src/client.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js" afterPath="$PROJECT_DIR$/src/node.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js.map" afterPath="$PROJECT_DIR$/src/node.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.ts" afterPath="$PROJECT_DIR$/src/node.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js" afterPath="$PROJECT_DIR$/src/redis.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js.map" afterPath="$PROJECT_DIR$/src/redis.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.ts" afterPath="$PROJECT_DIR$/src/redis.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js" afterPath="$PROJECT_DIR$/src/rig/linux.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js.map" afterPath="$PROJECT_DIR$/src/rig/linux.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.ts" afterPath="$PROJECT_DIR$/src/rig/linux.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/setup" afterPath="$PROJECT_DIR$/bin/setup" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -97,8 +34,8 @@
       <file leaf-file-name="setup" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/setup">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="94" column="47" lean-forward="false" selection-start-line="94" selection-start-column="47" selection-end-line="94" selection-end-column="47" />
+            <state relative-caret-position="458">
+              <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -637,14 +574,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="117604000" />
-    </task>
-    <task id="LOCAL-00029" summary="check directory of miners #6">
-      <created>1500151634389</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1500151634389</updated>
+      <workItem from="1499812485546" duration="117946000" />
     </task>
     <task id="LOCAL-00030" summary="targz #1">
       <created>1500152030297</created>
@@ -982,11 +912,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500228193308</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="ver 0.0.2">
+      <created>1500299871636</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1500299871637</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143848000" />
+    <option name="totallyTimeSpent" value="144190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1047,7 +984,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="targz #4" />
     <MESSAGE value="wrappers update" />
     <MESSAGE value="wrappers fix &amp; debug" />
     <MESSAGE value="wrappers fix &amp; debug &amp; stats" />
@@ -1072,7 +1008,8 @@
     <MESSAGE value="commands support #5&#10;restart experiment for ewbf" />
     <MESSAGE value="commands support #5&#10;restart experiment for ewbf #2" />
     <MESSAGE value="commands support #5&#10;restart experiment for ewbf #3" />
-    <option name="LAST_COMMIT_MESSAGE" value="commands support #5&#10;restart experiment for ewbf #3" />
+    <MESSAGE value="ver 0.0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1571,8 +1508,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/setup">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="94" column="47" lean-forward="false" selection-start-line="94" selection-start-column="47" selection-end-line="94" selection-end-column="47" />
+        <state relative-caret-position="458">
+          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
           <folding />
         </state>
       </provider>

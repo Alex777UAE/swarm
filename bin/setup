@@ -52,8 +52,15 @@ const checkRCLocal = Bluebird.coroutine(function* () {
         let lines = rcLocal.split('\n');
         lines = lines.filter(line => !exit0Remove.exec(line));
         lines.push("/usr/bin/screen -dmS swarm bash -c 'DEBUG=* /usr/local/swarm/bin/node'");
-        lines.push("exit 0");
         lines = lines.join('\n');
+        lines += `\n
+nvidia-xconfig -s -a --allow-empty-initial-configuration \
+--cool-bits=12 --registry-dwords="PerfLevelSrc=0x2222" \
+--no-sli --connected-monitor="DFP-0" -o /etc/X11/xorg.conf
+
+sed -i '/Driver/a Option "Interactive" "False"' /etc/X11/xorg.conf
+
+exit 0`;
         yield writeFile('/etc/rc.local', lines, 'utf8');
     } else {
         console.log('Yes, do nothing');

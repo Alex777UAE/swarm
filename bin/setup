@@ -91,8 +91,11 @@ export PATH
    yield writeFile('/etc/profile.d/swarm.sh', envFileContent, 'utf8');
 });
 
-console.log('Now I will (re)initialize all coins, gpu and miners configs. Previous configurations with matching names' +
-    'will be lost!');
+if (argv.r)
+    console.log('Now I will (re)initialize all coins, gpu and miners configs. Previous configurations with matching ' +
+        'names will be lost!');
+else
+    console.log('Setting up rc.local and environment variables');
 
 rl.question('Are you sure? Press Control-C to cancel.', () => {
     rl.close();

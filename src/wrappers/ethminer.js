@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * Created by alex on 13.07.17.
  */
 require("source-map-support/register");
+const colors = require("colors");
 const stdout_miner_wrapper_1 = require("./stdout_miner_wrapper");
 const util = require('util');
 const debug = require('debug')('miner:ETHMiner');
@@ -31,6 +32,7 @@ class ETHMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
                 '-S', `${coin.poolURL}:${coin.port}`,
                 '-O', `${coin.username}.${this.worker}:${coin.password}`,
                 '-U',
+                '--farm-recheck', '2000',
                 '--cuda-schedule', 'auto'
             ], this.parseStdOut.bind(this));
         });
@@ -46,7 +48,7 @@ class ETHMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
         const lines = data.split('\n');
         lines.forEach(line => {
             debug(line);
-            const match = REG_EXP.exec(line);
+            const match = REG_EXP.exec(colors.strip(line));
             if (match) {
                 const summaryHashrate = parseFloat(match[1]);
                 const acceptedShares = parseFloat(match[8]);

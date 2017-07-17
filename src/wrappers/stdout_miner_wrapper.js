@@ -85,7 +85,8 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
         // todo notify switching algo module somehow?
         debug(`exit code ${code}`);
         if (this.coin)
-            this.start(this.coin)
+            Bluebird.delay(5000)
+                .then(() => this.start(this.coin))
                 .catch(debug);
     }
     exec(args, stdoutParser, stderrParser) {

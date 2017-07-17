@@ -97,7 +97,8 @@ export abstract class StdOutMinerWrapper extends IMiner {
     protected handleExit(code: number): void {
         // todo notify switching algo module somehow?
         debug(`exit code ${code}`);
-        if (this.coin) this.start(this.coin)
+        if (this.coin) Bluebird.delay(5000)
+            .then(() => this.start(this.coin))
             .catch(debug);
     }
 

@@ -2,6 +2,7 @@
  * Created by alex on 13.07.17.
  */
 import 'source-map-support/register';
+import * as colors from 'colors';
 import {StdOutMinerWrapper} from "./stdout_miner_wrapper";
 import {MinerType} from "../../interfaces/i_miner";
 import {ICoinConfig} from "../../interfaces/i_coin";
@@ -27,6 +28,7 @@ class ETHMiner extends StdOutMinerWrapper {
             '-S', `${coin.poolURL}:${coin.port}`,
             '-O', `${coin.username}.${this.worker}:${coin.password}`,
             '-U',
+            '--farm-recheck', '2000',
             '--cuda-schedule', 'auto'
         ], this.parseStdOut.bind(this))
     }
@@ -45,7 +47,7 @@ class ETHMiner extends StdOutMinerWrapper {
         const lines = data.split('\n');
         lines.forEach(line => {
             debug(line);
-            const match = REG_EXP.exec(line);
+            const match = REG_EXP.exec(colors.strip(line));
             if (match) {
                 const summaryHashrate = parseFloat(match[1]);
                 const acceptedShares = parseFloat(match[8]);

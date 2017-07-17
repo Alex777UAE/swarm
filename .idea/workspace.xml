@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="ver 0.0.2 &#10;&#10;#">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/miners/ccminer-sp-nicehash-1.5.80-git" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/miners/ccminer-klaust-8.09" afterPath="$PROJECT_DIR$/data/miners/ccminer-sp-1.5.81" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/miners/ccminer-nanashi-1.8-r2" afterPath="$PROJECT_DIR$/data/miners/ccminer-cryptonight-2.03" />
+    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/setup" afterPath="$PROJECT_DIR$/bin/setup" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab" afterPath="$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/gpus/gtx1070" afterPath="$PROJECT_DIR$/data/gpus/gtx1070" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,8 +34,8 @@
       <file leaf-file-name="setup" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/setup">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="120" column="32" lean-forward="false" selection-start-line="120" selection-start-column="32" selection-end-line="120" selection-end-column="32" />
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -49,8 +44,8 @@
       <file leaf-file-name="gpu-set" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/gpu-set">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="20" />
+            <state relative-caret-position="30">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -258,9 +253,9 @@
         <option value="$PROJECT_DIR$/bin/setup.js" />
         <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/src/client.ts" />
-        <option value="$PROJECT_DIR$/bin/setup" />
         <option value="$PROJECT_DIR$/data/gpus/gtx1070" />
         <option value="$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab" />
+        <option value="$PROJECT_DIR$/bin/setup" />
       </list>
     </option>
   </component>
@@ -598,14 +593,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="123643000" />
-    </task>
-    <task id="LOCAL-00037" summary="targz #4">
-      <created>1500154247165</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1500154247165</updated>
+      <workItem from="1499812485546" duration="123691000" />
     </task>
     <task id="LOCAL-00038" summary="wrappers update">
       <created>1500155485180</created>
@@ -943,11 +931,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500315053402</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="ver 0.0.3">
+      <created>1500329899303</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1500329899303</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149887000" />
+    <option name="totallyTimeSpent" value="149935000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1008,7 +1003,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="stats &amp; signal handlers" />
     <MESSAGE value="stats and minerUpdate fix" />
     <MESSAGE value="node 8 -&gt; 6 backward compatibility &#10;standalone mode tets" />
     <MESSAGE value="node 8 -&gt; 6 backward compatibility &#10;standalone mode tets&#10;&#10;ewbf default acceptedPercent fix" />
@@ -1033,7 +1027,8 @@
     <MESSAGE value="ver 0.0.2 &#10;&#10;#3" />
     <MESSAGE value="ver 0.0.2 &#10;&#10;#4" />
     <MESSAGE value="ver 0.0.2 &#10;&#10;#5" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.2 &#10;&#10;#5" />
+    <MESSAGE value="ver 0.0.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1402,14 +1397,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/gpu-set">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1496,10 +1483,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/gpu-set">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/setup">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="120" column="32" lean-forward="false" selection-start-line="120" selection-start-column="32" selection-end-line="120" selection-end-column="32" />
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>

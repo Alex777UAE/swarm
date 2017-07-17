@@ -103,7 +103,7 @@ rl.question('Are you sure? Press Control-C to cancel.', () => {
             if (!argv.r) return;
             console.log('Uploading coins\' configurations:');
             const coins = fs.readdirSync(CONFIGS_COINS);
-            uploadCoins(coins)
+            return uploadCoins(coins)
         })
         .then(() => {
             if (!argv.r) return;

@@ -1,0 +1,8 @@
+{
+  "algorithm": "equihash",
+  "poolURL": "zen.suprnova.cc",
+  "port": 3618,
+  "username": "host777",
+  "password": "x",
+  "ssl": false
+}

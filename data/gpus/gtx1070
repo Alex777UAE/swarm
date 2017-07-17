@@ -1,0 +1,107 @@
+{
+  "equihash": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ewbf-0.3.4b"
+  },
+  "neoscrypt": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-klaust-8.09"
+  },
+  "groestl": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-klaust-8.09"
+  },
+  "myr-gr": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-klaust-8.09"
+  },
+  "dmd-gr": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-klaust-8.09"
+  },
+  "sia": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-klaust-8.09"
+  },
+  "sib": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-klaust-8.09"
+  },
+  "lyra2v2": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-nanashi-1.8-r2"
+  },
+  "decred": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-alexis-1.0"
+  },
+  "lbry": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-alexis-1.0"
+  },
+  "skein": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-alexis-1.0"
+  },
+  "x11gost": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-alexis-1.0"
+  },
+  "lyra2z": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-tpruvot-2.0"
+  },
+  "cryptonight": {
+    "fanSpeedTarget": 80,
+    "memClockOffset": 1100,
+    "gpuClockOffset": 115,
+    "powerLimit": 197,
+    "miner": "ccminer-tpruvot-2.0"
+  },
+  "ethash": {
+    "fanSpeedTarget": 75,
+    "memClockOffset": 1100,
+    "gpuClockOffset": -400,
+    "powerLimit": 140,
+    "miner": "ethminer-0.11.0.dev0"
+  }
+}

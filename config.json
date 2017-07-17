@@ -2,7 +2,7 @@
   "nvidia-smi": "/usr/bin/nvidia-smi",
   "nvidia-settings": "/usr/bin/nvidia-settings",
   "redis": {
-    "host": "78.109.31.242",
+    "host": "78.109.31.253",
     "port": 6379
   },
   "defaultCoin": "zec",

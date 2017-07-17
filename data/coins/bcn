@@ -1,0 +1,8 @@
+{
+  "algorithm": "cryptonight",
+  "poolURL": "bcn.pool.minergate.com",
+  "port": 45550,
+  "username": "info@hosting.ua",
+  "password": "x",
+  "ssl": false
+}

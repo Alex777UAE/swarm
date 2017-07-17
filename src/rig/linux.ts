@@ -11,7 +11,7 @@ import * as targz from 'tar.gz';
 import {NVidia} from "../nvidia";
 import {NVidiaGPU} from "../gpu/nvidia_gpu";
 import {IRig, OS} from "../../interfaces/i_rig";
-import {IGPU} from "../../interfaces/i_gpu";
+import {IGPU, IGPUConfigList} from "../../interfaces/i_gpu";
 import {ICoinConfig, ICoinList} from "../../interfaces/i_coin";
 import {IMinerConfig, IMinerList} from "../../interfaces/i_miner";
 import {Readable} from "stream";
@@ -27,8 +27,9 @@ const mkdir = util.promisify(fs.mkdir);
 const chmod = util.promisify(fs.chmod);
 const exec = util.promisify(execFile);
 
-const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
-const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
+const CONFIG_COINS_PATH = __dirname + '/../../data/coins/';
+const CONFIG_MINERS_PATH = __dirname + '/../../data/miners/';
+const CONFIG_GPUS_PATH = __dirname + '/../../data/gpus/';
 const MINERS_PATH = __dirname + '/../../miners/';
 const LIGHT_DM_CONFIG_PATH = '/etc/lightdm/lightdm.conf';
 
@@ -78,14 +79,14 @@ export class Linux extends IRig {
         return this.gpus;
     }
 
-    public async getLoad(): Promise<{cpu: number; mem: number}> {
+    public async getLoad(): Promise<{ cpu: number; mem: number }> {
         const cpuNum = os.cpus().length;
         const loadAvg = os.loadavg()[0];
 
         const osTotalMem = os.totalmem();
         const osFreeMem = os.freemem();
 
-        return {cpu: Math.round(loadAvg/cpuNum), mem: Math.round(osFreeMem*100/osTotalMem)};
+        return {cpu: Math.round(loadAvg / cpuNum), mem: Math.round(osFreeMem * 100 / osTotalMem)};
     }
 
     /*
@@ -130,8 +131,8 @@ export class Linux extends IRig {
         await writeFile(CONFIG_MINERS_PATH + name, JSON.stringify(config, null, 2));
         if (config.fileType === 'binary') {
             if (!(await this.checkDir(MINERS_PATH + name))) await mkdir(MINERS_PATH + name);
-            await writeFile(MINERS_PATH  + name + path.sep + config.executable, bin);
-            await chmod(MINERS_PATH  + name + path.sep + config.executable, 755);
+            await writeFile(MINERS_PATH + name + path.sep + config.executable, bin);
+            await chmod(MINERS_PATH + name + path.sep + config.executable, 755);
         } else if (config.fileType === 'tgz') {
             await this.untgzBuffer(name, bin);
         }
@@ -153,7 +154,6 @@ export class Linux extends IRig {
         return new Promise((resolve, reject) => {
             debug(`Is buffer: ${Buffer.isBuffer(bin)}`);
             debug(`Buffer length is: ${bin.length}`);
-            // const readStream = fs.createReadStream(bin);
             const readStream = new Readable();
             readStream._read = () => {};
             readStream.push(bin);
@@ -164,7 +164,7 @@ export class Linux extends IRig {
             writeStream.on('finish', resolve);
             writeStream.on('error', reject);
             readStream.on('error', reject);
-            setImmediate(() => {readStream.push(null)});
+            setImmediate(() => readStream.push(null));
         }) as Promise<any>;
     }
 
@@ -176,13 +176,17 @@ export class Linux extends IRig {
         return await Linux.loadJSONFiles(CONFIG_COINS_PATH);
     }
 
+    public async loadGPUConfigs(): Promise<IGPUConfigList> {
+        return await Linux.loadJSONFiles(CONFIG_GPUS_PATH);
+    }
+
     protected static async loadJSONFiles(dir: string): Promise<any> {
         const list = {};
         const files = await readdir(dir);
 
         for (let i = 0; i < files.length; i++) {
             const name = files[i];
-            list[name] = JSON.parse(await readFile(dir + name,{encoding: 'utf8'}));
+            list[name] = JSON.parse(await readFile(dir + name, {encoding: 'utf8'}));
         }
 
         return list;

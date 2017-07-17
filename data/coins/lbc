@@ -1,0 +1,8 @@
+{
+  "algorithm": "lbry",
+  "poolURL": "lbry.suprnova.cc",
+  "port": 6256,
+  "username": "host777",
+  "password": "x",
+  "ssl": false
+}

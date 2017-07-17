@@ -1,0 +1,8 @@
+{
+  "algorithm": "equihash",
+  "poolURL": "hush.suprnova.cc",
+  "port": 4048,
+  "username": "host777",
+  "password": "x",
+  "ssl": false
+}

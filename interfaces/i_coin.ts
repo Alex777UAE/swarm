@@ -2,13 +2,12 @@
  * Created by alex on 05.07.17.
  */
 
-import {IGPUConfig} from "./i_gpu";
-
-export type Algorithm = 'equihash' | 'ethash' | 'neoscrypt' | 'sib' | 'groestl' | 'myr-gr' | 'lbry' | 'lyra2rev2' |
-    'pascal' | 'sia' | 'decred' | 'lyra2v2';
+export type Algorithm = 'equihash' | 'neoscrypt' | 'groestl' | 'myr-gr' | 'dmd-gr' | 'sia' | 'sib' | 'lyra2v2' |
+    'decred' | 'lbry' | 'x11gost' | 'cryptonight' | 'ethash';
 
 export type ICoinList = { [name: string]: ICoinConfig };
 
+// found by coin name (zec,ftc,...) in miner:coins hash
 export interface ICoinConfig {
     algorithm: Algorithm;
     poolURL: string;
@@ -16,5 +15,4 @@ export interface ICoinConfig {
     username: string;
     password: string;
     ssl: boolean;
-    gpuConfigs: { [modelOrUUID: string]: IGPUConfig };
 }

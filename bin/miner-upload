@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
 const minimist = require('minimist');
-
 const argv = minimist(process.argv.slice(2));
 
-if (!argv._[0] || !argv._[1]) {
-    console.error(`\nPlease provide coin name and path to json config:\n\tcoin ftc ./configs/coins/ftc`);
+if (!argv._[0] || !argv._[0]) {
+    console.error('\nPlease provide miner name, path to json config:');
+    console.error('\tminer-upload ccminer-klaust-8.09 ./configs/miners/ccminer-klaust-8.09 [directory|binary]');
     process.exit(1);
 } else {
     const Client = require('../src/client').Client;
     const client = new Client();
-    client.uploadCoin(argv._[0], argv._[1])
+    client.uploadMiner(...argv._)
         .then(() => {
             console.log('Done');
             process.exit(0);

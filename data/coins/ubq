@@ -1,0 +1,8 @@
+{
+  "algorithm": "ethash",
+  "poolURL": "eu.ubiqpool.io",
+  "port": 8888,
+  "username": "0xa9e9d706fcfc2d1bcd6b4456bc82f998ce39902a",
+  "password": "x",
+  "ssl": false
+}

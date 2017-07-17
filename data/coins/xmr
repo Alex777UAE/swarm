@@ -1,0 +1,8 @@
+{
+  "algorithm": "cryptonight",
+  "poolURL": "xmr.pool.minergate.com",
+  "port": 45560,
+  "username": "info@hosting.ua",
+  "password": "x",
+  "ssl": false
+}

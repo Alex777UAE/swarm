@@ -1,0 +1,8 @@
+{
+  "algorithm": "lyra2z",
+  "poolURL": "hub.miningpoolhub.com",
+  "port": 20581,
+  "username": "host",
+  "password": "x",
+  "ssl": false
+}

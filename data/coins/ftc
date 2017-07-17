@@ -1,0 +1,8 @@
+{
+  "algorithm": "neoscrypt",
+  "poolURL": "hub.miningpoolhub.com",
+  "port": 20510,
+  "username": "host",
+  "password": "x",
+  "ssl": false
+}

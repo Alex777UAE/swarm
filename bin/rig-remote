@@ -4,7 +4,7 @@ const minimist = require('minimist');
 const argv = minimist(process.argv.slice(2));
 
 if (argv.h || !argv._[0]) {
-    console.log('\nremote <command> [-p params] [HOSTNAME]');
+    console.log('\nrig-remote <command> [-p params] [HOSTNAME]');
     console.log('\texecute command on all nodes or only on HOSTNAME\n');
     console.log('Supported commands:\t');
     console.log('\trestart - restarts current miner proccess');

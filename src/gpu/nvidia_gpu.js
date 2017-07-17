@@ -72,8 +72,8 @@ class NVidiaGPU extends i_gpu_1.IGPU {
             const o = yield exec(this.nvidiaSMIPath, nvOpts, { killSignal: 'SIGKILL', timeout: 90000 });
             debug(`got output:\n${o.stdout}`);
             let [name, uuid] = o.stdout.split(',');
-            this.cardUUID = uuid.trim();
-            this.cardModel = name.replace('GeForce', '').replace(/\s+/g, '');
+            this.cardUUID = uuid.trim().toLowerCase();
+            this.cardModel = name.replace('GeForce', '').replace(/\s+/g, '').toLowerCase();
         });
     }
     setup(config) {

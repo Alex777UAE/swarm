@@ -4,14 +4,39 @@
 
 import {IUnit} from "./i_unit";
 export type GPUVendor = 'AMD' | 'NVIDIA';
-export type GPUModel = 'GTX1070' | 'GTX1080' | 'GTX1080ti' | 'GTX1060' | 'unknown';
+export type GPUModel = 'gtx1070' | 'gtx1080' | 'gtx1080ti' | 'gtx1060' | 'unknown';
 
 /*
- found by type
+ found by type/uuid key for hash, algorithm name as key
  type: GPUModel;
  or by uuid
- uuid?: string; // GPU-59a00a37-8f68-14bf-0a99-5d38080d7977
+ uuid?: string; // gpu-59a00a37-8f68-14bf-0a99-5d38080d7977
+
+
+ gtx1070 => {
+    equihash => {
+         fanSpeedTarget: number;
+         memClockOffset: number;
+         gpuClockOffset: number;
+         powerLimit: number;
+         miner: string; // miner name (key from miner:miners
+    },
+    neoscrypt => {...}
+ }
+
+ gpu-59a00a37-8f68-14bf-0a99-5d38080d7977 => {
+     neoscrypt => {
+         fanSpeedTarget: number;
+         memClockOffset: number;
+         gpuClockOffset: number;
+         powerLimit: number;
+         miner: string; // miner name (key from miner:miners
+     }
+ }
  */
+
+export type IGPUConfigList = { [modelOurUUID: string]: {[algorithm: string]: IGPUConfig} };
+
 export interface IGPUConfig {
     fanSpeedTarget: number;
     memClockOffset: number;

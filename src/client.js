@@ -41,6 +41,12 @@ class Client {
             yield this.redis.updateCoin(name, coinConfig);
         });
     }
+    uploadGPU(name, path) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const gpuConfig = JSON.parse(yield readFile(path, { encoding: 'utf8' }));
+            yield this.redis.updateGPU(name, gpuConfig);
+        });
+    }
     uploadMiner(name, path, minerPath) {
         return __awaiter(this, void 0, void 0, function* () {
             const minerConfig = JSON.parse(yield readFile(path, { encoding: 'utf8' }));
@@ -96,7 +102,7 @@ class Client {
                 stats[name].info.uptime = moment.duration(stats[name].info.uptime * 1000).humanize();
             });
             !full ? this.briefTable(stats) : this.fullTable(stats);
-            console.log(`Total GPUs: ${Object.keys(rawStats).reduce((total, n) => total + stats[n].info.gpuN, 0)}`);
+            console.log(`Total GPUs: ${Object.keys(stats).reduce((total, n) => total + stats[n].info.gpuN, 0)}`);
         });
     }
     briefTable(stats) {
@@ -128,7 +134,7 @@ class Client {
                 info.acceptPercent,
                 info.coinTime,
                 info.uptime,
-                d
+                d > 120 ? colors.red(d.toString()) : d
             ]);
         });
         console.log(table.toString());
@@ -162,7 +168,7 @@ class Client {
                 info.acceptPercent,
                 info.coinTime,
                 info.uptime,
-                d
+                d > 120 ? colors.red(d.toString()) : d
             ].map(rig => colors.bold(rig.toString())));
             table.push([
                 'GPU#',

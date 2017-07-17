@@ -28,7 +28,7 @@ class Redis extends i_db_layer_1.IDBLayer {
         this.redis = new IORedis(this.options.port, this.options.host);
         this.redis.on('connect', () => this.ready = true);
         if (this.options.onCoinUpdate || this.options.onMinerUpdate || this.options.onCurrentCoinUpdate ||
-            this.options.onCommand) {
+            this.options.onCommand || this.options.onGPUUpdate) {
             this.redisSubscriber = new IORedis(this.options.port, this.options.host);
             debug('subscribing');
             if (this.options.onCommand) {
@@ -49,6 +49,13 @@ class Redis extends i_db_layer_1.IDBLayer {
                         const fn = this.options.onCoinUpdate;
                         const { name, config } = JSON.parse(msg);
                         debug(`Coin ${name} update:\n${config}`);
+                        if (typeof fn === 'function')
+                            fn(name, config);
+                    }
+                    if (ch === 'gpus') {
+                        const fn = this.options.onGPUUpdate;
+                        const { name, config } = JSON.parse(msg);
+                        debug(`GPU ${name} update:\n${config}`);
                         if (typeof fn === 'function')
                             fn(name, config);
                     }
@@ -98,6 +105,16 @@ class Redis extends i_db_layer_1.IDBLayer {
             return minerList;
         });
     }
+    getAllGPUConfigs() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const rawData = yield this.redis.hgetall(REDIS_PREFIX + 'gpus');
+            const gpuConfigList = {};
+            Object.keys(rawData).forEach(gpu => {
+                gpuConfigList[gpu] = JSON.parse(rawData[gpu]);
+            });
+            return gpuConfigList;
+        });
+    }
     getMinerBinnary(sha256sum) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield this.redis.getBuffer(REDIS_PREFIX + sha256sum);
@@ -113,6 +130,12 @@ class Redis extends i_db_layer_1.IDBLayer {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.redis.hset(REDIS_PREFIX + 'coins', name, JSON.stringify(config));
             yield this.redis.publish('coins', JSON.stringify({ name, config }));
+        });
+    }
+    updateGPU(name, config) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.redis.hset(REDIS_PREFIX + 'gpus', name, JSON.stringify(config));
+            yield this.redis.publish('gpus', JSON.stringify({ name, config }));
         });
     }
     updateMiner(name, config, binaryPath) {

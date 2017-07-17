@@ -1,0 +1,8 @@
+{
+  "algorithm": "equihash",
+  "poolURL": "kmd.suprnova.cc",
+  "port": 6250,
+  "username": "host777",
+  "password": "x",
+  "ssl": false
+}

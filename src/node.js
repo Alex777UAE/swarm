@@ -82,6 +82,7 @@ class Node {
             this.GPUs = yield this.rig.getGPUs();
             this.coins = yield this.rig.loadCoins();
             this.miners = yield this.rig.loadMiners();
+            this.gpuConfigs = yield this.rig.loadGPUConfigs();
             if (swarm) {
                 this.db = new redis_1.Redis({
                     host: appConf.redis.host,
@@ -90,7 +91,8 @@ class Node {
                     onMinerUpdate: this.minerUpdate.bind(this),
                     onCoinUpdate: this.coinUpdate.bind(this),
                     onCurrentCoinUpdate: this.setCurrentCoin.bind(this),
-                    onCommand: this.command.bind(this)
+                    onCommand: this.command.bind(this),
+                    onGPUUpdate: this.gpuUpdate.bind(this)
                 });
                 coinName = yield this.db.getCurrentCoin();
                 yield this.syncCoins();
@@ -243,6 +245,12 @@ class Node {
             }
         });
     }
+    gpuUpdate(name, config) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // check all gpu, if gpu.model||gpu.uuid match - gpu.setup()
+            // if miner changed for [0] than miner.stop&miner.start
+        });
+    }
     minerUpdate(name, config, binary) {
         return __awaiter(this, void 0, void 0, function* () {
             this.miners[name] = config;
@@ -255,29 +263,38 @@ class Node {
     setCurrentCoin(name) {
         return __awaiter(this, void 0, void 0, function* () {
             const gpus = this.GPUs;
+            const model = gpus[0].model;
+            const algorithm = this.coins[name].algorithm;
             let miner;
             let minerName;
             try {
-                minerName = this.coins[name].gpuConfigs[gpus[0].model].miners[this.coins[name].algorithm];
+                debug(`Getting miner of 0 GPU model [${model}] on a rig for the algorithm {${algorithm}} ...`);
+                minerName = this.gpuConfigs[model][algorithm].miner;
+                debug(`Miner name is ${minerName}`);
                 const minerPath = __dirname + '/wrappers/' + this.miners[minerName].type;
-                debug(`loading miner: ${this.miners[minerName].type} from ${minerPath}`);
+                debug(`Loading miner: ${this.miners[minerName].type} from ${minerPath}`);
                 const Miner = require(minerPath).default;
                 miner = new Miner(minerName, this.miners[minerName].executable);
             }
             catch (err) {
-                debug(`can't continue setting current coins: ${err}`);
+                debug(`Can't continue setting current coins: ${err}`);
                 return;
             }
             if (this.miner) {
-                debug(`stopping current miner wrapper ${this.miner.type}`);
+                debug(`Stopping current miner wrapper ${this.miner.type}`);
                 yield this.miner.stop();
             }
-            debug(`setting gpu config for ${name}`);
-            if (!(yield this.setGPUConfig(name))) {
-                if (!this.currentCoin)
-                    throw new Error(`no default coin is set to failover`);
-                yield this.miner.start(this.coins[this.currentCoin]);
-                return;
+            if (!this.currentCoin || this.coins[name].algorithm !== this.coins[this.currentCoin].algorithm) {
+                debug(`Setting gpu config for ${name}`);
+                if (!(yield this.setGPUConfig(this.coins[name].algorithm))) {
+                    if (!this.currentCoin)
+                        throw new Error(`no default coin is set to failover`);
+                    yield this.miner.start(this.coins[this.currentCoin]);
+                    return;
+                }
+            }
+            else {
+                debug(`Algorithm for coin [${name}] is the same as for ${this.currentCoin}, skip GPU reconfiguration`);
             }
             this.currentCoin = name;
             this.miner = miner;
@@ -289,25 +306,33 @@ class Node {
             debug(`Miner started at ${this.coinStartedAt}`);
         });
     }
-    setGPUConfig(coinName) {
+    getGPUConfigForAlgorithm(gpu, algorithm) {
+        // gpuConfigs[gpu.uuid] ? gpuConfigs[gpu.uuid] : gpuConfigs[gpu.model];
+        if (this.gpuConfigs[gpu.uuid] && this.gpuConfigs[gpu.uuid][algorithm]) {
+            return this.gpuConfigs[gpu.uuid][algorithm];
+        }
+        else {
+            return this.gpuConfigs[gpu.model][algorithm];
+        }
+    }
+    setGPUConfig(algorithm) {
         return __awaiter(this, void 0, void 0, function* () {
             const gpus = this.GPUs;
             for (let i = 0; i < gpus.length; i++) {
                 const gpu = gpus[i];
-                const gpuConfigs = this.coins[coinName].gpuConfigs;
-                const config = gpuConfigs[gpu.uuid] ? gpuConfigs[gpu.uuid] : gpuConfigs[gpu.model];
+                const config = this.getGPUConfigForAlgorithm(gpu, algorithm);
                 if (!config) {
-                    debug(`can't continue setting current coin to ${coinName}: no config found for ${gpu.model}`);
-                    if (!this.currentCoin)
-                        return false;
-                    // returning current configs to the cards
-                    for (let j = i - 1; j > 0; j--) {
-                        const gpu = gpus[j];
-                        const gpuConfigs = this.coins[this.currentCoin].gpuConfigs;
-                        const config = gpuConfigs[gpu.uuid] ? gpuConfigs[gpu.uuid] : gpuConfigs[gpu.model];
-                        if (!config)
-                            return false;
-                        yield gpu.setup(config);
+                    debug(`Can't continue setting current coin to ${algorithm}: no config found for ${gpu.model}`);
+                    if (this.currentCoin) {
+                        // returning current configs to the cards
+                        for (let j = i - 1; j > 0; j--) {
+                            const gpu = gpus[j];
+                            const algorithm = this.coins[this.currentCoin].algorithm;
+                            const config = this.getGPUConfigForAlgorithm(gpu, algorithm);
+                            if (!config)
+                                return false;
+                            yield gpu.setup(config);
+                        }
                     }
                     return false;
                 }

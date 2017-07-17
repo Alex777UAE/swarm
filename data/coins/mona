@@ -1,0 +1,8 @@
+{
+  "algorithm": "lyra2v2",
+  "poolURL": "mona.suprnova.cc",
+  "port": 2995,
+  "username": "host777",
+  "password": "x",
+  "ssl": false
+}

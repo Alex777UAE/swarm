@@ -10,6 +10,7 @@ import * as IORedis from 'ioredis';
 import {DBStats, IDBLayer} from "../interfaces/i_db_layer";
 import {IMinerConfig, IMinerList} from "../interfaces/i_miner";
 import {ICoinConfig, ICoinList} from "../interfaces/i_coin";
+import {IGPUConfig, IGPUConfigList} from "../interfaces/i_gpu";
 
 const debug = require('debug')('miner:redis');
 const readFile = util.promisify(fs.readFile);
@@ -21,6 +22,7 @@ interface RedisOptions {
     port: number;
     myName: string;
     onCoinUpdate?: (coinName: string, config: ICoinConfig) => void,
+    onGPUUpdate?: (gpuUUIDOrModel: string, config: IGPUConfig) => void,
     onMinerUpdate?: (minerName: string, config: IMinerConfig, binary: Buffer) => void,
     onCurrentCoinUpdate?: (coinName: string) => void,
     onCommand?: (command: string, options?: string) => void;
@@ -36,7 +38,7 @@ export class Redis extends IDBLayer {
         this.redis = new IORedis(this.options.port, this.options.host);
         this.redis.on('connect', () => this.ready = true);
         if (this.options.onCoinUpdate || this.options.onMinerUpdate || this.options.onCurrentCoinUpdate ||
-            this.options.onCommand) {
+            this.options.onCommand || this.options.onGPUUpdate) {
             this.redisSubscriber = new IORedis(this.options.port, this.options.host);
             debug('subscribing');
             if (this.options.onCommand) {
@@ -57,6 +59,13 @@ export class Redis extends IDBLayer {
                         const fn = this.options.onCoinUpdate;
                         const {name, config} = JSON.parse(msg);
                         debug(`Coin ${name} update:\n${config}`);
+                        if (typeof fn === 'function') fn(name, config);
+                    }
+
+                    if (ch === 'gpus') {
+                        const fn = this.options.onGPUUpdate;
+                        const {name, config} = JSON.parse(msg);
+                        debug(`GPU ${name} update:\n${config}`);
                         if (typeof fn === 'function') fn(name, config);
                     }
 
@@ -106,6 +115,16 @@ export class Redis extends IDBLayer {
         return minerList;
     }
 
+    public async getAllGPUConfigs(): Promise<IGPUConfigList> {
+        const rawData = await this.redis.hgetall(REDIS_PREFIX + 'gpus');
+        const gpuConfigList: IGPUConfigList = {};
+
+        Object.keys(rawData).forEach(gpu => {
+            gpuConfigList[gpu] = JSON.parse(rawData[gpu]);
+        });
+        return gpuConfigList;
+    }
+
     public async getMinerBinnary(sha256sum: string): Promise<Buffer> {
         return await this.redis.getBuffer(REDIS_PREFIX + sha256sum);
     }
@@ -118,6 +137,11 @@ export class Redis extends IDBLayer {
     public async updateCoin(name: string, config: ICoinConfig): Promise<void> {
         await this.redis.hset(REDIS_PREFIX + 'coins', name, JSON.stringify(config));
         await this.redis.publish('coins', JSON.stringify({name, config}));
+    }
+
+    public async updateGPU(name: string, config: IGPUConfig): Promise<void> {
+        await this.redis.hset(REDIS_PREFIX + 'gpus', name, JSON.stringify(config));
+        await this.redis.publish('gpus', JSON.stringify({name, config}));
     }
 
     public async updateMiner(name: string, config: IMinerConfig, binaryPath?: string): Promise<void> {

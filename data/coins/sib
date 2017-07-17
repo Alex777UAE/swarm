@@ -1,0 +1,8 @@
+{
+  "algorithm": "sib",
+  "poolURL": "sib.suprnova.cc",
+  "port": 3458,
+  "username": "host777",
+  "password": "x",
+  "ssl": false
+}

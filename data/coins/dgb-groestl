@@ -1,0 +1,8 @@
+{
+  "algorithm": "myr-gr",
+  "poolURL": "hub.miningpoolhub.com",
+  "port": 20499,
+  "username": "host",
+  "password": "x",
+  "ssl": false
+}

@@ -1,0 +1,101 @@
+#!/usr/bin/env node
+const Client = require('../src/client').Client;
+const client = new Client();
+const readline = require('readline');
+const fs = require('fs');
+const Bluebird = require('bluebird');
+const _ = require('lodash');
+
+const CONFIGS_COINS = __dirname + '/../data/coins/';
+const CONFIGS_GPUS = __dirname + '/../data/gpus/';
+const CONFIGS_MINERS = __dirname + '/../data/miners/';
+const BINARIES_MINERS = __dirname + '/../miners/';
+const readFile = Bluebird.promisify(fs.readFile);
+const writeFile = Bluebird.promisify(fs.writeFile);
+
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+const uploadCoins = Bluebird.coroutine(function* (coinNames) {
+    for (let i = 0; i < coinNames.length; i++) {
+        const coinName = coinNames[i];
+        console.log(`\t${coinName.toUpperCase()}`);
+        yield client.uploadCoin(coinName, CONFIGS_COINS + coinName);
+    }
+});
+
+const uploadGPUs = Bluebird.coroutine(function* (gpuNames) {
+    for (let i = 0; i < gpuNames.length; i++) {
+        const gpuName = gpuNames[i];
+        console.log(`\t${gpuName.toUpperCase()}`);
+        yield client.uploadGPU(gpuName, CONFIGS_GPUS + gpuName);
+    }
+});
+
+const uploadMiners = Bluebird.coroutine(function* (minerNames) {
+    for (let i = 0; i < minerNames.length; i++) {
+        const minerName = minerNames[i];
+        console.log(`\t${minerName}`);
+        yield client.uploadMiner(minerName, CONFIGS_MINERS + minerName, BINARIES_MINERS + minerName);
+    }
+});
+
+const checkRCLocal = Bluebird.coroutine(function* () {
+    const rcLocal = yield readFile('/etc/rc.local', 'utf8');
+    const exit0Remove = /^\s*exit\s*\d*.*$/gi;
+    console.log('Check if startup is already set in rc.local');
+    if (rcLocal.indexOf("/usr/bin/screen -dmS swarm bash -c 'DEBUG=* /usr/local/swarm/bin/node'") === -1) {
+        console.log('No, adding');
+        let lines = rcLocal.split('\n');
+        lines = lines.filter(line => !exit0Remove.exec(line));
+        lines.push("/usr/bin/screen -dmS swarm bash -c 'DEBUG=* /usr/local/swarm/bin/node'");
+        lines.push("exit 0");
+        lines = lines.join('\n');
+        yield writeFile('/etc/rc.local', lines, 'utf8');
+    } else {
+        console.log('Yes, do nothing');
+    }
+});
+
+const writeEnv = Bluebird.coroutine(function* () {
+    const envFileContent =`#!/bin/sh
+
+PATH=$PATH:${__dirname}
+export PATH
+`;
+    console.log('Writing environment variable PATH to /etc/profile.d/swarm.sh');
+   yield writeFile('/etc/profile.d/swarm.sh', envFileContent, 'utf8');
+});
+
+console.log('Now I will (re)initialize all coins, gpu and miners configs. Previous configurations with matching names' +
+    'will be lost!');
+
+rl.question('Are you sure? Press Control-C to cancel.', () => {
+    rl.close();
+    console.log('Uploading coins\' configurations:');
+    const coins = fs.readdirSync(CONFIGS_COINS);
+    uploadCoins(coins)
+        .then(() => {
+            console.log('Uploading GPUs\' configurations:');
+            const gpus = fs.readdirSync(CONFIGS_GPUS);
+            return uploadGPUs(gpus);
+        })
+        .then(() => {
+            console.log('Uploading miners\' configurations and binaries:');
+            const minerConfigs = fs.readdirSync(CONFIGS_MINERS);
+            const minerBinaries = fs.readdirSync(BINARIES_MINERS);
+            const readyMiners = _.intersection(minerBinaries, minerConfigs);
+            return uploadMiners(readyMiners);
+        })
+        .then(checkRCLocal)
+        .then(writeEnv)
+        .then(() => 'Setup finished succefully!')
+        .catch(err => {
+            console.error(err);
+            process.exit(1);
+        })
+        .finally(() => process.exit(0))
+});

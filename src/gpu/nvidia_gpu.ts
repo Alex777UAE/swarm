@@ -73,8 +73,8 @@ export class NVidiaGPU extends IGPU {
         const o = await exec(this.nvidiaSMIPath, nvOpts, {killSignal: 'SIGKILL', timeout: 90000});
         debug(`got output:\n${o.stdout}`);
         let [name, uuid] = o.stdout.split(',');
-        this.cardUUID = uuid.trim();
-        this.cardModel = name.replace('GeForce', '').replace(/\s+/g, '');
+        this.cardUUID = uuid.trim().toLowerCase();
+        this.cardModel = name.replace('GeForce', '').replace(/\s+/g, '').toLowerCase();
     }
 
     public async setup(config: IGPUConfig): Promise<void> {

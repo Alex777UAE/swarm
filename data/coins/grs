@@ -1,0 +1,8 @@
+{
+  "algorithm": "groestl",
+  "poolURL": "europe1.groestlcoin.miningpoolhub.com",
+  "port": 20486,
+  "username": "host",
+  "password": "x",
+  "ssl": false
+}

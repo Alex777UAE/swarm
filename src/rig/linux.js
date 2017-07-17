@@ -30,8 +30,9 @@ const access = util.promisify(fs.access);
 const mkdir = util.promisify(fs.mkdir);
 const chmod = util.promisify(fs.chmod);
 const exec = util.promisify(child_process_1.execFile);
-const CONFIG_COINS_PATH = __dirname + '/../../configs/coins/';
-const CONFIG_MINERS_PATH = __dirname + '/../../configs/miners/';
+const CONFIG_COINS_PATH = __dirname + '/../../data/coins/';
+const CONFIG_MINERS_PATH = __dirname + '/../../data/miners/';
+const CONFIG_GPUS_PATH = __dirname + '/../../data/gpus/';
 const MINERS_PATH = __dirname + '/../../miners/';
 const LIGHT_DM_CONFIG_PATH = '/etc/lightdm/lightdm.conf';
 class Linux extends i_rig_1.IRig {
@@ -153,7 +154,6 @@ class Linux extends i_rig_1.IRig {
         return new Promise((resolve, reject) => {
             debug(`Is buffer: ${Buffer.isBuffer(bin)}`);
             debug(`Buffer length is: ${bin.length}`);
-            // const readStream = fs.createReadStream(bin);
             const readStream = new stream_1.Readable();
             readStream._read = () => { };
             readStream.push(bin);
@@ -163,7 +163,7 @@ class Linux extends i_rig_1.IRig {
             writeStream.on('finish', resolve);
             writeStream.on('error', reject);
             readStream.on('error', reject);
-            setImmediate(() => { readStream.push(null); });
+            setImmediate(() => readStream.push(null));
         });
     }
     loadMiners() {
@@ -174,6 +174,11 @@ class Linux extends i_rig_1.IRig {
     loadCoins() {
         return __awaiter(this, void 0, void 0, function* () {
             return yield Linux.loadJSONFiles(CONFIG_COINS_PATH);
+        });
+    }
+    loadGPUConfigs() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield Linux.loadJSONFiles(CONFIG_GPUS_PATH);
         });
     }
     static loadJSONFiles(dir) {

@@ -1,0 +1,8 @@
+{
+  "algorithm": "sia",
+  "poolURL": "eu.siamining.com",
+  "port": 3333,
+  "username": "92a2db0a25e729dcd6738adb975a97e018776ceffbe4dc37e2732d17ba65e38d8bfff8905168",
+  "password": "x",
+  "ssl": false
+}

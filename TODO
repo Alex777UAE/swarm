@@ -1,26 +1,27 @@
-
-- simplify coin->miner config
-    * check if it's really needed to restart miner (no if only uuid based GPU config updated)
-
-- restart command
-- reboot command
-
 - list available coins
 - delete coin
 - list miners
 - delete miner
+- list gpus
+- delete gpu
+
 - power limit in %
 - web monitoring interface
 - telegram notices
 - make it work on default lubuntu 17.04 node
 
-
-
 - install script
     1. setup all provided coins
+     - setup all provided gpu configs
     2. setup all provided miners
     3. install "/usr/bin/screen -dmS swarm bash -c 'DEBUG=* /usr/local/swarm/bin/node'" into rc.local if not done yet
     4. add to PATH system env.var /usr/local/swarm/bin/
+        /etc/profile.d/swarm.sh
+        #!/bin/sh
 
--  may be autorestart possible ?
-    miner:EWBFMiner ERROR: Looks like GPU1 are stopped. Restart attempt. +0ms
+        PATH=$PATH:/usr/local/swarm/bin
+        export PATH
+
+- excavator support, pascal algo
+- Marlin support, sia
+- benchmark all miners

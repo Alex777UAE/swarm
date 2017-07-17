@@ -44,6 +44,12 @@ export class Client {
 
     }
 
+    public async uploadGPU(name: string, path: string): Promise<void> {
+        const gpuConfig = JSON.parse(await readFile(path, {encoding: 'utf8'}));
+        await this.redis.updateGPU(name, gpuConfig);
+
+    }
+
     public async uploadMiner(name: string, path: string, minerPath?: string): Promise<void> {
         const minerConfig: IMinerConfig = JSON.parse(await readFile(path, {encoding: 'utf8'}));
 
@@ -95,7 +101,7 @@ export class Client {
             stats[name].info.uptime = moment.duration((stats[name].info.uptime as number) * 1000).humanize()
         });
         !full ? this.briefTable(stats) : this.fullTable(stats);
-        console.log(`Total GPUs: ${Object.keys(rawStats).reduce((total, n) => total + stats[n].info.gpuN, 0)}`);
+        console.log(`Total GPUs: ${Object.keys(stats).reduce((total, n) => total + stats[n].info.gpuN, 0)}`);
     }
 
     protected briefTable(stats: Stats): void {
@@ -127,7 +133,8 @@ export class Client {
                 info.acceptPercent,
                 info.coinTime,
                 info.uptime,
-                d]);
+                d > 120 ? colors.red(d.toString()) : d
+            ]);
         });
         console.log(table.toString());
     }
@@ -162,7 +169,7 @@ export class Client {
                 info.acceptPercent,
                 info.coinTime,
                 info.uptime,
-                d
+                d > 120 ? colors.red(d.toString()) : d
             ].map(rig => colors.bold(rig.toString())));
             table.push([
                 'GPU#',

@@ -132,7 +132,7 @@ class Linux extends i_rig_1.IRig {
                 if (!(yield this.checkDir(MINERS_PATH + name)))
                     yield mkdir(MINERS_PATH + name);
                 yield writeFile(MINERS_PATH + name + path.sep + config.executable, bin);
-                yield chmod(MINERS_PATH + name + path.sep + config.executable, 755);
+                yield chmod(MINERS_PATH + name + path.sep + config.executable, 0o755);
             }
             else if (config.fileType === 'tgz') {
                 yield this.untgzBuffer(name, bin);

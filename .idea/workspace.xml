@@ -7,6 +7,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" afterPath="$PROJECT_DIR$/src/gpu/nvidia_gpu.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js" afterPath="$PROJECT_DIR$/src/rig/linux.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js.map" afterPath="$PROJECT_DIR$/src/rig/linux.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.ts" afterPath="$PROJECT_DIR$/src/rig/linux.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -558,14 +560,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="118791000" />
-    </task>
-    <task id="LOCAL-00033" summary="targz #2">
-      <created>1500152895200</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1500152895201</updated>
+      <workItem from="1499812485546" duration="118800000" />
     </task>
     <task id="LOCAL-00034" summary="targz #3">
       <created>1500153128579</created>
@@ -903,11 +898,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500302920352</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="ver 0.0.2 &#10;&#10;#4">
+      <created>1500303155880</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1500303155881</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145035000" />
+    <option name="totallyTimeSpent" value="145044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -968,7 +970,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ccminer" />
     <MESSAGE value="stats" />
     <MESSAGE value="stats &amp; signal handlers" />
     <MESSAGE value="stats and minerUpdate fix" />
@@ -993,7 +994,8 @@
     <MESSAGE value="ver 0.0.2 &#10;&#10;#1" />
     <MESSAGE value="ver 0.0.2 &#10;&#10;#2" />
     <MESSAGE value="ver 0.0.2 &#10;&#10;#3" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.2 &#10;&#10;#3" />
+    <MESSAGE value="ver 0.0.2 &#10;&#10;#4" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.2 &#10;&#10;#4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

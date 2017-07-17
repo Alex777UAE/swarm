@@ -15,7 +15,7 @@
   },
   "groestl": {
     "fanSpeedTarget": 80,
-    "memClockOffset": 1100,
+    "memClockOffset": 0,
     "gpuClockOffset": 115,
     "powerLimit": 197,
     "miner": "ccminer-sp-1.5.81"

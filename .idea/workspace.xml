@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
+    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="ver 0.0.4&#10;&#10;alexis support">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ccminer.js" afterPath="$PROJECT_DIR$/src/wrappers/ccminer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ccminer.js.map" afterPath="$PROJECT_DIR$/src/wrappers/ccminer.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/wrappers/ccminer.ts" afterPath="$PROJECT_DIR$/src/wrappers/ccminer.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab" afterPath="$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/gpus/gtx1070" afterPath="$PROJECT_DIR$/data/gpus/gtx1070" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -108,21 +107,53 @@
       <file leaf-file-name="gtx1070" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/gpus/gtx1070">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="85" column="10" lean-forward="false" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
+            <state relative-caret-position="255">
+              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ccminer.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gpu-5d49e948-770c-4228-bb89-027ca3c521ab" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ccminer.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/wrappers/ccminer.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-538">
+            <state relative-caret-position="120">
               <caret line="11" column="91" lean-forward="false" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nvidia.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/nvidia.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-179">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nvidia_gpu.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gpu/nvidia_gpu.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -231,13 +262,13 @@
         <option value="$PROJECT_DIR$/bin/setup.js" />
         <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/src/client.ts" />
-        <option value="$PROJECT_DIR$/data/gpus/gtx1070" />
-        <option value="$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/bin/setup" />
         <option value="$PROJECT_DIR$/bin/gpu-set" />
         <option value="$PROJECT_DIR$/bin/miner-upload" />
         <option value="$PROJECT_DIR$/src/wrappers/ccminer.ts" />
+        <option value="$PROJECT_DIR$/data/gpus/gtx1070" />
+        <option value="$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab" />
       </list>
     </option>
   </component>
@@ -313,7 +344,57 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gpu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gpus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -479,14 +560,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
-      <workItem from="1499812485546" duration="124411000" />
-    </task>
-    <task id="LOCAL-00043" summary="wrappers fix &amp; debug">
-      <created>1500157274461</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1500157274462</updated>
+      <workItem from="1499812485546" duration="124622000" />
     </task>
     <task id="LOCAL-00044" summary="wrappers fix &amp; debug &amp; stats">
       <created>1500157735340</created>
@@ -824,11 +898,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500330450802</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="ver 0.0.4&#10;&#10;alexis support">
+      <created>1500330926814</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1500330926814</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150655000" />
+    <option name="totallyTimeSpent" value="150866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -889,7 +970,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="stats and minerUpdate fix" />
     <MESSAGE value="node 8 -&gt; 6 backward compatibility &#10;standalone mode tets" />
     <MESSAGE value="node 8 -&gt; 6 backward compatibility &#10;standalone mode tets&#10;&#10;ewbf default acceptedPercent fix" />
     <MESSAGE value="node 8 -&gt; 6 backward compatibility, reverted&#10;standalone mode tets&#10;&#10;ewbf default acceptedPercent fix" />
@@ -914,7 +994,8 @@
     <MESSAGE value="ver 0.0.2 &#10;&#10;#4" />
     <MESSAGE value="ver 0.0.2 &#10;&#10;#5" />
     <MESSAGE value="ver 0.0.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.3" />
+    <MESSAGE value="ver 0.0.4&#10;&#10;alexis support" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.4&#10;&#10;alexis support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -923,14 +1004,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/coins/etc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/coins/eth">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -948,14 +1021,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/coins/exp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/coins/grs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
@@ -1123,14 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gpu/nvidia_gpu.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="107" column="23" lean-forward="false" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/coins/xzc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1175,14 +1232,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="2846" column="20" lean-forward="false" selection-start-line="2846" selection-start-column="20" selection-end-line="2846" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1367,21 +1416,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/gpus/gtx1070">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="85" column="10" lean-forward="false" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wrappers/ccminer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-538">
+        <state relative-caret-position="120">
           <caret line="11" column="91" lean-forward="false" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nvidia.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-179">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gpu/nvidia_gpu.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/coins/grs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/gpus/gtx1070">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/gpus/gpu-5d49e948-770c-4228-bb89-027ca3c521ab">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -31,8 +31,7 @@ class ETHMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
                 '-S', `${coin.poolURL}:${coin.port}`,
                 '-O', `${coin.username}.${this.worker}:${coin.password}`,
                 '-U',
-                '--cuda-schedule', 'auto',
-                '--eexit 3'
+                '--cuda-schedule', 'auto'
             ], this.parseStdOut.bind(this));
         });
     }

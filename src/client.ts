@@ -34,7 +34,8 @@ export class Client {
             host: config.redis.host,
             port: config.redis.port,
             myName: os.hostname(),
-            onCommand: () => {} // to allow subscriber mode
+            onCommand: () => {
+            } // to allow subscriber mode
         });
     }
 
@@ -59,7 +60,7 @@ export class Client {
                 const binaryPath = await this.targzDirectory(name, minerPath);
                 minerConfig.fileType = 'tgz';
                 await this.redis.updateMiner(name, minerConfig, binaryPath);
-            } else if (fsStat.isFile()){
+            } else if (fsStat.isFile()) {
                 minerConfig.fileType = 'binary';
                 await this.redis.updateMiner(name, minerConfig, minerPath);
             } else {
@@ -121,22 +122,31 @@ export class Client {
             ],
             colWidths: [21, 17, 6, 32, 15]
         });
-        Object.keys(stats).forEach(name => {
-            const info = stats[name].info;
-            const d = Math.round((Date.now() - stats[name].timestamp) / 1000);
-            table.push([
-                name,
-                info.ip,
-                info.coin,
-                info.cpu,
-                info.gpuN,
-                info.hashrate,
-                (info.acceptPercent || 0).toFixed(2),
-                info.coinTime,
-                info.uptime,
-                d > 120 ? colors.red(d.toString()) : d
-            ]);
-        });
+        Object.keys(stats)
+            .sort((a, b) => {
+                if (stats[a].info.hashrate > stats[b].info.hashrate) {
+                    return -1;
+                } else if (stats[a].info.hashrate < stats[b].info.hashrate) {
+                    return 1;
+                }
+                return 0;
+            })
+            .forEach(name => {
+                const info = stats[name].info;
+                const d = Math.round((Date.now() - stats[name].timestamp) / 1000);
+                table.push([
+                    name,
+                    info.ip,
+                    info.coin,
+                    info.cpu,
+                    info.gpuN,
+                    info.hashrate,
+                    (info.acceptPercent || 0).toFixed(2),
+                    info.coinTime,
+                    info.uptime,
+                    d > 120 ? colors.red(d.toString()) : d
+                ]);
+            });
         console.log(table.toString());
     }
 

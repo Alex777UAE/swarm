@@ -105,7 +105,7 @@ if (argv.r)
 else
     console.log('Setting up rc.local and environment variables');
 
-rl.question('Are you sure? Press Control-C to cancel.', () => {
+rl.question('Are you sure? Press Control-C to cancel. Or ENTER to continue.', () => {
     rl.close();
 
     checkRCLocal()

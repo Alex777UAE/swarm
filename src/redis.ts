@@ -166,6 +166,13 @@ export class Redis extends IDBLayer {
         if (!nodes || nodes.length === 0) {
             await this.redis.hset(REDIS_PREFIX + 'currentCoin', 'default', name);
             await this.redis.publish('switch', JSON.stringify({hostname: 'all', coinName: name}));
+        } else if (name === 'default') {
+            const currentCoinName = await this.redis.hget(REDIS_PREFIX + 'currentCoin', 'default');
+            for (let i = 0; i < nodes.length; i++) {
+                const node = nodes[i];
+                await this.redis.hdel(REDIS_PREFIX + 'currentCoin', node);
+                await this.redis.publish('switch', JSON.stringify({hostname: node, coinName: currentCoinName}));
+            }
         } else {
             for (let i = 0; i < nodes.length; i++) {
                 const node = nodes[i];

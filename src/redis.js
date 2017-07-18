@@ -165,6 +165,14 @@ class Redis extends i_db_layer_1.IDBLayer {
                 yield this.redis.hset(REDIS_PREFIX + 'currentCoin', 'default', name);
                 yield this.redis.publish('switch', JSON.stringify({ hostname: 'all', coinName: name }));
             }
+            else if (name === 'default') {
+                const currentCoinName = yield this.redis.hget(REDIS_PREFIX + 'currentCoin', 'default');
+                for (let i = 0; i < nodes.length; i++) {
+                    const node = nodes[i];
+                    yield this.redis.hdel(REDIS_PREFIX + 'currentCoin', node);
+                    yield this.redis.publish('switch', JSON.stringify({ hostname: node, coinName: currentCoinName }));
+                }
+            }
             else {
                 for (let i = 0; i < nodes.length; i++) {
                     const node = nodes[i];

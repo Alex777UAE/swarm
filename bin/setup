@@ -83,7 +83,7 @@ exit 0`;
             '--registry-dwords="PerfLevelSrc=0x2222"', '--registry-dwords="PerfLevelSrc=0x2222"', '--no-sli',
             '--connected-monitor="DFP-0"', '-o', '/etc/X11/xorg.conf'
         ]);
-        yield execFile('/bin/sed', ['-i', '\'/Driver/a Option "Interactive" "False"\'', '/etc/X11/xorg.conf']);
+        yield execFile('/bin/sed', ['-i', '/Driver/a Option "Interactive" "False"', '/etc/X11/xorg.conf']);
     } else {
         console.log('Yes, do nothing');
     }

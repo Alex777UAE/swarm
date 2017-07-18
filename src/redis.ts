@@ -160,7 +160,8 @@ export class Redis extends IDBLayer {
     public async setCurrentCoin(name: string, nodes?: string[]): Promise<void> {
         if (name === 'default' && (!nodes || nodes.length === 0)) throw new Error(`Can't reset without nodes argument`);
         const availableCoins = await this.getAllCoins();
-        if (Object.keys(availableCoins).indexOf(name) === -1) throw new Error(`No coin ${name} available in swarm`);
+        if (name !== 'default' && Object.keys(availableCoins).indexOf(name) === -1)
+            throw new Error(`No coin ${name} available in swarm`);
 
         if (!nodes || nodes.length === 0) {
             await this.redis.hset(REDIS_PREFIX + 'currentCoin', 'default', name);

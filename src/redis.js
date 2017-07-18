@@ -159,7 +159,7 @@ class Redis extends i_db_layer_1.IDBLayer {
             if (name === 'default' && (!nodes || nodes.length === 0))
                 throw new Error(`Can't reset without nodes argument`);
             const availableCoins = yield this.getAllCoins();
-            if (Object.keys(availableCoins).indexOf(name) === -1)
+            if (name !== 'default' && Object.keys(availableCoins).indexOf(name) === -1)
                 throw new Error(`No coin ${name} available in swarm`);
             if (!nodes || nodes.length === 0) {
                 yield this.redis.hset(REDIS_PREFIX + 'currentCoin', 'default', name);

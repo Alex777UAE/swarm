@@ -5,6 +5,8 @@
 - list gpus
 - delete gpu
 
+- setup should execute xorg configuration
+
 - power limit in %
 - web monitoring interface
 - telegram notices

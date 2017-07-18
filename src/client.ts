@@ -131,7 +131,7 @@ export class Client {
                 info.cpu,
                 info.gpuN,
                 info.hashrate,
-                info.acceptPercent.toFixed(4),
+                (info.acceptPercent || 0).toFixed(2),
                 info.coinTime,
                 info.uptime,
                 d > 120 ? colors.red(d.toString()) : d
@@ -167,7 +167,7 @@ export class Client {
                 info.cpu,
                 info.gpuN,
                 info.hashrate,
-                info.acceptPercent.toFixed(2),
+                (info.acceptPercent || 0).toFixed(2),
                 info.coinTime,
                 info.uptime,
                 d > 120 ? colors.red(d.toString()) : d

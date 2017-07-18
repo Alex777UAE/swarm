@@ -6,6 +6,7 @@ const fs = require('fs');
 const Bluebird = require('bluebird');
 const minimist = require('minimist');
 const _ = require('lodash');
+const childProcess = require('child_process');
 
 const argv = minimist(process.argv.slice(2));
 
@@ -16,6 +17,7 @@ const BINARIES_MINERS = __dirname + '/../miners/';
 const readFile = Bluebird.promisify(fs.readFile);
 const writeFile = Bluebird.promisify(fs.writeFile);
 const chmod = Bluebird.promisify(fs.chmod);
+const execFile = Bluebird.promisify(childProcess.execFile);
 
 if (argv.h) {
     console.error(`\nsetup [-r]`);
@@ -75,7 +77,13 @@ sed -i '/Driver/a Option "Interactive" "False"' /etc/X11/xorg.conf
 
 exit 0`;
         yield writeFile('/etc/rc.local', lines, 'utf8');
-        yield chmod('/etc/rc.local', 0o755)
+        yield chmod('/etc/rc.local', 0o755);
+        yield execFile('/usr/bin/nvidia-xconfig', [
+            '-s', '-a', '--allow-empty-initial-configuration', '--cool-bits=12',
+            '--registry-dwords="PerfLevelSrc=0x2222"', '--registry-dwords="PerfLevelSrc=0x2222"', '--no-sli',
+            '--connected-monitor="DFP-0"', '-o', '/etc/X11/xorg.conf'
+        ]);
+        yield execFile('/bin/sed', ['-i', '\'/Driver/a Option "Interactive" "False"\'', '/etc/X11/xorg.conf']);
     } else {
         console.log('Yes, do nothing');
     }

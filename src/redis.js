@@ -54,10 +54,10 @@ class Redis extends i_db_layer_1.IDBLayer {
                     }
                     if (ch === 'gpus') {
                         const fn = this.options.onGPUUpdate;
-                        const { name, config } = JSON.parse(msg);
-                        debug(`GPU ${name} update:\n${config}`);
+                        const { modelOrUUID, config } = JSON.parse(msg);
+                        debug(`GPU ${modelOrUUID} update:\n${config}`);
                         if (typeof fn === 'function')
-                            fn(name, config);
+                            fn(modelOrUUID, config);
                     }
                     if (ch === 'miners') {
                         const { name, config } = JSON.parse(msg);

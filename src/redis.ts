@@ -63,9 +63,9 @@ export class Redis extends IDBLayer {
 
                     if (ch === 'gpus') {
                         const fn = this.options.onGPUUpdate;
-                        const {name, config} = JSON.parse(msg);
-                        debug(`GPU ${name} update:\n${config}`);
-                        if (typeof fn === 'function') fn(name, config);
+                        const {modelOrUUID, config} = JSON.parse(msg);
+                        debug(`GPU ${modelOrUUID} update:\n${config}`);
+                        if (typeof fn === 'function') fn(modelOrUUID, config);
                     }
 
                     if (ch === 'miners') {

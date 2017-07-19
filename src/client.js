@@ -235,7 +235,7 @@ class Client {
                 algorithm,
                 cardId
             };
-            yield this.redis.command('command.gpu', JSON.stringify(config), hostname);
+            yield this.redis.command('gpu', JSON.stringify(config), hostname);
         });
     }
 }

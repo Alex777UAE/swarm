@@ -238,7 +238,7 @@ export class Client {
             cardId
         };
 
-        await this.redis.command('command.gpu', JSON.stringify(config), hostname);
+        await this.redis.command('gpu', JSON.stringify(config), hostname);
 
     }
 }

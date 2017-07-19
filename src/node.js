@@ -144,6 +144,8 @@ class Node {
                     else {
                         Object.keys(newGPUConfigs[targetGPU.uuid])
                             .forEach(algo => {
+                            newGPUConfigs[targetGPU.uuid][algo] = newGPUConfigs[targetGPU.uuid][algo] ?
+                                newGPUConfigs[targetGPU.uuid][algo] : newGPUConfigs[targetGPU.model][algo];
                             newGPUConfigs[targetGPU.uuid][algo][key] = ovConfig[key];
                         });
                     }

@@ -39,7 +39,7 @@ class EWBFMiner extends StdOutMinerWrapper {
         await this.launchMinerBinary(coin, [
             '--server', coin.poolURL,
             '--port', coin.port.toString(),
-            '--user', `${coin.username}.${this.worker}`,
+            '--user', `${coin.username}.${coin.workername ? coin.workername : this.worker}`,
             '--pass', coin.password,
             '--fee', '0',
             '--boff',

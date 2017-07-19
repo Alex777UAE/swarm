@@ -1,4 +1,11 @@
-* fix coin reset
+- remote control gpu clocks, mem clocks, powerlimit, fan speed
+    + [-a algorithm] or all
+    + [-g gpuClocks] [-m memClocks] [-p powerLimit] [-f fanSpeed]
+ ! check
+- default workername in coinconfig, check
+- --no-colors change for colors.strip() for ccminer wrapper, check
+- delay between restarts, check
+
 
 - list available coins
 - delete coin
@@ -6,8 +13,6 @@
 - delete miner
 - list gpus
 - delete gpu
-
-- setup should execute xorg configuration
 
 - power limit in %
 - web monitoring interface

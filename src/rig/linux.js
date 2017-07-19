@@ -125,6 +125,11 @@ class Linux extends i_rig_1.IRig {
             yield writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config, null, 2));
         });
     }
+    updateGPU(gpuModelOrUUID, config) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield writeFile(CONFIG_GPUS_PATH + gpuModelOrUUID, JSON.stringify(config, null, 2));
+        });
+    }
     updateMiner(name, config, bin) {
         return __awaiter(this, void 0, void 0, function* () {
             yield writeFile(CONFIG_MINERS_PATH + name, JSON.stringify(config, null, 2));

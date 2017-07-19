@@ -12,10 +12,14 @@ import {Redis} from "./redis";
 import {Linux} from "./rig/linux";
 import {setTimeout} from "timers";
 import {IRig} from "../interfaces/i_rig";
-import {IGPU, IGPUConfig, IGPUConfigList, IGPUStats} from "../interfaces/i_gpu";
+import {
+    IGPU, IGPUConfig, IGPUConfigList, IGPUStats, OverClockMessage,
+    PerAlgorithmGPUConfig
+} from "../interfaces/i_gpu";
 import {IMiner, IMinerList, IMinerConfig} from "../interfaces/i_miner";
 import {ICoinConfig, ICoinList, Algorithm} from "../interfaces/i_coin";
 import * as path from "path";
+import {isNullOrUndefined} from "util";
 
 const debug = require('debug')('miner:node');
 const readFile = util.promisify(fs.readFile);
@@ -146,6 +150,7 @@ export class Node {
     }
 
     private async command(command: string, params: string): Promise<void> {
+        // todo idea. make commands dynamic. bound commandname -> filename. like in src/commands/*
         debug(`received command ${command} with params ${params}`);
         if (command === 'command.reboot') {
             await this.abortSignalHandler();
@@ -153,6 +158,21 @@ export class Node {
         } else if (command === 'command.restart') {
             await this.miner.stop();
             await this.miner.start(this.coins[this.currentCoin]);
+        } else if (command === 'command.gpu') {
+            const ovConfig: OverClockMessage = JSON.parse(params);
+            const newGPUConfigs = Object.assign({}, this.gpuConfigs);
+            const targetGPU = this.GPUs.find(gpu => gpu.id === ovConfig.cardId);
+            if (!targetGPU) throw new Error(`No GPU with id ${ovConfig.cardId} found on ${this.rig.hostname}`);
+            if (!newGPUConfigs[targetGPU.uuid]) {
+                // add new
+                newGPUConfigs[targetGPU.uuid] = {};
+                newGPUConfigs[targetGPU.uuid][ovConfig.algorithm] = newGPUConfigs[targetGPU.model][ovConfig.algorithm];
+            }
+            Object.keys(ovConfig)
+                .filter(key => key !== 'algorithm' && key !== 'cardId' && !isNullOrUndefined(ovConfig[key]))
+                .forEach(key => newGPUConfigs[targetGPU.uuid][ovConfig.algorithm][key] = ovConfig[key]);
+
+            await this.db.updateGPU(targetGPU.uuid, newGPUConfigs[targetGPU.uuid]);
         }
     }
 
@@ -280,9 +300,23 @@ export class Node {
         }
     }
 
-    private async gpuUpdate(name: string, config: ICoinConfig) {
-        // check all gpu, if gpu.model||gpu.uuid match - gpu.setup()
+    private async gpuUpdate(gpuModelOrUUID: string, config: PerAlgorithmGPUConfig) {
+        // check all gpu, if gpu.model||gpu.uuid match gpuModelOrUUID: string - gpu.setup()
         // if miner changed for [0] than miner.stop&miner.start
+        const currentAlgo = this.coins[this.currentCoin].algorithm;
+        for (let i = 0; i < this.GPUs.length; i++) {
+            const gpu = this.GPUs[i];
+            if (gpu.model === gpuModelOrUUID || gpu.uuid === gpuModelOrUUID) {
+                if (!_.isEqual(this.gpuConfigs[gpuModelOrUUID][currentAlgo], config[currentAlgo]))
+                    await gpu.setup(config[currentAlgo]);
+            }
+        }
+        await this.rig.updateGPU(gpuModelOrUUID, config);
+        if (this.gpuConfigs[gpuModelOrUUID][currentAlgo].miner !== config[currentAlgo].miner) {
+            await this.miner.stop();
+            await this.miner.start(this.coins[this.currentCoin]);
+        }
+        this.gpuConfigs[gpuModelOrUUID] = config;
     }
 
     private async minerUpdate(name: string, config: IMinerConfig, binary: Buffer) {

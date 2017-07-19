@@ -132,10 +132,10 @@ class Redis extends i_db_layer_1.IDBLayer {
             yield this.redis.publish('coins', JSON.stringify({ name, config }));
         });
     }
-    updateGPU(name, config) {
+    updateGPU(modelOrUUID, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.redis.hset(REDIS_PREFIX + 'gpus', name, JSON.stringify(config));
-            yield this.redis.publish('gpus', JSON.stringify({ name, config }));
+            yield this.redis.hset(REDIS_PREFIX + 'gpus', modelOrUUID, JSON.stringify(config));
+            yield this.redis.publish('gpus', JSON.stringify({ modelOrUUID, config }));
         });
     }
     updateMiner(name, config, binaryPath) {
@@ -228,6 +228,11 @@ class Redis extends i_db_layer_1.IDBLayer {
                     this.redis.on('error', reject);
                 });
             }
+        });
+    }
+    coinExists(name) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return !!(yield this.redis.hget(REDIS_PREFIX + 'coins', name));
         });
     }
 }

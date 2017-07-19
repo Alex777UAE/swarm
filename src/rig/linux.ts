@@ -11,7 +11,7 @@ import * as targz from 'tar.gz';
 import {NVidia} from "../nvidia";
 import {NVidiaGPU} from "../gpu/nvidia_gpu";
 import {IRig, OS} from "../../interfaces/i_rig";
-import {IGPU, IGPUConfigList} from "../../interfaces/i_gpu";
+import {IGPU, IGPUConfigList, PerAlgorithmGPUConfig} from "../../interfaces/i_gpu";
 import {ICoinConfig, ICoinList} from "../../interfaces/i_coin";
 import {IMinerConfig, IMinerList} from "../../interfaces/i_miner";
 import {Readable} from "stream";
@@ -125,6 +125,10 @@ export class Linux extends IRig {
 
     public async updateCoin(name: string, config: ICoinConfig): Promise<void> {
         await writeFile(CONFIG_COINS_PATH + name, JSON.stringify(config, null, 2));
+    }
+
+    public async updateGPU(gpuModelOrUUID: string, config: PerAlgorithmGPUConfig): Promise<void> {
+        await writeFile(CONFIG_GPUS_PATH + gpuModelOrUUID, JSON.stringify(config, null, 2));
     }
 
     public async updateMiner(name: string, config: IMinerConfig, bin: Buffer): Promise<void> {

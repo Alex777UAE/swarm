@@ -21,6 +21,7 @@ const redis_1 = require("./redis");
 const linux_1 = require("./rig/linux");
 const timers_1 = require("timers");
 const path = require("path");
+const util_1 = require("util");
 const debug = require('debug')('miner:node');
 const readFile = util.promisify(fs.readFile);
 const unlink = util.promisify(fs.unlink);
@@ -111,6 +112,7 @@ class Node {
     }
     command(command, params) {
         return __awaiter(this, void 0, void 0, function* () {
+            // todo idea. make commands dynamic. bound commandname -> filename. like in src/commands/*
             debug(`received command ${command} with params ${params}`);
             if (command === 'command.reboot') {
                 yield this.abortSignalHandler();
@@ -119,6 +121,22 @@ class Node {
             else if (command === 'command.restart') {
                 yield this.miner.stop();
                 yield this.miner.start(this.coins[this.currentCoin]);
+            }
+            else if (command === 'command.gpu') {
+                const ovConfig = JSON.parse(params);
+                const newGPUConfigs = Object.assign({}, this.gpuConfigs);
+                const targetGPU = this.GPUs.find(gpu => gpu.id === ovConfig.cardId);
+                if (!targetGPU)
+                    throw new Error(`No GPU with id ${ovConfig.cardId} found on ${this.rig.hostname}`);
+                if (!newGPUConfigs[targetGPU.uuid]) {
+                    // add new
+                    newGPUConfigs[targetGPU.uuid] = {};
+                    newGPUConfigs[targetGPU.uuid][ovConfig.algorithm] = newGPUConfigs[targetGPU.model][ovConfig.algorithm];
+                }
+                Object.keys(ovConfig)
+                    .filter(key => key !== 'algorithm' && key !== 'cardId' && !util_1.isNullOrUndefined(ovConfig[key]))
+                    .forEach(key => newGPUConfigs[targetGPU.uuid][ovConfig.algorithm][key] = ovConfig[key]);
+                yield this.db.updateGPU(targetGPU.uuid, newGPUConfigs[targetGPU.uuid]);
             }
         });
     }
@@ -245,10 +263,24 @@ class Node {
             }
         });
     }
-    gpuUpdate(name, config) {
+    gpuUpdate(gpuModelOrUUID, config) {
         return __awaiter(this, void 0, void 0, function* () {
-            // check all gpu, if gpu.model||gpu.uuid match - gpu.setup()
+            // check all gpu, if gpu.model||gpu.uuid match gpuModelOrUUID: string - gpu.setup()
             // if miner changed for [0] than miner.stop&miner.start
+            const currentAlgo = this.coins[this.currentCoin].algorithm;
+            for (let i = 0; i < this.GPUs.length; i++) {
+                const gpu = this.GPUs[i];
+                if (gpu.model === gpuModelOrUUID || gpu.uuid === gpuModelOrUUID) {
+                    if (!_.isEqual(this.gpuConfigs[gpuModelOrUUID][currentAlgo], config[currentAlgo]))
+                        yield gpu.setup(config[currentAlgo]);
+                }
+            }
+            yield this.rig.updateGPU(gpuModelOrUUID, config);
+            if (this.gpuConfigs[gpuModelOrUUID][currentAlgo].miner !== config[currentAlgo].miner) {
+                yield this.miner.stop();
+                yield this.miner.start(this.coins[this.currentCoin]);
+            }
+            this.gpuConfigs[gpuModelOrUUID] = config;
         });
     }
     minerUpdate(name, config, binary) {

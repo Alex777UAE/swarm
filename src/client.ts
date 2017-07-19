@@ -12,6 +12,7 @@ import {Redis} from './redis';
 import {IStats, IAppConfig, SWITCH_FILE} from './node';
 import {IMinerConfig} from "../interfaces/i_miner";
 import * as path from "path";
+import {IGPUConfig, OverClockMessage} from "../interfaces/i_gpu";
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
@@ -48,7 +49,6 @@ export class Client {
     public async uploadGPU(name: string, path: string): Promise<void> {
         const gpuConfig = JSON.parse(await readFile(path, {encoding: 'utf8'}));
         await this.redis.updateGPU(name, gpuConfig);
-
     }
 
     public async uploadMiner(name: string, path: string, minerPath?: string): Promise<void> {
@@ -218,6 +218,28 @@ export class Client {
 
     public async command(name, params: string = '', hostname: string = ''): Promise<void> {
         await this.redis.command(name, params, hostname);
+    }
+
+    public async overclock(hostname: string,
+                           cardId: number | string,
+                           algorithm: string,
+                           gpuClockOffset: number,
+                           memClockOffset: number,
+                           powerLimit: number,
+                           fanSpeedTarget: number): Promise<void> {
+        if (cardId && isNaN(parseInt(cardId as string))) throw new Error(`No valid card id provided`);
+        cardId = parseInt(cardId as string);
+        const config: OverClockMessage = {
+            fanSpeedTarget,
+            memClockOffset,
+            gpuClockOffset,
+            powerLimit,
+            algorithm,
+            cardId
+        };
+
+        await this.redis.command('command.gpu', JSON.stringify(config), hostname);
+
     }
 }
 

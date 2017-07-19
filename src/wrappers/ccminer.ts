@@ -3,6 +3,7 @@
  */
 
 import 'source-map-support/register';
+import * as colors from 'colors';
 import {StdOutMinerWrapper} from "./stdout_miner_wrapper";
 import {MinerType} from "../../interfaces/i_miner";
 import {ICoinConfig} from "../../interfaces/i_coin";
@@ -28,12 +29,12 @@ class CCMiner extends StdOutMinerWrapper {
     public async start(coin: ICoinConfig): Promise<void> {
         await this.launchMinerBinary(coin, [
             '-a', coin.algorithm,
-            '-o', `stratum+${coin.ssl ? 'ssl' : 'tcp'}://${coin.poolURL}:${coin.port}`,
-            '-O', `${coin.username}.${this.worker}:${coin.password}`,
+            '-o', `stratum+tcp://${coin.poolURL}:${coin.port}`,
+            '-O', `${coin.username}.${coin.workername ? coin.workername : this.worker}:${coin.password}`,
             '--retries=1',
             '--retry-pause=10',
             '--timeout=60',
-            '--no-color'
+            // '--no-color'
         ], this.parseStdOut.bind(this), this.parseStdOut.bind(this))
     }
 
@@ -60,6 +61,7 @@ class CCMiner extends StdOutMinerWrapper {
         const lines = data.split('\n');
         lines.forEach(line => {
             debug(line);
+            line = colors.strip(line);
             const acceptedMatchV1 = REGEXP_ACCEPTED_HASHRATE_V1.exec(line);
             if (acceptedMatchV1) {
                 const acceptedShares = acceptedMatchV1[1];

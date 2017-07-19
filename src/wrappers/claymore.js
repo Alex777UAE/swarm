@@ -30,8 +30,8 @@ class Claymore extends stdout_miner_wrapper_1.StdOutMinerWrapper {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.launchMinerBinary(coin, [
                 '-epool', `${coin.poolURL}:${coin.port}`,
-                '-ewal', `${coin.username}.${this.worker}`,
-                '-eworker', `${coin.username}.${this.worker}`,
+                '-ewal', `${coin.username}.${coin.workername ? coin.workername : this.worker}`,
+                '-eworker', `${coin.username}.${coin.workername ? coin.workername : this.worker}`,
                 '-epsw', coin.password,
                 '-esm', '2',
                 '-mode', '1',
@@ -99,4 +99,4 @@ class Claymore extends stdout_miner_wrapper_1.StdOutMinerWrapper {
     }
 }
 exports.default = Claymore;
-//# sourceMappingURL=Claymore.js.map
+//# sourceMappingURL=claymore.js.map

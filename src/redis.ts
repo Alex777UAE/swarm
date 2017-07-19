@@ -10,7 +10,7 @@ import * as IORedis from 'ioredis';
 import {DBStats, IDBLayer} from "../interfaces/i_db_layer";
 import {IMinerConfig, IMinerList} from "../interfaces/i_miner";
 import {ICoinConfig, ICoinList} from "../interfaces/i_coin";
-import {IGPUConfig, IGPUConfigList} from "../interfaces/i_gpu";
+import {IGPUConfigList, PerAlgorithmGPUConfig} from "../interfaces/i_gpu";
 
 const debug = require('debug')('miner:redis');
 const readFile = util.promisify(fs.readFile);
@@ -22,7 +22,7 @@ interface RedisOptions {
     port: number;
     myName: string;
     onCoinUpdate?: (coinName: string, config: ICoinConfig) => void,
-    onGPUUpdate?: (gpuUUIDOrModel: string, config: IGPUConfig) => void,
+    onGPUUpdate?: (gpuUUIDOrModel: string, config: PerAlgorithmGPUConfig) => void,
     onMinerUpdate?: (minerName: string, config: IMinerConfig, binary: Buffer) => void,
     onCurrentCoinUpdate?: (coinName: string) => void,
     onCommand?: (command: string, options?: string) => void;
@@ -138,9 +138,9 @@ export class Redis extends IDBLayer {
         await this.redis.publish('coins', JSON.stringify({name, config}));
     }
 
-    public async updateGPU(name: string, config: IGPUConfig): Promise<void> {
-        await this.redis.hset(REDIS_PREFIX + 'gpus', name, JSON.stringify(config));
-        await this.redis.publish('gpus', JSON.stringify({name, config}));
+    public async updateGPU(modelOrUUID: string, config: PerAlgorithmGPUConfig): Promise<void> {
+        await this.redis.hset(REDIS_PREFIX + 'gpus', modelOrUUID, JSON.stringify(config));
+        await this.redis.publish('gpus', JSON.stringify({modelOrUUID, config}));
     }
 
     public async updateMiner(name: string, config: IMinerConfig, binaryPath?: string): Promise<void> {
@@ -223,5 +223,9 @@ export class Redis extends IDBLayer {
 
         }
 
+    }
+
+    public async coinExists(name: string): Promise<boolean> {
+        return !!await this.redis.hget(REDIS_PREFIX + 'coins', name);
     }
 }

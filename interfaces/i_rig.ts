@@ -4,7 +4,7 @@
 
 import {IUnit} from "./i_unit";
 
-import {IGPU, IGPUConfigList} from "./i_gpu";
+import {IGPU, IGPUConfigList, PerAlgorithmGPUConfig} from "./i_gpu";
 import {ICoinConfig, ICoinList} from "./i_coin";
 import {IMinerConfig, IMinerList} from "./i_miner";
 
@@ -28,6 +28,8 @@ export abstract class IRig extends IUnit {
     public abstract async getLoad(): Promise<{ cpu: number; mem: number }>;
 
     public abstract async updateCoin(name: string, config: ICoinConfig): Promise<void>;
+
+    public abstract async updateGPU(gpuModelOrUUID: string, config: PerAlgorithmGPUConfig): Promise<void>;
 
     public abstract async updateMiner(name: string, config: IMinerConfig, bin: Buffer): Promise<void>;
 

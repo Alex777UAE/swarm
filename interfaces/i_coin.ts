@@ -14,5 +14,5 @@ export interface ICoinConfig {
     port: number;
     username: string;
     password: string;
-    ssl: boolean;
+    workername?: string;
 }

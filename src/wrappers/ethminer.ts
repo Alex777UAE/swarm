@@ -32,7 +32,7 @@ class ETHMiner extends StdOutMinerWrapper {
     public async start(coin: ICoinConfig): Promise<void> {
         await this.launchMinerBinary(coin, [
             '-S', `${coin.poolURL}:${coin.port}`,
-            '-O', `${coin.username}.${this.worker}:${coin.password}`,
+            '-O', `${coin.username}.${coin.workername ? coin.workername : this.worker}:${coin.password}`,
             '-U',
             '--farm-recheck', '2000',
             '--cuda-schedule', 'auto'

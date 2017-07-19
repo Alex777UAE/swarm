@@ -35,7 +35,8 @@ export type GPUModel = 'gtx1070' | 'gtx1080' | 'gtx1080ti' | 'gtx1060' | 'unknow
  }
  */
 
-export type IGPUConfigList = { [modelOurUUID: string]: {[algorithm: string]: IGPUConfig} };
+export type PerAlgorithmGPUConfig = {[algorithm: string]: IGPUConfig};
+export type IGPUConfigList = { [modelOurUUID: string]: PerAlgorithmGPUConfig };
 
 export interface IGPUConfig {
     fanSpeedTarget: number;
@@ -53,6 +54,16 @@ export interface IGPUStats {
     fanSpeed: number;
     gpuClock: number;
     memClock: number;
+}
+
+
+export interface OverClockMessage {
+    fanSpeedTarget: number;
+    memClockOffset: number;
+    gpuClockOffset: number;
+    powerLimit: number;
+    algorithm: string;
+    cardId: number;
 }
 
 export abstract class IGPU extends IUnit {

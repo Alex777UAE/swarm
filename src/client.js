@@ -222,6 +222,22 @@ class Client {
             yield this.redis.command(name, params, hostname);
         });
     }
+    overclock(hostname, cardId, algorithm, gpuClockOffset, memClockOffset, powerLimit, fanSpeedTarget) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (cardId && isNaN(parseInt(cardId)))
+                throw new Error(`No valid card id provided`);
+            cardId = parseInt(cardId);
+            const config = {
+                fanSpeedTarget,
+                memClockOffset,
+                gpuClockOffset,
+                powerLimit,
+                algorithm,
+                cardId
+            };
+            yield this.redis.command('command.gpu', JSON.stringify(config), hostname);
+        });
+    }
 }
 exports.Client = Client;
 //# sourceMappingURL=client.js.map

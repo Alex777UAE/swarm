@@ -5,7 +5,7 @@ const minimist = require('minimist');
 const argv = minimist(process.argv.slice(2));
 
 if (!argv._[0] || !argv._[1]) {
-    console.error(`\nPlease provide coin name and path to json config:\n\tcoin-set ftc ./configs/coins/ftc`);
+    console.error(`\nPlease provide coin name and path to json config:\n\tcoin-set ftc ./data/coins/ftc`);
     process.exit(1);
 } else {
     const Client = require('../src/client').Client;

@@ -12,6 +12,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 require("source-map-support/register");
+const colors = require("colors");
 const stdout_miner_wrapper_1 = require("./stdout_miner_wrapper");
 const util = require('util');
 const debug = require('debug')('miner:CCMiner');
@@ -31,12 +32,11 @@ class CCMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.launchMinerBinary(coin, [
                 '-a', coin.algorithm,
-                '-o', `stratum+${coin.ssl ? 'ssl' : 'tcp'}://${coin.poolURL}:${coin.port}`,
-                '-O', `${coin.username}.${this.worker}:${coin.password}`,
+                '-o', `stratum+tcp://${coin.poolURL}:${coin.port}`,
+                '-O', `${coin.username}.${coin.workername ? coin.workername : this.worker}:${coin.password}`,
                 '--retries=1',
                 '--retry-pause=10',
                 '--timeout=60',
-                '--no-color'
             ], this.parseStdOut.bind(this), this.parseStdOut.bind(this));
         });
     }
@@ -63,6 +63,7 @@ class CCMiner extends stdout_miner_wrapper_1.StdOutMinerWrapper {
         const lines = data.split('\n');
         lines.forEach(line => {
             debug(line);
+            line = colors.strip(line);
             const acceptedMatchV1 = REGEXP_ACCEPTED_HASHRATE_V1.exec(line);
             if (acceptedMatchV1) {
                 const acceptedShares = acceptedMatchV1[1];

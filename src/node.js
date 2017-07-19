@@ -309,9 +309,9 @@ class Node {
                     const gpu = this.GPUs[i];
                     if (gpu.model === gpuModelOrUUID || gpu.uuid === gpuModelOrUUID) {
                         debug(`Found matching gpu with local id ${gpu.id}`);
-                        if (!this.gpuConfigs[gpuModelOrUUID] ||
-                            !_.isEqual(this.gpuConfigs[gpuModelOrUUID][currentAlgo], config[currentAlgo]))
-                            yield gpu.setup(config[currentAlgo]);
+                        /*                    if (!this.gpuConfigs[gpuModelOrUUID] ||
+                                                !_.isEqual(this.gpuConfigs[gpuModelOrUUID][currentAlgo], config[currentAlgo]))*/
+                        yield gpu.setup(config[currentAlgo]);
                     }
                 }
                 if (currentMiner !== config[currentAlgo].miner) {

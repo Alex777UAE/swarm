@@ -160,17 +160,30 @@ export class Node {
             await this.miner.start(this.coins[this.currentCoin]);
         } else if (command === 'command.gpu') {
             const ovConfig: OverClockMessage = JSON.parse(params);
+            const algo = ovConfig.algorithm;
             const newGPUConfigs = Object.assign({}, this.gpuConfigs);
             const targetGPU = this.GPUs.find(gpu => gpu.id === ovConfig.cardId);
             if (!targetGPU) throw new Error(`No GPU with id ${ovConfig.cardId} found on ${this.rig.hostname}`);
             if (!newGPUConfigs[targetGPU.uuid]) {
                 // add new
-                newGPUConfigs[targetGPU.uuid] = {};
-                newGPUConfigs[targetGPU.uuid][ovConfig.algorithm] = newGPUConfigs[targetGPU.model][ovConfig.algorithm];
+                newGPUConfigs[targetGPU.uuid] = newGPUConfigs[targetGPU.model];
+                if (algo) {
+                    newGPUConfigs[targetGPU.uuid][algo] = newGPUConfigs[targetGPU.model][algo];
+                }
+
             }
             Object.keys(ovConfig)
                 .filter(key => key !== 'algorithm' && key !== 'cardId' && !isNullOrUndefined(ovConfig[key]))
-                .forEach(key => newGPUConfigs[targetGPU.uuid][ovConfig.algorithm][key] = ovConfig[key]);
+                .forEach(key => {
+                    if (algo)
+                        newGPUConfigs[targetGPU.uuid][algo][key] = ovConfig[key];
+                    else {
+                        Object.keys(newGPUConfigs[targetGPU.uuid])
+                            .forEach(algo => {
+                                newGPUConfigs[targetGPU.uuid][algo][key] = ovConfig[key];
+                            });
+                    }
+                });
 
             await this.db.updateGPU(targetGPU.uuid, newGPUConfigs[targetGPU.uuid]);
         }

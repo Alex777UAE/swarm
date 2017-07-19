@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/rig-gpu" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js" afterPath="$PROJECT_DIR$/src/node.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js.map" afterPath="$PROJECT_DIR$/src/node.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.ts" afterPath="$PROJECT_DIR$/src/node.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js" afterPath="$PROJECT_DIR$/src/rig/linux.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.js.map" afterPath="$PROJECT_DIR$/src/rig/linux.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rig/linux.ts" afterPath="$PROJECT_DIR$/src/rig/linux.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.ts" afterPath="$PROJECT_DIR$/src/redis.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="redis.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="redis.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/redis.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1007">
-              <caret line="206" column="17" lean-forward="false" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
+            <state relative-caret-position="81">
+              <caret line="53" column="77" lean-forward="false" selection-start-line="53" selection-start-column="77" selection-end-line="53" selection-end-column="77" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#41#78#0" expanded="true" />
@@ -50,26 +46,26 @@
                 <element signature="n#!!block;n#getCurrentCoin#0;n#Redis#0" expanded="false" />
                 <element signature="n#!!block;n#updateCoin#0;n#Redis#0" expanded="false" />
                 <element signature="n#!!block;n#updateMiner#0;n#Redis#0" expanded="false" />
-                <element signature="e#6640#6807#0" expanded="false" />
+                <element signature="e#6648#6815#0" expanded="false" />
                 <element signature="n#!!block;n#setCurrentCoin#0;n#Redis#0" expanded="false" />
                 <element signature="n#!!block;n#updateStats#0;n#Redis#0" expanded="false" />
-                <element signature="e#8532#8612#0" expanded="false" />
+                <element signature="e#8540#8620#0" expanded="false" />
                 <element signature="n#!!block;n#getStats#0;n#Redis#0" expanded="false" />
-                <element signature="e#8827#8961#0" expanded="false" />
+                <element signature="e#8835#8969#0" expanded="false" />
                 <element signature="n#!!block;n#removeDeadNode#0;n#Redis#0" expanded="false" />
-                <element signature="e#9579#10042#0" expanded="false" />
-                <element signature="e#9626#9978#0" expanded="false" />
-                <element signature="e#9771#9958#0" expanded="false" />
+                <element signature="e#9587#10050#0" expanded="false" />
+                <element signature="e#9634#9986#0" expanded="false" />
+                <element signature="e#9779#9966#0" expanded="false" />
                 <element signature="n#!!block;n#coinExists#0;n#Redis#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="node.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
+            <state relative-caret-position="850">
               <caret line="341" column="31" lean-forward="false" selection-start-line="341" selection-start-column="31" selection-end-line="341" selection-end-column="31" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
@@ -297,7 +293,6 @@
         <option value="$PROJECT_DIR$/interfaces/i_gpu.ts" />
         <option value="$PROJECT_DIR$/interfaces/i_db_layer.ts" />
         <option value="$PROJECT_DIR$/interfaces/i_rig.ts" />
-        <option value="$PROJECT_DIR$/src/redis.ts" />
         <option value="$PROJECT_DIR$/interfaces/i_coin.ts" />
         <option value="$PROJECT_DIR$/src/wrappers/ccminer.ts" />
         <option value="$PROJECT_DIR$/src/wrappers/claymore.ts" />
@@ -315,6 +310,7 @@
         <option value="$PROJECT_DIR$/bin/rig-gpu" />
         <option value="$PROJECT_DIR$/src/rig/linux.ts" />
         <option value="$PROJECT_DIR$/src/node.ts" />
+        <option value="$PROJECT_DIR$/src/redis.ts" />
       </list>
     </option>
   </component>
@@ -590,14 +586,7 @@
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
       <workItem from="1499812485546" duration="145823000" />
-      <workItem from="1500499017357" duration="4292000" />
-    </task>
-    <task id="LOCAL-00059" summary="node 8 -&gt; 6 backward compatibility &#10;standalone mode tets">
-      <created>1500213411735</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1500213411736</updated>
+      <workItem from="1500499017357" duration="4430000" />
     </task>
     <task id="LOCAL-00060" summary="node 8 -&gt; 6 backward compatibility &#10;standalone mode tets&#10;&#10;ewbf default acceptedPercent fix">
       <created>1500213981356</created>
@@ -935,11 +924,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500502520488</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="ver 0.0.4&#10;&#10;fix for coin current coin update skip if it's already the same&#10;ethminer params fix&#10;ethminer colors fix #2&#10;ethminer hashrates dumb fix&#10;sort by hashrate for brief stats&#10;fix for default coin reset&#10;&#10;- remote control gpu clocks, mem clocks, powerlimit, fan speed&#10;    + [-a algorithm] or all&#10;    + [-g gpuClocks] [-m memClocks] [-p powerLimit] [-f fanSpeed]&#10; ! check&#10;- default workername in coinconfig, check&#10;- --no-colors change for colors.strip() for ccminer wrapper, check&#10;- delay between restarts, check">
+      <created>1500503542475</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1500503542475</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176359000" />
+    <option name="totallyTimeSpent" value="176497000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1286,7 +1282,7 @@
         <state relative-caret-position="240">
           <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
           <folding>
-            <element signature="e#41#89#0" expanded="true" />
+            <element signature="e#41#89#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1442,34 +1438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redis.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="206" column="17" lean-forward="false" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#41#78#0" expanded="true" />
-            <element signature="n#!!block;n#getAllCoins#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#getAllMiners#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#getMinerBinnary#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#getCurrentCoin#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoin#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#updateMiner#0;n#Redis#0" expanded="false" />
-            <element signature="e#6640#6807#0" expanded="false" />
-            <element signature="n#!!block;n#setCurrentCoin#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#updateStats#0;n#Redis#0" expanded="false" />
-            <element signature="e#8532#8612#0" expanded="false" />
-            <element signature="n#!!block;n#getStats#0;n#Redis#0" expanded="false" />
-            <element signature="e#8827#8961#0" expanded="false" />
-            <element signature="n#!!block;n#removeDeadNode#0;n#Redis#0" expanded="false" />
-            <element signature="e#9579#10042#0" expanded="false" />
-            <element signature="e#9626#9978#0" expanded="false" />
-            <element signature="e#9771#9958#0" expanded="false" />
-            <element signature="n#!!block;n#coinExists#0;n#Redis#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rig/linux.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -1523,7 +1491,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/node.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
+        <state relative-caret-position="850">
           <caret line="341" column="31" lean-forward="false" selection-start-line="341" selection-start-column="31" selection-end-line="341" selection-end-column="31" />
           <folding>
             <element signature="e#40#77#0" expanded="true" />
@@ -1551,6 +1519,34 @@
             <element signature="e#13727#13795#0" expanded="false" />
             <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redis.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="53" column="77" lean-forward="false" selection-start-line="53" selection-start-column="77" selection-end-line="53" selection-end-column="77" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#41#78#0" expanded="true" />
+            <element signature="n#!!block;n#getAllCoins#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#getAllMiners#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#getMinerBinnary#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#getCurrentCoin#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#updateCoin#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#updateMiner#0;n#Redis#0" expanded="false" />
+            <element signature="e#6648#6815#0" expanded="false" />
+            <element signature="n#!!block;n#setCurrentCoin#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#updateStats#0;n#Redis#0" expanded="false" />
+            <element signature="e#8540#8620#0" expanded="false" />
+            <element signature="n#!!block;n#getStats#0;n#Redis#0" expanded="false" />
+            <element signature="e#8835#8969#0" expanded="false" />
+            <element signature="n#!!block;n#removeDeadNode#0;n#Redis#0" expanded="false" />
+            <element signature="e#9587#10050#0" expanded="false" />
+            <element signature="e#9634#9986#0" expanded="false" />
+            <element signature="e#9779#9966#0" expanded="false" />
+            <element signature="n#!!block;n#coinExists#0;n#Redis#0" expanded="false" />
           </folding>
         </state>
       </provider>

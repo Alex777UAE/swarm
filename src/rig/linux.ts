@@ -128,7 +128,9 @@ export class Linux extends IRig {
     }
 
     public async updateGPU(gpuModelOrUUID: string, config: PerAlgorithmGPUConfig): Promise<void> {
-        await writeFile(CONFIG_GPUS_PATH + gpuModelOrUUID, JSON.stringify(config, null, 2));
+        const path = CONFIG_GPUS_PATH + gpuModelOrUUID;
+        debug(`writing to [${path}] new config`);
+        await writeFile(path, JSON.stringify(config, null, 2));
     }
 
     public async updateMiner(name: string, config: IMinerConfig, bin: Buffer): Promise<void> {

@@ -98,6 +98,7 @@ class Node {
                 coinName = yield this.db.getCurrentCoin();
                 yield this.syncCoins();
                 yield this.syncMiners();
+                yield this.syncGPUs();
             }
             else {
                 yield touch(os.tmpdir() + path.sep + exports.SWITCH_FILE);
@@ -268,6 +269,24 @@ class Node {
             }
         });
     }
+    syncGPUs() {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const gpuList = yield this.db.getAllGPUConfigs();
+                const modelOrUUIDs = Object.keys(gpuList);
+                for (let i = 0; i < modelOrUUIDs.length; i++) {
+                    const modelOrUUID = modelOrUUIDs[i];
+                    if (!this.gpuConfigs[modelOrUUID] || !_.isEqual(this.gpuConfigs[modelOrUUID], gpuList[modelOrUUID])) {
+                        debug(`Updating gpu config in process and on disk`);
+                        yield this.gpuUpdate(modelOrUUID, gpuList[modelOrUUID]);
+                    }
+                }
+            }
+            catch (err) {
+                debug(`Error syncing gpuConfigs:\n${err}`);
+            }
+        });
+    }
     coinUpdate(name, config) {
         return __awaiter(this, void 0, void 0, function* () {
             this.coins[name] = config;
@@ -281,30 +300,32 @@ class Node {
         return __awaiter(this, void 0, void 0, function* () {
             // check all gpu, if gpu.model||gpu.uuid match gpuModelOrUUID: string - gpu.setup()
             // if miner changed for [0] than miner.stop&miner.start
-            const currentAlgo = this.coins[this.currentCoin].algorithm;
-            debug(`gpuUpdate - current algo (${currentAlgo} and gpuModelOrUUID is [${gpuModelOrUUID}])`);
-            for (let i = 0; i < this.GPUs.length; i++) {
-                const gpu = this.GPUs[i];
-                if (gpu.model === gpuModelOrUUID || gpu.uuid === gpuModelOrUUID) {
-                    debug(`Found matching gpu with local id ${gpu.id}`);
-                    if (!this.gpuConfigs[gpuModelOrUUID] ||
-                        !_.isEqual(this.gpuConfigs[gpuModelOrUUID][currentAlgo], config[currentAlgo]))
-                        yield gpu.setup(config[currentAlgo]);
+            if (this.currentCoin) {
+                const currentAlgo = this.coins[this.currentCoin].algorithm;
+                const currentMiner = this.gpuConfigs[gpuModelOrUUID] ? this.gpuConfigs[gpuModelOrUUID][currentAlgo].miner
+                    : this.gpuConfigs[this.GPUs[0].model][currentAlgo].miner;
+                debug(`gpuUpdate - current algo (${currentAlgo} and gpuModelOrUUID is [${gpuModelOrUUID}])`);
+                for (let i = 0; i < this.GPUs.length; i++) {
+                    const gpu = this.GPUs[i];
+                    if (gpu.model === gpuModelOrUUID || gpu.uuid === gpuModelOrUUID) {
+                        debug(`Found matching gpu with local id ${gpu.id}`);
+                        if (!this.gpuConfigs[gpuModelOrUUID] ||
+                            !_.isEqual(this.gpuConfigs[gpuModelOrUUID][currentAlgo], config[currentAlgo]))
+                            yield gpu.setup(config[currentAlgo]);
+                    }
+                }
+                if (currentMiner !== config[currentAlgo].miner) {
+                    debug(`Miner change [${currentMiner}] -> [${config[currentAlgo].miner}]`);
+                    const minerPath = __dirname + '/wrappers/' + this.miners[config[currentAlgo].miner].type;
+                    debug(`Loading miner: ${this.miners[config[currentAlgo].miner].type} from ${minerPath}`);
+                    const Miner = require(minerPath).default;
+                    const miner = new Miner(config[currentAlgo].miner, this.miners[config[currentAlgo].miner].executable);
+                    yield this.miner.stop();
+                    this.miner = miner;
+                    yield this.miner.start(this.coins[this.currentCoin]);
                 }
             }
             yield this.rig.updateGPU(gpuModelOrUUID, config);
-            const currentMiner = this.gpuConfigs[gpuModelOrUUID] ? this.gpuConfigs[gpuModelOrUUID][currentAlgo].miner
-                : this.gpuConfigs[this.GPUs[0].model][currentAlgo].miner;
-            if (currentMiner !== config[currentAlgo].miner) {
-                debug(`Miner change [${currentMiner}] -> [${config[currentAlgo].miner}]`);
-                const minerPath = __dirname + '/wrappers/' + this.miners[config[currentAlgo].miner].type;
-                debug(`Loading miner: ${this.miners[config[currentAlgo].miner].type} from ${minerPath}`);
-                const Miner = require(minerPath).default;
-                const miner = new Miner(config[currentAlgo].miner, this.miners[config[currentAlgo].miner].executable);
-                yield this.miner.stop();
-                this.miner = miner;
-                yield this.miner.start(this.coins[this.currentCoin]);
-            }
             this.gpuConfigs[gpuModelOrUUID] = config;
         });
     }

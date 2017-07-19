@@ -42,7 +42,7 @@ class Redis extends i_db_layer_1.IDBLayer {
                     }
                 });
             }
-            this.redisSubscriber.subscribe('coins', 'miners', 'switch');
+            this.redisSubscriber.subscribe('coins', 'miners', 'switch', 'gpus');
             this.redisSubscriber.on('message', (ch, msg) => {
                 try {
                     if (ch === 'coins') {

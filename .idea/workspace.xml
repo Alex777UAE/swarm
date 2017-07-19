@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/rig-gpu" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.ts" afterPath="$PROJECT_DIR$/src/redis.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js" afterPath="$PROJECT_DIR$/src/redis.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redis.js.map" afterPath="$PROJECT_DIR$/src/redis.js.map" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -586,14 +586,7 @@
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
       <workItem from="1499812485546" duration="145823000" />
-      <workItem from="1500499017357" duration="4430000" />
-    </task>
-    <task id="LOCAL-00060" summary="node 8 -&gt; 6 backward compatibility &#10;standalone mode tets&#10;&#10;ewbf default acceptedPercent fix">
-      <created>1500213981356</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1500213981357</updated>
+      <workItem from="1500499017357" duration="4483000" />
     </task>
     <task id="LOCAL-00061" summary="node 8 -&gt; 6 backward compatibility, reverted&#10;standalone mode tets&#10;&#10;ewbf default acceptedPercent fix">
       <created>1500215106166</created>
@@ -931,11 +924,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500503542475</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="ver 0.0.4&#10;&#10;fix for coin current coin update skip if it's already the same&#10;ethminer params fix&#10;ethminer colors fix #2&#10;ethminer hashrates dumb fix&#10;sort by hashrate for brief stats&#10;fix for default coin reset&#10;&#10;- remote control gpu clocks, mem clocks, powerlimit, fan speed&#10;    + [-a algorithm] or all&#10;    + [-g gpuClocks] [-m memClocks] [-p powerLimit] [-f fanSpeed]&#10; ! check&#10;- default workername in coinconfig, check&#10;- --no-colors change for colors.strip() for ccminer wrapper, check&#10;- delay between restarts, check">
+      <created>1500503700203</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1500503700203</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176497000" />
+    <option name="totallyTimeSpent" value="176550000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />

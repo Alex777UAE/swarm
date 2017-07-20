@@ -87,7 +87,8 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
         debug(`exit code ${code}`);
         if (this.coin)
             Bluebird.delay(15000)
-                .then(() => this.start(this.coin))
+                .then(() => { if (!this.miner)
+                return this.start(this.coin); })
                 .catch(debug);
     }
     exec(args, stdoutParser, stderrParser) {

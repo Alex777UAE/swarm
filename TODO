@@ -1,12 +1,6 @@
-- remote control gpu clocks, mem clocks, powerlimit, fan speed
-    + [-a algorithm] or all
-    + [-g gpuClocks] [-m memClocks] [-p powerLimit] [-f fanSpeed]
- ! check
-- default workername in coinconfig, check
-- --no-colors change for colors.strip() for ccminer wrapper, check
 - delay between restarts, check
 
-
+- reset gpu to model default (delete specific settings for it)
 - list available coins
 - delete coin
 - list miners

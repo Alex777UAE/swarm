@@ -69,7 +69,7 @@ export abstract class StdOutMinerWrapper extends IMiner {
             this.coin = undefined;
             this.miner.kill('SIGTERM');
             await Bluebird.delay(3000);
-            this.miner.kill('SIGKILL');
+            if (this.miner) this.miner.kill('SIGKILL');
             this.miner = undefined;
         }
     }

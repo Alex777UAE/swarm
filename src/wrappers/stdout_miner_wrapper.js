@@ -59,7 +59,8 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
                 this.coin = undefined;
                 this.miner.kill('SIGTERM');
                 yield Bluebird.delay(3000);
-                this.miner.kill('SIGKILL');
+                if (this.miner)
+                    this.miner.kill('SIGKILL');
                 this.miner = undefined;
             }
         });

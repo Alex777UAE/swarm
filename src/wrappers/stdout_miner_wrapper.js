@@ -85,17 +85,27 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
     handleExit(code) {
         // todo notify switching algo module somehow?
         debug(`exit code ${code}`);
+        const coin = this.coin;
         if (this.coin)
-            Bluebird.delay(15000)
-                .then(() => { if (!this.miner)
-                return this.start(this.coin); })
+            this.stop()
+                .then(() => Bluebird.delay(15000))
+                .then(() => {
+                if (!this.miner)
+                    return this.start(coin);
+            })
                 .catch(debug);
     }
     exec(args, stdoutParser, stderrParser) {
         return __awaiter(this, void 0, void 0, function* () {
             this.miner = childProcess.spawn(MINERS_DIRECTORY_BASE + this.name + path.sep + this.executable, args);
-            this.miner.stdout.on('data', data => { data = data.toString(); stdoutParser(data); });
-            this.miner.stderr.on('data', data => { data = data.toString(); stderrParser(data); });
+            this.miner.stdout.on('data', data => {
+                data = data.toString();
+                stdoutParser(data);
+            });
+            this.miner.stderr.on('data', data => {
+                data = data.toString();
+                stderrParser(data);
+            });
             this.miner.on('close', this.handleExit.bind(this));
             this.miner.on('error', StdOutMinerWrapper.errParser); // todo handle it properly
         });

@@ -24,8 +24,8 @@ export abstract class StdOutMinerWrapper extends IMiner {
     protected coin: ICoinConfig;
     protected hr: number = 0;
     protected hrTimestamp: number;
-    protected hrs: {[id: number]: number} = {};
-    protected hrsTimestamp: {[id: number]: number} = {};
+    protected hrs: { [id: number]: number } = {};
+    protected hrsTimestamp: { [id: number]: number } = {};
     protected acceptPercent: number = 0;
     protected worker: string;
     protected timer: NodeJS.Timer;
@@ -97,15 +97,26 @@ export abstract class StdOutMinerWrapper extends IMiner {
     protected handleExit(code: number): void {
         // todo notify switching algo module somehow?
         debug(`exit code ${code}`);
-        if (this.coin) Bluebird.delay(15000)
-            .then(() => {if (!this.miner) return this.start(this.coin)})
-            .catch(debug);
+        const coin = this.coin;
+        if (this.coin)
+            this.stop()
+                .then(() => Bluebird.delay(15000))
+                .then(() => {
+                    if (!this.miner) return this.start(coin)
+                })
+                .catch(debug);
     }
 
     protected async exec(args: string[], stdoutParser: parserFn, stderrParser: parserFn) {
         this.miner = childProcess.spawn(MINERS_DIRECTORY_BASE + this.name + path.sep + this.executable, args);
-        this.miner.stdout.on('data', data => { data = data.toString(); stdoutParser(data); });
-        this.miner.stderr.on('data', data => { data = data.toString(); stderrParser(data); });
+        this.miner.stdout.on('data', data => {
+            data = data.toString();
+            stdoutParser(data);
+        });
+        this.miner.stderr.on('data', data => {
+            data = data.toString();
+            stderrParser(data);
+        });
         this.miner.on('close', this.handleExit.bind(this));
         this.miner.on('error', StdOutMinerWrapper.errParser) // todo handle it properly
     }

@@ -248,6 +248,8 @@ class Redis extends i_db_layer_1.IDBLayer {
     }
     deleteMiner(name) {
         return __awaiter(this, void 0, void 0, function* () {
+            const minerConf = JSON.parse(yield this.redis.hget(REDIS_PREFIX + 'miners', name));
+            yield this.redis.del(REDIS_PREFIX + minerConf.sha256sum);
             yield this.redis.hdel(REDIS_PREFIX + 'miners', name);
         });
     }

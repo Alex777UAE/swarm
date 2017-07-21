@@ -7,7 +7,7 @@ const argv = minimist(process.argv.slice(2));
 
 if (argv.h || !argv._[0] ||  isNullOrUndefined(argv.i) || isNaN(parseInt(argv.i)) || argv.g && isNaN(parseInt(argv.g)) ||
     argv.m && isNaN(parseInt(argv.m)) || argv.p && isNaN(parseInt(argv.p)) || argv.f && isNaN(parseInt(argv.f))) {
-    console.log('\nrig-gpu HOSTNAME -i cardId [-a algorithm] [-g gpuClocksOffs] [-m memClocksOffs] [-p powerLimit] ' +
+    console.log('\ngpu-update HOSTNAME -i cardId [-a algorithm] [-g gpuClocksOffs] [-m memClocksOffs] [-p powerLimit] ' +
         '[-f fanSpeed]');
     console.log('\tcontrol GPU cardId on HOSTNAME\n');
     console.log('Supported commands:\n');
@@ -17,7 +17,7 @@ if (argv.h || !argv._[0] ||  isNullOrUndefined(argv.i) || isNaN(parseInt(argv.i)
     console.log('\t-m mem clock offset, ex. 1100 or 0');
     console.log('\t-p power limit in watts, ex. 195');
     console.log('\t-f fan speed in percents, ex. 80');
-    console.log('\n\n\tex. ./rig-gpu F503 -i 0 -g-200 -a ethash');
+    console.log('\n\n\tex. ./gpu-update F503 -i 0 -g-200 -a ethash');
     process.exit(0);
 }
 

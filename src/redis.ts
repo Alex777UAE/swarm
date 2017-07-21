@@ -239,6 +239,8 @@ export class Redis extends IDBLayer {
     }
 
     public async deleteMiner(name: string): Promise<void> {
+        const minerConf: IMinerConfig = JSON.parse(await this.redis.hget(REDIS_PREFIX + 'miners', name));
+        await this.redis.del(REDIS_PREFIX + minerConf.sha256sum);
         await this.redis.hdel(REDIS_PREFIX + 'miners', name);
     }
 }

@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+const minimist = require('minimist');
+
+const argv = minimist(process.argv.slice(2));
+
+if (!argv._[0]) {
+    console.error(`\nPlease provide coin name:\n\tcoin-del eth`);
+    process.exit(1);
+} else {
+    const Client = require('../src/client').Client;
+    const client = new Client();
+    client.deleteCoin(argv._[0])
+        .then(() => {
+            console.log('Done');
+            process.exit(0);
+        })
+        .catch(err => {
+            console.error(err);
+            process.exit(1);
+        });
+}

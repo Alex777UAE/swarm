@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+const minimist = require('minimist');
+
+const Client = require('../src/client').Client;
+const client = new Client();
+client.showMiners()
+    .then(() => {
+        process.exit(0);
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });

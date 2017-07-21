@@ -205,7 +205,8 @@ class Client {
                 table.push([
                     id,
                     info.gpuNames[id],
-                    gpu.temperature,
+                    gpu.temperature < 60 ? colors.cyan(gpu.temperature.toString()) : (gpu.temperature < 70 ?
+                        colors.yellow(gpu.temperature.toString()) : colors.red(gpu.temperature.toString())),
                     gpu.gpuLoad,
                     gpu.memLoad,
                     info.gpuHashrates[id],
@@ -296,20 +297,65 @@ class Client {
             yield this.redis.deleteGPU(uuidOrModel);
         });
     }
+    /*
+     algorithm: Algorithm;
+     poolURL: string;
+     port: number;
+     username: string;
+     password: string;
+     workername?: string;
+     */
     showCoins() {
         return __awaiter(this, void 0, void 0, function* () {
+            const coins = yield this.redis.getAllCoins();
+            const table = new Table({
+                head: ['Coin', 'Algorithm', 'Pool URL', 'Port', 'Username', 'Password', 'Workername'],
+                colWidths: [null, null, null, null, 40]
+            });
+            Object.keys(coins)
+                .sort((a, b) => coins[a].algorithm > coins[b].algorithm ? 1 : (coins[a].algorithm < coins[b].algorithm ? -1 : 0))
+                .forEach(name => table.push([
+                name,
+                coins[name].algorithm,
+                coins[name].poolURL,
+                coins[name].port,
+                coins[name].username,
+                coins[name].password,
+                coins[name].workername || '',
+            ]));
+            console.log(table.toString());
         });
     }
     deleteCoin(name) {
         return __awaiter(this, void 0, void 0, function* () {
+            yield this.redis.deleteCoin(name);
         });
     }
+    /*
+     fileType: 'binary' | 'tgz';
+     sha256sum: string;
+     type: MinerType;
+     executable: string;
+     */
     showMiners() {
         return __awaiter(this, void 0, void 0, function* () {
+            const miners = yield this.redis.getAllMiners();
+            const table = new Table({
+                head: ['Miner', 'Wrapper type', 'Executable path']
+            });
+            Object.keys(miners)
+                .sort((a, b) => miners[a].type > miners[b].type ? 1 : (miners[a].type < miners[b].type ? -1 : 0))
+                .forEach(name => table.push([
+                name,
+                miners[name].type,
+                miners[name].executable,
+            ]));
+            console.log(table.toString());
         });
     }
     deleteMiner(name) {
         return __awaiter(this, void 0, void 0, function* () {
+            yield this.redis.deleteMiner(name);
         });
     }
 }

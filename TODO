@@ -1,17 +1,6 @@
-- reset gpu to model default (delete specific settings for it), check
-    + broadcast delete event
-
-- list available coins
-- delete coin
-- list miners
-- delete miner
+- telegram notices
 
 - web monitoring interface
-- telegram notices
 - make it work on default lubuntu 17.04 node
 
-
-
 - excavator support, pascal algo
-- Marlin support, sia
-- benchmark all miners

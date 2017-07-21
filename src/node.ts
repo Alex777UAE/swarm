@@ -361,9 +361,11 @@ export class Node {
                 const gpu = this.GPUs[i];
                 if (gpu.model === gpuModelOrUUID || gpu.uuid === gpuModelOrUUID) {
                     debug(`Found matching gpu with local id ${gpu.id}`);
-/*                    if (!this.gpuConfigs[gpuModelOrUUID] ||
-                        !_.isEqual(this.gpuConfigs[gpuModelOrUUID][currentAlgo], config[currentAlgo]))*/
-                        await gpu.setup(config[currentAlgo]);
+                    if (config[currentAlgo]) {
+                        if (!this.gpuConfigs[gpuModelOrUUID] || !this.gpuConfigs[gpuModelOrUUID][currentAlgo] ||
+                            !_.isEqual(this.gpuConfigs[gpuModelOrUUID][currentAlgo], config[currentAlgo]))
+                            await gpu.setup(config[currentAlgo]);
+                    }
                 }
             }
 

@@ -10,7 +10,7 @@ if (argv.h || !argv._[0] ||  isNullOrUndefined(argv.i) || isNaN(parseInt(argv.i)
     console.log('\nrig-gpu HOSTNAME -i cardId [-a algorithm] [-g gpuClocksOffs] [-m memClocksOffs] [-p powerLimit] ' +
         '[-f fanSpeed]');
     console.log('\tcontrol GPU cardId on HOSTNAME\n');
-    console.log('Supported commands:\t');
+    console.log('Supported commands:\n');
     console.log('\t-i card index, ex. 0');
     console.log('\t-a algorithm name, if omitted - for all algorithms ');
     console.log('\t-g gpu clock offset, ex. 110 or -200');

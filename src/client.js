@@ -244,14 +244,15 @@ class Client {
             yield this.redis.command('gpu', JSON.stringify(config), hostname);
         });
     }
-    showGPUs(uuidOrModel) {
+    showGPUs(uuidOrModel, hostname) {
         return __awaiter(this, void 0, void 0, function* () {
             const configs = yield this.redis.getAllGPUConfigs();
             const stats = yield this.getStats();
             if (!uuidOrModel || !configs[uuidOrModel]) {
+                const tableRaw = [];
                 const table = new Table({ head: ['UUID', 'Hostname', 'GPU Index'] });
                 Object.keys(configs).forEach(uuid => {
-                    let host, id;
+                    let host = '', id;
                     const hostnames = Object.keys(stats);
                     for (let i = 0; i < hostnames.length; i++) {
                         const hostname = hostnames[i];
@@ -265,8 +266,12 @@ class Client {
                             break;
                         }
                     }
-                    table.push([uuid, host, id]);
+                    if (!hostname || hostname === host)
+                        tableRaw.push([uuid, host, id]);
                 });
+                // console.log(tableRaw);
+                tableRaw.sort((a, b) => a[1] > b[1] ? -1 : (a[1] < b[1] ? 1 : 0)).forEach(entry => table.push(entry));
+                // console.log(tableRaw);
                 console.log(table.toString());
             }
             else {

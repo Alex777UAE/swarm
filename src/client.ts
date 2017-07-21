@@ -249,13 +249,14 @@ export class Client {
 
     }
 
-    public async showGPUs(uuidOrModel?: string): Promise<void> {
+    public async showGPUs(uuidOrModel?: string, hostname?: string): Promise<void> {
         const configs = await this.redis.getAllGPUConfigs();
         const stats = await this.getStats();
         if (!uuidOrModel || !configs[uuidOrModel]) {
+            const tableRaw = [];
             const table = new Table({head: ['UUID', 'Hostname', 'GPU Index']});
             Object.keys(configs).forEach(uuid => {
-                let host, id;
+                let host = '', id;
                 const hostnames = Object.keys(stats);
                 for (let i = 0; i < hostnames.length; i++) {
                     const hostname = hostnames[i];
@@ -268,8 +269,11 @@ export class Client {
                         break;
                     }
                 }
-                table.push([uuid, host, id]);
+                if (!hostname || hostname === host) tableRaw.push([uuid, host, id]);
             });
+            // console.log(tableRaw);
+            tableRaw.sort((a, b) => a[1] > b[1] ? -1 : (a[1] < b[1] ? 1 : 0)).forEach(entry => table.push(entry));
+            // console.log(tableRaw);
             console.log(table.toString());
         } else {
             const table = new Table({head: ['algorithm', 'gpu oc', 'mem oc', 'fan speed', 'power limit', 'miner']});

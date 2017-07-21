@@ -4,7 +4,7 @@ const minimist = require('minimist');
 
 const argv = minimist(process.argv.slice(2));
 
-if (!argv._[0] || !argv._[1]) {
+if (!argv._[0]) {
     console.error(`\nPlease provide gpu model or uuid:\n\tgpu-del gpu-87259284-bbac-a56a-0fd4-912a02716d57`);
     process.exit(1);
 } else {

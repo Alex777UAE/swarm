@@ -2,9 +2,17 @@
 const minimist = require('minimist');
 
 const argv = minimist(process.argv.slice(2));
+
+if (argv.h) {
+    console.log('\ngpu-list [UUID | -l HOSTNAME]');
+    console.log('\t if UUID provided - detailed info about exact GPU will be shown');
+    console.log('\t -l HOSTNAME - lists GPUs on HOSTNAME node');
+    process.exit(0);
+}
+
 const Client = require('../src/client').Client;
 const client = new Client();
-client.showGPUs(argv._[0])
+client.showGPUs(argv._[0], argv.l)
     .then(() => {
         process.exit(0);
     })

@@ -369,6 +369,10 @@ export class Node {
                         if (!this.gpuConfigs[gpuModelOrUUID] || !this.gpuConfigs[gpuModelOrUUID][currentAlgo]
                             || !_.isEqual(this.gpuConfigs[gpuModelOrUUID][currentAlgo], config[currentAlgo]))
                             await gpu.setup(config[currentAlgo]);
+                        else if (this.gpuConfigs[gpuModelOrUUID] && this.gpuConfigs[gpuModelOrUUID][currentAlgo]) {
+                            console.log(this.gpuConfigs[gpuModelOrUUID][currentAlgo]);
+                            console.log(config[currentAlgo]);
+                        }
                     }
                 }
             }

@@ -48,6 +48,7 @@ export interface IStats {
     coin: string;
     coinTime: number | string;
     gpuN: number;
+    gpuIDs: number[];
     gpuNames: string[];
     gpuUUIDs: string[];
     gpuHashrates: number[];
@@ -256,12 +257,14 @@ export class Node {
                 gpuDetails: [],
                 gpuNames: [],
                 gpuUUIDs: [],
+                gpuIDs: [],
                 acceptPercent: this.miner.acceptedPercent
             };
 
             for (let i = 0; i < this.GPUs.length; i++) {
                 const gpuIdx = this.GPUs.findIndex(gpu => gpu.id === i);
                 const gpu = this.GPUs[gpuIdx];
+                stats.gpuIDs.push(gpu.id);
                 stats.gpuDetails.push(await gpu.getStats());
                 stats.gpuNames.push(gpu.model);
                 stats.gpuUUIDs.push(gpu.uuid);

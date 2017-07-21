@@ -203,7 +203,7 @@ export class Client {
             ].map(head => colors.green(head)));
             info.gpuDetails.forEach((gpu, id) => {
                 table.push([
-                    id,
+                    info.gpuIDs[id] ? info.gpuIDs[id] : id,
                     info.gpuNames[id],
                     gpu.temperature < 60 ? colors.cyan(gpu.temperature.toString()) : (gpu.temperature < 70 ?
                         colors.yellow(gpu.temperature.toString()) : colors.red(gpu.temperature.toString())),

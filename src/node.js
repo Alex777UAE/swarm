@@ -221,7 +221,8 @@ class Node {
                     acceptPercent: this.miner.acceptedPercent
                 };
                 for (let i = 0; i < this.GPUs.length; i++) {
-                    const gpu = this.GPUs[i];
+                    const gpuIdx = this.GPUs.findIndex(gpu => gpu.id === i);
+                    const gpu = this.GPUs[gpuIdx];
                     stats.gpuDetails.push(yield gpu.getStats());
                     stats.gpuNames.push(gpu.model);
                     stats.gpuUUIDs.push(gpu.uuid);

@@ -126,7 +126,7 @@ class Node {
             else if (command === 'command.gpu') {
                 const ovConfig = JSON.parse(params);
                 const algo = ovConfig.algorithm;
-                const newGPUConfigs = Object.assign({}, this.gpuConfigs);
+                const newGPUConfigs = _.cloneDeep(this.gpuConfigs);
                 const targetGPU = this.GPUs.find(gpu => gpu.id === ovConfig.cardId);
                 if (!targetGPU)
                     throw new Error(`No GPU with id ${ovConfig.cardId} found on ${this.rig.hostname}`);

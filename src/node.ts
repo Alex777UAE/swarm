@@ -326,6 +326,12 @@ export class Node {
                     await this.gpuUpdate(modelOrUUID, gpuList[modelOrUUID]);
                 }
             }
+
+            for (let i = 0; i < Object.keys(this.gpuConfigs).length; i++) {
+                const modelOrUUID = Object.keys(this.gpuConfigs)[i];
+                if (!gpuList[modelOrUUID]) delete this.gpuConfigs[modelOrUUID];
+
+            }
         } catch (err) {
             debug(`Error syncing gpuConfigs:\n${err}`);
         }

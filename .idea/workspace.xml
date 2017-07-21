@@ -108,8 +108,8 @@
       <file leaf-file-name="node.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="360" column="16" lean-forward="false" selection-start-line="360" selection-start-column="16" selection-end-line="360" selection-end-column="16" />
+            <state relative-caret-position="381">
+              <caret line="365" column="13" lean-forward="true" selection-start-line="365" selection-start-column="13" selection-end-line="365" selection-end-column="13" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
                 <element signature="e#2045#3414#0" expanded="false" />
@@ -127,7 +127,7 @@
                 <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
-                <element signature="e#16032#16100#0" expanded="false" />
+                <element signature="e#16462#16530#0" expanded="false" />
                 <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
@@ -569,14 +569,7 @@
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
       <workItem from="1499812485546" duration="145823000" />
-      <workItem from="1500499017357" duration="17792000" />
-    </task>
-    <task id="LOCAL-00081" summary="ver 0.0.2 &#10;&#10;#3">
-      <created>1500302920351</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1500302920352</updated>
+      <workItem from="1500499017357" duration="18416000" />
     </task>
     <task id="LOCAL-00082" summary="ver 0.0.2 &#10;&#10;#4">
       <created>1500303155880</created>
@@ -914,11 +907,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500654272246</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="debug gpu settings #3">
+      <created>1500654484283</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1500654484283</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189859000" />
+    <option name="totallyTimeSpent" value="190483000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1496,8 +1496,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/node.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="360" column="16" lean-forward="false" selection-start-line="360" selection-start-column="16" selection-end-line="360" selection-end-column="16" />
+        <state relative-caret-position="381">
+          <caret line="365" column="13" lean-forward="true" selection-start-line="365" selection-start-column="13" selection-end-line="365" selection-end-column="13" />
           <folding>
             <element signature="e#40#77#0" expanded="true" />
             <element signature="e#2045#3414#0" expanded="false" />
@@ -1515,7 +1515,7 @@
             <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
-            <element signature="e#16032#16100#0" expanded="false" />
+            <element signature="e#16462#16530#0" expanded="false" />
             <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />

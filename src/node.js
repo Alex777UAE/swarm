@@ -314,11 +314,20 @@ class Node {
             // check all gpu, if gpu.model||gpu.uuid match gpuModelOrUUID: string - gpu.setup()
             // if miner changed for [0] than miner.stop&miner.start
             if (this.currentCoin) {
+                const currentAlgo = this.coins[this.currentCoin].algorithm;
                 if (!config) {
-                    delete this.gpuConfigs[gpuModelOrUUID];
+                    const gpuIdx = this.GPUs.findIndex(gpu => gpu.uuid == gpuModelOrUUID);
+                    if (gpuIdx !== -1) {
+                        const gpu = this.GPUs[gpuIdx];
+                        delete this.gpuConfigs[gpuModelOrUUID];
+                        // todo set default settings for gpu model
+                        yield gpu.setup(this.gpuConfigs[gpu.model][currentAlgo]);
+                    }
+                    else {
+                        debug('GPU Template removed, doing nothing!');
+                    }
                     return;
                 }
-                const currentAlgo = this.coins[this.currentCoin].algorithm;
                 const currentMiner = this.gpuConfigs[gpuModelOrUUID] && this.gpuConfigs[gpuModelOrUUID][currentAlgo] ?
                     this.gpuConfigs[gpuModelOrUUID][currentAlgo].miner :
                     this.gpuConfigs[this.GPUs[0].model][currentAlgo].miner;

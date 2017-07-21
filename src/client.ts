@@ -264,11 +264,11 @@ export class Client {
                     if (idx !== -1) {
                         host = hostname;
                         id = idx;
-                        delete stats[hostname];
+                        // delete stats[hostname];
                         break;
                     }
                 }
-                table.push([uuid, hostname, id]);
+                table.push([uuid, host, id]);
             });
             console.log(table.toString());
         } else {

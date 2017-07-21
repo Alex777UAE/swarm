@@ -20,7 +20,6 @@ const util = require("util");
 const redis_1 = require("./redis");
 const node_1 = require("./node");
 const path = require("path");
-const os_1 = require("os");
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 const stat = util.promisify(fs.stat);
@@ -262,11 +261,11 @@ class Client {
                         if (idx !== -1) {
                             host = hostname;
                             id = idx;
-                            delete stats[hostname];
+                            // delete stats[hostname];
                             break;
                         }
                     }
-                    table.push([uuid, os_1.hostname, id]);
+                    table.push([uuid, host, id]);
                 });
                 console.log(table.toString());
             }

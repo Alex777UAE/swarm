@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
+    <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="debug gpu settings #2">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js" afterPath="$PROJECT_DIR$/src/node.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js.map" afterPath="$PROJECT_DIR$/src/node.js.map" />
@@ -108,12 +108,11 @@
       <file leaf-file-name="node.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="374" column="39" lean-forward="false" selection-start-line="374" selection-start-column="39" selection-end-line="374" selection-end-column="39" />
+            <state relative-caret-position="338">
+              <caret line="369" column="109" lean-forward="true" selection-start-line="369" selection-start-column="109" selection-end-line="369" selection-end-column="109" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
                 <element signature="e#2045#3414#0" expanded="false" />
-                <element signature="n#!!block;n#command#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#watchSwitchFile#0;n#Node#0" expanded="false" />
                 <element signature="e#7679#8170#0" expanded="false" />
                 <element signature="e#7717#8160#0" expanded="false" />
@@ -129,7 +128,7 @@
                 <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-                <element signature="e#15578#15646#0" expanded="false" />
+                <element signature="e#15683#15751#0" expanded="false" />
                 <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
@@ -204,7 +203,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>default</find>
       <find>argv.c</find>
       <find>deepeq</find>
       <find>deepe</find>
@@ -234,6 +232,7 @@
       <find>gpu</find>
       <find>GPU</find>
       <find>Found</find>
+      <find>this.gpuCo</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/coins</dir>
@@ -571,14 +570,7 @@
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
       <workItem from="1499812485546" duration="145823000" />
-      <workItem from="1500499017357" duration="16933000" />
-    </task>
-    <task id="LOCAL-00077" summary="commands support #5&#10;restart experiment for ewbf #3">
-      <created>1500228193307</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1500228193308</updated>
+      <workItem from="1500499017357" duration="17211000" />
     </task>
     <task id="LOCAL-00078" summary="ver 0.0.2">
       <created>1500299871636</created>
@@ -916,11 +908,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500653250409</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="debug gpu settings #2">
+      <created>1500653385122</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1500653385123</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189000000" />
+    <option name="totallyTimeSpent" value="189278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -981,7 +980,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commands support #1" />
     <MESSAGE value="commands support #2" />
     <MESSAGE value="commands support #3" />
     <MESSAGE value="commands support #4" />
@@ -1006,7 +1004,8 @@
     <MESSAGE value="ver 0.0.4&#10;&#10;fix for coin current coin update skip if it's already the same&#10;ethminer params fix&#10;ethminer colors fix #2&#10;ethminer hashrates dumb fix&#10;sort by hashrate for brief stats&#10;fix for default coin reset" />
     <MESSAGE value="ver 0.0.4&#10;&#10;fix for coin current coin update skip if it's already the same&#10;ethminer params fix&#10;ethminer colors fix #2&#10;ethminer hashrates dumb fix&#10;sort by hashrate for brief stats&#10;fix for default coin reset&#10;&#10;- remote control gpu clocks, mem clocks, powerlimit, fan speed&#10;    + [-a algorithm] or all&#10;    + [-g gpuClocks] [-m memClocks] [-p powerLimit] [-f fanSpeed]&#10; ! check&#10;- default workername in coinconfig, check&#10;- --no-colors change for colors.strip() for ccminer wrapper, check&#10;- delay between restarts, check" />
     <MESSAGE value="debug gpu settings #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug gpu settings #1" />
+    <MESSAGE value="debug gpu settings #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug gpu settings #2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1498,12 +1497,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/node.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="374" column="39" lean-forward="false" selection-start-line="374" selection-start-column="39" selection-end-line="374" selection-end-column="39" />
+        <state relative-caret-position="338">
+          <caret line="369" column="109" lean-forward="true" selection-start-line="369" selection-start-column="109" selection-end-line="369" selection-end-column="109" />
           <folding>
             <element signature="e#40#77#0" expanded="true" />
             <element signature="e#2045#3414#0" expanded="false" />
-            <element signature="n#!!block;n#command#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#watchSwitchFile#0;n#Node#0" expanded="false" />
             <element signature="e#7679#8170#0" expanded="false" />
             <element signature="e#7717#8160#0" expanded="false" />
@@ -1519,7 +1517,7 @@
             <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-            <element signature="e#15578#15646#0" expanded="false" />
+            <element signature="e#15683#15751#0" expanded="false" />
             <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />

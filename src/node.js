@@ -327,8 +327,9 @@ class Node {
                     if (gpu.model === gpuModelOrUUID || gpu.uuid === gpuModelOrUUID) {
                         debug(`Found matching gpu with local id ${gpu.id}`);
                         if (config[currentAlgo]) {
-                            if (!this.gpuConfigs[gpuModelOrUUID] || !this.gpuConfigs[gpuModelOrUUID][currentAlgo])
-                                // || !_.isEqual(this.gpuConfigs[gpuModelOrUUID][currentAlgo], config[currentAlgo])
+                            debug(`Possibly need to reconfigure GPU ${gpu.id} for currentAlgo ${currentAlgo}`);
+                            if (!this.gpuConfigs[gpuModelOrUUID] || !this.gpuConfigs[gpuModelOrUUID][currentAlgo]
+                                || !_.isEqual(this.gpuConfigs[gpuModelOrUUID][currentAlgo], config[currentAlgo]))
                                 yield gpu.setup(config[currentAlgo]);
                         }
                     }

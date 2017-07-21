@@ -175,7 +175,9 @@ export class Node {
                     newGPUConfigs[targetGPU.uuid] = newGPUConfigs[targetGPU.model];
                 }
 
-            }
+            } else if (algo && !newGPUConfigs[targetGPU.uuid][algo])
+                newGPUConfigs[targetGPU.uuid][algo] = newGPUConfigs[targetGPU.model][algo];
+
 
             Object.keys(ovConfig)
                 .filter(key => key !== 'algorithm' && key !== 'cardId' && !isNullOrUndefined(ovConfig[key]))

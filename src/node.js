@@ -140,6 +140,8 @@ class Node {
                         newGPUConfigs[targetGPU.uuid] = newGPUConfigs[targetGPU.model];
                     }
                 }
+                else if (algo && !newGPUConfigs[targetGPU.uuid][algo])
+                    newGPUConfigs[targetGPU.uuid][algo] = newGPUConfigs[targetGPU.model][algo];
                 Object.keys(ovConfig)
                     .filter(key => key !== 'algorithm' && key !== 'cardId' && !util_1.isNullOrUndefined(ovConfig[key]))
                     .forEach(key => {

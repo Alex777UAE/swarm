@@ -178,6 +178,7 @@ export class Node {
             } else if (algo && !newGPUConfigs[targetGPU.uuid][algo])
                 newGPUConfigs[targetGPU.uuid][algo] = newGPUConfigs[targetGPU.model][algo];
 
+            debug(`Current settings are ${util.inspect(newGPUConfigs[targetGPU.uuid], false, null)}`);
 
             Object.keys(ovConfig)
                 .filter(key => key !== 'algorithm' && key !== 'cardId' && !isNullOrUndefined(ovConfig[key]))

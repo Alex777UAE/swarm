@@ -356,8 +356,9 @@ export class Node {
                 return;
             }
             const currentAlgo = this.coins[this.currentCoin].algorithm;
-            const currentMiner = this.gpuConfigs[gpuModelOrUUID] ? this.gpuConfigs[gpuModelOrUUID][currentAlgo].miner
-                : this.gpuConfigs[this.GPUs[0].model][currentAlgo].miner;
+            const currentMiner = this.gpuConfigs[gpuModelOrUUID] && this.gpuConfigs[gpuModelOrUUID][currentAlgo] ?
+                this.gpuConfigs[gpuModelOrUUID][currentAlgo].miner :
+                this.gpuConfigs[this.GPUs[0].model][currentAlgo].miner;
 
             debug(`gpuUpdate - current algo (${currentAlgo} and gpuModelOrUUID is [${gpuModelOrUUID}])`);
             for (let i = 0; i < this.GPUs.length; i++) {

@@ -108,8 +108,8 @@
       <file leaf-file-name="node.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="178" column="91" lean-forward="false" selection-start-line="178" selection-start-column="91" selection-end-line="178" selection-end-column="91" />
+            <state relative-caret-position="429">
+              <caret line="367" column="34" lean-forward="false" selection-start-line="367" selection-start-column="34" selection-end-line="367" selection-end-column="34" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
                 <element signature="e#2045#3414#0" expanded="false" />
@@ -128,7 +128,7 @@
                 <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-                <element signature="e#15449#15517#0" expanded="false" />
+                <element signature="e#15452#15520#0" expanded="false" />
                 <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
@@ -570,14 +570,7 @@
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
       <workItem from="1499812485546" duration="145823000" />
-      <workItem from="1500499017357" duration="16491000" />
-    </task>
-    <task id="LOCAL-00074" summary="commands support #5&#10;restart experiment for ewbf">
-      <created>1500226267084</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1500226267084</updated>
+      <workItem from="1500499017357" duration="16608000" />
     </task>
     <task id="LOCAL-00075" summary="commands support #5&#10;restart experiment for ewbf">
       <created>1500226957564</created>
@@ -915,11 +908,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500652503225</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="ver 0.0.4&#10;&#10;fix for coin current coin update skip if it's already the same&#10;ethminer params fix&#10;ethminer colors fix #2&#10;ethminer hashrates dumb fix&#10;sort by hashrate for brief stats&#10;fix for default coin reset&#10;&#10;- remote control gpu clocks, mem clocks, powerlimit, fan speed&#10;    + [-a algorithm] or all&#10;    + [-g gpuClocks] [-m memClocks] [-p powerLimit] [-f fanSpeed]&#10; ! check&#10;- default workername in coinconfig, check&#10;- --no-colors change for colors.strip() for ccminer wrapper, check&#10;- delay between restarts, check">
+      <created>1500652809920</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1500652809920</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188558000" />
+    <option name="totallyTimeSpent" value="188675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1497,8 +1497,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/node.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="178" column="91" lean-forward="false" selection-start-line="178" selection-start-column="91" selection-end-line="178" selection-end-column="91" />
+        <state relative-caret-position="429">
+          <caret line="367" column="34" lean-forward="false" selection-start-line="367" selection-start-column="34" selection-end-line="367" selection-end-column="34" />
           <folding>
             <element signature="e#40#77#0" expanded="true" />
             <element signature="e#2045#3414#0" expanded="false" />
@@ -1517,7 +1517,7 @@
             <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-            <element signature="e#15449#15517#0" expanded="false" />
+            <element signature="e#15452#15520#0" expanded="false" />
             <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />

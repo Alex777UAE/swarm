@@ -235,6 +235,21 @@ class Redis extends i_db_layer_1.IDBLayer {
             return !!(yield this.redis.hget(REDIS_PREFIX + 'coins', name));
         });
     }
+    deleteGPU(modelOrUUID) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.redis.hdel(REDIS_PREFIX + 'gpus', modelOrUUID);
+        });
+    }
+    deleteCoin(name) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.redis.hdel(REDIS_PREFIX + 'coins', name);
+        });
+    }
+    deleteMiner(name) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.redis.hdel(REDIS_PREFIX + 'miners', name);
+        });
+    }
 }
 exports.Redis = Redis;
 //# sourceMappingURL=redis.js.map

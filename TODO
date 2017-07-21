@@ -1,23 +1,11 @@
-- delay between restarts, check - bug!
+- list gpus, check
+- reset gpu to model default (delete specific settings for it), check
 
-  miner:StdOutMinerWrapper executing miner with --server europe.equihash-hub.miningpoolhub.com --port 20570 --user host.L314 --pass x --fee 0 --boff --eexit 3 +3s
-  miner:StdOutMinerWrapper starting validation loop +8ms
-  miner:EWBFMiner TypeError: Cannot read property 'toString' of undefined
-  miner:EWBFMiner     at EWBFMiner.<anonymous> (/usr/local/swarm/src/wrappers/ewbf.ts:41:32)
-  miner:EWBFMiner     at Generator.next (<anonymous>)
-  miner:EWBFMiner     at /usr/local/swarm/src/wrappers/ewbf.js:7:71
-
-  than 2 started
-
-- reset gpu to model default (delete specific settings for it)
 - list available coins
 - delete coin
 - list miners
 - delete miner
-- list gpus
-- delete gpu
 
-- power limit in %
 - web monitoring interface
 - telegram notices
 - make it work on default lubuntu 17.04 node

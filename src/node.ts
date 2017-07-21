@@ -49,6 +49,7 @@ export interface IStats {
     coinTime: number | string;
     gpuN: number;
     gpuNames: string[];
+    gpuUUIDs: string[];
     gpuHashrates: number[];
     gpuDetails: IGPUStats[];
     hashrate: number;
@@ -167,12 +168,15 @@ export class Node {
             if (!targetGPU) throw new Error(`No GPU with id ${ovConfig.cardId} found on ${this.rig.hostname}`);
             if (!newGPUConfigs[targetGPU.uuid]) {
                 // add new
-                newGPUConfigs[targetGPU.uuid] = newGPUConfigs[targetGPU.model];
                 if (algo) {
+                    newGPUConfigs[targetGPU.uuid] = {}; // newGPUConfigs[targetGPU.model];
                     newGPUConfigs[targetGPU.uuid][algo] = newGPUConfigs[targetGPU.model][algo];
+                } else {
+                    newGPUConfigs[targetGPU.uuid] = newGPUConfigs[targetGPU.model];
                 }
 
             }
+
             Object.keys(ovConfig)
                 .filter(key => key !== 'algorithm' && key !== 'cardId' && !isNullOrUndefined(ovConfig[key]))
                 .forEach(key => {
@@ -248,6 +252,7 @@ export class Node {
                 gpuHashrates: this.miner.hashrates,
                 gpuDetails: [],
                 gpuNames: [],
+                gpuUUIDs: [],
                 acceptPercent: this.miner.acceptedPercent
             };
 
@@ -255,6 +260,7 @@ export class Node {
                 const gpu = this.GPUs[i];
                 stats.gpuDetails.push(await gpu.getStats());
                 stats.gpuNames.push(gpu.model);
+                stats.gpuUUIDs.push(gpu.uuid);
             }
 
             await this.db.updateStats(JSON.stringify(stats));
@@ -324,7 +330,6 @@ export class Node {
             debug(`Error syncing gpuConfigs:\n${err}`);
         }
     }
-
 
     private async coinUpdate(name: string, config: ICoinConfig) {
         this.coins[name] = config;

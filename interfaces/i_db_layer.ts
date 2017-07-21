@@ -16,7 +16,7 @@ export abstract class IDBLayer {
 
     public abstract async setCurrentCoin(name: string, nodes?: string[]): Promise<void>;
     public abstract async updateCoin(name: string, config: ICoinConfig): Promise<void>;
-    public abstract async updateGPU(name: string, config: PerAlgorithmGPUConfig): Promise<void>;
+    public abstract async updateGPU(modelOrUUID: string, config: PerAlgorithmGPUConfig): Promise<void>;
     public abstract async updateMiner(name: string, config: IMinerConfig, binaryPath?: string): Promise<void>;
 
     public abstract async updateStats(stringifiedJson: string): Promise<void>;
@@ -25,4 +25,10 @@ export abstract class IDBLayer {
     public abstract async command(name: string, params?: string): Promise<void>;
 
     public abstract async coinExists(name: string): Promise<boolean>;
+
+    public abstract async deleteGPU(modelOrUUID: string): Promise<void>;
+
+    public abstract async deleteCoin(name: string): Promise<void>;
+
+    public abstract async deleteMiner(name: string): Promise<void>;
 }

@@ -228,4 +228,16 @@ export class Redis extends IDBLayer {
     public async coinExists(name: string): Promise<boolean> {
         return !!await this.redis.hget(REDIS_PREFIX + 'coins', name);
     }
+
+    public async deleteGPU(modelOrUUID: string): Promise<void> {
+        await this.redis.hdel(REDIS_PREFIX + 'gpus', modelOrUUID);
+    }
+
+    public async deleteCoin(name: string): Promise<void> {
+        await this.redis.hdel(REDIS_PREFIX + 'coins', name);
+    }
+
+    public async deleteMiner(name: string): Promise<void> {
+        await this.redis.hdel(REDIS_PREFIX + 'miners', name);
+    }
 }

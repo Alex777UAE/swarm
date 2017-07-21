@@ -13,6 +13,7 @@ import {IStats, IAppConfig, SWITCH_FILE} from './node';
 import {IMinerConfig} from "../interfaces/i_miner";
 import * as path from "path";
 import {IGPUConfig, OverClockMessage} from "../interfaces/i_gpu";
+import {hostname} from "os";
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
@@ -92,7 +93,7 @@ export class Client {
             await writeFile(os.tmpdir() + path.sep + SWITCH_FILE, name, 'utf8');
     }
 
-    public async showStats(full: boolean = true, hostname?: string): Promise<void> {
+    private async getStats(hostname?: string): Promise<Stats> {
         const rawStats = await this.redis.getStats();
         let stats: Stats = {};
 
@@ -102,6 +103,12 @@ export class Client {
             stats[name].info.coinTime = moment.duration(stats[name].info.coinTime).humanize();
             stats[name].info.uptime = moment.duration((stats[name].info.uptime as number) * 1000).humanize()
         });
+        return stats;
+    }
+
+    public async showStats(full: boolean = true, hostname?: string): Promise<void> {
+        const stats = await this.getStats(hostname);
+
         !full ? this.briefTable(stats) : this.fullTable(stats);
         console.log(`Total GPUs: ${Object.keys(stats).reduce((total, n) => total + stats[n].info.gpuN, 0)}`);
     }
@@ -241,5 +248,66 @@ export class Client {
         await this.redis.command('gpu', JSON.stringify(config), hostname);
 
     }
+
+    public async showGPUs(uuidOrModel?: string): Promise<void> {
+        const configs = await this.redis.getAllGPUConfigs();
+        const stats = await this.getStats();
+        if (!uuidOrModel || !configs[uuidOrModel]) {
+            const table = new Table({head: ['UUID', 'Hostname', 'GPU Index']});
+            Object.keys(configs).forEach(uuid => {
+                let host, id;
+                const hostnames = Object.keys(stats);
+                for (let i = 0; i < hostnames.length; i++) {
+                    const hostname = hostnames[i];
+                    if (!stats[hostname].info.gpuUUIDs) continue;
+                    const idx = stats[hostname].info.gpuUUIDs.indexOf(uuid);
+                    if (idx !== -1) {
+                        host = hostname;
+                        id = idx;
+                        delete stats[hostname];
+                        break;
+                    }
+                }
+                table.push([uuid, hostname, id]);
+            });
+            console.log(table.toString());
+        } else {
+            const table = new Table({head: ['algorithm', 'gpu oc', 'mem oc', 'fan speed', 'power limit', 'miner']});
+            Object.keys(configs[uuidOrModel]).forEach(algorithm => {
+                const settings = configs[uuidOrModel][algorithm];
+                table.push([
+                    algorithm,
+                    settings.gpuClockOffset,
+                    settings.memClockOffset,
+                    settings.fanSpeedTarget,
+                    settings.powerLimit,
+                    settings.miner
+                ]);
+            });
+            console.log(table.toString());
+        }
+
+    }
+
+    public async deleteGPU(uuidOrModel: string): Promise<void> {
+        await this.redis.deleteGPU(uuidOrModel);
+    }
+
+    public async showCoins(): Promise<void> {
+
+    }
+
+    public async deleteCoin(name: string): Promise<void> {
+
+    }
+
+    public async showMiners(): Promise<void> {
+
+    }
+
+    public async deleteMiner(name: string): Promise<void> {
+
+    }
 }
+
 

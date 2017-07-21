@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+const minimist = require('minimist');
+
+const argv = minimist(process.argv.slice(2));
+const Client = require('../src/client').Client;
+const client = new Client();
+client.showGPUs(argv._[0])
+    .then(() => {
+        process.exit(0);
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });

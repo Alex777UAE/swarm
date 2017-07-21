@@ -20,6 +20,7 @@ const util = require("util");
 const redis_1 = require("./redis");
 const node_1 = require("./node");
 const path = require("path");
+const os_1 = require("os");
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 const stat = util.promisify(fs.stat);
@@ -93,7 +94,7 @@ class Client {
                 yield writeFile(os.tmpdir() + path.sep + node_1.SWITCH_FILE, name, 'utf8');
         });
     }
-    showStats(full = true, hostname) {
+    getStats(hostname) {
         return __awaiter(this, void 0, void 0, function* () {
             const rawStats = yield this.redis.getStats();
             let stats = {};
@@ -104,6 +105,12 @@ class Client {
                 stats[name].info.coinTime = moment.duration(stats[name].info.coinTime).humanize();
                 stats[name].info.uptime = moment.duration(stats[name].info.uptime * 1000).humanize();
             });
+            return stats;
+        });
+    }
+    showStats(full = true, hostname) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const stats = yield this.getStats(hostname);
             !full ? this.briefTable(stats) : this.fullTable(stats);
             console.log(`Total GPUs: ${Object.keys(stats).reduce((total, n) => total + stats[n].info.gpuN, 0)}`);
         });
@@ -236,6 +243,69 @@ class Client {
                 cardId
             };
             yield this.redis.command('gpu', JSON.stringify(config), hostname);
+        });
+    }
+    showGPUs(uuidOrModel) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const configs = yield this.redis.getAllGPUConfigs();
+            const stats = yield this.getStats();
+            if (!uuidOrModel || !configs[uuidOrModel]) {
+                const table = new Table({ head: ['UUID', 'Hostname', 'GPU Index'] });
+                Object.keys(configs).forEach(uuid => {
+                    let host, id;
+                    const hostnames = Object.keys(stats);
+                    for (let i = 0; i < hostnames.length; i++) {
+                        const hostname = hostnames[i];
+                        if (!stats[hostname].info.gpuUUIDs)
+                            continue;
+                        const idx = stats[hostname].info.gpuUUIDs.indexOf(uuid);
+                        if (idx !== -1) {
+                            host = hostname;
+                            id = idx;
+                            delete stats[hostname];
+                            break;
+                        }
+                    }
+                    table.push([uuid, os_1.hostname, id]);
+                });
+                console.log(table.toString());
+            }
+            else {
+                const table = new Table({ head: ['algorithm', 'gpu oc', 'mem oc', 'fan speed', 'power limit', 'miner'] });
+                Object.keys(configs[uuidOrModel]).forEach(algorithm => {
+                    const settings = configs[uuidOrModel][algorithm];
+                    table.push([
+                        algorithm,
+                        settings.gpuClockOffset,
+                        settings.memClockOffset,
+                        settings.fanSpeedTarget,
+                        settings.powerLimit,
+                        settings.miner
+                    ]);
+                });
+                console.log(table.toString());
+            }
+        });
+    }
+    deleteGPU(uuidOrModel) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.redis.deleteGPU(uuidOrModel);
+        });
+    }
+    showCoins() {
+        return __awaiter(this, void 0, void 0, function* () {
+        });
+    }
+    deleteCoin(name) {
+        return __awaiter(this, void 0, void 0, function* () {
+        });
+    }
+    showMiners() {
+        return __awaiter(this, void 0, void 0, function* () {
+        });
+    }
+    deleteMiner(name) {
+        return __awaiter(this, void 0, void 0, function* () {
         });
     }
 }

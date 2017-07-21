@@ -132,9 +132,12 @@ class Node {
                     throw new Error(`No GPU with id ${ovConfig.cardId} found on ${this.rig.hostname}`);
                 if (!newGPUConfigs[targetGPU.uuid]) {
                     // add new
-                    newGPUConfigs[targetGPU.uuid] = newGPUConfigs[targetGPU.model];
                     if (algo) {
+                        newGPUConfigs[targetGPU.uuid] = {}; // newGPUConfigs[targetGPU.model];
                         newGPUConfigs[targetGPU.uuid][algo] = newGPUConfigs[targetGPU.model][algo];
+                    }
+                    else {
+                        newGPUConfigs[targetGPU.uuid] = newGPUConfigs[targetGPU.model];
                     }
                 }
                 Object.keys(ovConfig)
@@ -211,12 +214,14 @@ class Node {
                     gpuHashrates: this.miner.hashrates,
                     gpuDetails: [],
                     gpuNames: [],
+                    gpuUUIDs: [],
                     acceptPercent: this.miner.acceptedPercent
                 };
                 for (let i = 0; i < this.GPUs.length; i++) {
                     const gpu = this.GPUs[i];
                     stats.gpuDetails.push(yield gpu.getStats());
                     stats.gpuNames.push(gpu.model);
+                    stats.gpuUUIDs.push(gpu.uuid);
                 }
                 yield this.db.updateStats(JSON.stringify(stats));
             }

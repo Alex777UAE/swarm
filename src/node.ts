@@ -372,7 +372,7 @@ export class Node {
                 }
             }
 
-            if (currentMiner !== config[currentAlgo].miner) {
+            if (config[currentAlgo] && currentMiner !== config[currentAlgo].miner) {
                 debug(`Miner change [${currentMiner}] -> [${config[currentAlgo].miner}]`);
                 const minerPath = __dirname + '/wrappers/' + this.miners[config[currentAlgo].miner].type;
                 debug(`Loading miner: ${this.miners[config[currentAlgo].miner].type} from ${minerPath}`);

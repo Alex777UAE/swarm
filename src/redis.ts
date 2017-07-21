@@ -231,6 +231,7 @@ export class Redis extends IDBLayer {
 
     public async deleteGPU(modelOrUUID: string): Promise<void> {
         await this.redis.hdel(REDIS_PREFIX + 'gpus', modelOrUUID);
+        await this.redis.publish('gpus', JSON.stringify({modelOrUUID, config: null}));
     }
 
     public async deleteCoin(name: string): Promise<void> {

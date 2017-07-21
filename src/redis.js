@@ -238,6 +238,7 @@ class Redis extends i_db_layer_1.IDBLayer {
     deleteGPU(modelOrUUID) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.redis.hdel(REDIS_PREFIX + 'gpus', modelOrUUID);
+            yield this.redis.publish('gpus', JSON.stringify({ modelOrUUID, config: null }));
         });
     }
     deleteCoin(name) {

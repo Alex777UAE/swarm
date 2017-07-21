@@ -311,6 +311,10 @@ class Node {
             // check all gpu, if gpu.model||gpu.uuid match gpuModelOrUUID: string - gpu.setup()
             // if miner changed for [0] than miner.stop&miner.start
             if (this.currentCoin) {
+                if (!config) {
+                    delete this.gpuConfigs[gpuModelOrUUID];
+                    return;
+                }
                 const currentAlgo = this.coins[this.currentCoin].algorithm;
                 const currentMiner = this.gpuConfigs[gpuModelOrUUID] ? this.gpuConfigs[gpuModelOrUUID][currentAlgo].miner
                     : this.gpuConfigs[this.GPUs[0].model][currentAlgo].miner;

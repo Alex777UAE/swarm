@@ -1,5 +1,5 @@
-- list gpus, check
 - reset gpu to model default (delete specific settings for it), check
+    + broadcast delete event
 
 - list available coins
 - delete coin

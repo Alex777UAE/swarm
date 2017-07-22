@@ -6,9 +6,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js" afterPath="$PROJECT_DIR$/src/client.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js.map" afterPath="$PROJECT_DIR$/src/client.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.ts" afterPath="$PROJECT_DIR$/src/client.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js" afterPath="$PROJECT_DIR$/src/node.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js.map" afterPath="$PROJECT_DIR$/src/node.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.ts" afterPath="$PROJECT_DIR$/src/node.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,7 +46,7 @@
       <file leaf-file-name="redis.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/redis.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
+            <state relative-caret-position="1698">
               <caret line="242" column="44" lean-forward="false" selection-start-line="242" selection-start-column="44" selection-end-line="242" selection-end-column="44" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -90,52 +87,52 @@
         <entry file="file://$PROJECT_DIR$/src/client.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="463">
-              <caret line="205" column="58" lean-forward="false" selection-start-line="205" selection-start-column="58" selection-end-line="205" selection-end-column="58" />
+              <caret line="206" column="70" lean-forward="false" selection-start-line="206" selection-start-column="70" selection-end-line="206" selection-end-column="70" />
               <folding>
                 <element signature="n#!!block;n#Stats#0" expanded="false" />
                 <element signature="n#!!block;n#constructor#0;n#Client#0" expanded="false" />
-                <element signature="e#1070#1263#0" expanded="false" />
-                <element signature="e#1210#1225#0" expanded="false" />
+                <element signature="e#1110#1303#0" expanded="false" />
+                <element signature="e#1250#1265#0" expanded="false" />
                 <element signature="n#!!block;n#uploadCoin#0;n#Client#0" expanded="false" />
                 <element signature="n#!!block;n#uploadGPU#0;n#Client#0" expanded="false" />
                 <element signature="n#!!block;n#uploadMiner#0;n#Client#0" expanded="false" />
-                <element signature="e#1916#2519#0" expanded="false" />
-                <element signature="e#2016#2233#0" expanded="false" />
-                <element signature="e#2260#2400#0" expanded="false" />
-                <element signature="e#2406#2509#0" expanded="false" />
-                <element signature="e#2525#2597#0" expanded="false" />
+                <element signature="e#1956#2559#0" expanded="false" />
+                <element signature="e#2056#2273#0" expanded="false" />
+                <element signature="e#2300#2440#0" expanded="false" />
+                <element signature="e#2446#2549#0" expanded="false" />
+                <element signature="e#2565#2637#0" expanded="false" />
                 <element signature="n#!!block;n#targzDirectory#0;n#Client#0" expanded="false" />
-                <element signature="e#2791#3150#0" expanded="false" />
+                <element signature="e#2831#3190#0" expanded="false" />
                 <element signature="n#!!block;n#setCurrentCoin#0;n#Client#0" expanded="false" />
                 <element signature="n#!!block;n#getStats#0;n#Client#0" expanded="false" />
-                <element signature="e#3709#4083#0" expanded="false" />
-                <element signature="e#4514#4870#0" expanded="false" />
-                <element signature="e#4534#4816#0" expanded="false" />
-                <element signature="e#4928#5197#0" expanded="false" />
-                <element signature="e#4999#5049#0" expanded="false" />
-                <element signature="e#5108#5157#0" expanded="false" />
-                <element signature="e#5228#5789#0" expanded="false" />
-                <element signature="e#5387#5773#0" expanded="false" />
+                <element signature="e#3749#4123#0" expanded="false" />
+                <element signature="e#4554#4910#0" expanded="false" />
+                <element signature="e#4574#4856#0" expanded="false" />
+                <element signature="e#4968#5237#0" expanded="false" />
+                <element signature="e#5039#5089#0" expanded="false" />
+                <element signature="e#5148#5197#0" expanded="false" />
+                <element signature="e#5268#5829#0" expanded="false" />
+                <element signature="e#5427#5813#0" expanded="false" />
                 <element signature="n#!!block;n#removeDeadNode#0;n#Client#0" expanded="false" />
                 <element signature="n#!!block;n#command#0;n#Client#0" expanded="false" />
                 <element signature="n#!!block;n#showGPUs#0;n#Client#0" expanded="false" />
-                <element signature="e#9250#10339#0" expanded="false" />
-                <element signature="e#9414#10093#0" expanded="false" />
-                <element signature="e#9564#9994#0" expanded="false" />
-                <element signature="e#9796#9976#0" expanded="false" />
-                <element signature="e#10345#10958#0" expanded="false" />
-                <element signature="e#10531#10903#0" expanded="false" />
-                <element signature="e#10626#10887#0" expanded="false" />
+                <element signature="e#9325#10414#0" expanded="false" />
+                <element signature="e#9489#10168#0" expanded="false" />
+                <element signature="e#9639#10069#0" expanded="false" />
+                <element signature="e#9871#10051#0" expanded="false" />
+                <element signature="e#10420#11033#0" expanded="false" />
+                <element signature="e#10606#10978#0" expanded="false" />
+                <element signature="e#10701#10962#0" expanded="false" />
                 <element signature="n#!!block;n#deleteGPU#0;n#Client#0" expanded="false" />
-                <element signature="e#11092#11242#0" expanded="false" />
+                <element signature="e#11167#11317#0" expanded="false" />
                 <element signature="n#!!block;n#showCoins#0;n#Client#0" expanded="false" />
-                <element signature="e#11375#11537#0" expanded="false" />
-                <element signature="e#11734#12003#0" expanded="false" />
+                <element signature="e#11450#11612#0" expanded="false" />
+                <element signature="e#11809#12078#0" expanded="false" />
                 <element signature="n#!!block;n#deleteCoin#0;n#Client#0" expanded="false" />
-                <element signature="e#12166#12280#0" expanded="false" />
+                <element signature="e#12241#12355#0" expanded="false" />
                 <element signature="n#!!block;n#showMiners#0;n#Client#0" expanded="false" />
-                <element signature="e#12416#12490#0" expanded="false" />
-                <element signature="e#12671#12784#0" expanded="false" />
+                <element signature="e#12491#12565#0" expanded="false" />
+                <element signature="e#12746#12859#0" expanded="false" />
                 <element signature="n#!!block;n#deleteMiner#0;n#Client#0" expanded="false" />
               </folding>
             </state>
@@ -207,8 +204,8 @@
       <file leaf-file-name="node.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="266" column="42" lean-forward="false" selection-start-line="266" selection-start-column="42" selection-end-line="266" selection-end-column="42" />
+            <state relative-caret-position="-378">
+              <caret line="353" column="18" lean-forward="false" selection-start-line="353" selection-start-column="18" selection-end-line="353" selection-end-column="18" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
                 <element signature="e#2067#3436#0" expanded="false" />
@@ -220,12 +217,12 @@
                 <element signature="n#!!block;n#abortSignalHandler#0;n#Node#0" expanded="false" />
                 <element signature="e#8288#8485#0" expanded="false" />
                 <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
+                <element signature="n#!!block;n#statisticLoop#0;n#Node#0" expanded="false" />
                 <element signature="e#10282#10317#0" expanded="false" />
                 <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
-                <element signature="n#!!block;n#gpuUpdate#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
                 <element signature="e#16633#16701#0" expanded="false" />
                 <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
@@ -233,6 +230,16 @@
                 <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="i_db_layer.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interfaces/i_db_layer.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -580,14 +587,7 @@
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
       <workItem from="1499812485546" duration="145823000" />
-      <workItem from="1500499017357" duration="23699000" />
-    </task>
-    <task id="LOCAL-00085" summary="ver 0.0.2 &#10;&#10;#5">
-      <created>1500315053401</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1500315053402</updated>
+      <workItem from="1500499017357" duration="24685000" />
     </task>
     <task id="LOCAL-00086" summary="ver 0.0.3">
       <created>1500329899303</created>
@@ -925,11 +925,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500670958288</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="0.1.0 release&#10;&#10;fixing GPU ids">
+      <created>1500671362141</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1500671362141</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195766000" />
+    <option name="totallyTimeSpent" value="196752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -990,7 +997,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commands support #5" />
     <MESSAGE value="commands support #5&#10;restart experiment for ewbf" />
     <MESSAGE value="commands support #5&#10;restart experiment for ewbf #2" />
     <MESSAGE value="commands support #5&#10;restart experiment for ewbf #3" />
@@ -1015,7 +1021,8 @@
     <MESSAGE value="debug gpu settings #3" />
     <MESSAGE value="debug gpu settings #4" />
     <MESSAGE value="0.1.0 release" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.1.0 release" />
+    <MESSAGE value="0.1.0 release&#10;&#10;fixing GPU ids" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.1.0 release&#10;&#10;fixing GPU ids" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1262,14 +1269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interfaces/i_db_layer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="30" column="66" lean-forward="false" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nvidia.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -1391,65 +1390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redis.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="242" column="44" lean-forward="false" selection-start-line="242" selection-start-column="44" selection-end-line="242" selection-end-column="44" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#41#78#0" expanded="true" />
-            <element signature="n#!!block;n#getAllGPUConfigs#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#getMinerBinnary#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#getCurrentCoin#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoin#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#updateMiner#0;n#Redis#0" expanded="false" />
-            <element signature="e#6669#6836#0" expanded="false" />
-            <element signature="n#!!block;n#setCurrentCoin#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#updateStats#0;n#Redis#0" expanded="false" />
-            <element signature="e#8561#8641#0" expanded="false" />
-            <element signature="n#!!block;n#getStats#0;n#Redis#0" expanded="false" />
-            <element signature="e#8856#8990#0" expanded="false" />
-            <element signature="n#!!block;n#removeDeadNode#0;n#Redis#0" expanded="false" />
-            <element signature="n#!!block;n#command#0;n#Redis#0" expanded="false" />
-            <element signature="e#9608#10071#0" expanded="false" />
-            <element signature="e#9655#10007#0" expanded="false" />
-            <element signature="e#9800#9987#0" expanded="false" />
-            <element signature="n#!!block;n#coinExists#0;n#Redis#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="266" column="42" lean-forward="false" selection-start-line="266" selection-start-column="42" selection-end-line="266" selection-end-column="42" />
-          <folding>
-            <element signature="e#40#77#0" expanded="true" />
-            <element signature="e#2067#3436#0" expanded="false" />
-            <element signature="n#!!block;n#watchSwitchFile#0;n#Node#0" expanded="false" />
-            <element signature="e#7695#8186#0" expanded="false" />
-            <element signature="e#7733#8176#0" expanded="false" />
-            <element signature="e#7804#8160#0" expanded="false" />
-            <element signature="e#7834#7953#0" expanded="false" />
-            <element signature="n#!!block;n#abortSignalHandler#0;n#Node#0" expanded="false" />
-            <element signature="e#8288#8485#0" expanded="false" />
-            <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
-            <element signature="e#10282#10317#0" expanded="false" />
-            <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#gpuUpdate#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-            <element signature="e#16633#16701#0" expanded="false" />
-            <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
-            <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/interfaces/i_gpu.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1498,55 +1438,122 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/interfaces/i_db_layer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redis.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1698">
+          <caret line="242" column="44" lean-forward="false" selection-start-line="242" selection-start-column="44" selection-end-line="242" selection-end-column="44" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#41#78#0" expanded="true" />
+            <element signature="n#!!block;n#getAllGPUConfigs#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#getMinerBinnary#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#getCurrentCoin#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#updateCoin#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#updateMiner#0;n#Redis#0" expanded="false" />
+            <element signature="e#6669#6836#0" expanded="false" />
+            <element signature="n#!!block;n#setCurrentCoin#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#updateStats#0;n#Redis#0" expanded="false" />
+            <element signature="e#8561#8641#0" expanded="false" />
+            <element signature="n#!!block;n#getStats#0;n#Redis#0" expanded="false" />
+            <element signature="e#8856#8990#0" expanded="false" />
+            <element signature="n#!!block;n#removeDeadNode#0;n#Redis#0" expanded="false" />
+            <element signature="n#!!block;n#command#0;n#Redis#0" expanded="false" />
+            <element signature="e#9608#10071#0" expanded="false" />
+            <element signature="e#9655#10007#0" expanded="false" />
+            <element signature="e#9800#9987#0" expanded="false" />
+            <element signature="n#!!block;n#coinExists#0;n#Redis#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/node.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="353" column="18" lean-forward="false" selection-start-line="353" selection-start-column="18" selection-end-line="353" selection-end-column="18" />
+          <folding>
+            <element signature="e#40#77#0" expanded="true" />
+            <element signature="e#2067#3436#0" expanded="false" />
+            <element signature="n#!!block;n#watchSwitchFile#0;n#Node#0" expanded="false" />
+            <element signature="e#7695#8186#0" expanded="false" />
+            <element signature="e#7733#8176#0" expanded="false" />
+            <element signature="e#7804#8160#0" expanded="false" />
+            <element signature="e#7834#7953#0" expanded="false" />
+            <element signature="n#!!block;n#abortSignalHandler#0;n#Node#0" expanded="false" />
+            <element signature="e#8288#8485#0" expanded="false" />
+            <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#statisticLoop#0;n#Node#0" expanded="false" />
+            <element signature="e#10282#10317#0" expanded="false" />
+            <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
+            <element signature="e#16633#16701#0" expanded="false" />
+            <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
+            <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
-          <caret line="205" column="58" lean-forward="false" selection-start-line="205" selection-start-column="58" selection-end-line="205" selection-end-column="58" />
+          <caret line="206" column="70" lean-forward="false" selection-start-line="206" selection-start-column="70" selection-end-line="206" selection-end-column="70" />
           <folding>
             <element signature="n#!!block;n#Stats#0" expanded="false" />
             <element signature="n#!!block;n#constructor#0;n#Client#0" expanded="false" />
-            <element signature="e#1070#1263#0" expanded="false" />
-            <element signature="e#1210#1225#0" expanded="false" />
+            <element signature="e#1110#1303#0" expanded="false" />
+            <element signature="e#1250#1265#0" expanded="false" />
             <element signature="n#!!block;n#uploadCoin#0;n#Client#0" expanded="false" />
             <element signature="n#!!block;n#uploadGPU#0;n#Client#0" expanded="false" />
             <element signature="n#!!block;n#uploadMiner#0;n#Client#0" expanded="false" />
-            <element signature="e#1916#2519#0" expanded="false" />
-            <element signature="e#2016#2233#0" expanded="false" />
-            <element signature="e#2260#2400#0" expanded="false" />
-            <element signature="e#2406#2509#0" expanded="false" />
-            <element signature="e#2525#2597#0" expanded="false" />
+            <element signature="e#1956#2559#0" expanded="false" />
+            <element signature="e#2056#2273#0" expanded="false" />
+            <element signature="e#2300#2440#0" expanded="false" />
+            <element signature="e#2446#2549#0" expanded="false" />
+            <element signature="e#2565#2637#0" expanded="false" />
             <element signature="n#!!block;n#targzDirectory#0;n#Client#0" expanded="false" />
-            <element signature="e#2791#3150#0" expanded="false" />
+            <element signature="e#2831#3190#0" expanded="false" />
             <element signature="n#!!block;n#setCurrentCoin#0;n#Client#0" expanded="false" />
             <element signature="n#!!block;n#getStats#0;n#Client#0" expanded="false" />
-            <element signature="e#3709#4083#0" expanded="false" />
-            <element signature="e#4514#4870#0" expanded="false" />
-            <element signature="e#4534#4816#0" expanded="false" />
-            <element signature="e#4928#5197#0" expanded="false" />
-            <element signature="e#4999#5049#0" expanded="false" />
-            <element signature="e#5108#5157#0" expanded="false" />
-            <element signature="e#5228#5789#0" expanded="false" />
-            <element signature="e#5387#5773#0" expanded="false" />
+            <element signature="e#3749#4123#0" expanded="false" />
+            <element signature="e#4554#4910#0" expanded="false" />
+            <element signature="e#4574#4856#0" expanded="false" />
+            <element signature="e#4968#5237#0" expanded="false" />
+            <element signature="e#5039#5089#0" expanded="false" />
+            <element signature="e#5148#5197#0" expanded="false" />
+            <element signature="e#5268#5829#0" expanded="false" />
+            <element signature="e#5427#5813#0" expanded="false" />
             <element signature="n#!!block;n#removeDeadNode#0;n#Client#0" expanded="false" />
             <element signature="n#!!block;n#command#0;n#Client#0" expanded="false" />
             <element signature="n#!!block;n#showGPUs#0;n#Client#0" expanded="false" />
-            <element signature="e#9250#10339#0" expanded="false" />
-            <element signature="e#9414#10093#0" expanded="false" />
-            <element signature="e#9564#9994#0" expanded="false" />
-            <element signature="e#9796#9976#0" expanded="false" />
-            <element signature="e#10345#10958#0" expanded="false" />
-            <element signature="e#10531#10903#0" expanded="false" />
-            <element signature="e#10626#10887#0" expanded="false" />
+            <element signature="e#9325#10414#0" expanded="false" />
+            <element signature="e#9489#10168#0" expanded="false" />
+            <element signature="e#9639#10069#0" expanded="false" />
+            <element signature="e#9871#10051#0" expanded="false" />
+            <element signature="e#10420#11033#0" expanded="false" />
+            <element signature="e#10606#10978#0" expanded="false" />
+            <element signature="e#10701#10962#0" expanded="false" />
             <element signature="n#!!block;n#deleteGPU#0;n#Client#0" expanded="false" />
-            <element signature="e#11092#11242#0" expanded="false" />
+            <element signature="e#11167#11317#0" expanded="false" />
             <element signature="n#!!block;n#showCoins#0;n#Client#0" expanded="false" />
-            <element signature="e#11375#11537#0" expanded="false" />
-            <element signature="e#11734#12003#0" expanded="false" />
+            <element signature="e#11450#11612#0" expanded="false" />
+            <element signature="e#11809#12078#0" expanded="false" />
             <element signature="n#!!block;n#deleteCoin#0;n#Client#0" expanded="false" />
-            <element signature="e#12166#12280#0" expanded="false" />
+            <element signature="e#12241#12355#0" expanded="false" />
             <element signature="n#!!block;n#showMiners#0;n#Client#0" expanded="false" />
-            <element signature="e#12416#12490#0" expanded="false" />
-            <element signature="e#12671#12784#0" expanded="false" />
+            <element signature="e#12491#12565#0" expanded="false" />
+            <element signature="e#12746#12859#0" expanded="false" />
             <element signature="n#!!block;n#deleteMiner#0;n#Client#0" expanded="false" />
           </folding>
         </state>

@@ -14,6 +14,7 @@ import {IMinerConfig} from "../interfaces/i_miner";
 import * as path from "path";
 import {IGPUConfig, OverClockMessage} from "../interfaces/i_gpu";
 import {hostname} from "os";
+import {isNullOrUndefined} from "util";
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
@@ -203,7 +204,7 @@ export class Client {
             ].map(head => colors.green(head)));
             info.gpuDetails.forEach((gpu, id) => {
                 table.push([
-                    info.gpuIDs[id] ? info.gpuIDs[id] : id,
+                    info.gpuIDs && !isNullOrUndefined(info.gpuIDs[id]) ? info.gpuIDs[id] : id,
                     info.gpuNames[id],
                     gpu.temperature < 60 ? colors.cyan(gpu.temperature.toString()) : (gpu.temperature < 70 ?
                         colors.yellow(gpu.temperature.toString()) : colors.red(gpu.temperature.toString())),

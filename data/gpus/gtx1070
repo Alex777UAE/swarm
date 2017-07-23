@@ -25,7 +25,7 @@
     "memClockOffset": 1100,
     "gpuClockOffset": 115,
     "powerLimit": 197,
-    "miner": "ccminer-sp-nicehash-1.5.80-git"
+    "miner": "ccminer-klaust-8.09"
   },
   "dmd-gr": {
     "fanSpeedTarget": 80,

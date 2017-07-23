@@ -29,6 +29,7 @@ export abstract class StdOutMinerWrapper extends IMiner {
     protected acceptPercent: number = 0;
     protected worker: string;
     protected timer: NodeJS.Timer;
+    protected started: number;
 
     constructor(name: string, executable: string) {
         super(name, executable);
@@ -46,6 +47,11 @@ export abstract class StdOutMinerWrapper extends IMiner {
         return Object.keys(this.hrs).map(id => this.hrs[id]);
     }
 
+    public get startTime(): number {
+        return this.started;
+    }
+
+
     public setWorker(name: string): void {
         this.worker = name;
     }
@@ -55,9 +61,11 @@ export abstract class StdOutMinerWrapper extends IMiner {
                                    stoutParser: parserFn,
                                    stdErrParser?: parserFn): Promise<void> {
         this.coin = coin;
-        debug(`executing ${this.executable} with ${args.join(' ')}`);
+        debug(`Executing ${this.executable} with ${args.join(' ')}`);
         await this.exec(args, stoutParser, stdErrParser ? stdErrParser : StdOutMinerWrapper.errParser);
-        debug(`starting validation loop`);
+        this.started = Date.now();
+        debug(`Miner started at ${this.started}`);
+        debug(`Starting validation loop`);
         this.validityLoop();
     }
 

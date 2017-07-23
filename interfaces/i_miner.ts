@@ -29,6 +29,8 @@ export abstract class IMiner extends IUnit {
 
     public abstract get acceptedPercent(): number;
 
+    public abstract get startTime(): number;
+
     public abstract setWorker(name: string): void;
 
     public abstract async start(coin: ICoinConfig): Promise<void>;

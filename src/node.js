@@ -31,6 +31,7 @@ class Node {
     constructor() {
         this.coins = {};
         this.miners = {};
+        // stats
         this.statsLocked = false;
     }
     /*
@@ -210,7 +211,7 @@ class Node {
                     cpuLoad: cpu,
                     memLoad: mem,
                     coin: this.currentCoin,
-                    coinTime: Date.now() - this.coinStartedAt,
+                    coinTime: Date.now() - this.miner.startTime,
                     gpuN: this.GPUs.length,
                     uptime: this.rig.uptime,
                     hashrate: this.miner.hashrate,
@@ -419,8 +420,6 @@ class Node {
             debug(`Current coin is ${name} and miner type is ${miner.type} with worker name ${this.rig.hostname}`);
             debug(`Starting miner up`);
             yield this.miner.start(this.coins[name]);
-            this.coinStartedAt = Date.now();
-            debug(`Miner started at ${this.coinStartedAt}`);
         });
     }
     getGPUConfigForAlgorithm(gpu, algorithm) {

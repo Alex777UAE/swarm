@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO" afterPath="$PROJECT_DIR$/TODO" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gpu-update" afterPath="$PROJECT_DIR$/bin/gpu-update" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/rig-remote" afterPath="$PROJECT_DIR$/bin/rig-remote" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.json" afterPath="$PROJECT_DIR$/config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_gpu.js.map" afterPath="$PROJECT_DIR$/interfaces/i_gpu.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfaces/i_gpu.ts" afterPath="$PROJECT_DIR$/interfaces/i_gpu.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js" afterPath="$PROJECT_DIR$/src/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.js.map" afterPath="$PROJECT_DIR$/src/client.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.ts" afterPath="$PROJECT_DIR$/src/client.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js" afterPath="$PROJECT_DIR$/src/node.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js.map" afterPath="$PROJECT_DIR$/src/node.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.ts" afterPath="$PROJECT_DIR$/src/node.ts" />
@@ -34,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TODO" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TODO" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TODO">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -47,7 +36,7 @@
       <file leaf-file-name="redis.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/redis.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="252">
               <caret line="140" column="17" lean-forward="false" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -88,46 +77,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="node.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="210" column="41" lean-forward="false" selection-start-line="210" selection-start-column="41" selection-end-line="210" selection-end-column="41" />
+            <state relative-caret-position="487">
+              <caret line="239" column="9" lean-forward="true" selection-start-line="239" selection-start-column="9" selection-end-line="239" selection-end-column="9" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
                 <element signature="e#2501#3870#0" expanded="false" />
                 <element signature="n#!!block;n#watchSwitchFile#0;n#Node#0" expanded="false" />
-                <element signature="e#9467#9958#0" expanded="false" />
-                <element signature="e#9505#9948#0" expanded="false" />
-                <element signature="e#9576#9932#0" expanded="false" />
-                <element signature="e#9606#9725#0" expanded="false" />
+                <element signature="e#9509#10000#0" expanded="false" />
+                <element signature="e#9547#9990#0" expanded="false" />
+                <element signature="e#9618#9974#0" expanded="false" />
+                <element signature="e#9648#9767#0" expanded="false" />
                 <element signature="n#!!block;n#abortSignalHandler#0;n#Node#0" expanded="false" />
-                <element signature="e#10060#10257#0" expanded="false" />
+                <element signature="e#10102#10299#0" expanded="false" />
                 <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#statisticLoop#0;n#Node#0" expanded="false" />
-                <element signature="e#12056#12091#0" expanded="false" />
+                <element signature="e#12098#12133#0" expanded="false" />
                 <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#gpuUpdate#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-                <element signature="e#18466#18534#0" expanded="false" />
+                <element signature="e#18508#18576#0" expanded="false" />
                 <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="4388" column="15" lean-forward="false" selection-start-line="4388" selection-start-column="15" selection-end-line="4388" selection-end-column="15" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -318,9 +297,9 @@
         <option value="$PROJECT_DIR$/src/client.ts" />
         <option value="$PROJECT_DIR$/bin/gpu-update" />
         <option value="$PROJECT_DIR$/config.json" />
-        <option value="$PROJECT_DIR$/src/node.ts" />
         <option value="$PROJECT_DIR$/bin/rig-remote" />
         <option value="$PROJECT_DIR$/TODO" />
+        <option value="$PROJECT_DIR$/src/node.ts" />
       </list>
     </option>
   </component>
@@ -560,14 +539,7 @@
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
       <workItem from="1499812485546" duration="145823000" />
-      <workItem from="1500499017357" duration="43736000" />
-    </task>
-    <task id="LOCAL-00088" summary="ver 0.0.3">
-      <created>1500329970237</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1500329970238</updated>
+      <workItem from="1500499017357" duration="44083000" />
     </task>
     <task id="LOCAL-00089" summary="ver 0.0.3">
       <created>1500330082970</created>
@@ -905,11 +877,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500845798300</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="0.1.2 ver&#10;&#10;autoupdate node from github repo by rig-remote command">
+      <created>1500915710024</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1500915710026</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215803000" />
+    <option name="totallyTimeSpent" value="216150000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -970,7 +949,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commands support #5&#10;restart experiment for ewbf #2" />
     <MESSAGE value="commands support #5&#10;restart experiment for ewbf #3" />
     <MESSAGE value="ver 0.0.2" />
     <MESSAGE value="ver 0.0.2 &#10;&#10;#1" />
@@ -995,7 +973,8 @@
     <MESSAGE value="0.1.0 release" />
     <MESSAGE value="0.1.0 release&#10;&#10;fixing GPU ids" />
     <MESSAGE value="0.1.1 ver&#10;&#10;coin mining time now calculated since start action in miner itself" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.1.1 ver&#10;&#10;coin mining time now calculated since start action in miner itself" />
+    <MESSAGE value="0.1.2 ver&#10;&#10;autoupdate node from github repo by rig-remote command" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.1.2 ver&#10;&#10;autoupdate node from github repo by rig-remote command" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1469,17 +1448,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
+    <entry file="file://$PROJECT_DIR$/bin/rig-remote">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="4388" column="15" lean-forward="false" selection-start-line="4388" selection-start-column="15" selection-end-line="4388" selection-end-column="15" />
+        <state relative-caret-position="135">
+          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/gpu-update">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/redis.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="252">
           <caret line="140" column="17" lean-forward="false" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -1509,59 +1504,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/rig-remote">
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="29" />
+        <state relative-caret-position="234">
+          <caret line="4388" column="15" lean-forward="false" selection-start-line="4388" selection-start-column="15" selection-end-line="4388" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/node.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="210" column="41" lean-forward="false" selection-start-line="210" selection-start-column="41" selection-end-line="210" selection-end-column="41" />
+        <state relative-caret-position="487">
+          <caret line="239" column="9" lean-forward="true" selection-start-line="239" selection-start-column="9" selection-end-line="239" selection-end-column="9" />
           <folding>
             <element signature="e#40#77#0" expanded="true" />
             <element signature="e#2501#3870#0" expanded="false" />
             <element signature="n#!!block;n#watchSwitchFile#0;n#Node#0" expanded="false" />
-            <element signature="e#9467#9958#0" expanded="false" />
-            <element signature="e#9505#9948#0" expanded="false" />
-            <element signature="e#9576#9932#0" expanded="false" />
-            <element signature="e#9606#9725#0" expanded="false" />
+            <element signature="e#9509#10000#0" expanded="false" />
+            <element signature="e#9547#9990#0" expanded="false" />
+            <element signature="e#9618#9974#0" expanded="false" />
+            <element signature="e#9648#9767#0" expanded="false" />
             <element signature="n#!!block;n#abortSignalHandler#0;n#Node#0" expanded="false" />
-            <element signature="e#10060#10257#0" expanded="false" />
+            <element signature="e#10102#10299#0" expanded="false" />
             <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#statisticLoop#0;n#Node#0" expanded="false" />
-            <element signature="e#12056#12091#0" expanded="false" />
+            <element signature="e#12098#12133#0" expanded="false" />
             <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#gpuUpdate#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-            <element signature="e#18466#18534#0" expanded="false" />
+            <element signature="e#18508#18576#0" expanded="false" />
             <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#readConfig#0;n#Node#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/gpu-update">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -229,14 +229,14 @@ export class Node {
             await exec(this.config.git, ['clone', GITHUB_REPO], {cwd: CURRENT_ROOT_DIR});
             debug(`Stopping miner`);
             await this.miner.stop();
-            debug(`Launching new version`);
+            debug(`Launching new version from ${CURRENT_ROOT_DIR + '/bin/node'}`);
             const child = childProcess.spawn(path.resolve(CURRENT_ROOT_DIR + '/bin/node'), [], {
                 detached: true,
                 stdio: 'inherit'
             });
             child.unref();
             debug(`Exiting with success code`);
-            process.exit(0);
+            // process.exit(0);
         }
     }
 

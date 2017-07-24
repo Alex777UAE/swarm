@@ -76,7 +76,7 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
         debug(`validating at ${now}`);
         if (!this.hrTimestamp || now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL)
             this.hr = 0;
-        if (!this.hrsTimestamp)
+        if (!this.hrTimestamp)
             this.noTimestampCounter++;
         else
             this.noTimestampCounter = 0;

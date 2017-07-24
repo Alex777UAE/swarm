@@ -235,7 +235,8 @@ export class Client {
                            gpuClockOffset: number,
                            memClockOffset: number,
                            powerLimit: number,
-                           fanSpeedTarget: number): Promise<void> {
+                           fanSpeedTarget: number,
+                           miner: string): Promise<void> {
         if (cardId && isNaN(parseInt(cardId as string))) throw new Error(`No valid card id provided`);
         cardId = parseInt(cardId as string);
         const config: OverClockMessage = {
@@ -244,6 +245,7 @@ export class Client {
             gpuClockOffset,
             powerLimit,
             algorithm,
+            miner,
             cardId
         };
 

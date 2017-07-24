@@ -206,7 +206,9 @@ Done
 coin-set ftc ./data/coins/ftc
 ```
 Where:
+
    ftc - is a coin abbreviation lowercase, in case FTC - Feathercoin
+   
    ./data/coins/ftc is a path to JSON config of the coin
    
 ```json
@@ -265,9 +267,13 @@ miner-upload ccminer-klaust-8.09 ./data/miners/ccminer-klaust-8.09 ./miners/ccmi
 ```   
 
 Where:
-    ccminer-klaust-8.09 - is a miner name, which is used in GPU configuration
-    ./data/miners/ccminer-klaust-8.09 - path to JSON configuration
-    ./miners/ccminer-klaust-8.09 - directory with miner binary (tgz used to distribute) or binary itself
+
+   ccminer-klaust-8.09 - is a miner name, which is used in GPU configuration
+    
+   ./data/miners/ccminer-klaust-8.09 - path to JSON configuration
+    
+   ./miners/ccminer-klaust-8.09 - directory with miner binary (tgz used to distribute) or binary itself
+    
 
 ```json
 {
@@ -279,10 +285,14 @@ Where:
 ```
 
 Where:
-    fileType - tgz or binary (auto-set by client software)
-    sha256sum - sha256 sum (auto-set by client software)
-    type - type of wrapper, currently supported : **ccminer | claymore | ethminer | ewbf**
-    executable - executable name which you are uploading right now, ex. ccminer, ethminer, miner... etc
+
+   fileType - tgz or binary (auto-set by client software)
+   
+   sha256sum - sha256 sum (auto-set by client software)
+   
+   type - type of wrapper, currently supported : **ccminer | claymore | ethminer | ewbf**
+   
+   executable - executable name which you are uploading right now, ex. ccminer, ethminer, miner... etc
     
 
 #### GPUs
@@ -366,8 +376,9 @@ gpu-set gpu-87259284-bbac-a56a-0fd4-912a02716d57 ./data/gpus/gpu-87259284-bbac-a
 
 Where:
 
-    gtx1070/gpu-87259284-bbac-a56a-0fd4-912a02716d57 - model name or UUID 
-    second param - path to JSON config
+   gtx1070/gpu-87259284-bbac-a56a-0fd4-912a02716d57 - model name or UUID 
+   
+   second param - path to JSON config
 
 GPU model template might look like this:
 ```json
@@ -556,3 +567,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Acknowledgments
 
 * Inspired by kopiemtu 3.0 
+* Web boilerplate - [Vortigern](https://github.com/barbar/vortigern.git) 

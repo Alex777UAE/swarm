@@ -1,4 +1,5 @@
 {
+  "git": "/usr/bin/git",
   "nvidia-smi": "/usr/bin/nvidia-smi",
   "nvidia-settings": "/usr/bin/nvidia-settings",
   "redis": {

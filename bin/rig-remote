@@ -7,6 +7,7 @@ if (argv.h || !argv._[0]) {
     console.log('\nrig-remote <command> [-p params] [HOSTNAME]');
     console.log('\texecute command on all nodes or only on HOSTNAME\n');
     console.log('Supported commands:\t');
+    console.log('\tautoupdate - updates swarm node from github repo up to latest commit');
     console.log('\trestart - restarts current miner proccess');
     console.log('\treboot - reboot rig');
     process.exit(0);

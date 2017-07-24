@@ -6,11 +6,14 @@ import * as fs from 'fs';
 import * as os from 'os';
 import * as _ from 'lodash';
 import * as util from 'util';
+import * as path from "path";
 import * as touch from 'touch';
+import * as rimraf from 'rimraf';
+import * as childProcess from 'child_process';
+import {setTimeout} from "timers";
 import {IDBLayer} from "../interfaces/i_db_layer";
 import {Redis} from "./redis";
 import {Linux} from "./rig/linux";
-import {setTimeout} from "timers";
 import {IRig} from "../interfaces/i_rig";
 import {
     IGPU, IGPUConfig, IGPUConfigList, IGPUStats, OverClockMessage,
@@ -18,17 +21,25 @@ import {
 } from "../interfaces/i_gpu";
 import {IMiner, IMinerList, IMinerConfig} from "../interfaces/i_miner";
 import {ICoinConfig, ICoinList, Algorithm} from "../interfaces/i_coin";
-import * as path from "path";
 import {isNullOrUndefined} from "util";
 
 const debug = require('debug')('miner:node');
 const readFile = util.promisify(fs.readFile);
 const unlink = util.promisify(fs.unlink);
+const access = util.promisify(fs.access);
+const rename = util.promisify(fs.rename);
+const mkdir = util.promisify(fs.mkdir);
+const exec = util.promisify(childProcess.execFile);
+
+const GITHUB_REPO = 'https://github.com/Alex777UAE/swarm.git';
 
 const STATISTIC_LOOP_INTERVAL_MS = 60 * 1000; // once a minute
+const UPDATE_TMP_DIR = os.tmpdir() + '/swarm-tmp';
+const CURRENT_ROOT_DIR = path.resolve(__dirname + '/../');
 export const SWITCH_FILE = 'switchCoin';
 
 export interface IAppConfig {
+    "git": string;
     "nvidia-smi": string;
     "nvidia-settings": string;
     "redis": {
@@ -69,6 +80,7 @@ export class Node {
     private miners: IMinerList = {};
     private timer: NodeJS.Timer;
     private switchFileWatcher: fs.FSWatcher;
+    private config: IAppConfig;
 
     // stats
     private statsLocked: boolean = false;
@@ -114,6 +126,7 @@ export class Node {
      */
     public async main(): Promise<void> {
         const appConf = await Node.readConfig();
+        this.config = appConf;
         const swarm = appConf.mode === 'swarm';
         let coinName = appConf.defaultCoin;
         // todo multi-OS, multi-GPU support
@@ -196,6 +209,34 @@ export class Node {
                 });
 
             await this.db.updateGPU(targetGPU.uuid, newGPUConfigs[targetGPU.uuid]);
+        } else if (command === 'command.autoupdate') {
+            debug(`Checking git executable [${this.config.git}] access`);
+            await access(this.config.git, fs.constants.F_OK | fs.constants.X_OK);
+
+            debug(`Removing backup directory [${UPDATE_TMP_DIR}]`);
+            await new Promise((resolve, reject) => {
+                rimraf(UPDATE_TMP_DIR, err => {
+                    if (err) return reject(err);
+                    resolve();
+                });
+            });
+
+            debug(`Backing up current directory [${CURRENT_ROOT_DIR}] to [${UPDATE_TMP_DIR}]`);
+            await rename(CURRENT_ROOT_DIR, UPDATE_TMP_DIR);
+            debug(`Creating new dir [${CURRENT_ROOT_DIR}]`);
+            await mkdir(CURRENT_ROOT_DIR);
+            debug(`Cloning github repo [${GITHUB_REPO}]`);
+            await exec(this.config.git, ['clone', GITHUB_REPO], {cwd: CURRENT_ROOT_DIR});
+            debug(`Stopping miner`);
+            await this.miner.stop();
+            debug(`Launching new version`);
+            const child = childProcess.spawn(path.resolve(CURRENT_ROOT_DIR + '/bin/node'), [], {
+                detached: true,
+                stdio: 'inherit'
+            });
+            child.unref();
+            debug(`Exiting with success code`);
+            process.exit(0);
         }
     }
 
@@ -389,6 +430,8 @@ export class Node {
                     }
                 }
             }
+
+            // todo check if gpuModelOrUUID is among GPUs
 
             if (config[currentAlgo] && currentMiner !== config[currentAlgo].miner) {
                 debug(`Miner change [${currentMiner}] -> [${config[currentAlgo].miner}]`);

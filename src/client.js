@@ -230,7 +230,7 @@ class Client {
             yield this.redis.command(name, params, hostname);
         });
     }
-    overclock(hostname, cardId, algorithm, gpuClockOffset, memClockOffset, powerLimit, fanSpeedTarget) {
+    overclock(hostname, cardId, algorithm, gpuClockOffset, memClockOffset, powerLimit, fanSpeedTarget, miner) {
         return __awaiter(this, void 0, void 0, function* () {
             if (cardId && isNaN(parseInt(cardId)))
                 throw new Error(`No valid card id provided`);
@@ -241,6 +241,7 @@ class Client {
                 gpuClockOffset,
                 powerLimit,
                 algorithm,
+                miner,
                 cardId
             };
             yield this.redis.command('gpu', JSON.stringify(config), hostname);

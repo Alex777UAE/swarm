@@ -3,7 +3,7 @@
  */
 
 import {IUnit} from "./i_unit";
-export type GPUVendor = 'AMD' | 'NVIDIA';
+// export type GPUVendor = 'AMD' | 'NVIDIA';
 export type GPUModel = 'gtx1070' | 'gtx1080' | 'gtx1080ti' | 'gtx1060' | 'unknown';
 
 /*
@@ -63,6 +63,7 @@ export interface OverClockMessage {
     gpuClockOffset: number;
     powerLimit: number;
     algorithm: string;
+    miner: string;
     cardId: number;
 }
 

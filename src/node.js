@@ -16,16 +16,25 @@ const fs = require("fs");
 const os = require("os");
 const _ = require("lodash");
 const util = require("util");
+const path = require("path");
 const touch = require("touch");
+const rimraf = require("rimraf");
+const childProcess = require("child_process");
+const timers_1 = require("timers");
 const redis_1 = require("./redis");
 const linux_1 = require("./rig/linux");
-const timers_1 = require("timers");
-const path = require("path");
 const util_1 = require("util");
 const debug = require('debug')('miner:node');
 const readFile = util.promisify(fs.readFile);
 const unlink = util.promisify(fs.unlink);
+const access = util.promisify(fs.access);
+const rename = util.promisify(fs.rename);
+const mkdir = util.promisify(fs.mkdir);
+const exec = util.promisify(childProcess.execFile);
+const GITHUB_REPO = 'https://github.com/Alex777UAE/swarm.git';
 const STATISTIC_LOOP_INTERVAL_MS = 60 * 1000; // once a minute
+const UPDATE_TMP_DIR = os.tmpdir() + '/swarm-tmp';
+const CURRENT_ROOT_DIR = path.resolve(__dirname + '/../');
 exports.SWITCH_FILE = 'switchCoin';
 class Node {
     constructor() {
@@ -76,6 +85,7 @@ class Node {
     main() {
         return __awaiter(this, void 0, void 0, function* () {
             const appConf = yield Node.readConfig();
+            this.config = appConf;
             const swarm = appConf.mode === 'swarm';
             let coinName = appConf.defaultCoin;
             // todo multi-OS, multi-GPU support
@@ -159,6 +169,34 @@ class Node {
                     }
                 });
                 yield this.db.updateGPU(targetGPU.uuid, newGPUConfigs[targetGPU.uuid]);
+            }
+            else if (command === 'command.autoupdate') {
+                debug(`Checking git executable [${this.config.git}] access`);
+                yield access(this.config.git, fs.constants.F_OK | fs.constants.X_OK);
+                debug(`Removing backup directory [${UPDATE_TMP_DIR}]`);
+                yield new Promise((resolve, reject) => {
+                    rimraf(UPDATE_TMP_DIR, err => {
+                        if (err)
+                            return reject(err);
+                        resolve();
+                    });
+                });
+                debug(`Backing up current directory [${CURRENT_ROOT_DIR}] to [${UPDATE_TMP_DIR}]`);
+                yield rename(CURRENT_ROOT_DIR, UPDATE_TMP_DIR);
+                debug(`Creating new dir [${CURRENT_ROOT_DIR}]`);
+                yield mkdir(CURRENT_ROOT_DIR);
+                debug(`Cloning github repo [${GITHUB_REPO}]`);
+                yield exec(this.config.git, ['clone', GITHUB_REPO], { cwd: CURRENT_ROOT_DIR });
+                debug(`Stopping miner`);
+                yield this.miner.stop();
+                debug(`Launching new version`);
+                const child = childProcess.spawn(path.resolve(CURRENT_ROOT_DIR + '/bin/node'), [], {
+                    detached: true,
+                    stdio: 'inherit'
+                });
+                child.unref();
+                debug(`Exiting with success code`);
+                process.exit(0);
             }
         });
     }
@@ -352,6 +390,7 @@ class Node {
                         }
                     }
                 }
+                // todo check if gpuModelOrUUID is among GPUs
                 if (config[currentAlgo] && currentMiner !== config[currentAlgo].miner) {
                     debug(`Miner change [${currentMiner}] -> [${config[currentAlgo].miner}]`);
                     const minerPath = __dirname + '/wrappers/' + this.miners[config[currentAlgo].miner].type;

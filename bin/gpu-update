@@ -17,6 +17,7 @@ if (argv.h || !argv._[0] ||  isNullOrUndefined(argv.i) || isNaN(parseInt(argv.i)
     console.log('\t-m mem clock offset, ex. 1100 or 0');
     console.log('\t-p power limit in watts, ex. 195');
     console.log('\t-f fan speed in percents, ex. 80');
+    console.log('\t-r miner name, ex. ccminer-klaust-8.09');
     console.log('\n\n\tex. ./gpu-update F503 -i 0 -g-200 -a ethash');
     process.exit(0);
 }
@@ -24,7 +25,7 @@ if (argv.h || !argv._[0] ||  isNullOrUndefined(argv.i) || isNaN(parseInt(argv.i)
 
 const Client = require('../src/client').Client;
 const client = new Client();
-client.overclock(argv._[0], parseInt(argv.i), argv.a, argv.g, argv.m, argv.p, argv.f)
+client.overclock(argv._[0], parseInt(argv.i), argv.a, argv.g, argv.m, argv.p, argv.f, argv.r)
     .then(() => process.exit(0))
     .catch(err => {
         console.error(err);

@@ -232,7 +232,8 @@ export class Node {
             debug(`Launching new version from ${CURRENT_ROOT_DIR + '/bin/node'}`);
             const child = childProcess.spawn(path.resolve(CURRENT_ROOT_DIR + '/bin/node'), [], {
                 detached: true,
-                stdio: 'inherit'
+                stdio: 'inherit',
+                cwd: CURRENT_ROOT_DIR
             });
             child.unref();
             debug(`Exiting with success code`);

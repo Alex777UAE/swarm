@@ -31,9 +31,9 @@ class CCMiner extends StdOutMinerWrapper {
             '-a', coin.algorithm,
             '-o', `stratum+tcp://${coin.poolURL}:${coin.port}`,
             '-O', `${coin.username}.${coin.workername ? coin.workername : this.worker}:${coin.password}`,
-            '--retries=1',
-            '--retry-pause=10',
-            '--timeout=60',
+            '-R', '0', // --retries=N
+            // '--retry-pause=10',
+            '-T', '45' //'--timeout=60',
             // '--no-color'
         ], this.parseStdOut.bind(this), this.parseStdOut.bind(this))
     }

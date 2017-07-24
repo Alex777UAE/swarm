@@ -199,7 +199,7 @@ class Node {
                 });
                 child.unref();
                 debug(`Exiting with success code`);
-                // process.exit(0);
+                process.exit(0);
             }
         });
     }

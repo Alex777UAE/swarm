@@ -71,13 +71,19 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
         });
     }
     validityLoop() {
-        if (!this.hrTimestamp || Date.now() - this.hrTimestamp > VALIDATION_LOOP_INTERVAL)
+        const now = Date.now();
+        if (!this.hrTimestamp || now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL)
             this.hr = 0;
         Object.keys(this.hrsTimestamp).forEach(gpuId => {
-            if (Date.now() - this.hrsTimestamp[gpuId] > VALIDATION_LOOP_INTERVAL)
-                this.hrsTimestamp[gpuId] = 0;
+            if (Date.now() - this.hrsTimestamp[gpuId] >= VALIDATION_LOOP_INTERVAL)
+                this.hrs[gpuId] = 0;
         });
-        this.timer = timers_1.setTimeout(this.validityLoop.bind(this), VALIDATION_LOOP_INTERVAL);
+        if (now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
+            this.handleExit(666);
+        }
+        else {
+            this.timer = timers_1.setTimeout(this.validityLoop.bind(this), VALIDATION_LOOP_INTERVAL);
+        }
     }
     setTotalHashrate(rate) {
         this.hr = rate;
@@ -88,7 +94,6 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
         this.hrsTimestamp[gpuId] = Date.now();
     }
     handleExit(code) {
-        // todo notify switching algo module somehow?
         debug(`exit code ${code}`);
         const coin = this.coin;
         if (this.coin)

@@ -83,13 +83,19 @@ export abstract class StdOutMinerWrapper extends IMiner {
     }
 
     protected validityLoop(): void {
-        if (!this.hrTimestamp || Date.now() - this.hrTimestamp > VALIDATION_LOOP_INTERVAL) this.hr = 0;
+        const now = Date.now();
+        if (!this.hrTimestamp || now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL) this.hr = 0;
 
         Object.keys(this.hrsTimestamp).forEach(gpuId => {
-            if (Date.now() - this.hrsTimestamp[gpuId] > VALIDATION_LOOP_INTERVAL)
-                this.hrsTimestamp[gpuId] = 0;
+            if (Date.now() - this.hrsTimestamp[gpuId] >= VALIDATION_LOOP_INTERVAL)
+                this.hrs[gpuId] = 0;
         });
-        this.timer = setTimeout(this.validityLoop.bind(this), VALIDATION_LOOP_INTERVAL)
+
+        if (now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
+            this.handleExit(666)
+        } else {
+            this.timer = setTimeout(this.validityLoop.bind(this), VALIDATION_LOOP_INTERVAL)
+        }
     }
 
     protected setTotalHashrate(rate: number): void {
@@ -103,7 +109,6 @@ export abstract class StdOutMinerWrapper extends IMiner {
     }
 
     protected handleExit(code: number): void {
-        // todo notify switching algo module somehow?
         debug(`exit code ${code}`);
         const coin = this.coin;
         if (this.coin)

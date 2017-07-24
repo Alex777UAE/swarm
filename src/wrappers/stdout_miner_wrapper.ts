@@ -87,7 +87,7 @@ export abstract class StdOutMinerWrapper extends IMiner {
         const now = Date.now();
         debug(`validating at ${now}`);
         if (!this.hrTimestamp || now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL) this.hr = 0;
-        if (!this.hrsTimestamp) this.noTimestampCounter++;
+        if (!this.hrTimestamp) this.noTimestampCounter++;
         else this.noTimestampCounter = 0;
 
         Object.keys(this.hrsTimestamp).forEach(gpuId => {

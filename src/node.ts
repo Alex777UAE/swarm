@@ -227,6 +227,8 @@ export class Node {
             await mkdir(CURRENT_ROOT_DIR);
             debug(`Cloning github repo [${GITHUB_REPO}]`);
             await exec(this.config.git, ['clone', GITHUB_REPO], {cwd: path.resolve(CURRENT_ROOT_DIR + '/../')});
+            debug(`Installing npm packages`);
+            await exec('/usr/local/bin/npm', ['i'], {cwd: CURRENT_ROOT_DIR});
             debug(`Stopping miner`);
             await this.miner.stop();
             debug(`Launching new version from ${CURRENT_ROOT_DIR + '/bin/node'}`);

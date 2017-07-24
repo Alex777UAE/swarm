@@ -95,7 +95,7 @@ export abstract class StdOutMinerWrapper extends IMiner {
                 this.hrs[gpuId] = 0;
         });
 
-        if (this.hrTimestamp && now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
+        if (this.noTimestampCounter > 1 || this.hrTimestamp && now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
             debug('too much of inactivity, restarting process');
             this.handleExit(666)
         } else {

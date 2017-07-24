@@ -84,7 +84,7 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
             if (Date.now() - this.hrsTimestamp[gpuId] >= VALIDATION_LOOP_INTERVAL)
                 this.hrs[gpuId] = 0;
         });
-        if (this.hrTimestamp && now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
+        if (this.noTimestampCounter > 1 || this.hrTimestamp && now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
             debug('too much of inactivity, restarting process');
             this.handleExit(666);
         }

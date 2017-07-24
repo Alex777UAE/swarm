@@ -186,7 +186,7 @@ class Node {
                 debug(`Creating new dir [${CURRENT_ROOT_DIR}]`);
                 yield mkdir(CURRENT_ROOT_DIR);
                 debug(`Cloning github repo [${GITHUB_REPO}]`);
-                yield exec(this.config.git, ['clone', GITHUB_REPO], { cwd: CURRENT_ROOT_DIR });
+                yield exec(this.config.git, ['clone', GITHUB_REPO], { cwd: path.resolve(CURRENT_ROOT_DIR + '/../') });
                 debug(`Stopping miner`);
                 yield this.miner.stop();
                 debug(`Launching new version from ${CURRENT_ROOT_DIR + '/bin/node'}`);

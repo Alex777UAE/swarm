@@ -97,6 +97,7 @@ export abstract class StdOutMinerWrapper extends IMiner {
 
         if (this.noTimestampCounter > 1 || this.hrTimestamp && now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
             debug('too much of inactivity, restarting process');
+            this.noTimestampCounter = 0
             this.handleExit(666)
         } else {
             debug('Setting up next loop');

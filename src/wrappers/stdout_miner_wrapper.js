@@ -72,6 +72,7 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
     }
     validityLoop() {
         const now = Date.now();
+        debug(`validating at ${now}`);
         if (!this.hrTimestamp || now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL)
             this.hr = 0;
         Object.keys(this.hrsTimestamp).forEach(gpuId => {
@@ -79,9 +80,11 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
                 this.hrs[gpuId] = 0;
         });
         if (now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
+            debug('too much of inactivity, restarting process');
             this.handleExit(666);
         }
         else {
+            debug('Setting up next loop');
             this.timer = timers_1.setTimeout(this.validityLoop.bind(this), VALIDATION_LOOP_INTERVAL);
         }
     }

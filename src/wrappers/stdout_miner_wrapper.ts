@@ -84,6 +84,7 @@ export abstract class StdOutMinerWrapper extends IMiner {
 
     protected validityLoop(): void {
         const now = Date.now();
+        debug(`validating at ${now}`);
         if (!this.hrTimestamp || now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL) this.hr = 0;
 
         Object.keys(this.hrsTimestamp).forEach(gpuId => {
@@ -92,8 +93,10 @@ export abstract class StdOutMinerWrapper extends IMiner {
         });
 
         if (now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
+            debug('too much of inactivity, restarting process');
             this.handleExit(666)
         } else {
+            debug('Setting up next loop');
             this.timer = setTimeout(this.validityLoop.bind(this), VALIDATION_LOOP_INTERVAL)
         }
     }

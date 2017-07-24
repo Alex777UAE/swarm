@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3b87a4-7251-4d44-b039-6afd1b6a478a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js" afterPath="$PROJECT_DIR$/src/node.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.js.map" afterPath="$PROJECT_DIR$/src/node.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.ts" afterPath="$PROJECT_DIR$/src/node.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -80,28 +78,28 @@
       <file leaf-file-name="node.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/node.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="230" column="74" lean-forward="false" selection-start-line="230" selection-start-column="74" selection-end-line="230" selection-end-column="74" />
+            <state relative-caret-position="563">
+              <caret line="242" column="9" lean-forward="true" selection-start-line="242" selection-start-column="9" selection-end-line="242" selection-end-column="9" />
               <folding>
                 <element signature="e#40#77#0" expanded="true" />
                 <element signature="e#2501#3870#0" expanded="false" />
                 <element signature="n#!!block;n#watchSwitchFile#0;n#Node#0" expanded="false" />
-                <element signature="e#9695#10186#0" expanded="false" />
-                <element signature="e#9733#10176#0" expanded="false" />
-                <element signature="e#9804#10160#0" expanded="false" />
-                <element signature="e#9834#9953#0" expanded="false" />
+                <element signature="e#9692#10183#0" expanded="false" />
+                <element signature="e#9730#10173#0" expanded="false" />
+                <element signature="e#9801#10157#0" expanded="false" />
+                <element signature="e#9831#9950#0" expanded="false" />
                 <element signature="n#!!block;n#abortSignalHandler#0;n#Node#0" expanded="false" />
-                <element signature="e#10288#10485#0" expanded="false" />
+                <element signature="e#10285#10482#0" expanded="false" />
                 <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#statisticLoop#0;n#Node#0" expanded="false" />
-                <element signature="e#12284#12319#0" expanded="false" />
+                <element signature="e#12281#12316#0" expanded="false" />
                 <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#gpuUpdate#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-                <element signature="e#18694#18762#0" expanded="false" />
+                <element signature="e#18691#18759#0" expanded="false" />
                 <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
                 <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />
@@ -539,14 +537,7 @@
       <updated>1499690362311</updated>
       <workItem from="1499690365352" duration="26244000" />
       <workItem from="1499812485546" duration="145823000" />
-      <workItem from="1500499017357" duration="44369000" />
-    </task>
-    <task id="LOCAL-00092" summary="ver 0.0.4&#10;&#10;alexis support">
-      <created>1500330926814</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1500330926814</updated>
+      <workItem from="1500499017357" duration="44429000" />
     </task>
     <task id="LOCAL-00093" summary="ver 0.0.4&#10;&#10;sp-mod + groestl mem clock template">
       <created>1500331181296</created>
@@ -884,11 +875,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500916339739</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="0.1.2 ver&#10;&#10;autoupdate node from github repo by rig-remote command">
+      <created>1500916480353</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1500916480353</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216436000" />
+    <option name="totallyTimeSpent" value="216496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1514,28 +1512,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/node.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="230" column="74" lean-forward="false" selection-start-line="230" selection-start-column="74" selection-end-line="230" selection-end-column="74" />
+        <state relative-caret-position="563">
+          <caret line="242" column="9" lean-forward="true" selection-start-line="242" selection-start-column="9" selection-end-line="242" selection-end-column="9" />
           <folding>
             <element signature="e#40#77#0" expanded="true" />
             <element signature="e#2501#3870#0" expanded="false" />
             <element signature="n#!!block;n#watchSwitchFile#0;n#Node#0" expanded="false" />
-            <element signature="e#9695#10186#0" expanded="false" />
-            <element signature="e#9733#10176#0" expanded="false" />
-            <element signature="e#9804#10160#0" expanded="false" />
-            <element signature="e#9834#9953#0" expanded="false" />
+            <element signature="e#9692#10183#0" expanded="false" />
+            <element signature="e#9730#10173#0" expanded="false" />
+            <element signature="e#9801#10157#0" expanded="false" />
+            <element signature="e#9831#9950#0" expanded="false" />
             <element signature="n#!!block;n#abortSignalHandler#0;n#Node#0" expanded="false" />
-            <element signature="e#10288#10485#0" expanded="false" />
+            <element signature="e#10285#10482#0" expanded="false" />
             <element signature="n#!!block;n#setSignalHandlers#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#statisticLoop#0;n#Node#0" expanded="false" />
-            <element signature="e#12284#12319#0" expanded="false" />
+            <element signature="e#12281#12316#0" expanded="false" />
             <element signature="n#!!block;n#syncCoins#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#syncMiners#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#syncGPUs#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#coinUpdate#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#gpuUpdate#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#minerUpdate#0;n#Node#0" expanded="false" />
-            <element signature="e#18694#18762#0" expanded="false" />
+            <element signature="e#18691#18759#0" expanded="false" />
             <element signature="n#!!block;n#setCurrentCoin#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#getGPUConfigForAlgorithm#0;n#Node#0" expanded="false" />
             <element signature="n#!!block;n#setGPUConfig#0;n#Node#0" expanded="false" />

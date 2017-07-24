@@ -30,6 +30,7 @@ export abstract class StdOutMinerWrapper extends IMiner {
     protected worker: string;
     protected timer: NodeJS.Timer;
     protected started: number;
+    protected noTimestampCounter: number = 0;
 
     constructor(name: string, executable: string) {
         super(name, executable);
@@ -86,13 +87,15 @@ export abstract class StdOutMinerWrapper extends IMiner {
         const now = Date.now();
         debug(`validating at ${now}`);
         if (!this.hrTimestamp || now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL) this.hr = 0;
+        if (!this.hrsTimestamp) this.noTimestampCounter++;
+        else this.noTimestampCounter = 0;
 
         Object.keys(this.hrsTimestamp).forEach(gpuId => {
             if (Date.now() - this.hrsTimestamp[gpuId] >= VALIDATION_LOOP_INTERVAL)
                 this.hrs[gpuId] = 0;
         });
 
-        if (now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
+        if (this.hrTimestamp && now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
             debug('too much of inactivity, restarting process');
             this.handleExit(666)
         } else {

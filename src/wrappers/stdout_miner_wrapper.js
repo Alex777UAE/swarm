@@ -28,6 +28,7 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
         this.hrs = {};
         this.hrsTimestamp = {};
         this.acceptPercent = 0;
+        this.noTimestampCounter = 0;
     }
     get hashrate() {
         return this.hr;
@@ -75,11 +76,15 @@ class StdOutMinerWrapper extends i_miner_1.IMiner {
         debug(`validating at ${now}`);
         if (!this.hrTimestamp || now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL)
             this.hr = 0;
+        if (!this.hrsTimestamp)
+            this.noTimestampCounter++;
+        else
+            this.noTimestampCounter = 0;
         Object.keys(this.hrsTimestamp).forEach(gpuId => {
             if (Date.now() - this.hrsTimestamp[gpuId] >= VALIDATION_LOOP_INTERVAL)
                 this.hrs[gpuId] = 0;
         });
-        if (now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
+        if (this.hrTimestamp && now - this.hrTimestamp >= VALIDATION_LOOP_INTERVAL * 2) {
             debug('too much of inactivity, restarting process');
             this.handleExit(666);
         }

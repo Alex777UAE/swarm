@@ -11,6 +11,7 @@ import {DBStats, IDBLayer} from "../interfaces/i_db_layer";
 import {IMinerConfig, IMinerList} from "../interfaces/i_miner";
 import {ICoinConfig, ICoinList} from "../interfaces/i_coin";
 import {IGPUConfigList, PerAlgorithmGPUConfig} from "../interfaces/i_gpu";
+import {isArray} from "util";
 
 const debug = require('debug')('miner:redis');
 const readFile = util.promisify(fs.readFile);
@@ -80,9 +81,10 @@ export class Redis extends IDBLayer {
                     }
 
                     if (ch === 'switch') {
-                        const {hostname, coinName} = JSON.parse(msg);
+                        const {hostname, coinName, except} = JSON.parse(msg);
                         const fn = this.options.onCurrentCoinUpdate;
                         debug(`Current coin switched to ${coinName} for: ${hostname}`);
+                        if (isArray(except) && except.indexOf(this.options.myName) !== -1) return;
                         if (hostname === this.options.myName || hostname === 'all' && typeof fn === 'function') {
                             debug(`Switching current coin to ${coinName}`);
                             fn(coinName);
@@ -165,7 +167,9 @@ export class Redis extends IDBLayer {
 
         if (!nodes || nodes.length === 0) {
             await this.redis.hset(REDIS_PREFIX + 'currentCoin', 'default', name);
-            await this.redis.publish('switch', JSON.stringify({hostname: 'all', coinName: name}));
+            const except = Object.keys(await this.redis.hgetall(REDIS_PREFIX + 'currentCoin'))
+                .filter(name => name !== 'default');
+            await this.redis.publish('switch', JSON.stringify({hostname: 'all', except, coinName: name}));
         } else if (name === 'default') {
             const currentCoinName = await this.redis.hget(REDIS_PREFIX + 'currentCoin', 'default');
             for (let i = 0; i < nodes.length; i++) {

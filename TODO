@@ -1,5 +1,5 @@
-* switching current coin for default case even when personal coin is set
-* check if gpuModelOrUUID is among RIGs GPUs when updating miner
+* switching current coin for default case even when personal coin is set, check
+* check if gpuModelOrUUID is among RIGs GPUs when updating miner, check
 
 - web monitoring interface
 - make it work on default lubuntu 17.04 node

@@ -44,6 +44,7 @@ const uploadGPUs = Bluebird.coroutine(function* (gpuNames) {
         const gpuName = gpuNames[i];
         console.log(`\t${gpuName.toUpperCase()}`);
         yield client.uploadGPU(gpuName, CONFIGS_GPUS + gpuName);
+        yield Bluebird.delay(7500);
     }
 });
 

@@ -17,6 +17,7 @@ const util = require("util");
 const crypto = require("crypto");
 const IORedis = require("ioredis");
 const i_db_layer_1 = require("../interfaces/i_db_layer");
+const util_1 = require("util");
 const debug = require('debug')('miner:redis');
 const readFile = util.promisify(fs.readFile);
 const REDIS_PREFIX = 'miner:';
@@ -70,9 +71,11 @@ class Redis extends i_db_layer_1.IDBLayer {
                         }
                     }
                     if (ch === 'switch') {
-                        const { hostname, coinName } = JSON.parse(msg);
+                        const { hostname, coinName, except } = JSON.parse(msg);
                         const fn = this.options.onCurrentCoinUpdate;
                         debug(`Current coin switched to ${coinName} for: ${hostname}`);
+                        if (util_1.isArray(except) && except.indexOf(this.options.myName) !== -1)
+                            return;
                         if (hostname === this.options.myName || hostname === 'all' && typeof fn === 'function') {
                             debug(`Switching current coin to ${coinName}`);
                             fn(coinName);
@@ -163,7 +166,9 @@ class Redis extends i_db_layer_1.IDBLayer {
                 throw new Error(`No coin ${name} available in swarm`);
             if (!nodes || nodes.length === 0) {
                 yield this.redis.hset(REDIS_PREFIX + 'currentCoin', 'default', name);
-                yield this.redis.publish('switch', JSON.stringify({ hostname: 'all', coinName: name }));
+                const except = Object.keys(yield this.redis.hgetall(REDIS_PREFIX + 'currentCoin'))
+                    .filter(name => name !== 'default');
+                yield this.redis.publish('switch', JSON.stringify({ hostname: 'all', except, coinName: name }));
             }
             else if (name === 'default') {
                 const currentCoinName = yield this.redis.hget(REDIS_PREFIX + 'currentCoin', 'default');

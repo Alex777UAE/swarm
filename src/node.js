@@ -393,16 +393,18 @@ class Node {
                         }
                     }
                 }
-                // todo check if gpuModelOrUUID is among GPUs
-                if (config[currentAlgo] && currentMiner !== config[currentAlgo].miner) {
-                    debug(`Miner change [${currentMiner}] -> [${config[currentAlgo].miner}]`);
-                    const minerPath = __dirname + '/wrappers/' + this.miners[config[currentAlgo].miner].type;
-                    debug(`Loading miner: ${this.miners[config[currentAlgo].miner].type} from ${minerPath}`);
-                    const Miner = require(minerPath).default;
-                    const miner = new Miner(config[currentAlgo].miner, this.miners[config[currentAlgo].miner].executable);
-                    yield this.miner.stop();
-                    this.miner = miner;
-                    yield this.miner.start(this.coins[this.currentCoin]);
+                // check if gpuModelOrUUID is among GPUs
+                if (this.GPUs.findIndex(gpu => gpu.uuid === gpuModelOrUUID || gpu.model === gpuModelOrUUID) !== -1) {
+                    if (config[currentAlgo] && currentMiner !== config[currentAlgo].miner) {
+                        debug(`Miner change [${currentMiner}] -> [${config[currentAlgo].miner}]`);
+                        const minerPath = __dirname + '/wrappers/' + this.miners[config[currentAlgo].miner].type;
+                        debug(`Loading miner: ${this.miners[config[currentAlgo].miner].type} from ${minerPath}`);
+                        const Miner = require(minerPath).default;
+                        const miner = new Miner(config[currentAlgo].miner, this.miners[config[currentAlgo].miner].executable);
+                        yield this.miner.stop();
+                        this.miner = miner;
+                        yield this.miner.start(this.coins[this.currentCoin]);
+                    }
                 }
             }
             yield this.rig.updateGPU(gpuModelOrUUID, config);
